@@ -74,6 +74,11 @@ const Index = () => {
       <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
+            <img 
+              src="/lovable-uploads/5d06de04-992d-43a6-ac71-779bc6f6ff12.png" 
+              alt="Dollar Symbol" 
+              className="w-24 h-24 mx-auto mb-6"
+            />
             <h2 className="text-3xl font-bold text-foreground mb-4">Dólar Hoje</h2>
             <p className="text-muted-foreground">Acompanhe a cotação USD/BRL em tempo real</p>
           </div>
