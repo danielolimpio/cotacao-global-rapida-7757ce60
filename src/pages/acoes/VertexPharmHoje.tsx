@@ -8,7 +8,7 @@ const VertexPharmHoje = () => {
     <Layout>
       <div className="container mx-auto px-4 py-8">
         <div className="text-center mb-8">
-          <h1 className="text-4xl font-bold text-foreground mb-4">Vertex Pharma Hoje</h1>
+          <h1 className="text-4xl font-bold text-foreground mb-4">Vertex Pharmaceuticals Hoje</h1>
           <p className="text-xl text-muted-foreground">Cotação da Vertex Pharmaceuticals (VRTX) em tempo real</p>
         </div>
 
@@ -18,30 +18,30 @@ const VertexPharmHoje = () => {
               <CardTitle>Gráfico VRTX</CardTitle>
             </CardHeader>
             <CardContent>
-              <TradingViewWidget symbol="VRTX" height="400" />
+              <TradingViewWidget symbol="NASDAQ:VRTX" height="400" />
             </CardContent>
           </Card>
 
           <div className="space-y-4">
             <QuoteCard
               pair="VRTX"
-              price="425.85"
+              price="$482.75"
               change="+8.45"
-              changePercent="+2.02"
-              flag1="🧬"
+              changePercent="+1.78"
+              flag1="💊"
             />
             <QuoteCard
               pair="Market Cap"
-              price="109.5B"
+              price="$124.8B"
               change="+2.2B"
-              changePercent="+2.05"
+              changePercent="+1.79"
               flag1="💼"
             />
             <QuoteCard
-              pair="P/E Ratio"
-              price="28.6"
-              change="+0.2"
-              changePercent="+0.70"
+              pair="Volume"
+              price="1.2M"
+              change="+185K"
+              changePercent="+18.27"
               flag1="📈"
             />
           </div>
@@ -53,7 +53,7 @@ const VertexPharmHoje = () => {
               <CardTitle>Máxima do Dia</CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-2xl font-bold text-success">$432.75</p>
+              <p className="text-2xl font-bold text-success">$487.25</p>
             </CardContent>
           </Card>
 
@@ -62,7 +62,7 @@ const VertexPharmHoje = () => {
               <CardTitle>Mínima do Dia</CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-2xl font-bold text-destructive">$417.40</p>
+              <p className="text-2xl font-bold text-destructive">$474.30</p>
             </CardContent>
           </Card>
 
@@ -71,7 +71,7 @@ const VertexPharmHoje = () => {
               <CardTitle>Volume</CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-2xl font-bold text-primary">1.8M</p>
+              <p className="text-2xl font-bold text-primary">1.2M</p>
             </CardContent>
           </Card>
         </div>

@@ -25,23 +25,23 @@ const ChinaShenhuaEnergyHoje = () => {
           <div className="space-y-4">
             <QuoteCard
               pair="1088.HK"
-              price="18.45"
-              change="+0.65"
-              changePercent="+3.65"
-              flag1="⚡"
+              price="HK$ 16.85"
+              change="+0.45"
+              changePercent="+2.74"
+              flag1="⛽"
             />
             <QuoteCard
               pair="Market Cap"
-              price="365B HKD"
-              change="+12.8B HKD"
-              changePercent="+3.64"
+              price="HK$ 335B"
+              change="+9.2B"
+              changePercent="+2.82"
               flag1="💼"
             />
             <QuoteCard
               pair="Volume"
-              price="48M"
-              change="+5.2M"
-              changePercent="+12.15"
+              price="48.5M"
+              change="+6.8M"
+              changePercent="+16.31"
               flag1="📈"
             />
           </div>
@@ -53,7 +53,7 @@ const ChinaShenhuaEnergyHoje = () => {
               <CardTitle>Máxima do Dia</CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-2xl font-bold text-success">HK$ 18.85</p>
+              <p className="text-2xl font-bold text-success">HK$ 17.15</p>
             </CardContent>
           </Card>
 
@@ -62,7 +62,7 @@ const ChinaShenhuaEnergyHoje = () => {
               <CardTitle>Mínima do Dia</CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-2xl font-bold text-destructive">HK$ 17.80</p>
+              <p className="text-2xl font-bold text-destructive">HK$ 16.40</p>
             </CardContent>
           </Card>
 
@@ -71,7 +71,7 @@ const ChinaShenhuaEnergyHoje = () => {
               <CardTitle>Volume</CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-2xl font-bold text-primary">48M</p>
+              <p className="text-2xl font-bold text-primary">48.5M</p>
             </CardContent>
           </Card>
         </div>

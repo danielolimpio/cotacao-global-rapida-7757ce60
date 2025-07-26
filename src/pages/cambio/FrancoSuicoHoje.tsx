@@ -26,23 +26,23 @@ const FrancoSuicoHoje = () => {
           <div className="space-y-4">
             <QuoteCard
               pair="CHF/USD"
-              price="1.1025"
-              change="+0.0085"
-              changePercent="+0.78"
+              price="1.0985"
+              change="+0.0035"
+              changePercent="+0.32"
               flag1="🇨🇭"
             />
             <QuoteCard
               pair="CHF/EUR"
-              price="1.0185"
-              change="+0.0065"
-              changePercent="+0.64"
+              price="0.9325"
+              change="+0.0025"
+              changePercent="+0.27"
               flag1="🇨🇭"
             />
             <QuoteCard
               pair="CHF/BRL"
-              price="5.8250"
-              change="+0.0485"
-              changePercent="+0.84"
+              price="5.68"
+              change="+0.08"
+              changePercent="+1.43"
               flag1="🇨🇭"
             />
           </div>
@@ -54,7 +54,7 @@ const FrancoSuicoHoje = () => {
               <CardTitle>Máxima do Dia</CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-2xl font-bold text-success">$1.1085</p>
+              <p className="text-2xl font-bold text-success">$1.1025</p>
             </CardContent>
           </Card>
 
@@ -63,7 +63,7 @@ const FrancoSuicoHoje = () => {
               <CardTitle>Mínima do Dia</CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-2xl font-bold text-destructive">$1.0940</p>
+              <p className="text-2xl font-bold text-destructive">$1.0950</p>
             </CardContent>
           </Card>
 
@@ -72,7 +72,7 @@ const FrancoSuicoHoje = () => {
               <CardTitle>Variação</CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-2xl font-bold text-success">+0.78%</p>
+              <p className="text-2xl font-bold text-success">+0.32%</p>
             </CardContent>
           </Card>
         </div>

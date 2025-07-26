@@ -49,21 +49,26 @@ const Index = () => {
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-primary/10 to-accent/10 py-20">
+      <section 
+        className="relative bg-gradient-to-br from-primary/10 to-accent/10 py-20 bg-cover bg-center bg-no-repeat"
+        style={{
+          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/lovable-uploads/85bbe2bd-087d-450f-854b-df96d620b9ce.png')`
+        }}
+      >
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h1 className="text-5xl font-bold text-foreground mb-4 animate-fade-in">
+            <h1 className="text-3xl md:text-5xl font-bold text-white mb-4 animate-fade-in">
               Cotações em <span className="text-primary">Tempo Real</span>
             </h1>
-            <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
+            <p className="text-lg md:text-xl text-white/90 mb-8 max-w-2xl mx-auto">
               Acompanhe as principais moedas, criptomoedas, ações e forex com dados precisos e atualizados a cada segundo.
             </p>
-            <div className="flex justify-center space-x-4">
+            <div className="flex flex-col sm:flex-row justify-center gap-4">
               <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground">
                 <TrendingUp className="mr-2 h-5 w-5" />
                 Ver Todas as Cotações
               </Button>
-              <Button variant="outline" size="lg">
+              <Button variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-primary">
                 Calculadora de Câmbio
               </Button>
             </div>

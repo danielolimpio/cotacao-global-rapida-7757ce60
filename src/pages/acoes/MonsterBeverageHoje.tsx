@@ -18,30 +18,30 @@ const MonsterBeverageHoje = () => {
               <CardTitle>Gráfico MNST</CardTitle>
             </CardHeader>
             <CardContent>
-              <TradingViewWidget symbol="MNST" height="400" />
+              <TradingViewWidget symbol="NASDAQ:MNST" height="400" />
             </CardContent>
           </Card>
 
           <div className="space-y-4">
             <QuoteCard
               pair="MNST"
-              price="52.85"
-              change="+1.15"
-              changePercent="+2.22"
-              flag1="👹"
+              price="$48.75"
+              change="+1.25"
+              changePercent="+2.63"
+              flag1="🍃"
             />
             <QuoteCard
               pair="Market Cap"
-              price="55.8B"
-              change="+1.2B"
-              changePercent="+2.20"
+              price="$24.8B"
+              change="+635M"
+              changePercent="+2.63"
               flag1="💼"
             />
             <QuoteCard
-              pair="P/E Ratio"
-              price="33.2"
-              change="+0.3"
-              changePercent="+0.91"
+              pair="Volume"
+              price="2.8M"
+              change="+485K"
+              changePercent="+20.87"
               flag1="📈"
             />
           </div>
@@ -53,7 +53,7 @@ const MonsterBeverageHoje = () => {
               <CardTitle>Máxima do Dia</CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-2xl font-bold text-success">$53.45</p>
+              <p className="text-2xl font-bold text-success">$49.15</p>
             </CardContent>
           </Card>
 
@@ -62,7 +62,7 @@ const MonsterBeverageHoje = () => {
               <CardTitle>Mínima do Dia</CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-2xl font-bold text-destructive">$51.70</p>
+              <p className="text-2xl font-bold text-destructive">$47.50</p>
             </CardContent>
           </Card>
 

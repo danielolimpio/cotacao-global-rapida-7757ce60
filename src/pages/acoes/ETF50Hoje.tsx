@@ -9,39 +9,39 @@ const ETF50Hoje = () => {
       <div className="container mx-auto px-4 py-8">
         <div className="text-center mb-8">
           <h1 className="text-4xl font-bold text-foreground mb-4">50 ETF Hoje</h1>
-          <p className="text-xl text-muted-foreground">Cotação do Shanghai 50 ETF em tempo real</p>
+          <p className="text-xl text-muted-foreground">Cotação do SSE 50 ETF (510050.SS) em tempo real</p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
           <Card>
             <CardHeader>
-              <CardTitle>Gráfico Shanghai 50 ETF</CardTitle>
+              <CardTitle>Gráfico 510050.SS</CardTitle>
             </CardHeader>
             <CardContent>
-              <TradingViewWidget symbol="ASHR" height="400" />
+              <TradingViewWidget symbol="SSE:510050" height="400" />
             </CardContent>
           </Card>
 
           <div className="space-y-4">
             <QuoteCard
-              pair="ASHR"
-              price="24.85"
-              change="+0.35"
-              changePercent="+1.43"
+              pair="510050.SS"
+              price="¥ 2.885"
+              change="+0.055"
+              changePercent="+1.94"
               flag1="📊"
             />
             <QuoteCard
               pair="Net Assets"
-              price="1.8B USD"
-              change="+25M USD"
-              changePercent="+1.41"
+              price="¥ 495B"
+              change="+9.6B"
+              changePercent="+1.98"
               flag1="💼"
             />
             <QuoteCard
               pair="Volume"
-              price="3.2M"
-              change="+420K"
-              changePercent="+15.11"
+              price="285M"
+              change="+48M"
+              changePercent="+20.25"
               flag1="📈"
             />
           </div>
@@ -53,7 +53,7 @@ const ETF50Hoje = () => {
               <CardTitle>Máxima do Dia</CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-2xl font-bold text-success">$25.15</p>
+              <p className="text-2xl font-bold text-success">¥ 2.915</p>
             </CardContent>
           </Card>
 
@@ -62,7 +62,7 @@ const ETF50Hoje = () => {
               <CardTitle>Mínima do Dia</CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-2xl font-bold text-destructive">$24.50</p>
+              <p className="text-2xl font-bold text-destructive">¥ 2.830</p>
             </CardContent>
           </Card>
 
@@ -71,7 +71,7 @@ const ETF50Hoje = () => {
               <CardTitle>Volume</CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-2xl font-bold text-primary">3.2M</p>
+              <p className="text-2xl font-bold text-primary">285M</p>
             </CardContent>
           </Card>
         </div>

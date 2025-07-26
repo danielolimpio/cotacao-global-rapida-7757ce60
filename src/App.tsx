@@ -98,7 +98,7 @@ const App = () => (
           <Route path="/cambio/euro" element={<EuroHoje />} />
           <Route path="/cambio/franco-suico" element={<FrancoSuicoHoje />} />
           <Route path="/cambio/iene" element={<IeneHoje />} />
-          <Route path="/cambio/libras-esterlinas" element={<LibrasEsterlinasHoje />} />
+          <Route path="/cambio/libras" element={<LibrasEsterlinasHoje />} />
           <Route path="/cambio/peso-argentino" element={<PesoArgentinoHoje />} />
           <Route path="/cambio/peso-chileno" element={<PesoChilenoHoje />} />
           <Route path="/cambio/peso-mexicano" element={<PesoMexicanoHoje />} />
@@ -137,24 +137,24 @@ const App = () => (
           <Route path="/acoes/blackrock" element={<BlackRockHoje />} />
           <Route path="/acoes/bradesco" element={<BradescoHoje />} />
           <Route path="/acoes/carrefour" element={<CarrefourHoje />} />
-          <Route path="/acoes/china-shenhua-energy" element={<ChinaShenhuaEnergyHoje />} />
+          <Route path="/acoes/china-shenhua" element={<ChinaShenhuaEnergyHoje />} />
           <Route path="/acoes/cisco" element={<CiscoHoje />} />
           <Route path="/acoes/eagle-point" element={<EaglePointHoje />} />
-          <Route path="/acoes/etf-300" element={<ETF300Hoje />} />
-          <Route path="/acoes/etf-50" element={<ETF50Hoje />} />
+          <Route path="/acoes/300-etf" element={<ETF300Hoje />} />
+          <Route path="/acoes/50-etf" element={<ETF50Hoje />} />
           <Route path="/acoes/hapvida" element={<HapvidaHoje />} />
           <Route path="/acoes/harvest-fund" element={<HarvestFundHoje />} />
           <Route path="/acoes/intel" element={<IntelHoje />} />
           <Route path="/acoes/invesco" element={<InvescoHoje />} />
           <Route path="/acoes/kraft-heinz" element={<KraftHeinzHoje />} />
-          <Route path="/acoes/magazine-luiza" element={<MagazineLuizHoje />} />
+          <Route path="/acoes/magazine-luiz" element={<MagazineLuizHoje />} />
           <Route path="/acoes/meta" element={<MetaHoje />} />
           <Route path="/acoes/microsoft" element={<MicrosoftHoje />} />
-          <Route path="/acoes/monster-beverage" element={<MonsterBeverageHoje />} />
+          <Route path="/acoes/monster" element={<MonsterBeverageHoje />} />
           <Route path="/acoes/nuveen" element={<NuveenHoje />} />
           <Route path="/acoes/nvidia" element={<NvidiaHoje />} />
           <Route path="/acoes/pimco" element={<PimcoHoje />} />
-          <Route path="/acoes/vertex-pharm" element={<VertexPharmHoje />} />
+          <Route path="/acoes/vertex" element={<VertexPharmHoje />} />
           
           {/* Forex routes */}
           <Route path="/forex/sp500" element={<SP500Hoje />} />

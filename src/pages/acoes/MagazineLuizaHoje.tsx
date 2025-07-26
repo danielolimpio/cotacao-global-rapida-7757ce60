@@ -3,45 +3,45 @@ import TradingViewWidget from "@/components/TradingViewWidget";
 import QuoteCard from "@/components/QuoteCard";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
-const CarrefourHoje = () => {
+const MagazineLuizaHoje = () => {
   return (
     <Layout>
       <div className="container mx-auto px-4 py-8">
         <div className="text-center mb-8">
-          <h1 className="text-4xl font-bold text-foreground mb-4">Carrefour Hoje</h1>
-          <p className="text-xl text-muted-foreground">Cotação do Carrefour Brasil (CRFB3) em tempo real</p>
+          <h1 className="text-4xl font-bold text-foreground mb-4">Magazine Luiza Hoje</h1>
+          <p className="text-xl text-muted-foreground">Cotação da Magazine Luiza (MGLU3) em tempo real</p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
           <Card>
             <CardHeader>
-              <CardTitle>Gráfico CRFB3</CardTitle>
+              <CardTitle>Gráfico MGLU3</CardTitle>
             </CardHeader>
             <CardContent>
-              <TradingViewWidget symbol="BMFBOVESPA:CRFB3" height="400" />
+              <TradingViewWidget symbol="BMFBOVESPA:MGLU3" height="400" />
             </CardContent>
           </Card>
 
           <div className="space-y-4">
             <QuoteCard
-              pair="CRFB3"
-              price="15.85"
-              change="+0.35"
-              changePercent="+2.26"
-              flag1="🛒"
+              pair="MGLU3"
+              price="R$ 8.45"
+              change="+0.32"
+              changePercent="+3.94"
+              flag1="🛍️"
             />
             <QuoteCard
               pair="Market Cap"
-              price="12.8B"
-              change="+285M"
-              changePercent="+2.28"
+              price="R$ 5.8B"
+              change="+220M"
+              changePercent="+3.95"
               flag1="💼"
             />
             <QuoteCard
               pair="Volume"
-              price="8.5M"
-              change="+450K"
-              changePercent="+5.59"
+              price="18.5M"
+              change="+3.2M"
+              changePercent="+20.92"
               flag1="📈"
             />
           </div>
@@ -53,7 +53,7 @@ const CarrefourHoje = () => {
               <CardTitle>Máxima do Dia</CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-2xl font-bold text-success">R$ 16.15</p>
+              <p className="text-2xl font-bold text-success">R$ 8.68</p>
             </CardContent>
           </Card>
 
@@ -62,7 +62,7 @@ const CarrefourHoje = () => {
               <CardTitle>Mínima do Dia</CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-2xl font-bold text-destructive">R$ 15.50</p>
+              <p className="text-2xl font-bold text-destructive">R$ 8.13</p>
             </CardContent>
           </Card>
 
@@ -71,7 +71,7 @@ const CarrefourHoje = () => {
               <CardTitle>Volume</CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-2xl font-bold text-primary">8.5M</p>
+              <p className="text-2xl font-bold text-primary">18.5M</p>
             </CardContent>
           </Card>
         </div>
@@ -80,4 +80,4 @@ const CarrefourHoje = () => {
   );
 };
 
-export default CarrefourHoje;
+export default MagazineLuizaHoje;
