@@ -5,6 +5,7 @@ import CurrencyConverter from "@/components/CurrencyConverter";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { TrendingUp, Globe, Shield, Zap } from "lucide-react";
+import { Link } from "react-router-dom";
 const Index = () => {
   const popularQuotes = [{
     pair: "USD/BRL",
@@ -57,9 +58,11 @@ const Index = () => {
                 <TrendingUp className="mr-2 h-5 w-5" />
                 Ver Todas as Cotações
               </Button>
-              <Button variant="outline" size="lg" className="border-white bg-white/10 text-white hover:bg-white hover:text-zinc-800">
-                Calculadora de Câmbio
-              </Button>
+              <Link to="/calculadora-juros">
+                <Button variant="outline" size="lg" className="border-white bg-white/10 text-white hover:bg-white hover:text-zinc-800">
+                  Calculadora de Câmbio
+                </Button>
+              </Link>
             </div>
           </div>
         </div>
