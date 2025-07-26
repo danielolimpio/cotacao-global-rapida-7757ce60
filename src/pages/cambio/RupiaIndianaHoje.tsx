@@ -1,6 +1,7 @@
 import Layout from "@/components/Layout";
 import TradingViewWidget from "@/components/TradingViewWidget";
 import QuoteCard from "@/components/QuoteCard";
+import CurrencyConverter from "@/components/CurrencyConverter";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 const RupiaIndianaHoje = () => {
@@ -75,6 +76,8 @@ const RupiaIndianaHoje = () => {
             </CardContent>
           </Card>
         </div>
+
+        <CurrencyConverter type="currency" mainCurrency="INR" />
       </div>
     </Layout>
   );
