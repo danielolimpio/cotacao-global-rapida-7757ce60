@@ -18,7 +18,7 @@ const ChinaShenhuaEnergyHoje = () => {
               <CardTitle>Gráfico 1088.HK</CardTitle>
             </CardHeader>
             <CardContent>
-              <TradingViewWidget symbol="HKEX:1088" height="400" />
+              <TradingViewWidget symbol="SSE:601088" height="400" />
             </CardContent>
           </Card>
 

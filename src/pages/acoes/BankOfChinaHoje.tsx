@@ -18,7 +18,7 @@ const BankOfChinaHoje = () => {
               <CardTitle>Gráfico 3988.HK</CardTitle>
             </CardHeader>
             <CardContent>
-              <TradingViewWidget symbol="HKEX:3988" height="400" />
+              <TradingViewWidget symbol="SSE:601988" height="400" />
             </CardContent>
           </Card>
 

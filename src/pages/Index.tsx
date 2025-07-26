@@ -57,7 +57,7 @@ const Index = () => {
                 <TrendingUp className="mr-2 h-5 w-5" />
                 Ver Todas as Cotações
               </Button>
-              <Button variant="outline" size="lg" className="border-white hover:bg-white text-zinc-800">
+              <Button variant="outline" size="lg" className="border-white bg-white/10 text-white hover:bg-white hover:text-zinc-800">
                 Calculadora de Câmbio
               </Button>
             </div>

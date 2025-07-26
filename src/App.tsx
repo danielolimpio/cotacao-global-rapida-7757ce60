@@ -77,6 +77,9 @@ import VertexPharmHoje from "./pages/acoes/VertexPharmHoje";
 // Forex pages
 import SP500Hoje from "./pages/forex/SP500Hoje";
 
+// Calculator page
+import CalculadoraJuros from "./pages/CalculadoraJuros";
+
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -158,6 +161,9 @@ const App = () => (
           
           {/* Forex routes */}
           <Route path="/forex/sp500" element={<SP500Hoje />} />
+          
+          {/* Calculator routes */}
+          <Route path="/calculadora-juros" element={<CalculadoraJuros />} />
           
           <Route path="*" element={<NotFound />} />
         </Routes>

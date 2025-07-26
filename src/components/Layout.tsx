@@ -1,7 +1,8 @@
 import { Button } from "@/components/ui/button";
-import { TrendingUp, DollarSign, ChevronDown } from "lucide-react";
+import { TrendingUp, DollarSign, ChevronDown, Menu, X } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import CurrencyTicker from "@/components/CurrencyTicker";
+import { useState } from "react";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -13,6 +14,7 @@ const logoUrl = "/lovable-uploads/d6b0e3b9-996c-4858-a90a-4c5c17f95789.png";
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
   const location = useLocation();
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   
   const menuItems = [
     { name: "Início", path: "/" },
@@ -42,10 +44,15 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
             </Link>
 
             {/* Mobile Menu Button */}
-            <button className="md:hidden p-2 rounded-lg hover:bg-muted/50 transition-colors">
-              <svg className="w-6 h-6 text-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-              </svg>
+            <button 
+              className="md:hidden p-2 rounded-lg hover:bg-muted/50 transition-colors"
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            >
+              {isMobileMenuOpen ? (
+                <X className="w-6 h-6 text-foreground" />
+              ) : (
+                <Menu className="w-6 h-6 text-foreground" />
+              )}
             </button>
 
             {/* Navigation */}
@@ -229,6 +236,24 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
             </div>
           </div>
         </div>
+
+        {/* Mobile Menu */}
+        {isMobileMenuOpen && (
+          <div className="md:hidden border-t bg-card">
+            <div className="container mx-auto px-4 py-4 space-y-2">
+              {menuItems.map((item) => (
+                <Link
+                  key={item.path}
+                  to={item.path}
+                  className="block py-2 px-4 hover:bg-muted/50 rounded-lg transition-colors text-foreground"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  {item.name}
+                </Link>
+              ))}
+            </div>
+          </div>
+        )}
       </header>
 
       {/* Main Content */}

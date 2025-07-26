@@ -18,7 +18,7 @@ const CarrefourHoje = () => {
               <CardTitle>Gráfico CRFB3</CardTitle>
             </CardHeader>
             <CardContent>
-              <TradingViewWidget symbol="BMFBOVESPA:CRFB3" height="400" />
+              <TradingViewWidget symbol="BOVESPA:CRFB3" height="400" />
             </CardContent>
           </Card>
 
