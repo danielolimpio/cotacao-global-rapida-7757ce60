@@ -18,12 +18,13 @@ const CurrencyConverter: React.FC<CurrencyConverterProps> = ({
   const [amount, setAmount] = useState<string>('100');
   const [selectedDollar, setSelectedDollar] = useState<string>('USD');
   const [rates, setRates] = useState({
-    USD: 1,
-    BRL: 5.52,
+    USD: 5.52,
+    USDT: 5.63, // Turismo +2%
+    CAD: 4.09, // Dólar Canadense
+    AUD: 3.56, // Dólar Australiano
+    NZD: 3.35, // Dólar Neozelandês
     EUR: 0.85,
-    CAD: 1.35,
-    AUD: 1.55,
-    NZD: 1.65
+    BRL: 1
   });
   const [cryptoRates, setCryptoRates] = useState({
     BTC: 45000,
@@ -47,10 +48,14 @@ const CurrencyConverter: React.FC<CurrencyConverterProps> = ({
     const fetchRates = async () => {
       // Em produção, usar API real como ExchangeRate API ou CoinGecko
       // Por enquanto, simular variação das cotações
-      const variation = (Math.random() - 0.5) * 0.1;
+      const variation = (Math.random() - 0.5) * 0.05;
       setRates(prev => ({
         ...prev,
-        BRL: 5.52 + variation,
+        USD: 5.52 + variation,
+        USDT: (5.52 + variation) * 1.02, // Turismo +2%
+        CAD: 4.09 + (variation * 0.8),
+        AUD: 3.56 + (variation * 0.7),
+        NZD: 3.35 + (variation * 0.6),
         EUR: 0.85 + (variation * 0.1)
       }));
     };
@@ -64,16 +69,16 @@ const CurrencyConverter: React.FC<CurrencyConverterProps> = ({
     
     switch (type) {
       case 'dollar':
-        const dollarRate = selectedDollar === 'USDT' ? rates.USD * 1.02 : rates.USD; // Turismo +2%
+        const selectedRate = rates[selectedDollar as keyof typeof rates] || rates.USD;
         return {
-          usd: selectedDollar === 'USD' ? inputAmount : inputAmount / dollarRate,
-          brl: inputAmount * rates.BRL
+          usd: selectedDollar === 'USD' ? inputAmount : (inputAmount * selectedRate) / rates.USD,
+          brl: inputAmount * selectedRate
         };
       
       case 'euro':
         return {
           usd: inputAmount / rates.EUR,
-          brl: (inputAmount / rates.EUR) * rates.BRL
+          brl: (inputAmount / rates.EUR) * rates.USD
         };
       
       case 'crypto':
@@ -81,25 +86,25 @@ const CurrencyConverter: React.FC<CurrencyConverterProps> = ({
         const usdValue = inputAmount * cryptoPrice;
         return {
           usd: usdValue,
-          brl: usdValue * rates.BRL
+          brl: usdValue * rates.USD
         };
       
       default:
         return {
           usd: inputAmount / rates.USD,
-          brl: inputAmount * rates.BRL
+          brl: inputAmount * rates.USD
         };
     }
   };
 
   const conversion = calculateConversion();
   const currentRate = type === 'dollar' 
-    ? `1 ${selectedDollar} = ${rates.BRL.toFixed(2)} BRL`
+    ? `1 ${selectedDollar} = ${(rates[selectedDollar as keyof typeof rates] || rates.USD).toFixed(4)} BRL`
     : type === 'euro'
-    ? `1 EUR = ${rates.BRL.toFixed(2)} BRL | 1 EUR = ${(1/rates.EUR).toFixed(2)} USD`
+    ? `1 EUR = ${rates.USD.toFixed(4)} BRL | 1 EUR = ${(1/rates.EUR).toFixed(4)} USD`
     : type === 'crypto'
     ? `1 ${cryptoSymbol} = ${conversion.usd.toFixed(2)} USD | 1 ${cryptoSymbol} = ${conversion.brl.toFixed(2)} BRL`
-    : `1 ${mainCurrency} = ${rates.BRL.toFixed(2)} BRL`;
+    : `1 ${mainCurrency} = ${rates.USD.toFixed(4)} BRL`;
 
   return (
     <Card className="w-full max-w-2xl mx-auto mt-8">
