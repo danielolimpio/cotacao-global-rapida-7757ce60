@@ -42,7 +42,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
               <NavigationMenuList>
                 <NavigationMenuItem>
                   <Link to="/">
-                    <Button variant={location.pathname === "/" ? "default" : "ghost"} className="font-medium">
+                    <Button variant={location.pathname === "/" ? "default" : "ghost"} className="font-medium text-base">
                       Início
                     </Button>
                   </Link>
@@ -50,32 +50,32 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
 
                 {/* Câmbio Menu */}
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger className="font-medium">Câmbio</NavigationMenuTrigger>
+                  <NavigationMenuTrigger className="font-medium text-base">Câmbio</NavigationMenuTrigger>
                   <NavigationMenuContent>
-                    <div className="w-80 p-4">
-                      <div className="grid gap-3">
+                    <div className="w-[600px] p-6">
+                      <div className="grid grid-cols-2 gap-6">
                         <div>
-                          <h4 className="font-medium mb-2">Moedas Globais</h4>
-                          <div className="grid gap-1">
-                            <Link to="/cambio/dolar" className="text-sm hover:text-primary">Dólar Hoje</Link>
-                            <Link to="/cambio/euro" className="text-sm hover:text-primary">Euro Hoje</Link>
-                            <Link to="/cambio/franco-suico" className="text-sm hover:text-primary">Franco Suíço Hoje</Link>
-                            <Link to="/cambio/iene" className="text-sm hover:text-primary">Iene Hoje</Link>
-                            <Link to="/cambio/libras" className="text-sm hover:text-primary">Libras Esterlinas Hoje</Link>
+                          <h4 className="font-semibold mb-3 text-base">Moedas Globais</h4>
+                          <div className="grid gap-2">
+                            <Link to="/cambio/dolar" className="text-base hover:text-primary transition-colors">Dólar Hoje</Link>
+                            <Link to="/cambio/euro" className="text-base hover:text-primary transition-colors">Euro Hoje</Link>
+                            <Link to="/cambio/franco-suico" className="text-base hover:text-primary transition-colors">Franco Suíço Hoje</Link>
+                            <Link to="/cambio/iene" className="text-base hover:text-primary transition-colors">Iene Hoje</Link>
+                            <Link to="/cambio/libras" className="text-base hover:text-primary transition-colors">Libras Esterlinas Hoje</Link>
                           </div>
                         </div>
                         <div>
-                          <h4 className="font-medium mb-2">Moedas Emergentes</h4>
-                          <div className="grid gap-1">
-                            <Link to="/cambio/peso-argentino" className="text-sm hover:text-primary">Peso Argentino Hoje</Link>
-                            <Link to="/cambio/peso-chileno" className="text-sm hover:text-primary">Peso Chileno Hoje</Link>
-                            <Link to="/cambio/peso-mexicano" className="text-sm hover:text-primary">Peso Mexicano Hoje</Link>
-                            <Link to="/cambio/peso-uruguaio" className="text-sm hover:text-primary">Peso Uruguaio Hoje</Link>
-                            <Link to="/cambio/rand-sul-africano" className="text-sm hover:text-primary">Rand Sul-Africano</Link>
-                            <Link to="/cambio/rublo-russo" className="text-sm hover:text-primary">Rublo Russo Hoje</Link>
-                            <Link to="/cambio/rupia-indiana" className="text-sm hover:text-primary">Rupia Indiana Hoje</Link>
-                            <Link to="/cambio/yuan-chines" className="text-sm hover:text-primary">Yuan Chinês Hoje</Link>
-                            <Link to="/cambio/won-sul-coreano" className="text-sm hover:text-primary">Won Sul-Coreano Hoje</Link>
+                          <h4 className="font-semibold mb-3 text-base">Moedas Emergentes</h4>
+                          <div className="grid gap-2">
+                            <Link to="/cambio/peso-argentino" className="text-base hover:text-primary transition-colors">Peso Argentino Hoje</Link>
+                            <Link to="/cambio/peso-chileno" className="text-base hover:text-primary transition-colors">Peso Chileno Hoje</Link>
+                            <Link to="/cambio/peso-mexicano" className="text-base hover:text-primary transition-colors">Peso Mexicano Hoje</Link>
+                            <Link to="/cambio/peso-uruguaio" className="text-base hover:text-primary transition-colors">Peso Uruguaio Hoje</Link>
+                            <Link to="/cambio/rand-sul-africano" className="text-base hover:text-primary transition-colors">Rand Sul-Africano</Link>
+                            <Link to="/cambio/rublo-russo" className="text-base hover:text-primary transition-colors">Rublo Russo Hoje</Link>
+                            <Link to="/cambio/rupia-indiana" className="text-base hover:text-primary transition-colors">Rupia Indiana Hoje</Link>
+                            <Link to="/cambio/yuan-chines" className="text-base hover:text-primary transition-colors">Yuan Chinês Hoje</Link>
+                            <Link to="/cambio/won-sul-coreano" className="text-base hover:text-primary transition-colors">Won Sul-Coreano Hoje</Link>
                           </div>
                         </div>
                       </div>
@@ -85,44 +85,44 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
 
                 {/* Crypto Menu */}
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger className="font-medium">Crypto</NavigationMenuTrigger>
+                  <NavigationMenuTrigger className="font-medium text-base">Crypto</NavigationMenuTrigger>
                   <NavigationMenuContent>
-                    <div className="w-96 p-4">
-                      <div className="grid grid-cols-2 gap-4">
+                    <div className="w-[800px] p-6">
+                      <div className="grid grid-cols-4 gap-6">
                         <div>
-                          <h4 className="font-medium mb-2">Principais</h4>
-                          <div className="grid gap-1">
-                            <Link to="/crypto/bitcoin" className="text-sm hover:text-primary">Bitcoin Hoje</Link>
-                            <Link to="/crypto/ethereum" className="text-sm hover:text-primary">Ethereum Hoje</Link>
-                            <Link to="/crypto/binance-coin" className="text-sm hover:text-primary">Binance Coin Hoje</Link>
-                            <Link to="/crypto/ripple" className="text-sm hover:text-primary">Ripple Hoje</Link>
-                            <Link to="/crypto/cardano" className="text-sm hover:text-primary">Cardano Hoje</Link>
-                            <Link to="/crypto/litecoin" className="text-sm hover:text-primary">Litecoin Hoje</Link>
+                          <h4 className="font-semibold mb-3 text-base">Principais</h4>
+                          <div className="grid gap-2">
+                            <Link to="/crypto/bitcoin" className="text-base hover:text-primary transition-colors">Bitcoin Hoje</Link>
+                            <Link to="/crypto/ethereum" className="text-base hover:text-primary transition-colors">Ethereum Hoje</Link>
+                            <Link to="/crypto/binance-coin" className="text-base hover:text-primary transition-colors">Binance Coin Hoje</Link>
+                            <Link to="/crypto/ripple" className="text-base hover:text-primary transition-colors">Ripple Hoje</Link>
+                            <Link to="/crypto/cardano" className="text-base hover:text-primary transition-colors">Cardano Hoje</Link>
+                            <Link to="/crypto/litecoin" className="text-base hover:text-primary transition-colors">Litecoin Hoje</Link>
                           </div>
                         </div>
                         <div>
-                          <h4 className="font-medium mb-2">Altcoins</h4>
-                          <div className="grid gap-1">
-                            <Link to="/crypto/polkadot" className="text-sm hover:text-primary">Polkadot Hoje</Link>
-                            <Link to="/crypto/avalanche" className="text-sm hover:text-primary">Avalanche Hoje</Link>
-                            <Link to="/crypto/dash" className="text-sm hover:text-primary">Dash Hoje</Link>
-                            <Link to="/crypto/solana" className="text-sm hover:text-primary">Solana Hoje</Link>
+                          <h4 className="font-semibold mb-3 text-base">Altcoins</h4>
+                          <div className="grid gap-2">
+                            <Link to="/crypto/polkadot" className="text-base hover:text-primary transition-colors">Polkadot Hoje</Link>
+                            <Link to="/crypto/avalanche" className="text-base hover:text-primary transition-colors">Avalanche Hoje</Link>
+                            <Link to="/crypto/dash" className="text-base hover:text-primary transition-colors">Dash Hoje</Link>
+                            <Link to="/crypto/solana" className="text-base hover:text-primary transition-colors">Solana Hoje</Link>
                           </div>
                         </div>
                         <div>
-                          <h4 className="font-medium mb-2">Stablecoins</h4>
-                          <div className="grid gap-1">
-                            <Link to="/crypto/usdt" className="text-sm hover:text-primary">USDT (Tether) Hoje</Link>
-                            <Link to="/crypto/usdc" className="text-sm hover:text-primary">USDC Hoje</Link>
-                            <Link to="/crypto/dai" className="text-sm hover:text-primary">DAI Hoje</Link>
+                          <h4 className="font-semibold mb-3 text-base">Stablecoins</h4>
+                          <div className="grid gap-2">
+                            <Link to="/crypto/usdt" className="text-base hover:text-primary transition-colors">USDT (Tether) Hoje</Link>
+                            <Link to="/crypto/usdc" className="text-base hover:text-primary transition-colors">USDC Hoje</Link>
+                            <Link to="/crypto/dai" className="text-base hover:text-primary transition-colors">DAI Hoje</Link>
                           </div>
                         </div>
                         <div>
-                          <h4 className="font-medium mb-2">Tokens DeFi</h4>
-                          <div className="grid gap-1">
-                            <Link to="/crypto/uniswap" className="text-sm hover:text-primary">Uniswap Hoje</Link>
-                            <Link to="/crypto/chainlink" className="text-sm hover:text-primary">Chainlink Hoje</Link>
-                            <Link to="/crypto/aave" className="text-sm hover:text-primary">Aave Hoje</Link>
+                          <h4 className="font-semibold mb-3 text-base">Tokens DeFi</h4>
+                          <div className="grid gap-2">
+                            <Link to="/crypto/uniswap" className="text-base hover:text-primary transition-colors">Uniswap Hoje</Link>
+                            <Link to="/crypto/chainlink" className="text-base hover:text-primary transition-colors">Chainlink Hoje</Link>
+                            <Link to="/crypto/aave" className="text-base hover:text-primary transition-colors">Aave Hoje</Link>
                           </div>
                         </div>
                       </div>
@@ -132,55 +132,55 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
 
                 {/* Ações Menu */}
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger className="font-medium">Ações</NavigationMenuTrigger>
+                  <NavigationMenuTrigger className="font-medium text-base">Ações</NavigationMenuTrigger>
                   <NavigationMenuContent>
-                    <div className="w-96 p-4">
-                      <div className="grid grid-cols-2 gap-4">
+                    <div className="w-[900px] p-6">
+                      <div className="grid grid-cols-4 gap-6">
                         <div>
-                          <h4 className="font-medium mb-2">NYSE Bolsa de NY</h4>
-                          <div className="grid gap-1">
-                            <Link to="/acoes/pimco" className="text-sm hover:text-primary">PIMCO Hoje</Link>
-                            <Link to="/acoes/nuveen" className="text-sm hover:text-primary">Nuveen Hoje</Link>
-                            <Link to="/acoes/eagle-point" className="text-sm hover:text-primary">Eagle Point Hoje</Link>
-                            <Link to="/acoes/invesco" className="text-sm hover:text-primary">Invesco Hoje</Link>
-                            <Link to="/acoes/allspring" className="text-sm hover:text-primary">Allspring Hoje</Link>
-                            <Link to="/acoes/blackrock" className="text-sm hover:text-primary">BlackRock Hoje</Link>
+                          <h4 className="font-semibold mb-3 text-base">NYSE Bolsa de NY</h4>
+                          <div className="grid gap-2">
+                            <Link to="/acoes/pimco" className="text-base hover:text-primary transition-colors">PIMCO Hoje</Link>
+                            <Link to="/acoes/nuveen" className="text-base hover:text-primary transition-colors">Nuveen Hoje</Link>
+                            <Link to="/acoes/eagle-point" className="text-base hover:text-primary transition-colors">Eagle Point Hoje</Link>
+                            <Link to="/acoes/invesco" className="text-base hover:text-primary transition-colors">Invesco Hoje</Link>
+                            <Link to="/acoes/allspring" className="text-base hover:text-primary transition-colors">Allspring Hoje</Link>
+                            <Link to="/acoes/blackrock" className="text-base hover:text-primary transition-colors">BlackRock Hoje</Link>
                           </div>
                         </div>
                         <div>
-                          <h4 className="font-medium mb-2">NASDAQ</h4>
-                          <div className="grid gap-1">
-                            <Link to="/acoes/apple" className="text-sm hover:text-primary">Apple Hoje</Link>
-                            <Link to="/acoes/amazon" className="text-sm hover:text-primary">Amazon Hoje</Link>
-                            <Link to="/acoes/cisco" className="text-sm hover:text-primary">Cisco Hoje</Link>
-                            <Link to="/acoes/intel" className="text-sm hover:text-primary">Intel Hoje</Link>
-                            <Link to="/acoes/kraft-heinz" className="text-sm hover:text-primary">Kraft Heinz Hoje</Link>
-                            <Link to="/acoes/microsoft" className="text-sm hover:text-primary">Microsoft Hoje</Link>
-                            <Link to="/acoes/monster" className="text-sm hover:text-primary">Monster Beverage Hoje</Link>
-                            <Link to="/acoes/meta" className="text-sm hover:text-primary">Meta Hoje</Link>
-                            <Link to="/acoes/nvidia" className="text-sm hover:text-primary">NVIDIA Hoje</Link>
-                            <Link to="/acoes/vertex" className="text-sm hover:text-primary">Vertex Pharm Hoje</Link>
+                          <h4 className="font-semibold mb-3 text-base">NASDAQ</h4>
+                          <div className="grid gap-2">
+                            <Link to="/acoes/apple" className="text-base hover:text-primary transition-colors">Apple Hoje</Link>
+                            <Link to="/acoes/amazon" className="text-base hover:text-primary transition-colors">Amazon Hoje</Link>
+                            <Link to="/acoes/cisco" className="text-base hover:text-primary transition-colors">Cisco Hoje</Link>
+                            <Link to="/acoes/intel" className="text-base hover:text-primary transition-colors">Intel Hoje</Link>
+                            <Link to="/acoes/kraft-heinz" className="text-base hover:text-primary transition-colors">Kraft Heinz Hoje</Link>
+                            <Link to="/acoes/microsoft" className="text-base hover:text-primary transition-colors">Microsoft Hoje</Link>
+                            <Link to="/acoes/monster" className="text-base hover:text-primary transition-colors">Monster Beverage Hoje</Link>
+                            <Link to="/acoes/meta" className="text-base hover:text-primary transition-colors">Meta Hoje</Link>
+                            <Link to="/acoes/nvidia" className="text-base hover:text-primary transition-colors">NVIDIA Hoje</Link>
+                            <Link to="/acoes/vertex" className="text-base hover:text-primary transition-colors">Vertex Pharm Hoje</Link>
                           </div>
                         </div>
                         <div>
-                          <h4 className="font-medium mb-2">B3 Brasil</h4>
-                          <div className="grid gap-1">
-                            <Link to="/acoes/carrefour" className="text-sm hover:text-primary">Carrefour Hoje</Link>
-                            <Link to="/acoes/hapvida" className="text-sm hover:text-primary">Hapvida On Hoje</Link>
-                            <Link to="/acoes/magazine-luiz" className="text-sm hover:text-primary">Magazine Luiz Hoje</Link>
-                            <Link to="/acoes/bradesco" className="text-sm hover:text-primary">Bradesco Hoje</Link>
-                            <Link to="/acoes/ambev" className="text-sm hover:text-primary">Ambev Hoje</Link>
-                            <Link to="/acoes/assai" className="text-sm hover:text-primary">Assaí Hoje</Link>
+                          <h4 className="font-semibold mb-3 text-base">B3 Brasil</h4>
+                          <div className="grid gap-2">
+                            <Link to="/acoes/carrefour" className="text-base hover:text-primary transition-colors">Carrefour Hoje</Link>
+                            <Link to="/acoes/hapvida" className="text-base hover:text-primary transition-colors">Hapvida On Hoje</Link>
+                            <Link to="/acoes/magazine-luiz" className="text-base hover:text-primary transition-colors">Magazine Luiz Hoje</Link>
+                            <Link to="/acoes/bradesco" className="text-base hover:text-primary transition-colors">Bradesco Hoje</Link>
+                            <Link to="/acoes/ambev" className="text-base hover:text-primary transition-colors">Ambev Hoje</Link>
+                            <Link to="/acoes/assai" className="text-base hover:text-primary transition-colors">Assaí Hoje</Link>
                           </div>
                         </div>
                         <div>
-                          <h4 className="font-medium mb-2">Xangai</h4>
-                          <div className="grid gap-1">
-                            <Link to="/acoes/bank-of-china" className="text-sm hover:text-primary">Bank of China Hoje</Link>
-                            <Link to="/acoes/china-shenhua" className="text-sm hover:text-primary">China Shenhua Energy Hoje</Link>
-                            <Link to="/acoes/harvest-fund" className="text-sm hover:text-primary">Harvest Fund Hoje</Link>
-                            <Link to="/acoes/300-etf" className="text-sm hover:text-primary">300 ETF Hoje</Link>
-                            <Link to="/acoes/50-etf" className="text-sm hover:text-primary">50 ETF Hoje</Link>
+                          <h4 className="font-semibold mb-3 text-base">Xangai</h4>
+                          <div className="grid gap-2">
+                            <Link to="/acoes/bank-of-china" className="text-base hover:text-primary transition-colors">Bank of China Hoje</Link>
+                            <Link to="/acoes/china-shenhua" className="text-base hover:text-primary transition-colors">China Shenhua Energy Hoje</Link>
+                            <Link to="/acoes/harvest-fund" className="text-base hover:text-primary transition-colors">Harvest Fund Hoje</Link>
+                            <Link to="/acoes/300-etf" className="text-base hover:text-primary transition-colors">300 ETF Hoje</Link>
+                            <Link to="/acoes/50-etf" className="text-base hover:text-primary transition-colors">50 ETF Hoje</Link>
                           </div>
                         </div>
                       </div>
@@ -190,17 +190,17 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
 
                 {/* Forex Menu */}
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger className="font-medium">Forex</NavigationMenuTrigger>
+                  <NavigationMenuTrigger className="font-medium text-base">Forex</NavigationMenuTrigger>
                   <NavigationMenuContent>
-                    <div className="w-48 p-4">
-                      <Link to="/forex/sp500" className="text-sm hover:text-primary">S&P 500 Hoje</Link>
+                    <div className="w-60 p-6">
+                      <Link to="/forex/sp500" className="text-base hover:text-primary transition-colors">S&P 500 Hoje</Link>
                     </div>
                   </NavigationMenuContent>
                 </NavigationMenuItem>
 
                 <NavigationMenuItem>
                   <Link to="/contato">
-                    <Button variant={location.pathname === "/contato" ? "default" : "ghost"} className="font-medium">
+                    <Button variant={location.pathname === "/contato" ? "default" : "ghost"} className="font-medium text-base">
                       Contato
                     </Button>
                   </Link>
