@@ -1,6 +1,7 @@
 import Layout from "@/components/Layout";
 import QuoteCard from "@/components/QuoteCard";
 import TradingViewWidget from "@/components/TradingViewWidget";
+import CurrencyConverter from "@/components/CurrencyConverter";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { TrendingUp, Globe, Shield, Zap } from "lucide-react";
@@ -129,6 +130,9 @@ const Index = () => {
           </div>
         </div>
       </section>
+
+      {/* Currency Converter */}
+      <CurrencyConverter type="dollar" />
 
       {/* Features Section */}
       <section className="py-16">

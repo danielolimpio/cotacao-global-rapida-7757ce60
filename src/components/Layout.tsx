@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { TrendingUp, DollarSign, ChevronDown } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
+import CurrencyTicker from "@/components/CurrencyTicker";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -24,6 +25,9 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
 
   return (
     <div className="min-h-screen bg-background">
+      {/* Currency Ticker */}
+      <CurrencyTicker />
+      
       {/* Header */}
       <header className="border-b bg-card shadow-sm">
         <div className="container mx-auto px-4 py-4">
