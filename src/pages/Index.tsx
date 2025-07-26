@@ -112,9 +112,14 @@ const Index = () => {
       {/* Popular Quotes Grid */}
       <section className="py-16 bg-muted/30">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center text-foreground mb-12">
-            Cotações Populares
-          </h2>
+          <div className="text-center mb-12">
+            <img 
+              src="/lovable-uploads/d6b0e3b9-996c-4858-a90a-4c5c17f95789.png" 
+              alt="Financial Symbol" 
+              className="w-16 h-16 mx-auto mb-4"
+            />
+            <h2 className="text-3xl font-bold text-foreground">Cotações em Tempo Real</h2>
+          </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {popularQuotes.map((quote, index) => (
               <div key={quote.pair} className="animate-fade-in" style={{ animationDelay: `${index * 0.1}s` }}>
