@@ -25,7 +25,7 @@ const VerTodasCotacoes = () => {
   ];
 
   const forexData = [
-    { pair: "USD/BRL", price: "R$ 4.98", change: "+0.05", changePercent: "+1.02", flag1: "🇺🇸", flag2: "🇧🇷", isPositive: true },
+    { pair: "USD/BRL", price: "R$ 5.56", change: "+0.05", changePercent: "+0.90", flag1: "🇺🇸", flag2: "🇧🇷", isPositive: true },
     { pair: "EUR/BRL", price: "R$ 5.42", change: "-0.02", changePercent: "-0.37", flag1: "🇪🇺", flag2: "🇧🇷", isPositive: false },
     { pair: "GBP/BRL", price: "R$ 6.25", change: "+0.08", changePercent: "+1.30", flag1: "🇬🇧", flag2: "🇧🇷", isPositive: true },
     { pair: "JPY/BRL", price: "R$ 0.0335", change: "+0.0005", changePercent: "+1.52", flag1: "🇯🇵", flag2: "🇧🇷", isPositive: true },

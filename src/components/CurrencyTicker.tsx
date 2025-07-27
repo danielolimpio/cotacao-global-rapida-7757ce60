@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 const CurrencyTicker = () => {
   const [rates, setRates] = useState([
     { pair: 'EUR/USD', price: '1.0892', change: '+0.0023', positive: true },
-    { pair: 'USD/BRL', price: '5.5200', change: '+0.0150', positive: true },
+    { pair: 'USD/BRL', price: '5.5600', change: '+0.0500', positive: true },
     { pair: 'GBP/USD', price: '1.2675', change: '-0.0045', positive: false },
     { pair: 'USD/JPY', price: '149.85', change: '+0.75', positive: true },
     { pair: 'AUD/USD', price: '0.6521', change: '+0.0012', positive: true },

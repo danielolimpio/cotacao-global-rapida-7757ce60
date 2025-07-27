@@ -9,9 +9,9 @@ import { Link } from "react-router-dom";
 const Index = () => {
   const popularQuotes = [{
     pair: "USD/BRL",
-    price: "5.18",
+    price: "5.56",
     change: "+0.05",
-    changePercent: "+0.97%",
+    changePercent: "+0.90%",
     flag1: "🇺🇸",
     flag2: "🇧🇷",
     isPositive: true
@@ -88,10 +88,10 @@ const Index = () => {
                   <span className="text-3xl">🇧🇷</span>
                 </div>
                 <div className="text-right">
-                  <div className="text-3xl font-bold text-primary">R$ 5,18</div>
+                  <div className="text-3xl font-bold text-primary">R$ 5,56</div>
                   <div className="text-success flex items-center">
                     <TrendingUp className="h-4 w-4 mr-1" />
-                    +0.05 (+0.97%)
+                    +0.05 (+0.90%)
                   </div>
                 </div>
               </CardTitle>

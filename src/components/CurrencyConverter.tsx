@@ -18,16 +18,16 @@ const CurrencyConverter: React.FC<CurrencyConverterProps> = ({
   const [amount, setAmount] = useState<string>('100');
   const [selectedDollar, setSelectedDollar] = useState<string>('USD');
   const [rates, setRates] = useState({
-    USD: 5.52,
-    USDT: 5.63, // Turismo +2%
-    CAD: 4.09, // Dólar Canadense
-    AUD: 3.56, // Dólar Australiano
-    NZD: 3.35, // Dólar Neozelandês
-    EUR: 0.85,
+    USD: 5.56,
+    USDT: 5.67, // Turismo +2%
+    CAD: 4.12, // Dólar Canadense
+    AUD: 3.58, // Dólar Australiano
+    NZD: 3.37, // Dólar Neozelandês
+    EUR: 6.05, // Euro
     BRL: 1
   });
   const [cryptoRates, setCryptoRates] = useState({
-    BTC: 45000,
+    BTC: 117942,
     ETH: 2800,
     BNB: 320,
     XRP: 0.55,
@@ -51,8 +51,8 @@ const CurrencyConverter: React.FC<CurrencyConverterProps> = ({
       const variation = (Math.random() - 0.5) * 0.05;
       setRates(prev => ({
         ...prev,
-        USD: 5.52 + variation,
-        USDT: (5.52 + variation) * 1.02, // Turismo +2%
+        USD: 5.56 + variation,
+        USDT: (5.56 + variation) * 1.02, // Turismo +2%
         CAD: 4.09 + (variation * 0.8),
         AUD: 3.56 + (variation * 0.7),
         NZD: 3.35 + (variation * 0.6),

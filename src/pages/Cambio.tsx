@@ -6,7 +6,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 const Cambio = () => {
   const brlQuotes = [
-    { pair: "USD/BRL", price: "5.18", change: "+0.05", changePercent: "+0.97%", flag1: "🇺🇸", flag2: "🇧🇷", isPositive: true },
+    { pair: "USD/BRL", price: "5.56", change: "+0.05", changePercent: "+0.90%", flag1: "🇺🇸", flag2: "🇧🇷", isPositive: true },
     { pair: "EUR/BRL", price: "5.45", change: "-0.02", changePercent: "-0.37%", flag1: "🇪🇺", flag2: "🇧🇷", isPositive: false },
     { pair: "GBP/BRL", price: "6.32", change: "+0.08", changePercent: "+1.28%", flag1: "🇬🇧", flag2: "🇧🇷", isPositive: true },
     { pair: "CAD/BRL", price: "3.78", change: "+0.03", changePercent: "+0.80%", flag1: "🇨🇦", flag2: "🇧🇷", isPositive: true },

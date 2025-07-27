@@ -26,21 +26,21 @@ const BitcoinHoje = () => {
           <div className="space-y-4">
             <QuoteCard
               pair="BTC/USD"
-              price="45,120.00"
-              change="+1,250.00"
-              changePercent="+2.85"
+              price="117,942.00"
+              change="+2,850.00"
+              changePercent="+2.48"
               flag1="₿"
             />
             <QuoteCard
               pair="BTC/BRL"
-              price="238,540.00"
-              change="+6,800.00"
-              changePercent="+2.93"
+              price="655,761.52"
+              change="+15,846.00"
+              changePercent="+2.48"
               flag1="₿"
             />
             <QuoteCard
               pair="BTC/EUR"
-              price="41,640.00"
+              price="94,754.00"
               change="+1,150.00"
               changePercent="+2.84"
               flag1="₿"

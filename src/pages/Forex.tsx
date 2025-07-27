@@ -19,7 +19,7 @@ const Forex = () => {
   ];
 
   const exoticPairs = [
-    { pair: "USD/BRL", price: "5.1845", change: "+0.0523", changePercent: "+1.02%", flag1: "🇺🇸", flag2: "🇧🇷", isPositive: true },
+    { pair: "USD/BRL", price: "5.5600", change: "+0.0500", changePercent: "+0.90%", flag1: "🇺🇸", flag2: "🇧🇷", isPositive: true },
     { pair: "USD/MXN", price: "17.2456", change: "-0.1234", changePercent: "-0.71%", flag1: "🇺🇸", flag2: "🇲🇽", isPositive: false },
     { pair: "USD/ZAR", price: "18.9567", change: "+0.2345", changePercent: "+1.25%", flag1: "🇺🇸", flag2: "🇿🇦", isPositive: true },
     { pair: "USD/TRY", price: "28.5634", change: "+0.4567", changePercent: "+1.62%", flag1: "🇺🇸", flag2: "🇹🇷", isPositive: true },
