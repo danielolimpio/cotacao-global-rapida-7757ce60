@@ -33,16 +33,16 @@ const RupiaIndianaHoje = () => {
             />
             <QuoteCard
               pair="INR/BRL"
-              price="0.0634"
-              change="+0.0015"
-              changePercent="+2.42"
+              price="0.0667"
+              change="+0.0011"
+              changePercent="+1.68"
               flag1="🇮🇳"
             />
             <QuoteCard
               pair="INR/EUR"
-              price="0.0111"
-              change="+0.0003"
-              changePercent="+2.78"
+              price="0.0103"
+              change="+0.0002"
+              changePercent="+1.98"
               flag1="🇮🇳"
             />
           </div>

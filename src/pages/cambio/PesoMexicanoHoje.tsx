@@ -26,23 +26,23 @@ const PesoMexicanoHoje = () => {
           <div className="space-y-4">
             <QuoteCard
               pair="MXN/USD"
-              price="0.0582"
-              change="+0.0012"
-              changePercent="+2.10"
+              price="0.0540"
+              change="+0.0011"
+              changePercent="+2.08"
               flag1="🇲🇽"
             />
             <QuoteCard
               pair="MXN/BRL"
-              price="0.3075"
-              change="+0.0085"
-              changePercent="+2.84"
+              price="0.3002"
+              change="+0.0062"
+              changePercent="+2.11"
               flag1="🇲🇽"
             />
             <QuoteCard
               pair="MXN/EUR"
-              price="0.0537"
-              change="+0.0015"
-              changePercent="+2.87"
+              price="0.0462"
+              change="+0.0010"
+              changePercent="+2.21"
               flag1="🇲🇽"
             />
           </div>

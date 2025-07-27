@@ -26,23 +26,23 @@ const LibrasEsterlinasHoje = () => {
           <div className="space-y-4">
             <QuoteCard
               pair="GBP/USD"
-              price="1.2685"
-              change="+0.0125"
-              changePercent="+0.99"
+              price="1.3400"
+              change="+0.0135"
+              changePercent="+1.02"
               flag1="🇬🇧"
             />
             <QuoteCard
               pair="GBP/EUR"
-              price="1.1725"
-              change="+0.0085"
-              changePercent="+0.73"
+              price="1.1453"
+              change="+0.0089"
+              changePercent="+0.78"
               flag1="🇬🇧"
             />
             <QuoteCard
               pair="GBP/BRL"
-              price="6.7125"
-              change="+0.0685"
-              changePercent="+1.03"
+              price="7.4504"
+              change="+0.0754"
+              changePercent="+1.02"
               flag1="🇬🇧"
             />
           </div>

@@ -26,23 +26,23 @@ const EthereumHoje = () => {
           <div className="space-y-4">
             <QuoteCard
               pair="ETH/USD"
-              price="2,850.00"
-              change="+125.50"
-              changePercent="+4.60"
+              price="3,751.50"
+              change="+185.25"
+              changePercent="+5.19"
               flag1="⚡"
             />
             <QuoteCard
               pair="ETH/BTC"
-              price="0.0632"
-              change="+0.0015"
-              changePercent="+2.43"
+              price="0.0318"
+              change="+0.0012"
+              changePercent="+3.93"
               flag1="⚡"
             />
             <QuoteCard
               pair="ETH/EUR"
-              price="2,630.45"
-              change="+118.75"
-              changePercent="+4.73"
+              price="3,206.84"
+              change="+158.34"
+              changePercent="+5.19"
               flag1="⚡"
             />
           </div>
@@ -54,7 +54,7 @@ const EthereumHoje = () => {
               <CardTitle>Máxima do Dia</CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-2xl font-bold text-success">$2,920</p>
+              <p className="text-2xl font-bold text-success">$3,795</p>
             </CardContent>
           </Card>
 
@@ -63,7 +63,7 @@ const EthereumHoje = () => {
               <CardTitle>Mínima do Dia</CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-2xl font-bold text-destructive">$2,720</p>
+              <p className="text-2xl font-bold text-destructive">$3,680</p>
             </CardContent>
           </Card>
 
@@ -72,7 +72,7 @@ const EthereumHoje = () => {
               <CardTitle>Volume 24h</CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-2xl font-bold text-primary">$18.2B</p>
+              <p className="text-2xl font-bold text-primary">$24.8B</p>
             </CardContent>
           </Card>
         </div>

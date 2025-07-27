@@ -26,23 +26,23 @@ const RubloRussoHoje = () => {
           <div className="space-y-4">
             <QuoteCard
               pair="RUB/USD"
-              price="0.0102"
+              price="0.0130"
               change="+0.0003"
-              changePercent="+3.03"
+              changePercent="+2.36"
               flag1="🇷🇺"
             />
             <QuoteCard
               pair="RUB/BRL"
-              price="0.0539"
-              change="+0.0018"
-              changePercent="+3.45"
+              price="0.0723"
+              change="+0.0017"
+              changePercent="+2.41"
               flag1="🇷🇺"
             />
             <QuoteCard
               pair="RUB/EUR"
-              price="0.0094"
-              change="+0.0004"
-              changePercent="+4.44"
+              price="0.0111"
+              change="+0.0003"
+              changePercent="+2.78"
               flag1="🇷🇺"
             />
           </div>
@@ -54,7 +54,7 @@ const RubloRussoHoje = () => {
               <CardTitle>Máxima do Dia</CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-2xl font-bold text-success">$0.0105</p>
+              <p className="text-2xl font-bold text-success">$0.0133</p>
             </CardContent>
           </Card>
 
@@ -63,7 +63,7 @@ const RubloRussoHoje = () => {
               <CardTitle>Mínima do Dia</CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-2xl font-bold text-destructive">$0.0099</p>
+              <p className="text-2xl font-bold text-destructive">$0.0127</p>
             </CardContent>
           </Card>
 
@@ -72,7 +72,7 @@ const RubloRussoHoje = () => {
               <CardTitle>Variação</CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-2xl font-bold text-success">+3.03%</p>
+              <p className="text-2xl font-bold text-success">+2.36%</p>
             </CardContent>
           </Card>
         </div>

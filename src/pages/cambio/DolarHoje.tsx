@@ -26,23 +26,23 @@ const DolarHoje = () => {
           <div className="space-y-4">
             <QuoteCard
               pair="USD/BRL"
-              price="5.2850"
-              change="+0.0125"
-              changePercent="+0.24"
+              price="5.5600"
+              change="+0.0150"
+              changePercent="+0.27"
               flag1="🇺🇸"
             />
             <QuoteCard
               pair="USD/EUR"
-              price="0.9245"
-              change="-0.0032"
-              changePercent="-0.34"
+              price="0.8547"
+              change="-0.0025"
+              changePercent="-0.29"
               flag1="🇺🇸"
             />
             <QuoteCard
               pair="USD/GBP"
-              price="0.7890"
-              change="+0.0015"
-              changePercent="+0.19"
+              price="0.7463"
+              change="+0.0012"
+              changePercent="+0.16"
               flag1="🇺🇸"
             />
           </div>
@@ -54,7 +54,7 @@ const DolarHoje = () => {
               <CardTitle>Máxima do Dia</CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-2xl font-bold text-success">R$ 5.3120</p>
+              <p className="text-2xl font-bold text-success">R$ 5.5820</p>
             </CardContent>
           </Card>
 
@@ -63,7 +63,7 @@ const DolarHoje = () => {
               <CardTitle>Mínima do Dia</CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-2xl font-bold text-destructive">R$ 5.2680</p>
+              <p className="text-2xl font-bold text-destructive">R$ 5.5380</p>
             </CardContent>
           </Card>
 
@@ -72,7 +72,7 @@ const DolarHoje = () => {
               <CardTitle>Variação</CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-2xl font-bold text-success">+0.24%</p>
+              <p className="text-2xl font-bold text-success">+0.27%</p>
             </CardContent>
           </Card>
         </div>

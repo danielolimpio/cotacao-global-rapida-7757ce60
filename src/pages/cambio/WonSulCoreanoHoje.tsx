@@ -26,23 +26,23 @@ const WonSulCoreanoHoje = () => {
           <div className="space-y-4">
             <QuoteCard
               pair="KRW/USD"
-              price="0.0007"
+              price="0.00072"
               change="+0.00001"
-              changePercent="+1.45"
+              changePercent="+1.41"
               flag1="🇰🇷"
             />
             <QuoteCard
               pair="KRW/BRL"
-              price="0.0040"
-              change="+0.0001"
-              changePercent="+2.56"
+              price="0.00400"
+              change="+0.00006"
+              changePercent="+1.52"
               flag1="🇰🇷"
             />
             <QuoteCard
               pair="KRW/EUR"
-              price="0.0007"
-              change="+0.00002"
-              changePercent="+2.94"
+              price="0.00062"
+              change="+0.00001"
+              changePercent="+1.64"
               flag1="🇰🇷"
             />
           </div>

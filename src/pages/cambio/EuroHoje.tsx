@@ -26,23 +26,23 @@ const EuroHoje = () => {
           <div className="space-y-4">
             <QuoteCard
               pair="EUR/BRL"
-              price="5.7240"
-              change="+0.0180"
-              changePercent="+0.32"
+              price="6.5052"
+              change="+0.0195"
+              changePercent="+0.30"
               flag1="🇪🇺"
             />
             <QuoteCard
               pair="EUR/USD"
-              price="1.0835"
-              change="+0.0025"
-              changePercent="+0.23"
+              price="1.1700"
+              change="+0.0028"
+              changePercent="+0.24"
               flag1="🇪🇺"
             />
             <QuoteCard
               pair="EUR/GBP"
-              price="0.8530"
-              change="-0.0015"
-              changePercent="-0.18"
+              price="0.8731"
+              change="-0.0012"
+              changePercent="-0.14"
               flag1="🇪🇺"
             />
           </div>
@@ -54,7 +54,7 @@ const EuroHoje = () => {
               <CardTitle>Máxima do Dia</CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-2xl font-bold text-success">R$ 5.7580</p>
+              <p className="text-2xl font-bold text-success">R$ 6.5280</p>
             </CardContent>
           </Card>
 
@@ -63,7 +63,7 @@ const EuroHoje = () => {
               <CardTitle>Mínima do Dia</CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-2xl font-bold text-destructive">R$ 5.7100</p>
+              <p className="text-2xl font-bold text-destructive">R$ 6.4820</p>
             </CardContent>
           </Card>
 
@@ -72,7 +72,7 @@ const EuroHoje = () => {
               <CardTitle>Variação</CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-2xl font-bold text-success">+0.32%</p>
+              <p className="text-2xl font-bold text-success">+0.30%</p>
             </CardContent>
           </Card>
         </div>

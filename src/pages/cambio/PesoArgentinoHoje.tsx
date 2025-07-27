@@ -26,23 +26,23 @@ const PesoArgentinoHoje = () => {
           <div className="space-y-4">
             <QuoteCard
               pair="ARS/USD"
-              price="0.0011"
-              change="+0.0001"
-              changePercent="+9.09"
+              price="0.00079"
+              change="+0.00002"
+              changePercent="+2.59"
               flag1="🇦🇷"
             />
             <QuoteCard
               pair="ARS/BRL"
-              price="0.0058"
-              change="+0.0002"
-              changePercent="+3.57"
+              price="0.00439"
+              change="+0.00011"
+              changePercent="+2.57"
               flag1="🇦🇷"
             />
             <QuoteCard
               pair="ARS/EUR"
-              price="0.0010"
-              change="+0.0001"
-              changePercent="+11.11"
+              price="0.00068"
+              change="+0.00002"
+              changePercent="+3.03"
               flag1="🇦🇷"
             />
           </div>
@@ -54,7 +54,7 @@ const PesoArgentinoHoje = () => {
               <CardTitle>Máxima do Dia</CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-2xl font-bold text-success">$0.0012</p>
+              <p className="text-2xl font-bold text-success">$0.00081</p>
             </CardContent>
           </Card>
 
@@ -63,7 +63,7 @@ const PesoArgentinoHoje = () => {
               <CardTitle>Mínima do Dia</CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-2xl font-bold text-destructive">$0.0010</p>
+              <p className="text-2xl font-bold text-destructive">$0.00077</p>
             </CardContent>
           </Card>
 
@@ -72,7 +72,7 @@ const PesoArgentinoHoje = () => {
               <CardTitle>Variação</CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-2xl font-bold text-success">+9.09%</p>
+              <p className="text-2xl font-bold text-success">+2.59%</p>
             </CardContent>
           </Card>
         </div>

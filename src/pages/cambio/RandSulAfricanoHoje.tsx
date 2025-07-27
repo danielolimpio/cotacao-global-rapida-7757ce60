@@ -26,23 +26,23 @@ const RandSulAfricanoHoje = () => {
           <div className="space-y-4">
             <QuoteCard
               pair="ZAR/USD"
-              price="0.0550"
+              price="0.0560"
               change="+0.0015"
-              changePercent="+2.80"
+              changePercent="+2.75"
               flag1="🇿🇦"
             />
             <QuoteCard
               pair="ZAR/BRL"
-              price="0.2907"
-              change="+0.0085"
-              changePercent="+3.01"
+              price="0.3114"
+              change="+0.0086"
+              changePercent="+2.84"
               flag1="🇿🇦"
             />
             <QuoteCard
               pair="ZAR/EUR"
-              price="0.0508"
-              change="+0.0018"
-              changePercent="+3.67"
+              price="0.0479"
+              change="+0.0013"
+              changePercent="+2.79"
               flag1="🇿🇦"
             />
           </div>

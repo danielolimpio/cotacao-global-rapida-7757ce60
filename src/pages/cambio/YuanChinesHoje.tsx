@@ -26,23 +26,23 @@ const YuanChinesHoje = () => {
           <div className="space-y-4">
             <QuoteCard
               pair="CNY/USD"
-              price="0.1385"
-              change="+0.0025"
-              changePercent="+1.84"
+              price="0.1400"
+              change="+0.0028"
+              changePercent="+2.04"
               flag1="🇨🇳"
             />
             <QuoteCard
               pair="CNY/BRL"
-              price="0.7322"
-              change="+0.0158"
-              changePercent="+2.20"
+              price="0.7784"
+              change="+0.0156"
+              changePercent="+2.04"
               flag1="🇨🇳"
             />
             <QuoteCard
               pair="CNY/EUR"
-              price="0.1279"
-              change="+0.0032"
-              changePercent="+2.56"
+              price="0.1197"
+              change="+0.0024"
+              changePercent="+2.04"
               flag1="🇨🇳"
             />
           </div>

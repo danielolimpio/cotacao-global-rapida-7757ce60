@@ -26,23 +26,23 @@ const IeneHoje = () => {
           <div className="space-y-4">
             <QuoteCard
               pair="JPY/USD"
-              price="0.0067"
+              price="0.0068"
               change="+0.0001"
-              changePercent="+1.52"
+              changePercent="+1.49"
               flag1="🇯🇵"
             />
             <QuoteCard
               pair="JPY/EUR"
-              price="0.0062"
+              price="0.0058"
               change="+0.0001"
-              changePercent="+1.64"
+              changePercent="+1.72"
               flag1="🇯🇵"
             />
             <QuoteCard
               pair="JPY/BRL"
-              price="0.0354"
+              price="0.0378"
               change="+0.0006"
-              changePercent="+1.72"
+              changePercent="+1.61"
               flag1="🇯🇵"
             />
           </div>

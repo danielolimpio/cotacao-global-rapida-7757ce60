@@ -18,17 +18,29 @@ const CurrencyConverter: React.FC<CurrencyConverterProps> = ({
   const [amount, setAmount] = useState<string>('100');
   const [selectedDollar, setSelectedDollar] = useState<string>('USD');
   const [rates, setRates] = useState({
-    USD: 5.56,
+    USD: 5.56, // 1 USD = 5.56 BRL
     USDT: 5.67, // Turismo +2%
     CAD: 4.12, // Dólar Canadense
     AUD: 3.58, // Dólar Australiano
     NZD: 3.37, // Dólar Neozelandês
-    EUR: 6.05, // Euro
+    EUR: 1.17, // 1 EUR = 1.17 USD
+    CHF: 1.26, // 1 CHF = 1.26 USD
+    JPY: 0.0068, // 1 JPY = 0.0068 USD
+    GBP: 1.34, // 1 GBP = 1.34 USD
+    ARS: 0.00079, // 1 ARS = 0.00079 USD
+    CLP: 0.0010, // 1 CLP = 0.0010 USD
+    MXN: 0.054, // 1 MXN = 0.054 USD
+    UYU: 0.025, // 1 UYU = 0.025 USD
+    ZAR: 0.056, // 1 ZAR = 0.056 USD
+    RUB: 0.013, // 1 RUB = 0.013 USD
+    INR: 0.012, // 1 INR = 0.012 USD
+    CNY: 0.14, // 1 CNY = 0.14 USD
+    KRW: 0.00072, // 1 KRW = 0.00072 USD
     BRL: 1
   });
   const [cryptoRates, setCryptoRates] = useState({
     BTC: 117942,
-    ETH: 2800,
+    ETH: 3751.50,
     BNB: 320,
     XRP: 0.55,
     ADA: 0.45,
@@ -56,7 +68,19 @@ const CurrencyConverter: React.FC<CurrencyConverterProps> = ({
         CAD: 4.09 + (variation * 0.8),
         AUD: 3.56 + (variation * 0.7),
         NZD: 3.35 + (variation * 0.6),
-        EUR: 0.85 + (variation * 0.1)
+        EUR: 1.17 + (variation * 0.1),
+        CHF: 1.26 + (variation * 0.1),
+        JPY: 0.0068 + (variation * 0.0001),
+        GBP: 1.34 + (variation * 0.1),
+        ARS: 0.00079 + (variation * 0.00001),
+        CLP: 0.0010 + (variation * 0.00001),
+        MXN: 0.054 + (variation * 0.001),
+        UYU: 0.025 + (variation * 0.001),
+        ZAR: 0.056 + (variation * 0.001),
+        RUB: 0.013 + (variation * 0.0001),
+        INR: 0.012 + (variation * 0.0001),
+        CNY: 0.14 + (variation * 0.01),
+        KRW: 0.00072 + (variation * 0.00001)
       }));
     };
 

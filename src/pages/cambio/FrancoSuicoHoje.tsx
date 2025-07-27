@@ -26,23 +26,23 @@ const FrancoSuicoHoje = () => {
           <div className="space-y-4">
             <QuoteCard
               pair="CHF/USD"
-              price="1.0985"
-              change="+0.0035"
+              price="1.2600"
+              change="+0.0040"
               changePercent="+0.32"
               flag1="🇨🇭"
             />
             <QuoteCard
               pair="CHF/EUR"
-              price="0.9325"
-              change="+0.0025"
-              changePercent="+0.27"
+              price="1.0769"
+              change="+0.0030"
+              changePercent="+0.28"
               flag1="🇨🇭"
             />
             <QuoteCard
               pair="CHF/BRL"
-              price="5.68"
-              change="+0.08"
-              changePercent="+1.43"
+              price="7.0056"
+              change="+0.0950"
+              changePercent="+1.38"
               flag1="🇨🇭"
             />
           </div>
@@ -54,7 +54,7 @@ const FrancoSuicoHoje = () => {
               <CardTitle>Máxima do Dia</CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-2xl font-bold text-success">$1.1025</p>
+              <p className="text-2xl font-bold text-success">$1.2650</p>
             </CardContent>
           </Card>
 
@@ -63,7 +63,7 @@ const FrancoSuicoHoje = () => {
               <CardTitle>Mínima do Dia</CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-2xl font-bold text-destructive">$1.0950</p>
+              <p className="text-2xl font-bold text-destructive">$1.2550</p>
             </CardContent>
           </Card>
 
