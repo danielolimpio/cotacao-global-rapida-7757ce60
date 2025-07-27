@@ -54,13 +54,15 @@ const Index = () => {
               Acompanhe as principais moedas, criptomoedas, ações e forex com dados precisos e atualizados a cada segundo.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
-              <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground">
-                <TrendingUp className="mr-2 h-5 w-5" />
-                Ver Todas as Cotações
-              </Button>
+              <Link to="/ver-todas-cotacoes">
+                <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground">
+                  <TrendingUp className="mr-2 h-5 w-5" />
+                  Ver Todas as Cotações
+                </Button>
+              </Link>
               <Link to="/calculadora-juros">
-                <Button variant="outline" size="lg" className="border-white bg-white/10 text-white hover:bg-white hover:text-zinc-800">
-                  Calculadora de Câmbio
+                <Button variant="outline" size="lg" className="border-white bg-white/10 text-white hover:bg-white/20 hover:text-white">
+                  Calculadora de Juros
                 </Button>
               </Link>
             </div>

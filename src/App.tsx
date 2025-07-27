@@ -79,6 +79,7 @@ import SP500Hoje from "./pages/forex/SP500Hoje";
 
 // Calculator page
 import CalculadoraJuros from "./pages/CalculadoraJuros";
+import VerTodasCotacoes from "./pages/VerTodasCotacoes";
 
 const queryClient = new QueryClient();
 
@@ -164,6 +165,7 @@ const App = () => (
           
           {/* Calculator routes */}
           <Route path="/calculadora-juros" element={<CalculadoraJuros />} />
+          <Route path="/ver-todas-cotacoes" element={<VerTodasCotacoes />} />
           
           <Route path="*" element={<NotFound />} />
         </Routes>
