@@ -4,10 +4,8 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Mail, Phone, MapPin } from "lucide-react";
-
 const Contato = () => {
-  return (
-    <Layout>
+  return <Layout>
       <div className="container mx-auto px-4 py-8">
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold text-foreground mb-4">Contato</h1>
@@ -55,7 +53,7 @@ const Contato = () => {
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-muted-foreground">+55 (11) 9999-9999</p>
+                <p className="text-muted-foreground">+55 (12) 98251-9116</p>
               </CardContent>
             </Card>
 
@@ -76,8 +74,6 @@ const Contato = () => {
           </div>
         </div>
       </div>
-    </Layout>
-  );
+    </Layout>;
 };
-
 export default Contato;
