@@ -2,6 +2,7 @@ import Layout from "@/components/Layout";
 import TradingViewWidget from "@/components/TradingViewWidget";
 import QuoteCard from "@/components/QuoteCard";
 import CurrencyConverter from "@/components/CurrencyConverter";
+import Banner from "@/components/Banner";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 const DashHoje = () => {
@@ -12,6 +13,8 @@ const DashHoje = () => {
           <h1 className="text-4xl font-bold text-foreground mb-4">Dash Hoje</h1>
           <p className="text-xl text-muted-foreground">Cotação do Dash (DASH) em tempo real</p>
         </div>
+
+        <Banner />
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
           <Card>
@@ -77,7 +80,9 @@ const DashHoje = () => {
           </Card>
         </div>
 
-        <CurrencyConverter type="crypto" cryptoSymbol="DASH" mainCurrency="DASH" />
+        <CurrencyConverter type="crypto" cryptoSymbol="DASH" />
+        
+        <Banner />
       </div>
     </Layout>
   );

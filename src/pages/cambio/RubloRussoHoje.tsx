@@ -2,6 +2,7 @@ import Layout from "@/components/Layout";
 import TradingViewWidget from "@/components/TradingViewWidget";
 import QuoteCard from "@/components/QuoteCard";
 import CurrencyConverter from "@/components/CurrencyConverter";
+import Banner from "@/components/Banner";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 const RubloRussoHoje = () => {
@@ -12,6 +13,8 @@ const RubloRussoHoje = () => {
           <h1 className="text-4xl font-bold text-foreground mb-4">Rublo Russo Hoje</h1>
           <p className="text-xl text-muted-foreground">Cotação do Rublo Russo (RUB) em tempo real</p>
         </div>
+
+        <Banner />
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
           <Card>
@@ -78,6 +81,8 @@ const RubloRussoHoje = () => {
         </div>
 
         <CurrencyConverter type="currency" mainCurrency="RUB" />
+        
+        <Banner />
       </div>
     </Layout>
   );

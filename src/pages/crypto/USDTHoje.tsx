@@ -2,6 +2,7 @@ import Layout from "@/components/Layout";
 import TradingViewWidget from "@/components/TradingViewWidget";
 import QuoteCard from "@/components/QuoteCard";
 import CurrencyConverter from "@/components/CurrencyConverter";
+import Banner from "@/components/Banner";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 const USDTHoje = () => {
@@ -9,9 +10,11 @@ const USDTHoje = () => {
     <Layout>
       <div className="container mx-auto px-4 py-8">
         <div className="text-center mb-8">
-          <h1 className="text-4xl font-bold text-foreground mb-4">USDT (Tether) Hoje</h1>
+          <h1 className="text-4xl font-bold text-foreground mb-4">USDT Hoje</h1>
           <p className="text-xl text-muted-foreground">Cotação do Tether (USDT) em tempo real</p>
         </div>
+
+        <Banner />
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
           <Card>
@@ -77,7 +80,9 @@ const USDTHoje = () => {
           </Card>
         </div>
 
-        <CurrencyConverter type="crypto" cryptoSymbol="USDT" mainCurrency="USDT" />
+        <CurrencyConverter type="crypto" cryptoSymbol="USDT" />
+        
+        <Banner />
       </div>
     </Layout>
   );

@@ -1,6 +1,8 @@
 import Layout from "@/components/Layout";
 import TradingViewWidget from "@/components/TradingViewWidget";
 import QuoteCard from "@/components/QuoteCard";
+import CurrencyConverter from "@/components/CurrencyConverter";
+import Banner from "@/components/Banner";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 const AppleHoje = () => {
@@ -9,8 +11,10 @@ const AppleHoje = () => {
       <div className="container mx-auto px-4 py-8">
         <div className="text-center mb-8">
           <h1 className="text-4xl font-bold text-foreground mb-4">Apple Hoje</h1>
-          <p className="text-xl text-muted-foreground">Cotação da Apple Inc. (AAPL) em tempo real</p>
+          <p className="text-xl text-muted-foreground">Cotação da Apple (AAPL) em tempo real</p>
         </div>
+
+        <Banner />
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
           <Card>
@@ -75,6 +79,10 @@ const AppleHoje = () => {
             </CardContent>
           </Card>
         </div>
+
+        <CurrencyConverter type="currency" />
+        
+        <Banner />
       </div>
     </Layout>
   );
