@@ -2,6 +2,7 @@ import Layout from "@/components/Layout";
 import TradingViewWidget from "@/components/TradingViewWidget";
 import QuoteCard from "@/components/QuoteCard";
 import CurrencyConverter from "@/components/CurrencyConverter";
+import Banner from "@/components/Banner";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 const EuroHoje = () => {
@@ -12,6 +13,8 @@ const EuroHoje = () => {
           <h1 className="text-4xl font-bold text-foreground mb-4">Euro Hoje</h1>
           <p className="text-xl text-muted-foreground">Cotação do Euro (EUR) em tempo real</p>
         </div>
+
+        <Banner />
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
           <Card>
@@ -78,6 +81,8 @@ const EuroHoje = () => {
         </div>
 
         <CurrencyConverter type="euro" />
+        
+        <Banner />
       </div>
     </Layout>
   );
