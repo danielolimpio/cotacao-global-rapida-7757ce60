@@ -3,9 +3,12 @@ import TradingViewWidget from "@/components/TradingViewWidget";
 import QuoteCard from "@/components/QuoteCard";
 import CurrencyConverter from "@/components/CurrencyConverter";
 import Banner from "@/components/Banner";
+import useRealTimeQuotes from "@/hooks/useRealTimeQuotes";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 const DolarHoje = () => {
+  const { quotes, loading } = useRealTimeQuotes(['USDBRL', 'EURUSD', 'GBPUSD']);
+  
   return (
     <Layout>
       <div className="container mx-auto px-4 py-8">
@@ -29,24 +32,30 @@ const DolarHoje = () => {
           <div className="space-y-4">
             <QuoteCard
               pair="USD/BRL"
-              price="5.5600"
-              change="+0.0150"
-              changePercent="+0.27"
+              price={quotes.USDBRL?.price || 5.3899}
+              change={quotes.USDBRL?.change || -0.0130}
+              changePercent={quotes.USDBRL?.changePercent || -0.24}
               flag1="🇺🇸"
+              flag2="🇧🇷"
+              isLoading={loading}
             />
             <QuoteCard
               pair="USD/EUR"
-              price="0.8547"
-              change="-0.0025"
-              changePercent="-0.29"
+              price={1 / (quotes.EURUSD?.price || 1.17)}
+              change={-(quotes.EURUSD?.change || 0.0028) / (quotes.EURUSD?.price || 1.17)}
+              changePercent={-(quotes.EURUSD?.changePercent || 0.24)}
               flag1="🇺🇸"
+              flag2="🇪🇺"
+              isLoading={loading}
             />
             <QuoteCard
               pair="USD/GBP"
-              price="0.7463"
-              change="+0.0012"
-              changePercent="+0.16"
+              price={1 / (quotes.GBPUSD?.price || 1.34)}
+              change={-(quotes.GBPUSD?.change || 0.0135) / (quotes.GBPUSD?.price || 1.34)}
+              changePercent={-(quotes.GBPUSD?.changePercent || 1.02)}
               flag1="🇺🇸"
+              flag2="🇬🇧"
+              isLoading={loading}
             />
           </div>
         </div>
@@ -57,7 +66,13 @@ const DolarHoje = () => {
               <CardTitle>Máxima do Dia</CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-2xl font-bold text-success">R$ 5.5820</p>
+              {loading ? (
+                <div className="h-8 w-20 bg-muted animate-pulse rounded"></div>
+              ) : (
+                <p className="text-2xl font-bold text-success">
+                  R$ {quotes.USDBRL?.high?.toFixed(4) || '5.4200'}
+                </p>
+              )}
             </CardContent>
           </Card>
 
@@ -66,7 +81,13 @@ const DolarHoje = () => {
               <CardTitle>Mínima do Dia</CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-2xl font-bold text-destructive">R$ 5.5380</p>
+              {loading ? (
+                <div className="h-8 w-20 bg-muted animate-pulse rounded"></div>
+              ) : (
+                <p className="text-2xl font-bold text-destructive">
+                  R$ {quotes.USDBRL?.low?.toFixed(4) || '5.3800'}
+                </p>
+              )}
             </CardContent>
           </Card>
 
@@ -75,7 +96,13 @@ const DolarHoje = () => {
               <CardTitle>Variação</CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-2xl font-bold text-success">+0.27%</p>
+              {loading ? (
+                <div className="h-8 w-20 bg-muted animate-pulse rounded"></div>
+              ) : (
+                <p className={`text-2xl font-bold ${(quotes.USDBRL?.changePercent || 0) >= 0 ? 'text-success' : 'text-destructive'}`}>
+                  {(quotes.USDBRL?.changePercent || 0) >= 0 ? '+' : ''}{quotes.USDBRL?.changePercent?.toFixed(2) || '-0.24'}%
+                </p>
+              )}
             </CardContent>
           </Card>
         </div>

@@ -3,9 +3,12 @@ import TradingViewWidget from "@/components/TradingViewWidget";
 import QuoteCard from "@/components/QuoteCard";
 import CurrencyConverter from "@/components/CurrencyConverter";
 import Banner from "@/components/Banner";
+import useRealTimeQuotes from "@/hooks/useRealTimeQuotes";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 const EthereumHoje = () => {
+  const { quotes, loading } = useRealTimeQuotes(['ETHUSD', 'ETHBTC', 'ETHEUR']);
+  
   return (
     <Layout>
       <div className="container mx-auto px-4 py-8">
@@ -29,24 +32,27 @@ const EthereumHoje = () => {
           <div className="space-y-4">
             <QuoteCard
               pair="ETH/USD"
-              price="3,751.50"
-              change="+185.25"
-              changePercent="+5.19"
+              price={quotes.ETHUSD?.price || 3751.50}
+              change={quotes.ETHUSD?.change || 185.25}
+              changePercent={quotes.ETHUSD?.changePercent || 5.19}
               flag1="⚡"
+              isLoading={loading}
             />
             <QuoteCard
               pair="ETH/BTC"
-              price="0.0318"
-              change="+0.0012"
-              changePercent="+3.93"
+              price={quotes.ETHBTC?.price || 0.0318}
+              change={quotes.ETHBTC?.change || 0.0012}
+              changePercent={quotes.ETHBTC?.changePercent || 3.93}
               flag1="⚡"
+              isLoading={loading}
             />
             <QuoteCard
               pair="ETH/EUR"
-              price="3,206.84"
-              change="+158.34"
-              changePercent="+5.19"
+              price={quotes.ETHEUR?.price || 3206.84}
+              change={quotes.ETHEUR?.change || 158.34}
+              changePercent={quotes.ETHEUR?.changePercent || 5.19}
               flag1="⚡"
+              isLoading={loading}
             />
           </div>
         </div>
@@ -57,7 +63,13 @@ const EthereumHoje = () => {
               <CardTitle>Máxima do Dia</CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-2xl font-bold text-success">$3,795</p>
+              {loading ? (
+                <div className="h-8 w-20 bg-muted animate-pulse rounded"></div>
+              ) : (
+                <p className="text-2xl font-bold text-success">
+                  ${quotes.ETHUSD?.high?.toLocaleString() || '3,795'}
+                </p>
+              )}
             </CardContent>
           </Card>
 
@@ -66,7 +78,13 @@ const EthereumHoje = () => {
               <CardTitle>Mínima do Dia</CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-2xl font-bold text-destructive">$3,680</p>
+              {loading ? (
+                <div className="h-8 w-20 bg-muted animate-pulse rounded"></div>
+              ) : (
+                <p className="text-2xl font-bold text-destructive">
+                  ${quotes.ETHUSD?.low?.toLocaleString() || '3,680'}
+                </p>
+              )}
             </CardContent>
           </Card>
 
@@ -75,7 +93,11 @@ const EthereumHoje = () => {
               <CardTitle>Volume 24h</CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-2xl font-bold text-primary">$24.8B</p>
+              {loading ? (
+                <div className="h-8 w-20 bg-muted animate-pulse rounded"></div>
+              ) : (
+                <p className="text-2xl font-bold text-primary">$24.8B</p>
+              )}
             </CardContent>
           </Card>
         </div>
