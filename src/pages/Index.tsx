@@ -3,44 +3,53 @@ import Banner from "@/components/Banner";
 import QuoteCard from "@/components/QuoteCard";
 import TradingViewWidget from "@/components/TradingViewWidget";
 import CurrencyConverter from "@/components/CurrencyConverter";
+import CurrencyTicker from "@/components/CurrencyTicker";
+import useRealTimeQuotes from "@/hooks/useRealTimeQuotes";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { TrendingUp, Globe, Shield, Zap } from "lucide-react";
 import { Link } from "react-router-dom";
 const Index = () => {
-  const popularQuotes = [{
-    pair: "USD/BRL",
-    price: "5.56",
-    change: "+0.05",
-    changePercent: "+0.90%",
-    flag1: "🇺🇸",
-    flag2: "🇧🇷",
-    isPositive: true
-  }, {
-    pair: "EUR/BRL",
-    price: "5.45",
-    change: "-0.02",
-    changePercent: "-0.37%",
-    flag1: "🇪🇺",
-    flag2: "🇧🇷",
-    isPositive: false
-  }, {
-    pair: "GBP/BRL",
-    price: "6.32",
-    change: "+0.08",
-    changePercent: "+1.28%",
-    flag1: "🇬🇧",
-    flag2: "🇧🇷",
-    isPositive: true
-  }, {
-    pair: "CAD/BRL",
-    price: "3.78",
-    change: "+0.03",
-    changePercent: "+0.80%",
-    flag1: "🇨🇦",
-    flag2: "🇧🇷",
-    isPositive: true
-  }];
+  const { quotes, loading } = useRealTimeQuotes(['USDBRL', 'EURBRL', 'GBPUSD', 'CADBRL']);
+  
+  const popularQuotes = [
+    {
+      pair: "USD/BRL",
+      price: quotes.USDBRL?.price || 5.56,
+      change: quotes.USDBRL?.change || 0.05,
+      changePercent: quotes.USDBRL?.changePercent || 0.90,
+      flag1: "🇺🇸",
+      flag2: "🇧🇷",
+      isLoading: loading
+    },
+    {
+      pair: "EUR/BRL", 
+      price: quotes.EURBRL?.price || 5.45,
+      change: quotes.EURBRL?.change || -0.02,
+      changePercent: quotes.EURBRL?.changePercent || -0.37,
+      flag1: "🇪🇺",
+      flag2: "🇧🇷", 
+      isLoading: loading
+    },
+    {
+      pair: "GBP/BRL",
+      price: (quotes.GBPUSD?.price || 1.34) * (quotes.USDBRL?.price || 5.56) / 1.34 * 1.134,
+      change: 0.08,
+      changePercent: 1.28,
+      flag1: "🇬🇧",
+      flag2: "🇧🇷",
+      isLoading: loading
+    },
+    {
+      pair: "CAD/BRL",
+      price: quotes.CADBRL?.price || 3.78,
+      change: quotes.CADBRL?.change || 0.03,
+      changePercent: quotes.CADBRL?.changePercent || 0.80,
+      flag1: "🇨🇦",
+      flag2: "🇧🇷",
+      isLoading: loading
+    }
+  ];
   return <Layout>
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-primary/10 to-accent/10 py-20 bg-cover bg-center bg-no-repeat" style={{
@@ -71,7 +80,7 @@ const Index = () => {
         </div>
       </section>
 
-      <Banner />
+      <CurrencyTicker />
 
       {/* Main USD/BRL Chart */}
       <section className="py-16">
@@ -91,11 +100,25 @@ const Index = () => {
                   <span className="text-3xl">🇧🇷</span>
                 </div>
                 <div className="text-right">
-                  <div className="text-3xl font-bold text-primary">R$ 5,56</div>
-                  <div className="text-success flex items-center">
-                    <TrendingUp className="h-4 w-4 mr-1" />
-                    +0.05 (+0.90%)
-                  </div>
+                  {loading ? (
+                    <div className="space-y-2">
+                      <div className="h-8 w-24 bg-muted animate-pulse rounded"></div>
+                      <div className="h-4 w-20 bg-muted animate-pulse rounded"></div>
+                    </div>
+                  ) : (
+                    <>
+                      <div className="text-3xl font-bold text-primary">
+                        R$ {quotes.USDBRL?.price?.toFixed(4) || '5.56'}
+                      </div>
+                      <div className={`flex items-center ${
+                        (quotes.USDBRL?.change || 0) >= 0 ? 'text-success' : 'text-destructive'
+                      }`}>
+                        <TrendingUp className="h-4 w-4 mr-1" />
+                        {(quotes.USDBRL?.change || 0) >= 0 ? '+' : ''}{quotes.USDBRL?.change?.toFixed(4) || '0.05'} 
+                        ({(quotes.USDBRL?.changePercent || 0) >= 0 ? '+' : ''}{quotes.USDBRL?.changePercent?.toFixed(2) || '0.90'}%)
+                      </div>
+                    </>
+                  )}
                 </div>
               </CardTitle>
             </CardHeader>
