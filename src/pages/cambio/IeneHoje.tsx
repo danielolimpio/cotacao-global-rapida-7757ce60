@@ -3,9 +3,11 @@ import TradingViewWidget from "@/components/TradingViewWidget";
 import QuoteCard from "@/components/QuoteCard";
 import CurrencyConverter from "@/components/CurrencyConverter";
 import Banner from "@/components/Banner";
+import useRealTimeQuotes from "@/hooks/useRealTimeQuotes";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 const IeneHoje = () => {
+  const { quotes, loading } = useRealTimeQuotes(['JPYUSD', 'EURUSD', 'JPYBRL']);
   return (
     <Layout>
       <div className="container mx-auto px-4 py-8">
@@ -29,24 +31,30 @@ const IeneHoje = () => {
           <div className="space-y-4">
             <QuoteCard
               pair="JPY/USD"
-              price="0.0068"
-              change="+0.0001"
-              changePercent="+1.49"
+              price={quotes.JPYUSD?.price || 0.0068}
+              change={quotes.JPYUSD?.change || 0.0001}
+              changePercent={quotes.JPYUSD?.changePercent || 1.49}
               flag1="🇯🇵"
+              flag2="🇺🇸"
+              isLoading={loading}
             />
             <QuoteCard
               pair="JPY/EUR"
-              price="0.0058"
-              change="+0.0001"
-              changePercent="+1.72"
+              price={(quotes.JPYUSD?.price || 0.0068) / (quotes.EURUSD?.price || 1.0892)}
+              change={((quotes.JPYUSD?.change || 0.0001) / (quotes.EURUSD?.price || 1.0892))}
+              changePercent={quotes.JPYUSD?.changePercent || 1.72}
               flag1="🇯🇵"
+              flag2="🇪🇺"
+              isLoading={loading}
             />
             <QuoteCard
               pair="JPY/BRL"
-              price="0.0378"
-              change="+0.0006"
-              changePercent="+1.61"
+              price={quotes.JPYBRL?.price || 0.0378}
+              change={quotes.JPYBRL?.change || 0.0006}
+              changePercent={quotes.JPYBRL?.changePercent || 1.61}
               flag1="🇯🇵"
+              flag2="🇧🇷"
+              isLoading={loading}
             />
           </div>
         </div>
@@ -57,7 +65,13 @@ const IeneHoje = () => {
               <CardTitle>Máxima do Dia</CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-2xl font-bold text-success">$0.0068</p>
+              {loading ? (
+                <div className="h-8 w-20 bg-muted animate-pulse rounded"></div>
+              ) : (
+                <p className="text-2xl font-bold text-success">
+                  ${quotes.JPYUSD?.high?.toFixed(4) || '0.0068'}
+                </p>
+              )}
             </CardContent>
           </Card>
 
@@ -66,7 +80,13 @@ const IeneHoje = () => {
               <CardTitle>Mínima do Dia</CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-2xl font-bold text-destructive">$0.0066</p>
+              {loading ? (
+                <div className="h-8 w-20 bg-muted animate-pulse rounded"></div>
+              ) : (
+                <p className="text-2xl font-bold text-destructive">
+                  ${quotes.JPYUSD?.low?.toFixed(4) || '0.0066'}
+                </p>
+              )}
             </CardContent>
           </Card>
 
@@ -75,7 +95,13 @@ const IeneHoje = () => {
               <CardTitle>Variação</CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-2xl font-bold text-success">+1.52%</p>
+              {loading ? (
+                <div className="h-8 w-20 bg-muted animate-pulse rounded"></div>
+              ) : (
+                <p className={`text-2xl font-bold ${(quotes.JPYUSD?.changePercent || 0) >= 0 ? 'text-success' : 'text-destructive'}`}>
+                  {(quotes.JPYUSD?.changePercent || 0) >= 0 ? '+' : ''}{quotes.JPYUSD?.changePercent?.toFixed(2) || '1.52'}%
+                </p>
+              )}
             </CardContent>
           </Card>
         </div>

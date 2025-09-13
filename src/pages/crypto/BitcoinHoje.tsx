@@ -3,9 +3,12 @@ import TradingViewWidget from "@/components/TradingViewWidget";
 import QuoteCard from "@/components/QuoteCard";
 import CurrencyConverter from "@/components/CurrencyConverter";
 import Banner from "@/components/Banner";
+import useRealTimeQuotes from "@/hooks/useRealTimeQuotes";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 const BitcoinHoje = () => {
+  const { quotes, loading } = useRealTimeQuotes(['BTCUSD', 'ETHUSD']);
+  
   return (
     <Layout>
       <div className="container mx-auto px-4 py-8">
@@ -29,24 +32,30 @@ const BitcoinHoje = () => {
           <div className="space-y-4">
             <QuoteCard
               pair="BTC/USD"
-              price="117,942.00"
-              change="+2,850.00"
-              changePercent="+2.48"
+              price={quotes.BTCUSD?.price || 91250.75}
+              change={quotes.BTCUSD?.change || 2845.50}
+              changePercent={quotes.BTCUSD?.changePercent || 3.22}
               flag1="₿"
+              flag2="🇺🇸"
+              isLoading={loading}
             />
             <QuoteCard
               pair="BTC/BRL"
-              price="655,761.52"
-              change="+15,846.00"
-              changePercent="+2.48"
+              price={(quotes.BTCUSD?.price || 91250.75) * 5.56}
+              change={((quotes.BTCUSD?.change || 2845.50) * 5.56)}
+              changePercent={quotes.BTCUSD?.changePercent || 3.22}
               flag1="₿"
+              flag2="🇧🇷"
+              isLoading={loading}
             />
             <QuoteCard
-              pair="BTC/EUR"
-              price="94,754.00"
-              change="+1,150.00"
-              changePercent="+2.84"
-              flag1="₿"
+              pair="ETH/USD"
+              price={quotes.ETHUSD?.price || 3751.50}
+              change={quotes.ETHUSD?.change || 185.25}
+              changePercent={quotes.ETHUSD?.changePercent || 5.19}
+              flag1="Ξ"
+              flag2="🇺🇸"
+              isLoading={loading}
             />
           </div>
         </div>
@@ -57,7 +66,13 @@ const BitcoinHoje = () => {
               <CardTitle>Máxima do Dia</CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-2xl font-bold text-success">$45,890</p>
+              {loading ? (
+                <div className="h-8 w-20 bg-muted animate-pulse rounded"></div>
+              ) : (
+                <p className="text-2xl font-bold text-success">
+                  ${quotes.BTCUSD?.high?.toLocaleString('en-US', { maximumFractionDigits: 2 }) || '92,500'}
+                </p>
+              )}
             </CardContent>
           </Card>
 
@@ -66,16 +81,28 @@ const BitcoinHoje = () => {
               <CardTitle>Mínima do Dia</CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-2xl font-bold text-destructive">$43,850</p>
+              {loading ? (
+                <div className="h-8 w-20 bg-muted animate-pulse rounded"></div>
+              ) : (
+                <p className="text-2xl font-bold text-destructive">
+                  ${quotes.BTCUSD?.low?.toLocaleString('en-US', { maximumFractionDigits: 2 }) || '88,800'}
+                </p>
+              )}
             </CardContent>
           </Card>
 
           <Card>
             <CardHeader>
-              <CardTitle>Volume 24h</CardTitle>
+              <CardTitle>Variação</CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-2xl font-bold text-primary">$28.5B</p>
+              {loading ? (
+                <div className="h-8 w-20 bg-muted animate-pulse rounded"></div>
+              ) : (
+                <p className={`text-2xl font-bold ${(quotes.BTCUSD?.changePercent || 0) >= 0 ? 'text-success' : 'text-destructive'}`}>
+                  {(quotes.BTCUSD?.changePercent || 0) >= 0 ? '+' : ''}{quotes.BTCUSD?.changePercent?.toFixed(2) || '3.22'}%
+                </p>
+              )}
             </CardContent>
           </Card>
         </div>

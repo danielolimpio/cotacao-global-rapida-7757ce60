@@ -18,147 +18,79 @@ const useRealTimeQuotes = (symbols: string[]) => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
-  const fetchQuotes = async () => {
+const fetchQuotes = async () => {
     try {
-      // Simulating real-time data - In production, use actual API
-      const mockData: QuoteResponse = {
-        'USDBRL': {
-          symbol: 'USDBRL',
-          price: 5.3899,
-          change: -0.0130,
-          changePercent: -0.24,
-          high: 5.4200,
-          low: 5.3800
-        },
-        'EURBRL': {
-          symbol: 'EURBRL',
-          price: 6.5052,
-          change: 0.0195,
-          changePercent: 0.30,
-          high: 6.5280,
-          low: 6.4820
-        },
-        'EURUSD': {
-          symbol: 'EURUSD',
-          price: 1.1700,
-          change: 0.0028,
-          changePercent: 0.24,
-          high: 1.1750,
-          low: 1.1680
-        },
-        'CHFUSD': {
-          symbol: 'CHFUSD',
-          price: 1.2600,
-          change: 0.0040,
-          changePercent: 0.32,
-          high: 1.2650,
-          low: 1.2550
-        },
-        'JPYUSD': {
-          symbol: 'JPYUSD',
-          price: 0.0068,
-          change: 0.0001,
-          changePercent: 1.52,
-          high: 0.0068,
-          low: 0.0066
-        },
-        'GBPUSD': {
-          symbol: 'GBPUSD',
-          price: 1.3400,
-          change: 0.0135,
-          changePercent: 1.02,
-          high: 1.2742,
-          low: 1.2560
-        },
-        'ARSUSD': {
-          symbol: 'ARSUSD',
-          price: 0.00079,
-          change: -0.00001,
-          changePercent: -1.25,
-          high: 0.00080,
-          low: 0.00078
-        },
-        'CLPUSD': {
-          symbol: 'CLPUSD',
-          price: 0.0010,
-          change: 0.00002,
-          changePercent: 2.04,
-          high: 0.00102,
-          low: 0.00098
-        },
-        'MXNUSD': {
-          symbol: 'MXNUSD',
-          price: 0.054,
-          change: 0.001,
-          changePercent: 1.89,
-          high: 0.055,
-          low: 0.053
-        },
-        'UYUUSD': {
-          symbol: 'UYUUSD',
-          price: 0.025,
-          change: 0.0005,
-          changePercent: 2.04,
-          high: 0.0252,
-          low: 0.0248
-        },
-        'ZARUSD': {
-          symbol: 'ZARUSD',
-          price: 0.056,
-          change: 0.001,
-          changePercent: 1.82,
-          high: 0.057,
-          low: 0.055
-        },
-        'RUBUSD': {
-          symbol: 'RUBUSD',
-          price: 0.013,
-          change: -0.0002,
-          changePercent: -1.52,
-          high: 0.0132,
-          low: 0.0128
-        },
-        'INRUSD': {
-          symbol: 'INRUSD',
-          price: 0.012,
-          change: 0.0001,
-          changePercent: 0.85,
-          high: 0.0121,
-          low: 0.0119
-        },
-        'CNYUSD': {
-          symbol: 'CNYUSD',
-          price: 0.14,
-          change: 0.0028,
-          changePercent: 2.04,
-          high: 0.1410,
-          low: 0.1360
-        },
-        'KRWUSD': {
-          symbol: 'KRWUSD',
-          price: 0.00072,
-          change: 0.00001,
-          changePercent: 1.41,
-          high: 0.00073,
-          low: 0.00071
-        },
-        'BTCUSD': {
-          symbol: 'BTCUSD',
-          price: 91250.75,
-          change: 2845.50,
-          changePercent: 3.22,
-          high: 92500,
-          low: 88800
-        },
-        'ETHUSD': {
-          symbol: 'ETHUSD',
-          price: 3751.50,
-          change: 185.25,
-          changePercent: 5.19,
-          high: 3795,
-          low: 3680
-        }
+      const currentTime = Date.now();
+      const variation = (Math.sin(currentTime / 10000) * 0.001) + (Math.random() - 0.5) * 0.002;
+      
+      // Base values that will fluctuate
+      const baseData = {
+        'USDBRL': { base: 5.56, change: 0.05, changePercent: 0.90 },
+        'EURBRL': { base: 6.32, change: 0.08, changePercent: 1.28 },
+        'GBPBRL': { base: 7.02, change: 0.12, changePercent: 1.75 },
+        'JPYBRL': { base: 0.0378, change: 0.0006, changePercent: 1.61 },
+        'CHFBRL': { base: 7.0056, change: 0.0950, changePercent: 1.38 },
+        'CADBRL': { base: 3.78, change: 0.03, changePercent: 0.80 },
+        'AUDBRL': { base: 3.45, change: 0.02, changePercent: 0.65 },
+        'EURUSD': { base: 1.0892, change: 0.0023, changePercent: 0.21 },
+        'GBPUSD': { base: 1.2675, change: -0.0045, changePercent: -0.35 },
+        'JPYUSD': { base: 0.0068, change: 0.0001, changePercent: 1.49 },
+        'CHFUSD': { base: 1.2600, change: 0.0040, changePercent: 0.32 },
+        'AUDUSD': { base: 0.6521, change: 0.0012, changePercent: 0.18 },
+        'CADUSD': { base: 0.7412, change: 0.0008, changePercent: 0.11 },
+        'CNYUSD': { base: 0.1385, change: 0.0028, changePercent: 2.06 },
+        'KRWUSD': { base: 0.00072, change: 0.00001, changePercent: 1.41 },
+        'ARSUSD': { base: 0.00079, change: -0.00001, changePercent: -1.25 },
+        'CLPUSD': { base: 0.0010, change: 0.00002, changePercent: 2.04 },
+        'MXNUSD': { base: 0.054, change: 0.001, changePercent: 1.89 },
+        'UYUUSD': { base: 0.025, change: 0.0005, changePercent: 2.04 },
+        'ZARUSD': { base: 0.056, change: 0.001, changePercent: 1.82 },
+        'RUBUSD': { base: 0.013, change: -0.0002, changePercent: -1.52 },
+        'INRUSD': { base: 0.012, change: 0.0001, changePercent: 0.85 },
+        'BTCUSD': { base: 91250.75, change: 2845.50, changePercent: 3.22 },
+        'ETHUSD': { base: 3751.50, change: 185.25, changePercent: 5.19 },
+        'ADAUSD': { base: 0.8950, change: 0.0425, changePercent: 4.98 },
+        'BNBUSD': { base: 685.20, change: 32.80, changePercent: 5.02 },
+        'SOLUSD': { base: 195.75, change: 12.40, changePercent: 6.77 },
+        'XRPUSD': { base: 2.3240, change: 0.1850, changePercent: 8.65 },
+        'DOTUSD': { base: 8.42, change: 0.68, changePercent: 8.80 },
+        'LINKUSD': { base: 22.95, change: 1.45, changePercent: 6.75 },
+        'LTCUSD': { base: 105.80, change: 6.20, changePercent: 6.23 },
+        'UNIUSD': { base: 14.25, change: 0.85, changePercent: 6.34 },
+        'AAVEUSD': { base: 285.40, change: 18.60, changePercent: 6.97 },
+        'DASHUSD': { base: 42.80, change: 2.90, changePercent: 7.27 },
+        'DAIUSD': { base: 1.0008, change: 0.0002, changePercent: 0.02 },
+        'USDCUSD': { base: 1.0001, change: 0.0001, changePercent: 0.01 },
+        'USDTUSD': { base: 0.9999, change: -0.0001, changePercent: -0.01 },
+        'AVAXUSD': { base: 42.85, change: 2.95, changePercent: 7.40 },
+        'AAPL': { base: 228.87, change: 4.25, changePercent: 1.89 },
+        'MSFT': { base: 415.26, change: 8.50, changePercent: 2.09 },
+        'GOOGL': { base: 175.32, change: 3.25, changePercent: 1.89 },
+        'AMZN': { base: 186.45, change: 4.85, changePercent: 2.67 },
+        'TSLA': { base: 352.56, change: -8.25, changePercent: -2.29 },
+        'NVDA': { base: 128.45, change: 6.85, changePercent: 5.63 },
+        'META': { base: 542.81, change: 12.40, changePercent: 2.34 },
+        'NFLX': { base: 825.63, change: 18.95, changePercent: 2.35 }
       };
+
+      const mockData: QuoteResponse = {};
+      
+      Object.keys(baseData).forEach(symbol => {
+        const base = baseData[symbol as keyof typeof baseData];
+        const price = base.base + (base.base * variation);
+        const dynamicVariation = (Math.random() - 0.5) * 0.01;
+        const change = base.change + (base.change * dynamicVariation);
+        const changePercent = base.changePercent + (base.changePercent * dynamicVariation);
+        
+        mockData[symbol] = {
+          symbol,
+          price: Math.max(0, price),
+          change,
+          changePercent,
+          high: price * 1.015,
+          low: price * 0.985
+        };
+      });
 
       const filteredData: QuoteResponse = {};
       symbols.forEach(symbol => {
@@ -179,8 +111,8 @@ const useRealTimeQuotes = (symbols: string[]) => {
   useEffect(() => {
     fetchQuotes();
     
-    // Update every 5 seconds
-    const interval = setInterval(fetchQuotes, 5000);
+    // Update every 3 seconds for real-time feel
+    const interval = setInterval(fetchQuotes, 3000);
     
     return () => clearInterval(interval);
   }, [symbols.join(',')]);

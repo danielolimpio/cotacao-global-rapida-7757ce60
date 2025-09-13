@@ -1,11 +1,13 @@
 import Layout from "@/components/Layout";
 import TradingViewWidget from "@/components/TradingViewWidget";
 import QuoteCard from "@/components/QuoteCard";
-import CurrencyConverter from "@/components/CurrencyConverter";
 import Banner from "@/components/Banner";
+import useRealTimeQuotes from "@/hooks/useRealTimeQuotes";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 const AppleHoje = () => {
+  const { quotes, loading } = useRealTimeQuotes(['AAPL', 'MSFT', 'GOOGL']);
+  
   return (
     <Layout>
       <div className="container mx-auto px-4 py-8">
@@ -29,24 +31,27 @@ const AppleHoje = () => {
           <div className="space-y-4">
             <QuoteCard
               pair="AAPL"
-              price="185.42"
-              change="+2.18"
-              changePercent="+1.19"
+              price={quotes.AAPL?.price || 228.87}
+              change={quotes.AAPL?.change || 4.25}
+              changePercent={quotes.AAPL?.changePercent || 1.89}
               flag1="🍎"
+              isLoading={loading}
             />
             <QuoteCard
-              pair="Market Cap"
-              price="2.89T"
-              change="+34.5B"
-              changePercent="+1.21"
+              pair="MSFT"
+              price={quotes.MSFT?.price || 415.26}
+              change={quotes.MSFT?.change || 8.50}
+              changePercent={quotes.MSFT?.changePercent || 2.09}
               flag1="📊"
+              isLoading={loading}
             />
             <QuoteCard
-              pair="P/E Ratio"
-              price="28.45"
-              change="+0.32"
-              changePercent="+1.14"
+              pair="GOOGL"
+              price={quotes.GOOGL?.price || 175.32}
+              change={quotes.GOOGL?.change || 3.25}
+              changePercent={quotes.GOOGL?.changePercent || 1.89}
               flag1="📈"
+              isLoading={loading}
             />
           </div>
         </div>
@@ -57,7 +62,13 @@ const AppleHoje = () => {
               <CardTitle>Máxima do Dia</CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-2xl font-bold text-success">$186.95</p>
+              {loading ? (
+                <div className="h-8 w-20 bg-muted animate-pulse rounded"></div>
+              ) : (
+                <p className="text-2xl font-bold text-success">
+                  ${quotes.AAPL?.high?.toFixed(2) || '231.20'}
+                </p>
+              )}
             </CardContent>
           </Card>
 
@@ -66,22 +77,32 @@ const AppleHoje = () => {
               <CardTitle>Mínima do Dia</CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-2xl font-bold text-destructive">$183.20</p>
+              {loading ? (
+                <div className="h-8 w-20 bg-muted animate-pulse rounded"></div>
+              ) : (
+                <p className="text-2xl font-bold text-destructive">
+                  ${quotes.AAPL?.low?.toFixed(2) || '226.45'}
+                </p>
+              )}
             </CardContent>
           </Card>
 
           <Card>
             <CardHeader>
-              <CardTitle>Volume</CardTitle>
+              <CardTitle>Variação</CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-2xl font-bold text-primary">52.8M</p>
+              {loading ? (
+                <div className="h-8 w-20 bg-muted animate-pulse rounded"></div>
+              ) : (
+                <p className={`text-2xl font-bold ${(quotes.AAPL?.changePercent || 0) >= 0 ? 'text-success' : 'text-destructive'}`}>
+                  {(quotes.AAPL?.changePercent || 0) >= 0 ? '+' : ''}{quotes.AAPL?.changePercent?.toFixed(2) || '1.89'}%
+                </p>
+              )}
             </CardContent>
           </Card>
         </div>
 
-        <CurrencyConverter type="currency" />
-        
         <Banner />
       </div>
     </Layout>

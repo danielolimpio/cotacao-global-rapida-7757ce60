@@ -7,7 +7,7 @@ import useRealTimeQuotes from "@/hooks/useRealTimeQuotes";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 const EthereumHoje = () => {
-  const { quotes, loading } = useRealTimeQuotes(['ETHUSD', 'ETHBTC', 'ETHEUR']);
+  const { quotes, loading } = useRealTimeQuotes(['ETHUSD', 'BTCUSD', 'ADAUSD']);
   
   return (
     <Layout>
@@ -35,23 +35,26 @@ const EthereumHoje = () => {
               price={quotes.ETHUSD?.price || 3751.50}
               change={quotes.ETHUSD?.change || 185.25}
               changePercent={quotes.ETHUSD?.changePercent || 5.19}
-              flag1="⚡"
+              flag1="Ξ"
+              flag2="🇺🇸"
               isLoading={loading}
             />
             <QuoteCard
               pair="ETH/BTC"
-              price={quotes.ETHBTC?.price || 0.0318}
-              change={quotes.ETHBTC?.change || 0.0012}
-              changePercent={quotes.ETHBTC?.changePercent || 3.93}
-              flag1="⚡"
+              price={(quotes.ETHUSD?.price || 3751.50) / (quotes.BTCUSD?.price || 91250.75)}
+              change={((quotes.ETHUSD?.change || 185.25) / (quotes.BTCUSD?.price || 91250.75))}
+              changePercent={quotes.ETHUSD?.changePercent || 5.19}
+              flag1="Ξ"
+              flag2="₿"
               isLoading={loading}
             />
             <QuoteCard
-              pair="ETH/EUR"
-              price={quotes.ETHEUR?.price || 3206.84}
-              change={quotes.ETHEUR?.change || 158.34}
-              changePercent={quotes.ETHEUR?.changePercent || 5.19}
-              flag1="⚡"
+              pair="ADA/USD"
+              price={quotes.ADAUSD?.price || 0.8950}
+              change={quotes.ADAUSD?.change || 0.0425}
+              changePercent={quotes.ADAUSD?.changePercent || 4.98}
+              flag1="₳"
+              flag2="🇺🇸"
               isLoading={loading}
             />
           </div>
