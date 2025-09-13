@@ -23,7 +23,7 @@ const fetchQuotes = async () => {
       const currentTime = Date.now();
       const variation = (Math.sin(currentTime / 10000) * 0.001) + (Math.random() - 0.5) * 0.002;
       
-      // Base values that will fluctuate
+      // Base values that will fluctuate - aligned with TradingView real prices
       const baseData = {
         'USDBRL': { base: 5.56, change: 0.05, changePercent: 0.90 },
         'EURBRL': { base: 6.32, change: 0.08, changePercent: 1.28 },
@@ -32,10 +32,10 @@ const fetchQuotes = async () => {
         'CHFBRL': { base: 7.0056, change: 0.0950, changePercent: 1.38 },
         'CADBRL': { base: 3.78, change: 0.03, changePercent: 0.80 },
         'AUDBRL': { base: 3.45, change: 0.02, changePercent: 0.65 },
-        'EURUSD': { base: 1.0892, change: 0.0023, changePercent: 0.21 },
+        'EURUSD': { base: 1.0900, change: 0.0023, changePercent: 0.21 },
         'GBPUSD': { base: 1.2675, change: -0.0045, changePercent: -0.35 },
-        'JPYUSD': { base: 0.0068, change: 0.0001, changePercent: 1.49 },
-        'CHFUSD': { base: 1.2600, change: 0.0040, changePercent: 0.32 },
+        'JPYUSD': { base: 0.006751, change: 0.0001, changePercent: 1.49 },
+        'CHFUSD': { base: 0.8850, change: 0.0040, changePercent: 0.32 },
         'AUDUSD': { base: 0.6521, change: 0.0012, changePercent: 0.18 },
         'CADUSD': { base: 0.7412, change: 0.0008, changePercent: 0.11 },
         'CNYUSD': { base: 0.1385, change: 0.0028, changePercent: 2.06 },
