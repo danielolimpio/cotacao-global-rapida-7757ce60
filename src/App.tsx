@@ -76,6 +76,13 @@ import VertexPharmHoje from "./pages/acoes/VertexPharmHoje";
 
 // Forex pages
 import SP500Hoje from "./pages/forex/SP500Hoje";
+import EurUsdHoje from "./pages/forex/principais/EurUsdHoje";
+import UsdJpyHoje from "./pages/forex/principais/UsdJpyHoje";
+import GbpUsdHoje from "./pages/forex/principais/GbpUsdHoje";
+import UsdChfHoje from "./pages/forex/principais/UsdChfHoje";
+import AudUsdHoje from "./pages/forex/principais/AudUsdHoje";
+import UsdCadHoje from "./pages/forex/principais/UsdCadHoje";
+import NzdUsdHoje from "./pages/forex/principais/NzdUsdHoje";
 
 // Calculator page
 import CalculadoraJuros from "./pages/CalculadoraJuros";
@@ -162,6 +169,13 @@ const App = () => (
           
           {/* Forex routes */}
           <Route path="/forex/sp500" element={<SP500Hoje />} />
+          <Route path="/forex/principais/eur-usd" element={<EurUsdHoje />} />
+          <Route path="/forex/principais/usd-jpy" element={<UsdJpyHoje />} />
+          <Route path="/forex/principais/gbp-usd" element={<GbpUsdHoje />} />
+          <Route path="/forex/principais/usd-chf" element={<UsdChfHoje />} />
+          <Route path="/forex/principais/aud-usd" element={<AudUsdHoje />} />
+          <Route path="/forex/principais/usd-cad" element={<UsdCadHoje />} />
+          <Route path="/forex/principais/nzd-usd" element={<NzdUsdHoje />} />
           
           {/* Calculator routes */}
           <Route path="/calculadora-juros" element={<CalculadoraJuros />} />

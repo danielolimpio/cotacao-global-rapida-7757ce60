@@ -70,7 +70,8 @@ const fetchQuotes = async () => {
         'TSLA': { base: 352.56, change: -8.25, changePercent: -2.29 },
         'NVDA': { base: 128.45, change: 6.85, changePercent: 5.63 },
         'META': { base: 542.81, change: 12.40, changePercent: 2.34 },
-        'NFLX': { base: 825.63, change: 18.95, changePercent: 2.35 }
+        'NFLX': { base: 825.63, change: 18.95, changePercent: 2.35 },
+        'NZDUSD': { base: 0.6128, change: 0.0045, changePercent: 0.74 }
       };
 
       const mockData: QuoteResponse = {};

@@ -210,8 +210,37 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
                 <NavigationMenuItem>
                   <NavigationMenuTrigger className="font-medium text-base">Forex</NavigationMenuTrigger>
                   <NavigationMenuContent>
-                    <div className="w-60 p-6">
-                      <Link to="/forex/sp500" className="text-base hover:text-primary transition-colors">S&P 500 Hoje</Link>
+                    <div className="w-[600px] p-6">
+                      <div className="grid grid-cols-3 gap-6">
+                        <div>
+                          <h4 className="font-semibold mb-3 text-base">Principais</h4>
+                          <div className="grid gap-2">
+                            <Link to="/forex/principais/eur-usd" className="text-base hover:text-primary transition-colors">EUR/USD</Link>
+                            <Link to="/forex/principais/usd-jpy" className="text-base hover:text-primary transition-colors">USD/JPY</Link>
+                            <Link to="/forex/principais/gbp-usd" className="text-base hover:text-primary transition-colors">GBP/USD</Link>
+                            <Link to="/forex/principais/usd-chf" className="text-base hover:text-primary transition-colors">USD/CHF</Link>
+                            <Link to="/forex/principais/aud-usd" className="text-base hover:text-primary transition-colors">AUD/USD</Link>
+                            <Link to="/forex/principais/usd-cad" className="text-base hover:text-primary transition-colors">USD/CAD</Link>
+                            <Link to="/forex/principais/nzd-usd" className="text-base hover:text-primary transition-colors">NZD/USD</Link>
+                          </div>
+                        </div>
+                        <div>
+                          <h4 className="font-semibold mb-3 text-base">Secundários</h4>
+                          <div className="grid gap-2">
+                            <span className="text-sm text-muted-foreground">Em breve...</span>
+                          </div>
+                        </div>
+                        <div>
+                          <h4 className="font-semibold mb-3 text-base">Exóticos</h4>
+                          <div className="grid gap-2">
+                            <span className="text-sm text-muted-foreground">Em breve...</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="mt-6 pt-4 border-t">
+                        <h4 className="font-semibold mb-3 text-base">Índices</h4>
+                        <Link to="/forex/sp500" className="text-base hover:text-primary transition-colors">S&P 500 Hoje</Link>
+                      </div>
                     </div>
                   </NavigationMenuContent>
                 </NavigationMenuItem>

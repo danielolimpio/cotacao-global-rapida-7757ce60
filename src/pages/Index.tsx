@@ -7,40 +7,33 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { TrendingUp, Globe, Shield, Zap } from "lucide-react";
 import { Link } from "react-router-dom";
+import useRealTimeQuotes from "@/hooks/useRealTimeQuotes";
 const Index = () => {
-  const popularQuotes = [{
-    pair: "USD/BRL",
-    price: "5.56",
-    change: "+0.05",
-    changePercent: "+0.90%",
-    flag1: "🇺🇸",
-    flag2: "🇧🇷",
-    isPositive: true
-  }, {
-    pair: "EUR/BRL",
-    price: "5.45",
-    change: "-0.02",
-    changePercent: "-0.37%",
-    flag1: "🇪🇺",
-    flag2: "🇧🇷",
-    isPositive: false
-  }, {
-    pair: "GBP/BRL",
-    price: "6.32",
-    change: "+0.08",
-    changePercent: "+1.28%",
-    flag1: "🇬🇧",
-    flag2: "🇧🇷",
-    isPositive: true
-  }, {
-    pair: "CAD/BRL",
-    price: "3.78",
-    change: "+0.03",
-    changePercent: "+0.80%",
-    flag1: "🇨🇦",
-    flag2: "🇧🇷",
-    isPositive: true
-  }];
+  const { quotes, loading } = useRealTimeQuotes(['USDBRL', 'EURBRL', 'GBPBRL', 'CADBRL']);
+
+  const getQuoteData = (symbol: string, flags: { flag1: string, flag2: string }, pairName: string) => {
+    const quote = quotes[symbol];
+    if (!quote) return null;
+    
+    return {
+      pair: pairName,
+      price: quote.price.toFixed(2),
+      change: quote.change >= 0 ? `+${quote.change.toFixed(3)}` : quote.change.toFixed(3),
+      changePercent: quote.changePercent >= 0 ? `+${quote.changePercent.toFixed(2)}%` : `${quote.changePercent.toFixed(2)}%`,
+      flag1: flags.flag1,
+      flag2: flags.flag2,
+      isPositive: quote.change >= 0
+    };
+  };
+
+  const popularQuotes = [
+    getQuoteData('USDBRL', { flag1: "🇺🇸", flag2: "🇧🇷" }, "USD/BRL"),
+    getQuoteData('EURBRL', { flag1: "🇪🇺", flag2: "🇧🇷" }, "EUR/BRL"),
+    getQuoteData('GBPBRL', { flag1: "🇬🇧", flag2: "🇧🇷" }, "GBP/BRL"),
+    getQuoteData('CADBRL', { flag1: "🇨🇦", flag2: "🇧🇷" }, "CAD/BRL")
+  ].filter(Boolean);
+
+  const usdBrlQuote = quotes['USDBRL'];
   return <Layout>
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-primary/10 to-accent/10 py-20 bg-cover bg-center bg-no-repeat" style={{
@@ -91,11 +84,22 @@ const Index = () => {
                   <span className="text-3xl">🇧🇷</span>
                 </div>
                 <div className="text-right">
-                  <div className="text-3xl font-bold text-primary">R$ 5,56</div>
-                  <div className="text-success flex items-center">
-                    <TrendingUp className="h-4 w-4 mr-1" />
-                    +0.05 (+0.90%)
-                  </div>
+                  {loading || !usdBrlQuote ? (
+                    <div className="animate-pulse">
+                      <div className="text-3xl font-bold text-primary">R$ -.--</div>
+                      <div className="text-muted-foreground">Carregando...</div>
+                    </div>
+                  ) : (
+                    <>
+                      <div className="text-3xl font-bold text-primary">
+                        R$ {usdBrlQuote.price.toFixed(2)}
+                      </div>
+                      <div className={`flex items-center ${usdBrlQuote.change >= 0 ? 'text-success' : 'text-destructive'}`}>
+                        <TrendingUp className="h-4 w-4 mr-1" />
+                        {usdBrlQuote.change >= 0 ? '+' : ''}{usdBrlQuote.change.toFixed(3)} ({usdBrlQuote.changePercent >= 0 ? '+' : ''}{usdBrlQuote.changePercent.toFixed(2)}%)
+                      </div>
+                    </>
+                  )}
                 </div>
               </CardTitle>
             </CardHeader>
@@ -116,11 +120,19 @@ const Index = () => {
             <h2 className="text-3xl font-bold text-foreground">Cotações em Tempo Real</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {popularQuotes.map((quote, index) => <div key={quote.pair} className="animate-fade-in" style={{
-            animationDelay: `${index * 0.1}s`
-          }}>
-                <QuoteCard {...quote} />
-              </div>)}
+            {loading ? (
+              Array.from({ length: 4 }).map((_, index) => (
+                <div key={index} className="animate-pulse">
+                  <div className="bg-muted rounded-lg h-32"></div>
+                </div>
+              ))
+            ) : (
+              popularQuotes.map((quote, index) => (
+                <div key={quote.pair} className="animate-fade-in" style={{ animationDelay: `${index * 0.1}s` }}>
+                  <QuoteCard {...quote} />
+                </div>
+              ))
+            )}
           </div>
         </div>
       </section>
