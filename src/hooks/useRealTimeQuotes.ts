@@ -32,7 +32,7 @@ const fetchQuotes = async () => {
         'CHFBRL': { base: 7.0056, change: 0.0950, changePercent: 1.38 },
         'CADBRL': { base: 3.78, change: 0.03, changePercent: 0.80 },
         'AUDBRL': { base: 3.45, change: 0.02, changePercent: 0.65 },
-        'EURUSD': { base: 1.0900, change: 0.0023, changePercent: 0.21 },
+        'EURUSD': { base: 1.1730, change: 0.0126, changePercent: 1.06 },
         'GBPUSD': { base: 1.2675, change: -0.0045, changePercent: -0.35 },
         'JPYUSD': { base: 0.006751, change: 0.0001, changePercent: 1.49 },
         'CHFUSD': { base: 0.8850, change: 0.0040, changePercent: 0.32 },
