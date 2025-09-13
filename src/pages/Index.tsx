@@ -9,12 +9,16 @@ import { TrendingUp, Globe, Shield, Zap } from "lucide-react";
 import { Link } from "react-router-dom";
 import useRealTimeQuotes from "@/hooks/useRealTimeQuotes";
 const Index = () => {
-  const { quotes, loading } = useRealTimeQuotes(['USDBRL', 'EURBRL', 'GBPBRL', 'CADBRL']);
-
-  const getQuoteData = (symbol: string, flags: { flag1: string, flag2: string }, pairName: string) => {
+  const {
+    quotes,
+    loading
+  } = useRealTimeQuotes(['USDBRL', 'EURBRL', 'GBPBRL', 'CADBRL']);
+  const getQuoteData = (symbol: string, flags: {
+    flag1: string;
+    flag2: string;
+  }, pairName: string) => {
     const quote = quotes[symbol];
     if (!quote) return null;
-    
     return {
       pair: pairName,
       price: quote.price.toFixed(2),
@@ -25,14 +29,19 @@ const Index = () => {
       isPositive: quote.change >= 0
     };
   };
-
-  const popularQuotes = [
-    getQuoteData('USDBRL', { flag1: "🇺🇸", flag2: "🇧🇷" }, "USD/BRL"),
-    getQuoteData('EURBRL', { flag1: "🇪🇺", flag2: "🇧🇷" }, "EUR/BRL"),
-    getQuoteData('GBPBRL', { flag1: "🇬🇧", flag2: "🇧🇷" }, "GBP/BRL"),
-    getQuoteData('CADBRL', { flag1: "🇨🇦", flag2: "🇧🇷" }, "CAD/BRL")
-  ].filter(Boolean);
-
+  const popularQuotes = [getQuoteData('USDBRL', {
+    flag1: "🇺🇸",
+    flag2: "🇧🇷"
+  }, "USD/BRL"), getQuoteData('EURBRL', {
+    flag1: "🇪🇺",
+    flag2: "🇧🇷"
+  }, "EUR/BRL"), getQuoteData('GBPBRL', {
+    flag1: "🇬🇧",
+    flag2: "🇧🇷"
+  }, "GBP/BRL"), getQuoteData('CADBRL', {
+    flag1: "🇨🇦",
+    flag2: "🇧🇷"
+  }, "CAD/BRL")].filter(Boolean);
   const usdBrlQuote = quotes['USDBRL'];
   return <Layout>
       {/* Hero Section */}
@@ -84,13 +93,10 @@ const Index = () => {
                   <span className="text-3xl">🇧🇷</span>
                 </div>
                 <div className="text-right">
-                  {loading || !usdBrlQuote ? (
-                    <div className="animate-pulse">
+                  {loading || !usdBrlQuote ? <div className="animate-pulse">
                       <div className="text-3xl font-bold text-primary">R$ -.--</div>
                       <div className="text-muted-foreground">Carregando...</div>
-                    </div>
-                  ) : (
-                    <>
+                    </div> : <>
                       <div className="text-3xl font-bold text-primary">
                         R$ {usdBrlQuote.price.toFixed(2)}
                       </div>
@@ -98,8 +104,7 @@ const Index = () => {
                         <TrendingUp className="h-4 w-4 mr-1" />
                         {usdBrlQuote.change >= 0 ? '+' : ''}{usdBrlQuote.change.toFixed(3)} ({usdBrlQuote.changePercent >= 0 ? '+' : ''}{usdBrlQuote.changePercent.toFixed(2)}%)
                       </div>
-                    </>
-                  )}
+                    </>}
                 </div>
               </CardTitle>
             </CardHeader>
@@ -113,29 +118,7 @@ const Index = () => {
       </section>
 
       {/* Popular Quotes Grid */}
-      <section className="py-16 bg-muted/30">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <img src="/lovable-uploads/d6b0e3b9-996c-4858-a90a-4c5c17f95789.png" alt="Financial Symbol" className="w-16 h-16 mx-auto mb-4" />
-            <h2 className="text-3xl font-bold text-foreground">Cotações em Tempo Real</h2>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {loading ? (
-              Array.from({ length: 4 }).map((_, index) => (
-                <div key={index} className="animate-pulse">
-                  <div className="bg-muted rounded-lg h-32"></div>
-                </div>
-              ))
-            ) : (
-              popularQuotes.map((quote, index) => (
-                <div key={quote.pair} className="animate-fade-in" style={{ animationDelay: `${index * 0.1}s` }}>
-                  <QuoteCard {...quote} />
-                </div>
-              ))
-            )}
-          </div>
-        </div>
-      </section>
+      
 
       {/* Currency Converter */}
       <CurrencyConverter type="dollar" />
