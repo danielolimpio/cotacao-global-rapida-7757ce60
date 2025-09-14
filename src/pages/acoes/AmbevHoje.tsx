@@ -51,34 +51,6 @@ const AmbevHoje = () => {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <Card>
-            <CardHeader>
-              <CardTitle>Máxima do Dia</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-2xl font-bold text-success">R$ 12.68</p>
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardHeader>
-              <CardTitle>Mínima do Dia</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-2xl font-bold text-destructive">R$ 12.27</p>
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardHeader>
-              <CardTitle>Volume</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-2xl font-bold text-primary">32.8M</p>
-            </CardContent>
-          </Card>
-        </div>
 
         <CurrencyConverter type="currency" />
         

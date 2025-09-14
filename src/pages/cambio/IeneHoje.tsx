@@ -59,52 +59,6 @@ const IeneHoje = () => {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <Card>
-            <CardHeader>
-              <CardTitle>Máxima do Dia</CardTitle>
-            </CardHeader>
-            <CardContent>
-              {loading ? (
-                <div className="h-8 w-20 bg-muted animate-pulse rounded"></div>
-              ) : (
-                <p className="text-2xl font-bold text-success">
-                  ${quotes.JPYUSD?.high?.toFixed(4) || '0.0068'}
-                </p>
-              )}
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardHeader>
-              <CardTitle>Mínima do Dia</CardTitle>
-            </CardHeader>
-            <CardContent>
-              {loading ? (
-                <div className="h-8 w-20 bg-muted animate-pulse rounded"></div>
-              ) : (
-                <p className="text-2xl font-bold text-destructive">
-                  ${quotes.JPYUSD?.low?.toFixed(4) || '0.0066'}
-                </p>
-              )}
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardHeader>
-              <CardTitle>Variação</CardTitle>
-            </CardHeader>
-            <CardContent>
-              {loading ? (
-                <div className="h-8 w-20 bg-muted animate-pulse rounded"></div>
-              ) : (
-                <p className={`text-2xl font-bold ${(quotes.JPYUSD?.changePercent || 0) >= 0 ? 'text-success' : 'text-destructive'}`}>
-                  {(quotes.JPYUSD?.changePercent || 0) >= 0 ? '+' : ''}{quotes.JPYUSD?.changePercent?.toFixed(2) || '1.52'}%
-                </p>
-              )}
-            </CardContent>
-          </Card>
-        </div>
 
         <CurrencyConverter type="currency" mainCurrency="JPY" />
         

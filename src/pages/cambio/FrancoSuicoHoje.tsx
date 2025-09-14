@@ -59,52 +59,6 @@ const FrancoSuicoHoje = () => {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <Card>
-            <CardHeader>
-              <CardTitle>Máxima do Dia</CardTitle>
-            </CardHeader>
-            <CardContent>
-              {loading ? (
-                <div className="h-8 w-20 bg-muted animate-pulse rounded"></div>
-              ) : (
-                <p className="text-2xl font-bold text-success">
-                  ${quotes.CHFUSD?.high?.toFixed(4) || '1.2650'}
-                </p>
-              )}
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardHeader>
-              <CardTitle>Mínima do Dia</CardTitle>
-            </CardHeader>
-            <CardContent>
-              {loading ? (
-                <div className="h-8 w-20 bg-muted animate-pulse rounded"></div>
-              ) : (
-                <p className="text-2xl font-bold text-destructive">
-                  ${quotes.CHFUSD?.low?.toFixed(4) || '1.2550'}
-                </p>
-              )}
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardHeader>
-              <CardTitle>Variação</CardTitle>
-            </CardHeader>
-            <CardContent>
-              {loading ? (
-                <div className="h-8 w-20 bg-muted animate-pulse rounded"></div>
-              ) : (
-                <p className={`text-2xl font-bold ${(quotes.CHFUSD?.changePercent || 0) >= 0 ? 'text-success' : 'text-destructive'}`}>
-                  {(quotes.CHFUSD?.changePercent || 0) >= 0 ? '+' : ''}{quotes.CHFUSD?.changePercent?.toFixed(2) || '0.32'}%
-                </p>
-              )}
-            </CardContent>
-          </Card>
-        </div>
 
         <CurrencyConverter type="currency" mainCurrency="CHF" />
         

@@ -60,52 +60,6 @@ const EuroHoje = () => {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <Card>
-            <CardHeader>
-              <CardTitle>Máxima do Dia</CardTitle>
-            </CardHeader>
-            <CardContent>
-              {loading ? (
-                <div className="h-8 w-20 bg-muted animate-pulse rounded"></div>
-              ) : (
-                <p className="text-2xl font-bold text-success">
-                  R$ {quotes.EURBRL?.high?.toFixed(4) || '6.5280'}
-                </p>
-              )}
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardHeader>
-              <CardTitle>Mínima do Dia</CardTitle>
-            </CardHeader>
-            <CardContent>
-              {loading ? (
-                <div className="h-8 w-20 bg-muted animate-pulse rounded"></div>
-              ) : (
-                <p className="text-2xl font-bold text-destructive">
-                  R$ {quotes.EURBRL?.low?.toFixed(4) || '6.4820'}
-                </p>
-              )}
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardHeader>
-              <CardTitle>Variação</CardTitle>
-            </CardHeader>
-            <CardContent>
-              {loading ? (
-                <div className="h-8 w-20 bg-muted animate-pulse rounded"></div>
-              ) : (
-                <p className={`text-2xl font-bold ${(quotes.EURBRL?.changePercent || 0) >= 0 ? 'text-success' : 'text-destructive'}`}>
-                  {(quotes.EURBRL?.changePercent || 0) >= 0 ? '+' : ''}{quotes.EURBRL?.changePercent?.toFixed(2) || '0.30'}%
-                </p>
-              )}
-            </CardContent>
-          </Card>
-        </div>
 
         <CurrencyConverter type="euro" />
         
