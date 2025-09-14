@@ -16,39 +16,17 @@ const RippleHoje = () => {
 
         <Banner />
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+        <div className="mb-8">
           <Card>
             <CardHeader>
-              <CardTitle>Gráfico XRP/USD</CardTitle>
+              <CardTitle className="text-center">Gráfico XRP/USD</CardTitle>
             </CardHeader>
             <CardContent>
-              <TradingViewWidget symbol="XRPUSD" height="400" />
+              <div className="h-96">
+                <TradingViewWidget symbol="XRPUSD" height="400" />
+              </div>
             </CardContent>
           </Card>
-
-          <div className="space-y-4">
-            <QuoteCard
-              pair="XRP/USD"
-              price="0.6250"
-              change="+0.0385"
-              changePercent="+6.56"
-              flag1="💎"
-            />
-            <QuoteCard
-              pair="XRP/BTC"
-              price="0.0000139"
-              change="+0.0000008"
-              changePercent="+6.11"
-              flag1="💎"
-            />
-            <QuoteCard
-              pair="XRP/ETH"
-              price="0.0002195"
-              change="+0.0000125"
-              changePercent="+6.04"
-              flag1="💎"
-            />
-          </div>
         </div>
 
 

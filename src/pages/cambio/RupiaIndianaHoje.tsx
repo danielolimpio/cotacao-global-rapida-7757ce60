@@ -13,39 +13,17 @@ const RupiaIndianaHoje = () => {
           <p className="text-xl text-muted-foreground">Cotação da Rupia Indiana (INR) em tempo real</p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+        <div className="mb-8">
           <Card>
             <CardHeader>
-              <CardTitle>Gráfico INR/USD</CardTitle>
+              <CardTitle className="text-center">Gráfico INR/USD</CardTitle>
             </CardHeader>
             <CardContent>
-              <TradingViewWidget symbol="INRUSD" height="400" />
+              <div className="h-96">
+                <TradingViewWidget symbol="INRUSD" height="400" />
+              </div>
             </CardContent>
           </Card>
-
-          <div className="space-y-4">
-            <QuoteCard
-              pair="INR/USD"
-              price="0.0120"
-              change="+0.0002"
-              changePercent="+1.69"
-              flag1="🇮🇳"
-            />
-            <QuoteCard
-              pair="INR/BRL"
-              price="0.0667"
-              change="+0.0011"
-              changePercent="+1.68"
-              flag1="🇮🇳"
-            />
-            <QuoteCard
-              pair="INR/EUR"
-              price="0.0103"
-              change="+0.0002"
-              changePercent="+1.98"
-              flag1="🇮🇳"
-            />
-          </div>
         </div>
 
 

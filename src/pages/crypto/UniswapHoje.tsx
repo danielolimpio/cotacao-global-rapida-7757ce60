@@ -16,39 +16,17 @@ const UniswapHoje = () => {
 
         <Banner />
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+        <div className="mb-8">
           <Card>
             <CardHeader>
-              <CardTitle>Gráfico UNI/USD</CardTitle>
+              <CardTitle className="text-center">Gráfico UNI/USD</CardTitle>
             </CardHeader>
             <CardContent>
-              <TradingViewWidget symbol="UNIUSD" height="400" />
+              <div className="h-96">
+                <TradingViewWidget symbol="UNIUSD" height="400" />
+              </div>
             </CardContent>
           </Card>
-
-          <div className="space-y-4">
-            <QuoteCard
-              pair="UNI/USD"
-              price="8.45"
-              change="+0.35"
-              changePercent="+4.32"
-              flag1="🦄"
-            />
-            <QuoteCard
-              pair="UNI/BTC"
-              price="0.0001875"
-              change="+0.0000058"
-              changePercent="+3.18"
-              flag1="🦄"
-            />
-            <QuoteCard
-              pair="UNI/ETH"
-              price="0.00297"
-              change="+0.000085"
-              changePercent="+2.95"
-              flag1="🦄"
-            />
-          </div>
         </div>
 
 

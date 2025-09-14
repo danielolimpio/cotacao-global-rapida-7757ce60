@@ -16,39 +16,17 @@ const USDCHoje = () => {
 
         <Banner />
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+        <div className="mb-8">
           <Card>
             <CardHeader>
-              <CardTitle>Gráfico USDC/USD</CardTitle>
+              <CardTitle className="text-center">Gráfico USDC/USD</CardTitle>
             </CardHeader>
             <CardContent>
-              <TradingViewWidget symbol="USDCUSD" height="400" />
+              <div className="h-96">
+                <TradingViewWidget symbol="USDCUSD" height="400" />
+              </div>
             </CardContent>
           </Card>
-
-          <div className="space-y-4">
-            <QuoteCard
-              pair="USDC/USD"
-              price="1.0001"
-              change="+0.0000"
-              changePercent="+0.00"
-              flag1="🔵"
-            />
-            <QuoteCard
-              pair="Market Cap"
-              price="34.2B"
-              change="+42M"
-              changePercent="+0.12"
-              flag1="💼"
-            />
-            <QuoteCard
-              pair="Volume 24h"
-              price="5.8B"
-              change="+685M"
-              changePercent="+13.40"
-              flag1="📈"
-            />
-          </div>
         </div>
 
 

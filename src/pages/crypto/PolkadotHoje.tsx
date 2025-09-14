@@ -16,39 +16,17 @@ const PolkadotHoje = () => {
 
         <Banner />
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+        <div className="mb-8">
           <Card>
             <CardHeader>
-              <CardTitle>Gráfico DOT/USD</CardTitle>
+              <CardTitle className="text-center">Gráfico DOT/USD</CardTitle>
             </CardHeader>
             <CardContent>
-              <TradingViewWidget symbol="DOTUSD" height="400" />
+              <div className="h-96">
+                <TradingViewWidget symbol="DOTUSD" height="400" />
+              </div>
             </CardContent>
           </Card>
-
-          <div className="space-y-4">
-            <QuoteCard
-              pair="DOT/USD"
-              price="7.85"
-              change="+0.42"
-              changePercent="+5.65"
-              flag1="🔴"
-            />
-            <QuoteCard
-              pair="Market Cap"
-              price="9.8B"
-              change="+520M"
-              changePercent="+5.61"
-              flag1="💼"
-            />
-            <QuoteCard
-              pair="Volume 24h"
-              price="285M"
-              change="+45M"
-              changePercent="+18.75"
-              flag1="📈"
-            />
-          </div>
         </div>
 
 

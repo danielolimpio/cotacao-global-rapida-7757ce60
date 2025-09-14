@@ -16,39 +16,17 @@ const AaveHoje = () => {
 
         <Banner />
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+        <div className="mb-8">
           <Card>
             <CardHeader>
-              <CardTitle>Gráfico AAVE/USD</CardTitle>
+              <CardTitle className="text-center">Gráfico AAVE/USD</CardTitle>
             </CardHeader>
             <CardContent>
-              <TradingViewWidget symbol="AAVEUSD" height="400" />
+              <div className="h-96">
+                <TradingViewWidget symbol="AAVEUSD" height="400" />
+              </div>
             </CardContent>
           </Card>
-
-          <div className="space-y-4">
-            <QuoteCard
-              pair="AAVE/USD"
-              price="185.40"
-              change="+8.25"
-              changePercent="+4.65"
-              flag1="👻"
-            />
-            <QuoteCard
-              pair="AAVE/BTC"
-              price="0.004115"
-              change="+0.000158"
-              changePercent="+3.99"
-              flag1="👻"
-            />
-            <QuoteCard
-              pair="AAVE/ETH"
-              price="0.0651"
-              change="+0.00218"
-              changePercent="+3.46"
-              flag1="👻"
-            />
-          </div>
         </div>
 
 

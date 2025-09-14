@@ -16,39 +16,17 @@ const LibrasEsterlinasHoje = () => {
 
         <Banner />
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+        <div className="mb-8">
           <Card>
             <CardHeader>
-              <CardTitle>Gráfico GBP/USD</CardTitle>
+              <CardTitle className="text-center">Gráfico GBP/USD</CardTitle>
             </CardHeader>
             <CardContent>
-              <TradingViewWidget symbol="GBPUSD" height="400" />
+              <div className="h-96">
+                <TradingViewWidget symbol="GBPUSD" height="400" />
+              </div>
             </CardContent>
           </Card>
-
-          <div className="space-y-4">
-            <QuoteCard
-              pair="GBP/USD"
-              price="1.3400"
-              change="+0.0135"
-              changePercent="+1.02"
-              flag1="🇬🇧"
-            />
-            <QuoteCard
-              pair="GBP/EUR"
-              price="1.1453"
-              change="+0.0089"
-              changePercent="+0.78"
-              flag1="🇬🇧"
-            />
-            <QuoteCard
-              pair="GBP/BRL"
-              price="7.4504"
-              change="+0.0754"
-              changePercent="+1.02"
-              flag1="🇬🇧"
-            />
-          </div>
         </div>
 
 

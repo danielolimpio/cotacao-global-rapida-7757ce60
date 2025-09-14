@@ -13,39 +13,17 @@ const PesoUruguaioHoje = () => {
           <p className="text-xl text-muted-foreground">Cotação do Peso Uruguaio (UYU) em tempo real</p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+        <div className="mb-8">
           <Card>
             <CardHeader>
-              <CardTitle>Gráfico UYU/USD</CardTitle>
+              <CardTitle className="text-center">Gráfico UYU/USD</CardTitle>
             </CardHeader>
             <CardContent>
-              <TradingViewWidget symbol="UYUUSD" height="400" />
+              <div className="h-96">
+                <TradingViewWidget symbol="UYUUSD" height="400" />
+              </div>
             </CardContent>
           </Card>
-
-          <div className="space-y-4">
-            <QuoteCard
-              pair="UYU/USD"
-              price="0.0250"
-              change="+0.0005"
-              changePercent="+2.04"
-              flag1="🇺🇾"
-            />
-            <QuoteCard
-              pair="UYU/BRL"
-              price="0.1390"
-              change="+0.0028"
-              changePercent="+2.05"
-              flag1="🇺🇾"
-            />
-            <QuoteCard
-              pair="UYU/EUR"
-              price="0.0214"
-              change="+0.0004"
-              changePercent="+1.90"
-              flag1="🇺🇾"
-            />
-          </div>
         </div>
 
 

@@ -16,39 +16,17 @@ const ChainlinkHoje = () => {
 
         <Banner />
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+        <div className="mb-8">
           <Card>
             <CardHeader>
-              <CardTitle>Gráfico LINK/USD</CardTitle>
+              <CardTitle className="text-center">Gráfico LINK/USD</CardTitle>
             </CardHeader>
             <CardContent>
-              <TradingViewWidget symbol="LINKUSD" height="400" />
+              <div className="h-96">
+                <TradingViewWidget symbol="LINKUSD" height="400" />
+              </div>
             </CardContent>
           </Card>
-
-          <div className="space-y-4">
-            <QuoteCard
-              pair="LINK/USD"
-              price="14.75"
-              change="+0.65"
-              changePercent="+4.61"
-              flag1="🔗"
-            />
-            <QuoteCard
-              pair="LINK/BTC"
-              price="0.0003275"
-              change="+0.0000125"
-              changePercent="+3.97"
-              flag1="🔗"
-            />
-            <QuoteCard
-              pair="LINK/ETH"
-              price="0.00518"
-              change="+0.000165"
-              changePercent="+3.29"
-              flag1="🔗"
-            />
-          </div>
         </div>
 
 

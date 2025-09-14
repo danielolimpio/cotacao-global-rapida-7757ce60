@@ -13,39 +13,17 @@ const YuanChinesHoje = () => {
           <p className="text-xl text-muted-foreground">Cotação do Yuan Chinês (CNY) em tempo real</p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+        <div className="mb-8">
           <Card>
             <CardHeader>
-              <CardTitle>Gráfico CNY/USD</CardTitle>
+              <CardTitle className="text-center">Gráfico CNY/USD</CardTitle>
             </CardHeader>
             <CardContent>
-              <TradingViewWidget symbol="CNYUSD" height="400" />
+              <div className="h-96">
+                <TradingViewWidget symbol="CNYUSD" height="400" />
+              </div>
             </CardContent>
           </Card>
-
-          <div className="space-y-4">
-            <QuoteCard
-              pair="CNY/USD"
-              price="0.1400"
-              change="+0.0028"
-              changePercent="+2.04"
-              flag1="🇨🇳"
-            />
-            <QuoteCard
-              pair="CNY/BRL"
-              price="0.7784"
-              change="+0.0156"
-              changePercent="+2.04"
-              flag1="🇨🇳"
-            />
-            <QuoteCard
-              pair="CNY/EUR"
-              price="0.1197"
-              change="+0.0024"
-              changePercent="+2.04"
-              flag1="🇨🇳"
-            />
-          </div>
         </div>
 
 

@@ -18,45 +18,17 @@ const IeneHoje = () => {
 
         <Banner />
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+        <div className="mb-8">
           <Card>
             <CardHeader>
-              <CardTitle>Gráfico JPY/USD</CardTitle>
+              <CardTitle className="text-center">Gráfico JPY/USD</CardTitle>
             </CardHeader>
             <CardContent>
-              <TradingViewWidget symbol="JPYUSD" height="400" />
+              <div className="h-96">
+                <TradingViewWidget symbol="JPYUSD" height="400" />
+              </div>
             </CardContent>
           </Card>
-
-          <div className="space-y-4">
-            <QuoteCard
-              pair="JPY/USD"
-              price={quotes.JPYUSD?.price || 0.0068}
-              change={quotes.JPYUSD?.change || 0.0001}
-              changePercent={quotes.JPYUSD?.changePercent || 1.49}
-              flag1="🇯🇵"
-              flag2="🇺🇸"
-              isLoading={loading}
-            />
-            <QuoteCard
-              pair="JPY/EUR"
-              price={(quotes.JPYUSD?.price || 0.0068) / (quotes.EURUSD?.price || 1.0892)}
-              change={((quotes.JPYUSD?.change || 0.0001) / (quotes.EURUSD?.price || 1.0892))}
-              changePercent={quotes.JPYUSD?.changePercent || 1.72}
-              flag1="🇯🇵"
-              flag2="🇪🇺"
-              isLoading={loading}
-            />
-            <QuoteCard
-              pair="JPY/BRL"
-              price={quotes.JPYBRL?.price || 0.0378}
-              change={quotes.JPYBRL?.change || 0.0006}
-              changePercent={quotes.JPYBRL?.changePercent || 1.61}
-              flag1="🇯🇵"
-              flag2="🇧🇷"
-              isLoading={loading}
-            />
-          </div>
         </div>
 
 

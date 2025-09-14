@@ -16,39 +16,17 @@ const CardanoHoje = () => {
 
         <Banner />
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+        <div className="mb-8">
           <Card>
             <CardHeader>
-              <CardTitle>Gráfico ADA/USD</CardTitle>
+              <CardTitle className="text-center">Gráfico ADA/USD</CardTitle>
             </CardHeader>
             <CardContent>
-              <TradingViewWidget symbol="ADAUSD" height="400" />
+              <div className="h-96">
+                <TradingViewWidget symbol="ADAUSD" height="400" />
+              </div>
             </CardContent>
           </Card>
-
-          <div className="space-y-4">
-            <QuoteCard
-              pair="ADA/USD"
-              price="0.4850"
-              change="+0.0245"
-              changePercent="+5.32"
-              flag1="🔷"
-            />
-            <QuoteCard
-              pair="ADA/BTC"
-              price="0.0000108"
-              change="+0.0000005"
-              changePercent="+4.85"
-              flag1="🔷"
-            />
-            <QuoteCard
-              pair="ADA/ETH"
-              price="0.0001702"
-              change="+0.0000078"
-              changePercent="+4.80"
-              flag1="🔷"
-            />
-          </div>
         </div>
 
 

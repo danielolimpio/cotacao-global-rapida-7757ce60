@@ -16,39 +16,17 @@ const SolanaHoje = () => {
 
         <Banner />
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+        <div className="mb-8">
           <Card>
             <CardHeader>
-              <CardTitle>Gráfico SOL/USD</CardTitle>
+              <CardTitle className="text-center">Gráfico SOL/USD</CardTitle>
             </CardHeader>
             <CardContent>
-              <TradingViewWidget symbol="SOLUSD" height="400" />
+              <div className="h-96">
+                <TradingViewWidget symbol="SOLUSD" height="400" />
+              </div>
             </CardContent>
           </Card>
-
-          <div className="space-y-4">
-            <QuoteCard
-              pair="SOL/USD"
-              price="185.40"
-              change="+8.25"
-              changePercent="+4.66"
-              flag1="☀️"
-            />
-            <QuoteCard
-              pair="Market Cap"
-              price="87.5B"
-              change="+3.9B"
-              changePercent="+4.68"
-              flag1="💼"
-            />
-            <QuoteCard
-              pair="Volume 24h"
-              price="3.2B"
-              change="+580M"
-              changePercent="+22.15"
-              flag1="📈"
-            />
-          </div>
         </div>
 
 

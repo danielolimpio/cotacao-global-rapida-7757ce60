@@ -12,39 +12,17 @@ const BlackRockHoje = () => {
           <p className="text-xl text-muted-foreground">Cotação da BlackRock (BLK) em tempo real</p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+        <div className="mb-8">
           <Card>
             <CardHeader>
-              <CardTitle>Gráfico BLK</CardTitle>
+              <CardTitle className="text-center">Gráfico BLK</CardTitle>
             </CardHeader>
             <CardContent>
-              <TradingViewWidget symbol="BLK" height="400" />
+              <div className="h-96">
+                <TradingViewWidget symbol="BLK" height="400" />
+              </div>
             </CardContent>
           </Card>
-
-          <div className="space-y-4">
-            <QuoteCard
-              pair="BLK"
-              price="785.50"
-              change="+18.25"
-              changePercent="+2.38"
-              flag1="⚫"
-            />
-            <QuoteCard
-              pair="Market Cap"
-              price="118.5B"
-              change="+2.8B"
-              changePercent="+2.42"
-              flag1="💼"
-            />
-            <QuoteCard
-              pair="P/E Ratio"
-              price="22.4"
-              change="+0.3"
-              changePercent="+1.36"
-              flag1="📈"
-            />
-          </div>
         </div>
 
       </div>

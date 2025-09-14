@@ -18,45 +18,17 @@ const FrancoSuicoHoje = () => {
 
         <Banner />
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+        <div className="mb-8">
           <Card>
             <CardHeader>
-              <CardTitle>Gráfico CHF/USD</CardTitle>
+              <CardTitle className="text-center">Gráfico CHF/USD</CardTitle>
             </CardHeader>
             <CardContent>
-              <TradingViewWidget symbol="CHFUSD" height="400" />
+              <div className="h-96">
+                <TradingViewWidget symbol="CHFUSD" height="400" />
+              </div>
             </CardContent>
           </Card>
-
-          <div className="space-y-4">
-            <QuoteCard
-              pair="CHF/USD"
-              price={quotes.CHFUSD?.price || 1.2600}
-              change={quotes.CHFUSD?.change || 0.0040}
-              changePercent={quotes.CHFUSD?.changePercent || 0.32}
-              flag1="🇨🇭"
-              flag2="🇺🇸"
-              isLoading={loading}
-            />
-            <QuoteCard
-              pair="CHF/EUR"
-              price={(quotes.CHFUSD?.price || 1.2600) / (quotes.EURUSD?.price || 1.0892)}
-              change={((quotes.CHFUSD?.change || 0.0040) / (quotes.EURUSD?.price || 1.0892))}
-              changePercent={quotes.CHFUSD?.changePercent || 0.32}
-              flag1="🇨🇭"
-              flag2="🇪🇺"
-              isLoading={loading}
-            />
-            <QuoteCard
-              pair="CHF/BRL"
-              price={quotes.CHFBRL?.price || 7.0056}
-              change={quotes.CHFBRL?.change || 0.0950}
-              changePercent={quotes.CHFBRL?.changePercent || 1.38}
-              flag1="🇨🇭"
-              flag2="🇧🇷"
-              isLoading={loading}
-            />
-          </div>
         </div>
 
 

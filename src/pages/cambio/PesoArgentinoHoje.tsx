@@ -16,39 +16,17 @@ const PesoArgentinoHoje = () => {
 
         <Banner />
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+        <div className="mb-8">
           <Card>
             <CardHeader>
-              <CardTitle>Gráfico ARS/USD</CardTitle>
+              <CardTitle className="text-center">Gráfico ARS/USD</CardTitle>
             </CardHeader>
             <CardContent>
-              <TradingViewWidget symbol="ARSUSD" height="400" />
+              <div className="h-96">
+                <TradingViewWidget symbol="ARSUSD" height="400" />
+              </div>
             </CardContent>
           </Card>
-
-          <div className="space-y-4">
-            <QuoteCard
-              pair="ARS/USD"
-              price="0.00079"
-              change="+0.00002"
-              changePercent="+2.59"
-              flag1="🇦🇷"
-            />
-            <QuoteCard
-              pair="ARS/BRL"
-              price="0.00439"
-              change="+0.00011"
-              changePercent="+2.57"
-              flag1="🇦🇷"
-            />
-            <QuoteCard
-              pair="ARS/EUR"
-              price="0.00068"
-              change="+0.00002"
-              changePercent="+3.03"
-              flag1="🇦🇷"
-            />
-          </div>
         </div>
 
 

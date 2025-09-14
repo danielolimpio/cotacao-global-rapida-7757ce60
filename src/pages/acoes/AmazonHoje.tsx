@@ -16,39 +16,17 @@ const AmazonHoje = () => {
 
         <Banner />
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+        <div className="mb-8">
           <Card>
             <CardHeader>
-              <CardTitle>Gráfico AMZN</CardTitle>
+              <CardTitle className="text-center">Gráfico AMZN</CardTitle>
             </CardHeader>
             <CardContent>
-              <TradingViewWidget symbol="AMZN" height="400" />
+              <div className="h-96">
+                <TradingViewWidget symbol="AMZN" height="400" />
+              </div>
             </CardContent>
           </Card>
-
-          <div className="space-y-4">
-            <QuoteCard
-              pair="AMZN"
-              price="145.85"
-              change="+3.25"
-              changePercent="+2.28"
-              flag1="📦"
-            />
-            <QuoteCard
-              pair="Market Cap"
-              price="1.52T"
-              change="+35B"
-              changePercent="+2.35"
-              flag1="💼"
-            />
-            <QuoteCard
-              pair="P/E Ratio"
-              price="52.8"
-              change="+0.8"
-              changePercent="+1.54"
-              flag1="📈"
-            />
-          </div>
         </div>
 
 

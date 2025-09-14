@@ -16,39 +16,17 @@ const BinanceCoinHoje = () => {
 
         <Banner />
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+        <div className="mb-8">
           <Card>
             <CardHeader>
-              <CardTitle>Gráfico BNB/USD</CardTitle>
+              <CardTitle className="text-center">Gráfico BNB/USD</CardTitle>
             </CardHeader>
             <CardContent>
-              <TradingViewWidget symbol="BNBUSD" height="400" />
+              <div className="h-96">
+                <TradingViewWidget symbol="BNBUSD" height="400" />
+              </div>
             </CardContent>
           </Card>
-
-          <div className="space-y-4">
-            <QuoteCard
-              pair="BNB/USD"
-              price="485.20"
-              change="+18.75"
-              changePercent="+4.02"
-              flag1="🟡"
-            />
-            <QuoteCard
-              pair="BNB/BTC"
-              price="0.0108"
-              change="+0.0003"
-              changePercent="+2.86"
-              flag1="🟡"
-            />
-            <QuoteCard
-              pair="BNB/ETH"
-              price="0.1703"
-              change="+0.0045"
-              changePercent="+2.71"
-              flag1="🟡"
-            />
-          </div>
         </div>
 
 

@@ -16,39 +16,17 @@ const RandSulAfricanoHoje = () => {
 
         <Banner />
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+        <div className="mb-8">
           <Card>
             <CardHeader>
-              <CardTitle>Gráfico ZAR/USD</CardTitle>
+              <CardTitle className="text-center">Gráfico ZAR/USD</CardTitle>
             </CardHeader>
             <CardContent>
-              <TradingViewWidget symbol="ZARUSD" height="400" />
+              <div className="h-96">
+                <TradingViewWidget symbol="ZARUSD" height="400" />
+              </div>
             </CardContent>
           </Card>
-
-          <div className="space-y-4">
-            <QuoteCard
-              pair="ZAR/USD"
-              price="0.0560"
-              change="+0.0015"
-              changePercent="+2.75"
-              flag1="🇿🇦"
-            />
-            <QuoteCard
-              pair="ZAR/BRL"
-              price="0.3114"
-              change="+0.0086"
-              changePercent="+2.84"
-              flag1="🇿🇦"
-            />
-            <QuoteCard
-              pair="ZAR/EUR"
-              price="0.0479"
-              change="+0.0013"
-              changePercent="+2.79"
-              flag1="🇿🇦"
-            />
-          </div>
         </div>
 
 

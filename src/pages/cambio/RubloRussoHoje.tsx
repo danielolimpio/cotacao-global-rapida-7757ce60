@@ -16,39 +16,17 @@ const RubloRussoHoje = () => {
 
         <Banner />
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+        <div className="mb-8">
           <Card>
             <CardHeader>
-              <CardTitle>Gráfico RUB/USD</CardTitle>
+              <CardTitle className="text-center">Gráfico RUB/USD</CardTitle>
             </CardHeader>
             <CardContent>
-              <TradingViewWidget symbol="RUBUSD" height="400" />
+              <div className="h-96">
+                <TradingViewWidget symbol="RUBUSD" height="400" />
+              </div>
             </CardContent>
           </Card>
-
-          <div className="space-y-4">
-            <QuoteCard
-              pair="RUB/USD"
-              price="0.0130"
-              change="+0.0003"
-              changePercent="+2.36"
-              flag1="🇷🇺"
-            />
-            <QuoteCard
-              pair="RUB/BRL"
-              price="0.0723"
-              change="+0.0017"
-              changePercent="+2.41"
-              flag1="🇷🇺"
-            />
-            <QuoteCard
-              pair="RUB/EUR"
-              price="0.0111"
-              change="+0.0003"
-              changePercent="+2.78"
-              flag1="🇷🇺"
-            />
-          </div>
         </div>
 
 

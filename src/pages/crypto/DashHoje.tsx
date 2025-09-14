@@ -16,39 +16,17 @@ const DashHoje = () => {
 
         <Banner />
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+        <div className="mb-8">
           <Card>
             <CardHeader>
-              <CardTitle>Gráfico DASH/USD</CardTitle>
+              <CardTitle className="text-center">Gráfico DASH/USD</CardTitle>
             </CardHeader>
             <CardContent>
-              <TradingViewWidget symbol="DASHUSD" height="400" />
+              <div className="h-96">
+                <TradingViewWidget symbol="DASHUSD" height="400" />
+              </div>
             </CardContent>
           </Card>
-
-          <div className="space-y-4">
-            <QuoteCard
-              pair="DASH/USD"
-              price="35.80"
-              change="+1.25"
-              changePercent="+3.62"
-              flag1="💸"
-            />
-            <QuoteCard
-              pair="Market Cap"
-              price="425M"
-              change="+15M"
-              changePercent="+3.66"
-              flag1="💼"
-            />
-            <QuoteCard
-              pair="Volume 24h"
-              price="85M"
-              change="+12M"
-              changePercent="+16.44"
-              flag1="📈"
-            />
-          </div>
         </div>
 
 

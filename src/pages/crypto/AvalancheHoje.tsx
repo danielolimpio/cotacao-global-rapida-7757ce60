@@ -16,39 +16,17 @@ const AvalancheHoje = () => {
 
         <Banner />
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+        <div className="mb-8">
           <Card>
             <CardHeader>
-              <CardTitle>Gráfico AVAX/USD</CardTitle>
+              <CardTitle className="text-center">Gráfico AVAX/USD</CardTitle>
             </CardHeader>
             <CardContent>
-              <TradingViewWidget symbol="AVAXUSD" height="400" />
+              <div className="h-96">
+                <TradingViewWidget symbol="AVAXUSD" height="400" />
+              </div>
             </CardContent>
           </Card>
-
-          <div className="space-y-4">
-            <QuoteCard
-              pair="AVAX/USD"
-              price="42.85"
-              change="+2.15"
-              changePercent="+5.28"
-              flag1="🔺"
-            />
-            <QuoteCard
-              pair="Market Cap"
-              price="16.2B"
-              change="+810M"
-              changePercent="+5.26"
-              flag1="💼"
-            />
-            <QuoteCard
-              pair="Volume 24h"
-              price="680M"
-              change="+125M"
-              changePercent="+22.50"
-              flag1="📈"
-            />
-          </div>
         </div>
 
 

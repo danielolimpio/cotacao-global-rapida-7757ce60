@@ -13,39 +13,17 @@ const PesoMexicanoHoje = () => {
           <p className="text-xl text-muted-foreground">Cotação do Peso Mexicano (MXN) em tempo real</p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+        <div className="mb-8">
           <Card>
             <CardHeader>
-              <CardTitle>Gráfico MXN/USD</CardTitle>
+              <CardTitle className="text-center">Gráfico MXN/USD</CardTitle>
             </CardHeader>
             <CardContent>
-              <TradingViewWidget symbol="MXNUSD" height="400" />
+              <div className="h-96">
+                <TradingViewWidget symbol="MXNUSD" height="400" />
+              </div>
             </CardContent>
           </Card>
-
-          <div className="space-y-4">
-            <QuoteCard
-              pair="MXN/USD"
-              price="0.0540"
-              change="+0.0011"
-              changePercent="+2.08"
-              flag1="🇲🇽"
-            />
-            <QuoteCard
-              pair="MXN/BRL"
-              price="0.3002"
-              change="+0.0062"
-              changePercent="+2.11"
-              flag1="🇲🇽"
-            />
-            <QuoteCard
-              pair="MXN/EUR"
-              price="0.0462"
-              change="+0.0010"
-              changePercent="+2.21"
-              flag1="🇲🇽"
-            />
-          </div>
         </div>
 
 

@@ -16,39 +16,17 @@ const PesoChilenoHoje = () => {
 
         <Banner />
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+        <div className="mb-8">
           <Card>
             <CardHeader>
-              <CardTitle>Gráfico CLP/USD</CardTitle>
+              <CardTitle className="text-center">Gráfico CLP/USD</CardTitle>
             </CardHeader>
             <CardContent>
-              <TradingViewWidget symbol="CLPUSD" height="400" />
+              <div className="h-96">
+                <TradingViewWidget symbol="CLPUSD" height="400" />
+              </div>
             </CardContent>
           </Card>
-
-          <div className="space-y-4">
-            <QuoteCard
-              pair="CLP/USD"
-              price="0.00100"
-              change="+0.00003"
-              changePercent="+3.09"
-              flag1="🇨🇱"
-            />
-            <QuoteCard
-              pair="CLP/BRL"
-              price="0.00556"
-              change="+0.00017"
-              changePercent="+3.15"
-              flag1="🇨🇱"
-            />
-            <QuoteCard
-              pair="CLP/EUR"
-              price="0.00085"
-              change="+0.00003"
-              changePercent="+3.66"
-              flag1="🇨🇱"
-            />
-          </div>
         </div>
 
 
