@@ -1,6 +1,7 @@
 import Layout from "@/components/Layout";
 import TradingViewWidget from "@/components/TradingViewWidget";
-import QuoteCard from "@/components/QuoteCard";
+import CurrencyConverter from "@/components/CurrencyConverter";
+import Banner from "@/components/Banner";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 const NvidiaHoje = () => {
@@ -12,41 +13,24 @@ const NvidiaHoje = () => {
           <p className="text-xl text-muted-foreground">Cotação da NVIDIA (NVDA) em tempo real</p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+        <Banner />
+
+        <div className="mb-8">
           <Card>
             <CardHeader>
-              <CardTitle>Gráfico NVDA</CardTitle>
+              <CardTitle className="text-center">Gráfico NVDA</CardTitle>
             </CardHeader>
             <CardContent>
-              <TradingViewWidget symbol="NVDA" height="400" />
+              <div className="h-96">
+                <TradingViewWidget symbol="NVDA" height="400" />
+              </div>
             </CardContent>
           </Card>
-
-          <div className="space-y-4">
-            <QuoteCard
-              pair="NVDA"
-              price="925.50"
-              change="+28.75"
-              changePercent="+3.21"
-              flag1="🔧"
-            />
-            <QuoteCard
-              pair="Market Cap"
-              price="2.28T"
-              change="+71B"
-              changePercent="+3.22"
-              flag1="💼"
-            />
-            <QuoteCard
-              pair="P/E Ratio"
-              price="72.5"
-              change="+1.2"
-              changePercent="+1.68"
-              flag1="📈"
-            />
-          </div>
         </div>
 
+        <CurrencyConverter type="currency" />
+        
+        <Banner />
       </div>
     </Layout>
   );

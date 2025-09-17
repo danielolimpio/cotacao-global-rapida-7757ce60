@@ -1,6 +1,7 @@
 import Layout from "@/components/Layout";
 import TradingViewWidget from "@/components/TradingViewWidget";
-import QuoteCard from "@/components/QuoteCard";
+import CurrencyConverter from "@/components/CurrencyConverter";
+import Banner from "@/components/Banner";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 const KraftHeinzHoje = () => {
@@ -12,40 +13,22 @@ const KraftHeinzHoje = () => {
           <p className="text-xl text-muted-foreground">Cotação da Kraft Heinz (KHC) em tempo real</p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+        <Banner />
+
+        <div className="mb-8">
           <Card>
             <CardHeader>
-              <CardTitle>Gráfico KHC</CardTitle>
+              <CardTitle className="text-center">Gráfico KHC</CardTitle>
             </CardHeader>
             <CardContent>
-              <TradingViewWidget symbol="KHC" height="400" />
+              <div className="h-96">
+                <TradingViewWidget symbol="KHC" height="400" />
+              </div>
             </CardContent>
           </Card>
-
-          <div className="space-y-4">
-            <QuoteCard
-              pair="KHC"
-              price="34.25"
-              change="+0.65"
-              changePercent="+1.93"
-              flag1="🍅"
-            />
-            <QuoteCard
-              pair="Market Cap"
-              price="41.8B"
-              change="+795M"
-              changePercent="+1.94"
-              flag1="💼"
-            />
-            <QuoteCard
-              pair="P/E Ratio"
-              price="13.1"
-              change="+0.1"
-              changePercent="+0.77"
-              flag1="📈"
-            />
-          </div>
         </div>
+
+        <CurrencyConverter type="currency" />
 
       </div>
     </Layout>

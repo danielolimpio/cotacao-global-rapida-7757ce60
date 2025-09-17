@@ -1,6 +1,7 @@
 import Layout from "@/components/Layout";
 import TradingViewWidget from "@/components/TradingViewWidget";
-import QuoteCard from "@/components/QuoteCard";
+import CurrencyConverter from "@/components/CurrencyConverter";
+import Banner from "@/components/Banner";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 const InvescoHoje = () => {
@@ -12,40 +13,22 @@ const InvescoHoje = () => {
           <p className="text-xl text-muted-foreground">Cotação da Invesco (IVZ) em tempo real</p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+        <Banner />
+
+        <div className="mb-8">
           <Card>
             <CardHeader>
-              <CardTitle>Gráfico IVZ</CardTitle>
+              <CardTitle className="text-center">Gráfico IVZ</CardTitle>
             </CardHeader>
             <CardContent>
-              <TradingViewWidget symbol="IVZ" height="400" />
+              <div className="h-96">
+                <TradingViewWidget symbol="IVZ" height="400" />
+              </div>
             </CardContent>
           </Card>
-
-          <div className="space-y-4">
-            <QuoteCard
-              pair="IVZ"
-              price="16.85"
-              change="+0.35"
-              changePercent="+2.12"
-              flag1="📊"
-            />
-            <QuoteCard
-              pair="Market Cap"
-              price="7.8B"
-              change="+165M"
-              changePercent="+2.16"
-              flag1="💼"
-            />
-            <QuoteCard
-              pair="P/E Ratio"
-              price="11.2"
-              change="+0.1"
-              changePercent="+0.90"
-              flag1="📈"
-            />
-          </div>
         </div>
+
+        <CurrencyConverter type="currency" />
 
       </div>
     </Layout>

@@ -1,6 +1,7 @@
 import Layout from "@/components/Layout";
 import TradingViewWidget from "@/components/TradingViewWidget";
-import QuoteCard from "@/components/QuoteCard";
+import CurrencyConverter from "@/components/CurrencyConverter";
+import Banner from "@/components/Banner";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 const MonsterBeverageHoje = () => {
@@ -12,41 +13,24 @@ const MonsterBeverageHoje = () => {
           <p className="text-xl text-muted-foreground">Cotação da Monster Beverage (MNST) em tempo real</p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+        <Banner />
+
+        <div className="mb-8">
           <Card>
             <CardHeader>
-              <CardTitle>Gráfico MNST</CardTitle>
+              <CardTitle className="text-center">Gráfico MNST</CardTitle>
             </CardHeader>
             <CardContent>
-              <TradingViewWidget symbol="NASDAQ:MNST" height="400" />
+              <div className="h-96">
+                <TradingViewWidget symbol="NASDAQ:MNST" height="400" />
+              </div>
             </CardContent>
           </Card>
-
-          <div className="space-y-4">
-            <QuoteCard
-              pair="MNST"
-              price="$48.75"
-              change="+1.25"
-              changePercent="+2.63"
-              flag1="🍃"
-            />
-            <QuoteCard
-              pair="Market Cap"
-              price="$24.8B"
-              change="+635M"
-              changePercent="+2.63"
-              flag1="💼"
-            />
-            <QuoteCard
-              pair="Volume"
-              price="2.8M"
-              change="+485K"
-              changePercent="+20.87"
-              flag1="📈"
-            />
-          </div>
         </div>
 
+        <CurrencyConverter type="currency" />
+        
+        <Banner />
       </div>
     </Layout>
   );

@@ -1,6 +1,7 @@
 import Layout from "@/components/Layout";
 import TradingViewWidget from "@/components/TradingViewWidget";
-import QuoteCard from "@/components/QuoteCard";
+import CurrencyConverter from "@/components/CurrencyConverter";
+import Banner from "@/components/Banner";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 const MetaHoje = () => {
@@ -12,41 +13,24 @@ const MetaHoje = () => {
           <p className="text-xl text-muted-foreground">Cotação da Meta (META) em tempo real</p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+        <Banner />
+
+        <div className="mb-8">
           <Card>
             <CardHeader>
-              <CardTitle>Gráfico META</CardTitle>
+              <CardTitle className="text-center">Gráfico META</CardTitle>
             </CardHeader>
             <CardContent>
-              <TradingViewWidget symbol="META" height="400" />
+              <div className="h-96">
+                <TradingViewWidget symbol="META" height="400" />
+              </div>
             </CardContent>
           </Card>
-
-          <div className="space-y-4">
-            <QuoteCard
-              pair="META"
-              price="485.25"
-              change="+12.85"
-              changePercent="+2.72"
-              flag1="📘"
-            />
-            <QuoteCard
-              pair="Market Cap"
-              price="1.23T"
-              change="+33B"
-              changePercent="+2.76"
-              flag1="💼"
-            />
-            <QuoteCard
-              pair="P/E Ratio"
-              price="24.1"
-              change="+0.3"
-              changePercent="+1.26"
-              flag1="📈"
-            />
-          </div>
         </div>
 
+        <CurrencyConverter type="currency" />
+        
+        <Banner />
       </div>
     </Layout>
   );

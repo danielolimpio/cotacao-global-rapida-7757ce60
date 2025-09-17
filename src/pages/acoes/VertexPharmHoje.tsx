@@ -1,6 +1,7 @@
 import Layout from "@/components/Layout";
 import TradingViewWidget from "@/components/TradingViewWidget";
-import QuoteCard from "@/components/QuoteCard";
+import CurrencyConverter from "@/components/CurrencyConverter";
+import Banner from "@/components/Banner";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 const VertexPharmHoje = () => {
@@ -12,41 +13,24 @@ const VertexPharmHoje = () => {
           <p className="text-xl text-muted-foreground">Cotação da Vertex Pharmaceuticals (VRTX) em tempo real</p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+        <Banner />
+
+        <div className="mb-8">
           <Card>
             <CardHeader>
-              <CardTitle>Gráfico VRTX</CardTitle>
+              <CardTitle className="text-center">Gráfico VRTX</CardTitle>
             </CardHeader>
             <CardContent>
-              <TradingViewWidget symbol="NASDAQ:VRTX" height="400" />
+              <div className="h-96">
+                <TradingViewWidget symbol="NASDAQ:VRTX" height="400" />
+              </div>
             </CardContent>
           </Card>
-
-          <div className="space-y-4">
-            <QuoteCard
-              pair="VRTX"
-              price="$482.75"
-              change="+8.45"
-              changePercent="+1.78"
-              flag1="💊"
-            />
-            <QuoteCard
-              pair="Market Cap"
-              price="$124.8B"
-              change="+2.2B"
-              changePercent="+1.79"
-              flag1="💼"
-            />
-            <QuoteCard
-              pair="Volume"
-              price="1.2M"
-              change="+185K"
-              changePercent="+18.27"
-              flag1="📈"
-            />
-          </div>
         </div>
 
+        <CurrencyConverter type="currency" />
+        
+        <Banner />
       </div>
     </Layout>
   );
