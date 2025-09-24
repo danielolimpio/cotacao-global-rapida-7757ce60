@@ -95,11 +95,11 @@ const fetchQuotes = async () => {
         
         // Base values that will fluctuate - aligned with TradingView real prices  
         const baseData = {
-          'USDBRL': { base: 5.56, change: 0.05, changePercent: 0.90 },
-          'EURBRL': { base: 6.32, change: 0.08, changePercent: 1.28 },
-          'GBPBRL': { base: 7.02, change: 0.12, changePercent: 1.75 },
-          'JPYBRL': { base: 0.0378, change: 0.0006, changePercent: 1.61 },
-          'CHFBRL': { base: 7.0056, change: 0.0950, changePercent: 1.38 },
+          'USDBRL': { base: 6.15, change: 0.00, changePercent: 0.00 },
+          'EURBRL': { base: 6.50, change: 0.00, changePercent: 0.00 },
+          'GBPBRL': { base: 7.80, change: 0.00, changePercent: 0.00 },
+          'JPYBRL': { base: 0.041, change: 0.0000, changePercent: 0.00 },
+          'CHFBRL': { base: 6.85, change: 0.0000, changePercent: 0.00 },
           'CADBRL': { base: 3.78, change: 0.03, changePercent: 0.80 },
           'AUDBRL': { base: 3.45, change: 0.02, changePercent: 0.65 },
           'EURUSD': { base: 1.1730, change: 0.0126, changePercent: 1.06 },

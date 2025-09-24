@@ -328,7 +328,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
             </div>
           </div>
           <div className="border-t pt-4 mt-8 text-center text-sm text-muted-foreground">
-            <p>&copy; 2024 Cotação de Hoje. Todos os direitos reservados.</p>
+            <p>&copy; 2025 Cotação de Hoje | Todos os direitos reservados | Desenvolvido por <a href="https://danielolimpio.com/" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">DanielOlimpio</a></p>
           </div>
         </div>
       </footer>
