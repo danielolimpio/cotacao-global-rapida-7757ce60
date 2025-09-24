@@ -71,65 +71,162 @@ const CurrencyConverter: React.FC<CurrencyConverterProps> = ({
         }
       }
 
-      const response = await fetch(
-        `https://api.frankfurter.app/latest?from=${baseCurrency}&to=${targetCurrencies.join(',')}`
-      );
+      // Currencies not supported by Frankfurter API
+      const unsupportedCurrencies = ['ARS', 'CLP', 'UYU', 'RUB'];
       
-      if (response.ok) {
-        const data = await response.json();
-        const newRates: { [key: string]: number } = {};
+      if (unsupportedCurrencies.includes(baseCurrency)) {
+        // Use fallback rates for unsupported currencies
+        const fallbackRates: { [key: string]: number } = {};
+        fallbackRates[baseCurrency] = 1;
         
-        // Adicionar taxa base
-        newRates[baseCurrency] = 1;
-        
-        // Adicionar taxas retornadas pela API
-        Object.keys(data.rates).forEach(currency => {
-          newRates[currency] = data.rates[currency];
-        });
-        
-        // Para dólar turismo, adicionar 2% de spread
-        if (selectedDollar === 'USDT' && baseCurrency === 'USD') {
-          newRates.USDT = newRates.BRL * 1.02;
+        switch (baseCurrency) {
+          case 'ARS':
+            fallbackRates.USD = 0.0006;
+            fallbackRates.BRL = 0.0032;
+            break;
+          case 'CLP':
+            fallbackRates.USD = 0.001;
+            fallbackRates.BRL = 0.0054;
+            break;
+          case 'UYU':
+            fallbackRates.USD = 0.02;
+            fallbackRates.BRL = 0.11;
+            break;
+          case 'RUB':
+            fallbackRates.USD = 0.01;
+            fallbackRates.BRL = 0.055;
+            break;
         }
         
-        // Se precisarmos de USD/BRL mas a base não é USD
-        if (baseCurrency !== 'USD' && !newRates.USD) {
-          // Fazer segunda requisição para obter USD/BRL
-          const usdResponse = await fetch('https://api.frankfurter.app/latest?from=USD&to=BRL');
-          if (usdResponse.ok) {
-            const usdData = await usdResponse.json();
-            newRates.USDBRL = usdData.rates.BRL;
-          }
-        }
-        
-        setRates(newRates);
+        setRates(fallbackRates);
         setLastUpdate(new Date());
+      } else {
+        // Use Frankfurter API for supported currencies
+        const response = await fetch(
+          `https://api.frankfurter.app/latest?from=${baseCurrency}&to=${targetCurrencies.join(',')}`
+        );
+        
+        if (response.ok) {
+          const data = await response.json();
+          const newRates: { [key: string]: number } = {};
+          
+          // Adicionar taxa base
+          newRates[baseCurrency] = 1;
+          
+          // Adicionar taxas retornadas pela API
+          Object.keys(data.rates).forEach(currency => {
+            newRates[currency] = data.rates[currency];
+          });
+          
+          // Para dólar turismo, adicionar 2% de spread
+          if (selectedDollar === 'USDT' && baseCurrency === 'USD') {
+            newRates.USDT = newRates.BRL * 1.02;
+          }
+          
+          // Se precisarmos de USD/BRL mas a base não é USD
+          if (baseCurrency !== 'USD' && !newRates.USD) {
+            // Fazer segunda requisição para obter USD/BRL
+            const usdResponse = await fetch('https://api.frankfurter.app/latest?from=USD&to=BRL');
+            if (usdResponse.ok) {
+              const usdData = await usdResponse.json();
+              newRates.USDBRL = usdData.rates.BRL;
+            }
+          }
+          
+          setRates(newRates);
+          setLastUpdate(new Date());
+        } else {
+          throw new Error('API Error');
+        }
       }
     } catch (error) {
       console.error('Erro ao buscar cotações:', error);
-      // Fallback com valores mais atualizados
-      setRates({
-        USD: type === 'currency' && mainCurrency === 'USD' ? 1 : 6.15,
-        USDT: 6.27,
-        EUR: type === 'euro' ? 1 : 0.154,
-        GBP: 7.80,
-        JPY: type === 'currency' && mainCurrency === 'JPY' ? 1 : 0.041,
-        CHF: 6.85,
-        CAD: 4.45,
-        AUD: 3.95,
-        NZD: 3.70,
-        CNY: type === 'currency' && mainCurrency === 'CNY' ? 1 : 0.85,
-        INR: type === 'currency' && mainCurrency === 'INR' ? 1 : 0.074,
-        KRW: type === 'currency' && mainCurrency === 'KRW' ? 1 : 0.0046,
-        MXN: 0.30,
-        ARS: 0.0062,
-        CLP: 0.0063,
-        UYU: 0.16,
-        ZAR: 0.34,
-        RUB: 0.063,
-        BRL: type === 'currency' && mainCurrency === 'BRL' ? 1 : 6.15,
-        USDBRL: 6.15
-      });
+      // Fallback com valores mais atualizados baseado no tipo e moeda principal
+      const fallbackRates: { [key: string]: number } = {};
+      
+      if (type === 'currency') {
+        fallbackRates[mainCurrency] = 1;
+        switch (mainCurrency) {
+          case 'USD':
+            fallbackRates.BRL = 5.34;
+            break;
+          case 'EUR':
+            fallbackRates.USD = 1.18;
+            fallbackRates.BRL = 6.29;
+            break;
+          case 'GBP':
+            fallbackRates.USD = 1.35;
+            fallbackRates.BRL = 7.22;
+            break;
+          case 'JPY':
+            fallbackRates.USD = 0.0068;
+            fallbackRates.BRL = 0.036;
+            break;
+          case 'CHF':
+            fallbackRates.USD = 1.26;
+            fallbackRates.BRL = 6.74;
+            break;
+          case 'CAD':
+            fallbackRates.USD = 0.72;
+            fallbackRates.BRL = 3.86;
+            break;
+          case 'AUD':
+            fallbackRates.USD = 0.66;
+            fallbackRates.BRL = 3.53;
+            break;
+          case 'CNY':
+            fallbackRates.USD = 0.12;
+            fallbackRates.BRL = 0.63;
+            break;
+          case 'INR':
+            fallbackRates.USD = 0.01;
+            fallbackRates.BRL = 0.06;
+            break;
+          case 'KRW':
+            fallbackRates.USD = 0.00061;
+            fallbackRates.BRL = 0.0032;
+            break;
+          case 'MXN':
+            fallbackRates.USD = 0.046;
+            fallbackRates.BRL = 0.25;
+            break;
+          case 'ARS':
+            fallbackRates.USD = 0.0006;
+            fallbackRates.BRL = 0.0032;
+            break;
+          case 'CLP':
+            fallbackRates.USD = 0.001;
+            fallbackRates.BRL = 0.0054;
+            break;
+          case 'UYU':
+            fallbackRates.USD = 0.02;
+            fallbackRates.BRL = 0.11;
+            break;
+          case 'ZAR':
+            fallbackRates.USD = 0.049;
+            fallbackRates.BRL = 0.26;
+            break;
+          case 'RUB':
+            fallbackRates.USD = 0.01;
+            fallbackRates.BRL = 0.055;
+            break;
+          case 'BRL':
+            fallbackRates.USD = 0.19;
+            break;
+          default:
+            fallbackRates.USD = 0.19;
+            fallbackRates.BRL = 5.34;
+        }
+      } else {
+        // Para outros tipos, usar lógica antiga
+        fallbackRates.USD = 1;
+        fallbackRates.USDT = 6.27;
+        fallbackRates.EUR = 0.85;
+        fallbackRates.BRL = 5.34;
+        fallbackRates.USDBRL = 5.34;
+      }
+      
+      setRates(fallbackRates);
       setLastUpdate(new Date());
     } finally {
       setLoading(false);

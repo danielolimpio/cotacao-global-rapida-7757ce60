@@ -65,41 +65,43 @@ const EnhancedCurrencyConverter: React.FC<EnhancedCurrencyConverterProps> = ({
   const fetchRates = async () => {
     setLoading(true);
     try {
-      const targetCurrencies = ['USD', 'BRL'];
-      if (selectedCurrency !== 'USD' && selectedCurrency !== 'BRL') {
-        targetCurrencies.push(selectedCurrency);
-      }
-
-      const response = await fetch(`https://api.frankfurter.app/latest?from=${selectedCurrency}&to=${targetCurrencies.join(',')}`);
+      // Currencies not supported by Frankfurter API - use fallback rates
+      const unsupportedCurrencies = ['ARS', 'CLP', 'UYU', 'RUB'];
       
-      if (response.ok) {
-        const data = await response.json();
-        setRates({ ...data.rates, [selectedCurrency]: 1 });
+      if (unsupportedCurrencies.includes(selectedCurrency)) {
+        // Use fallback rates for unsupported currencies
+        const fallbackRates: { [key: string]: number } = {
+          USD: selectedCurrency === 'USD' ? 1 : (selectedCurrency === 'ARS' ? 0.0006 : selectedCurrency === 'CLP' ? 0.001 : selectedCurrency === 'UYU' ? 0.02 : selectedCurrency === 'RUB' ? 0.01 : 0.16),
+          BRL: selectedCurrency === 'BRL' ? 1 : (selectedCurrency === 'ARS' ? 0.0032 : selectedCurrency === 'CLP' ? 0.0054 : selectedCurrency === 'UYU' ? 0.11 : selectedCurrency === 'RUB' ? 0.055 : 5.34),
+          [selectedCurrency]: 1
+        };
+        
+        setRates(fallbackRates);
         setLastUpdate(new Date());
       } else {
-        throw new Error('API Error');
+        // Use Frankfurter API for supported currencies
+        const targetCurrencies = ['USD', 'BRL'];
+        if (selectedCurrency !== 'USD' && selectedCurrency !== 'BRL') {
+          targetCurrencies.push(selectedCurrency);
+        }
+
+        const response = await fetch(`https://api.frankfurter.app/latest?from=${selectedCurrency}&to=${targetCurrencies.join(',')}`);
+        
+        if (response.ok) {
+          const data = await response.json();
+          setRates({ ...data.rates, [selectedCurrency]: 1 });
+          setLastUpdate(new Date());
+        } else {
+          throw new Error('API Error');
+        }
       }
     } catch (error) {
       console.error('Erro ao buscar cotações:', error);
-      // Fallback com valores padrão
+      // Fallback com valores padrão para qualquer erro
       const fallbackRates: { [key: string]: number } = {
-        USD: selectedCurrency === 'USD' ? 1 : 0.16,
-        BRL: selectedCurrency === 'BRL' ? 1 : 6.15,
-        EUR: selectedCurrency === 'EUR' ? 1 : 0.15,
-        GBP: selectedCurrency === 'GBP' ? 1 : 0.13,
-        JPY: selectedCurrency === 'JPY' ? 1 : 24.4,
-        CHF: selectedCurrency === 'CHF' ? 1 : 0.15,
-        CAD: selectedCurrency === 'CAD' ? 1 : 0.22,
-        AUD: selectedCurrency === 'AUD' ? 1 : 0.25,
-        CNY: selectedCurrency === 'CNY' ? 1 : 1.18,
-        INR: selectedCurrency === 'INR' ? 1 : 13.5,
-        KRW: selectedCurrency === 'KRW' ? 1 : 217,
-        MXN: selectedCurrency === 'MXN' ? 1 : 3.3,
-        ARS: selectedCurrency === 'ARS' ? 1 : 162,
-        CLP: selectedCurrency === 'CLP' ? 1 : 158,
-        UYU: selectedCurrency === 'UYU' ? 1 : 6.25,
-        ZAR: selectedCurrency === 'ZAR' ? 1 : 2.9,
-        RUB: selectedCurrency === 'RUB' ? 1 : 16
+        USD: selectedCurrency === 'USD' ? 1 : (selectedCurrency === 'ARS' ? 0.0006 : selectedCurrency === 'CLP' ? 0.001 : selectedCurrency === 'UYU' ? 0.02 : selectedCurrency === 'RUB' ? 0.01 : 0.18),
+        BRL: selectedCurrency === 'BRL' ? 1 : (selectedCurrency === 'ARS' ? 0.0032 : selectedCurrency === 'CLP' ? 0.0054 : selectedCurrency === 'UYU' ? 0.11 : selectedCurrency === 'RUB' ? 0.055 : 5.34),
+        [selectedCurrency]: 1
       };
       
       setRates(fallbackRates);

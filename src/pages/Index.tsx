@@ -121,7 +121,7 @@ const Index = () => {
       
 
       {/* Currency Converter */}
-      <CurrencyConverter type="dollar" />
+      <CurrencyConverter type="currency" mainCurrency="USD" />
 
       <Banner />
 
