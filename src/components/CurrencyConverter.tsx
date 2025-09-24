@@ -3,6 +3,8 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+import { Button } from '@/components/ui/button';
+import { RefreshCw } from 'lucide-react';
 
 interface CurrencyConverterProps {
   type: 'dollar' | 'euro' | 'crypto' | 'currency';
@@ -31,9 +33,13 @@ const CurrencyConverter: React.FC<CurrencyConverterProps> = ({
     DOT: 8,
     SOL: 95,
     UNI: 12,
-    LINK: 18
+    LINK: 18,
+    DAI: 1,
+    USDC: 1,
+    USDT: 1
   });
   const [loading, setLoading] = useState(false);
+  const [lastUpdate, setLastUpdate] = useState<Date | null>(null);
 
   const dollarOptions = [
     { value: 'USD', label: 'Dólar Americano' },
@@ -43,69 +49,100 @@ const CurrencyConverter: React.FC<CurrencyConverterProps> = ({
     { value: 'NZD', label: 'Dólar Neozelandês' }
   ];
 
-  // Fetch cotações em tempo real usando API real
-  useEffect(() => {
-    const fetchRates = async () => {
-      setLoading(true);
-      try {
-        // Buscar cotações reais da API Frankfurter
-        const currencies = ['USD', 'EUR', 'GBP', 'JPY', 'CHF', 'CAD', 'AUD', 'NZD', 'CNY', 'INR', 'KRW', 'MXN', 'ARS', 'CLP', 'UYU', 'ZAR', 'RUB'];
-        const response = await fetch(`https://api.frankfurter.app/latest?from=BRL&to=${currencies.join(',')}`);
-        
-        if (response.ok) {
-          const data = await response.json();
-          
-          // Converter as taxas (API retorna de BRL para outras moedas, precisamos inverter)
-          const newRates: { [key: string]: number } = { BRL: 1 };
-          
-          Object.keys(data.rates).forEach(currency => {
-            // Inverter a taxa para ter quanto vale 1 unidade da moeda estrangeira em BRL
-            newRates[currency] = 1 / data.rates[currency];
-          });
-          
-          // Adicionar dólar turismo como USD + 2%
-          if (newRates.USD) {
-            newRates.USDT = newRates.USD * 1.02;
-          }
-          
-          setRates(newRates);
+  // Função melhorada para buscar cotações em tempo real
+  const fetchRates = async () => {
+    setLoading(true);
+    try {
+      // Determinar moeda base e moedas alvo baseado no tipo
+      let baseCurrency = 'USD';
+      let targetCurrencies = ['BRL'];
+      
+      if (type === 'currency' && mainCurrency !== 'USD') {
+        baseCurrency = mainCurrency;
+        targetCurrencies = ['USD', 'BRL'];
+      } else if (type === 'euro') {
+        baseCurrency = 'EUR';
+        targetCurrencies = ['USD', 'BRL'];
+      } else if (type === 'dollar') {
+        baseCurrency = selectedDollar === 'USDT' ? 'USD' : selectedDollar;
+        targetCurrencies = ['BRL'];
+        if (selectedDollar !== 'USD') {
+          targetCurrencies.push('USD');
         }
-      } catch (error) {
-        console.error('Erro ao buscar cotações:', error);
-        // Fallback com valores padrão em caso de erro
-        setRates({
-          USD: 6.15,
-          USDT: 6.27,
-          EUR: 6.50,
-          GBP: 7.80,
-          JPY: 0.041,
-          CHF: 6.85,
-          CAD: 4.45,
-          AUD: 3.95,
-          NZD: 3.70,
-          CNY: 0.85,
-          INR: 0.074,
-          KRW: 0.0046,
-          MXN: 0.30,
-          ARS: 0.0062,
-          CLP: 0.0063,
-          UYU: 0.16,
-          ZAR: 0.34,
-          RUB: 0.063,
-          BRL: 1
-        });
-      } finally {
-        setLoading(false);
       }
-    };
 
-    // Buscar imediatamente
+      const response = await fetch(
+        `https://api.frankfurter.app/latest?from=${baseCurrency}&to=${targetCurrencies.join(',')}`
+      );
+      
+      if (response.ok) {
+        const data = await response.json();
+        const newRates: { [key: string]: number } = {};
+        
+        // Adicionar taxa base
+        newRates[baseCurrency] = 1;
+        
+        // Adicionar taxas retornadas pela API
+        Object.keys(data.rates).forEach(currency => {
+          newRates[currency] = data.rates[currency];
+        });
+        
+        // Para dólar turismo, adicionar 2% de spread
+        if (selectedDollar === 'USDT' && baseCurrency === 'USD') {
+          newRates.USDT = newRates.BRL * 1.02;
+        }
+        
+        // Se precisarmos de USD/BRL mas a base não é USD
+        if (baseCurrency !== 'USD' && !newRates.USD) {
+          // Fazer segunda requisição para obter USD/BRL
+          const usdResponse = await fetch('https://api.frankfurter.app/latest?from=USD&to=BRL');
+          if (usdResponse.ok) {
+            const usdData = await usdResponse.json();
+            newRates.USDBRL = usdData.rates.BRL;
+          }
+        }
+        
+        setRates(newRates);
+        setLastUpdate(new Date());
+      }
+    } catch (error) {
+      console.error('Erro ao buscar cotações:', error);
+      // Fallback com valores mais atualizados
+      setRates({
+        USD: type === 'currency' && mainCurrency === 'USD' ? 1 : 6.15,
+        USDT: 6.27,
+        EUR: type === 'euro' ? 1 : 0.154,
+        GBP: 7.80,
+        JPY: type === 'currency' && mainCurrency === 'JPY' ? 1 : 0.041,
+        CHF: 6.85,
+        CAD: 4.45,
+        AUD: 3.95,
+        NZD: 3.70,
+        CNY: type === 'currency' && mainCurrency === 'CNY' ? 1 : 0.85,
+        INR: type === 'currency' && mainCurrency === 'INR' ? 1 : 0.074,
+        KRW: type === 'currency' && mainCurrency === 'KRW' ? 1 : 0.0046,
+        MXN: 0.30,
+        ARS: 0.0062,
+        CLP: 0.0063,
+        UYU: 0.16,
+        ZAR: 0.34,
+        RUB: 0.063,
+        BRL: type === 'currency' && mainCurrency === 'BRL' ? 1 : 6.15,
+        USDBRL: 6.15
+      });
+      setLastUpdate(new Date());
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  // Fetch inicial e configurar atualizações automáticas
+  useEffect(() => {
     fetchRates();
-    
-    // Atualizar a cada 5 minutos
-    const interval = setInterval(fetchRates, 300000);
+    // Atualizar a cada 2 minutos para ter cotações mais atuais
+    const interval = setInterval(fetchRates, 120000);
     return () => clearInterval(interval);
-  }, []);
+  }, [type, mainCurrency, selectedDollar]);
 
   const calculateConversion = () => {
     const inputAmount = parseFloat(amount) || 0;
@@ -117,76 +154,115 @@ const CurrencyConverter: React.FC<CurrencyConverterProps> = ({
     switch (type) {
       case 'dollar':
         const selectedRate = rates[selectedDollar] || rates.USD || 6.15;
+        const usdToCompare = rates.USD || rates.USDBRL || 6.15;
         return {
-          usd: selectedDollar === 'USD' ? inputAmount : (inputAmount * selectedRate) / (rates.USD || 6.15),
+          usd: selectedDollar === 'USD' ? inputAmount : (inputAmount * selectedRate) / usdToCompare,
           brl: inputAmount * selectedRate
         };
       
       case 'euro':
-        const eurRate = rates.EUR || 6.50;
-        const usdRate = rates.USD || 6.15;
+        const eurToBrl = rates.BRL || 6.50;
+        const eurToUsd = rates.USD || 0.92;
         return {
-          usd: (inputAmount * eurRate) / usdRate,
-          brl: inputAmount * eurRate
+          usd: inputAmount * eurToUsd,
+          brl: inputAmount * eurToBrl
         };
       
       case 'crypto':
         const cryptoPrice = cryptoRates[cryptoSymbol as keyof typeof cryptoRates] || 45000;
         const usdValue = inputAmount * cryptoPrice;
+        const usdToBrl = rates.USDBRL || rates.USD || 6.15;
         return {
           usd: usdValue,
-          brl: usdValue * (rates.USD || 6.15)
+          brl: usdValue * usdToBrl
         };
       
       case 'currency':
-        const currencyRate = rates[mainCurrency] || 1;
-        const usdRateForCurrency = rates.USD || 6.15;
+        const currencyToBrl = rates.BRL || 1;
+        const currencyToUsd = rates.USD || (mainCurrency === 'BRL' ? 1/6.15 : 1);
         return {
-          usd: (inputAmount * currencyRate) / usdRateForCurrency,
-          brl: inputAmount * currencyRate
+          usd: mainCurrency === 'USD' ? inputAmount : inputAmount * currencyToUsd,
+          brl: mainCurrency === 'BRL' ? inputAmount : inputAmount * currencyToBrl
         };
       
       default:
-        const defaultRate = rates.USD || 6.15;
+        const defaultUsdToBrl = rates.USDBRL || rates.USD || 6.15;
         return {
-          usd: inputAmount / defaultRate,
-          brl: inputAmount * defaultRate
+          usd: inputAmount,
+          brl: inputAmount * defaultUsdToBrl
         };
     }
   };
 
   const conversion = calculateConversion();
-  
+
   const getCurrentRate = () => {
-    if (loading || Object.keys(rates).length === 0) {
+    if (loading) {
+      return 'Atualizando cotações em tempo real...';
+    }
+    
+    if (Object.keys(rates).length === 0) {
       return 'Carregando cotações...';
     }
     
     switch (type) {
       case 'dollar':
         const selectedRate = rates[selectedDollar] || rates.USD || 6.15;
-        return `1 ${selectedDollar} = ${selectedRate.toFixed(4)} BRL`;
+        return `1 ${selectedDollar} = R$${selectedRate.toFixed(4)} BRL`;
       
       case 'euro':
-        const eurRate = rates.EUR || 6.50;
-        const usdRate = rates.USD || 6.15;
-        return `1 EUR = ${eurRate.toFixed(4)} BRL | 1 EUR = ${(eurRate / usdRate).toFixed(4)} USD`;
+        const eurToBrl = rates.BRL || 6.50;
+        const eurToUsd = rates.USD || 0.92;
+        return `1 EUR = R$${eurToBrl.toFixed(4)} BRL | 1 EUR = $${eurToUsd.toFixed(4)} USD`;
       
       case 'crypto':
         const cryptoPrice = cryptoRates[cryptoSymbol as keyof typeof cryptoRates] || 45000;
-        return `1 ${cryptoSymbol} = ${cryptoPrice.toFixed(2)} USD | 1 ${cryptoSymbol} = ${(cryptoPrice * (rates.USD || 6.15)).toFixed(2)} BRL`;
+        const usdToBrl = rates.USDBRL || rates.USD || 6.15;
+        return `1 ${cryptoSymbol} = $${cryptoPrice.toLocaleString('en-US', { minimumFractionDigits: 2 })} USD | 1 ${cryptoSymbol} = R$${(cryptoPrice * usdToBrl).toLocaleString('pt-BR', { minimumFractionDigits: 2 })} BRL`;
       
       case 'currency':
-        const currencyRate = rates[mainCurrency] || 1;
-        return `1 ${mainCurrency} = ${currencyRate.toFixed(4)} BRL`;
+        const currencyToBrl = rates.BRL || 1;
+        const currencyToUsd = rates.USD || 1;
+        
+        if (mainCurrency === 'USD') {
+          return `1 USD = R$${currencyToBrl.toFixed(4)} BRL`;
+        } else if (mainCurrency === 'BRL') {
+          return `1 BRL = $${currencyToUsd.toFixed(4)} USD`;
+        } else {
+          let rateText = `1 ${mainCurrency} = R$${currencyToBrl.toFixed(4)} BRL`;
+          if (currencyToUsd !== 1) {
+            rateText += ` | 1 ${mainCurrency} = $${currencyToUsd.toFixed(4)} USD`;
+          }
+          return rateText;
+        }
       
       default:
-        const defaultRate = rates.USD || 6.15;
-        return `1 USD = ${defaultRate.toFixed(4)} BRL`;
+        const defaultRate = rates.USDBRL || rates.USD || 6.15;
+        return `1 USD = R$${defaultRate.toFixed(4)} BRL`;
     }
   };
-  
-  const currentRate = getCurrentRate();
+
+  const formatCurrency = (value: number, currency: 'USD' | 'BRL') => {
+    if (currency === 'USD') {
+      return `$${value.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+    }
+    return `R$${value.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+  };
+
+  const getCurrencyName = () => {
+    switch (type) {
+      case 'dollar':
+        return dollarOptions.find(opt => opt.value === selectedDollar)?.label || 'Dólar';
+      case 'euro':
+        return 'Euro (EUR)';
+      case 'crypto':
+        return `${cryptoSymbol}`;
+      case 'currency':
+        return `${mainCurrency}`;
+      default:
+        return 'USD';
+    }
+  };
 
   return (
     <Card className="w-full max-w-2xl mx-auto mt-8">
@@ -254,16 +330,33 @@ const CurrencyConverter: React.FC<CurrencyConverterProps> = ({
         </div>
 
         <div className="text-center p-4 bg-muted rounded-lg">
-          <p className="text-sm font-medium text-muted-foreground">
+          <p className="text-sm font-medium text-muted-foreground mb-2">
             {loading ? (
               <span className="flex items-center justify-center gap-2">
                 <span className="animate-spin h-4 w-4 border-2 border-primary border-t-transparent rounded-full"></span>
-                Atualizando cotações...
+                Atualizando cotações em tempo real...
               </span>
             ) : (
-              <>Taxa de câmbio atual: {currentRate}</>
+              <>Taxa de câmbio atual: {getCurrentRate()}</>
             )}
           </p>
+          {lastUpdate && !loading && (
+            <p className="text-xs text-muted-foreground">
+              Última atualização: {lastUpdate.toLocaleTimeString('pt-BR')}
+            </p>
+          )}
+          <div className="mt-2">
+            <Button 
+              variant="outline" 
+              size="sm" 
+              onClick={fetchRates}
+              disabled={loading}
+              className="text-xs"
+            >
+              <RefreshCw className={`h-3 w-3 mr-1 ${loading ? 'animate-spin' : ''}`} />
+              Atualizar
+            </Button>
+          </div>
         </div>
       </CardContent>
     </Card>

@@ -1,6 +1,7 @@
 import Layout from "@/components/Layout";
 import TradingViewWidget from "@/components/TradingViewWidget";
-import QuoteCard from "@/components/QuoteCard";
+import CurrencyConverter from "@/components/CurrencyConverter";
+import Banner from "@/components/Banner";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 const AllspringHoje = () => {
@@ -12,41 +13,24 @@ const AllspringHoje = () => {
           <p className="text-xl text-muted-foreground">Cotação da Allspring (ALSN) em tempo real</p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+        <Banner />
+
+        <div className="mb-8">
           <Card>
             <CardHeader>
-              <CardTitle>Gráfico ALSN</CardTitle>
+              <CardTitle className="text-center">Gráfico ALSN</CardTitle>
             </CardHeader>
             <CardContent>
-              <TradingViewWidget symbol="ALSN" height="400" />
+              <div className="h-96">
+                <TradingViewWidget symbol="ALSN" height="400" />
+              </div>
             </CardContent>
           </Card>
-
-          <div className="space-y-4">
-            <QuoteCard
-              pair="ALSN"
-              price="25.40"
-              change="+0.65"
-              changePercent="+2.62"
-              flag1="🏦"
-            />
-            <QuoteCard
-              pair="Market Cap"
-              price="5.2B"
-              change="+135M"
-              changePercent="+2.67"
-              flag1="💼"
-            />
-            <QuoteCard
-              pair="P/E Ratio"
-              price="14.8"
-              change="+0.2"
-              changePercent="+1.37"
-              flag1="📈"
-            />
-          </div>
         </div>
 
+        <CurrencyConverter type="currency" mainCurrency="USD" />
+        
+        <Banner />
       </div>
     </Layout>
   );

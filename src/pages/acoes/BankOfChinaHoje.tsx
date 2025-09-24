@@ -1,6 +1,7 @@
 import Layout from "@/components/Layout";
 import TradingViewWidget from "@/components/TradingViewWidget";
-import QuoteCard from "@/components/QuoteCard";
+import CurrencyConverter from "@/components/CurrencyConverter";
+import Banner from "@/components/Banner";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 const BankOfChinaHoje = () => {
@@ -12,41 +13,24 @@ const BankOfChinaHoje = () => {
           <p className="text-xl text-muted-foreground">Cotação do Bank of China (3988.HK) em tempo real</p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+        <Banner />
+
+        <div className="mb-8">
           <Card>
             <CardHeader>
-              <CardTitle>Gráfico 3988.HK</CardTitle>
+              <CardTitle className="text-center">Gráfico 3988.HK</CardTitle>
             </CardHeader>
             <CardContent>
-              <TradingViewWidget symbol="SSE:601988" height="400" />
+              <div className="h-96">
+                <TradingViewWidget symbol="SSE:601988" height="400" />
+              </div>
             </CardContent>
           </Card>
-
-          <div className="space-y-4">
-            <QuoteCard
-              pair="3988.HK"
-              price="3.85"
-              change="+0.08"
-              changePercent="+2.12"
-              flag1="🏦"
-            />
-            <QuoteCard
-              pair="Market Cap"
-              price="1.15T HKD"
-              change="+24B HKD"
-              changePercent="+2.13"
-              flag1="💼"
-            />
-            <QuoteCard
-              pair="Volume"
-              price="125M"
-              change="+8M"
-              changePercent="+6.84"
-              flag1="📈"
-            />
-          </div>
         </div>
 
+        <CurrencyConverter type="currency" mainCurrency="CNY" />
+        
+        <Banner />
       </div>
     </Layout>
   );

@@ -1,6 +1,7 @@
 import Layout from "@/components/Layout";
 import TradingViewWidget from "@/components/TradingViewWidget";
-import QuoteCard from "@/components/QuoteCard";
+import CurrencyConverter from "@/components/CurrencyConverter";
+import Banner from "@/components/Banner";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 const AssaiHoje = () => {
@@ -12,41 +13,24 @@ const AssaiHoje = () => {
           <p className="text-xl text-muted-foreground">Cotação do Assaí Atacadista (ASAI3) em tempo real</p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+        <Banner />
+
+        <div className="mb-8">
           <Card>
             <CardHeader>
-              <CardTitle>Gráfico ASAI3</CardTitle>
+              <CardTitle className="text-center">Gráfico ASAI3</CardTitle>
             </CardHeader>
             <CardContent>
-              <TradingViewWidget symbol="ASAI3" height="400" />
+              <div className="h-96">
+                <TradingViewWidget symbol="ASAI3" height="400" />
+              </div>
             </CardContent>
           </Card>
-
-          <div className="space-y-4">
-            <QuoteCard
-              pair="ASAI3"
-              price="14.25"
-              change="+0.35"
-              changePercent="+2.52"
-              flag1="🏪"
-            />
-            <QuoteCard
-              pair="Market Cap"
-              price="38.5B"
-              change="+945M"
-              changePercent="+2.52"
-              flag1="💼"
-            />
-            <QuoteCard
-              pair="Volume"
-              price="18.5M"
-              change="+1.8M"
-              changePercent="+10.78"
-              flag1="📈"
-            />
-          </div>
         </div>
 
+        <CurrencyConverter type="currency" mainCurrency="BRL" />
+        
+        <Banner />
       </div>
     </Layout>
   );

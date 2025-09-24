@@ -1,6 +1,7 @@
 import Layout from "@/components/Layout";
 import TradingViewWidget from "@/components/TradingViewWidget";
-import QuoteCard from "@/components/QuoteCard";
+import CurrencyConverter from "@/components/CurrencyConverter";
+import Banner from "@/components/Banner";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 const MagazineLuizaHoje = () => {
@@ -12,41 +13,24 @@ const MagazineLuizaHoje = () => {
           <p className="text-xl text-muted-foreground">Cotação da Magazine Luiza (MGLU3) em tempo real</p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+        <Banner />
+
+        <div className="mb-8">
           <Card>
             <CardHeader>
-              <CardTitle>Gráfico MGLU3</CardTitle>
+              <CardTitle className="text-center">Gráfico MGLU3</CardTitle>
             </CardHeader>
             <CardContent>
-              <TradingViewWidget symbol="BMFBOVESPA:MGLU3" height="400" />
+              <div className="h-96">
+                <TradingViewWidget symbol="BMFBOVESPA:MGLU3" height="400" />
+              </div>
             </CardContent>
           </Card>
-
-          <div className="space-y-4">
-            <QuoteCard
-              pair="MGLU3"
-              price="R$ 8.45"
-              change="+0.32"
-              changePercent="+3.94"
-              flag1="🛍️"
-            />
-            <QuoteCard
-              pair="Market Cap"
-              price="R$ 5.8B"
-              change="+220M"
-              changePercent="+3.95"
-              flag1="💼"
-            />
-            <QuoteCard
-              pair="Volume"
-              price="18.5M"
-              change="+3.2M"
-              changePercent="+20.92"
-              flag1="📈"
-            />
-          </div>
         </div>
 
+        <CurrencyConverter type="currency" mainCurrency="BRL" />
+        
+        <Banner />
       </div>
     </Layout>
   );
