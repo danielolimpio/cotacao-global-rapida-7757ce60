@@ -1,7 +1,7 @@
 import Layout from "@/components/Layout";
 import TradingViewWidget from "@/components/TradingViewWidget";
 import QuoteCard from "@/components/QuoteCard";
-import CurrencyConverter from "@/components/CurrencyConverter";
+import UniversalConverter from "@/components/UniversalConverter";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 const YuanChinesHoje = () => {
@@ -27,7 +27,7 @@ const YuanChinesHoje = () => {
         </div>
 
 
-        <CurrencyConverter type="currency" mainCurrency="CNY" />
+        <UniversalConverter assetType="fiat" assetSymbol="CNY" assetName="Yuan Chinês" />
       </div>
     </Layout>
   );

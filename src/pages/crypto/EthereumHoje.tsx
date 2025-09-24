@@ -1,6 +1,6 @@
 import Layout from "@/components/Layout";
 import TradingViewWidget from "@/components/TradingViewWidget";
-import CurrencyConverter from "@/components/CurrencyConverter";
+import UniversalConverter from "@/components/UniversalConverter";
 import Banner from "@/components/Banner";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
@@ -38,7 +38,7 @@ const EthereumHoje = () => {
           </Card>
         </div>
 
-        <CurrencyConverter type="crypto" cryptoSymbol="ETH" />
+        <UniversalConverter assetType="crypto" assetSymbol="ETH" assetName="Ethereum" />
         
         <Banner />
       </div>

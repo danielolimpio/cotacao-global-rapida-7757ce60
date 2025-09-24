@@ -2,7 +2,7 @@ import Layout from "@/components/Layout";
 import Banner from "@/components/Banner";
 import QuoteCard from "@/components/QuoteCard";
 import TradingViewWidget from "@/components/TradingViewWidget";
-import CurrencyConverter from "@/components/CurrencyConverter";
+import UniversalConverter from "@/components/UniversalConverter";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { TrendingUp, Globe, Shield, Zap } from "lucide-react";
@@ -121,7 +121,7 @@ const Index = () => {
       
 
       {/* Currency Converter */}
-      <CurrencyConverter type="currency" mainCurrency="USD" />
+      <UniversalConverter assetType="fiat" assetSymbol="USD" assetName="Dólar Americano" />
 
       <Banner />
 
