@@ -210,7 +210,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
                 <NavigationMenuItem>
                   <NavigationMenuTrigger className="font-medium text-base">Forex</NavigationMenuTrigger>
                   <NavigationMenuContent>
-                    <div className="w-[600px] p-6">
+                    <div className="w-[700px] p-6">
                       <div className="grid grid-cols-3 gap-6">
                         <div>
                           <h4 className="font-semibold mb-3 text-base">Principais</h4>
@@ -227,13 +227,25 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
                         <div>
                           <h4 className="font-semibold mb-3 text-base">Secundários</h4>
                           <div className="grid gap-2">
-                            <span className="text-sm text-muted-foreground">Em breve...</span>
+                            <Link to="/forex/secundarios/eur-gbp" className="text-base hover:text-primary transition-colors">EUR/GBP</Link>
+                            <Link to="/forex/secundarios/eur-aud" className="text-base hover:text-primary transition-colors">EUR/AUD</Link>
+                            <Link to="/forex/secundarios/eur-cad" className="text-base hover:text-primary transition-colors">EUR/CAD</Link>
+                            <Link to="/forex/secundarios/eur-nzd" className="text-base hover:text-primary transition-colors">EUR/NZD</Link>
+                            <Link to="/forex/secundarios/gbp-jpy" className="text-base hover:text-primary transition-colors">GBP/JPY</Link>
+                            <Link to="/forex/secundarios/gbp-aud" className="text-base hover:text-primary transition-colors">GBP/AUD</Link>
+                            <Link to="/forex/secundarios/gbp-cad" className="text-base hover:text-primary transition-colors">GBP/CAD</Link>
                           </div>
                         </div>
                         <div>
-                          <h4 className="font-semibold mb-3 text-base">Exóticos</h4>
+                          <h4 className="font-semibold mb-3 text-base invisible">Cont.</h4>
                           <div className="grid gap-2">
-                            <span className="text-sm text-muted-foreground">Em breve...</span>
+                            <Link to="/forex/secundarios/aud-jpy" className="text-base hover:text-primary transition-colors">AUD/JPY</Link>
+                            <Link to="/forex/secundarios/cad-jpy" className="text-base hover:text-primary transition-colors">CAD/JPY</Link>
+                            <Link to="/forex/secundarios/nzd-jpy" className="text-base hover:text-primary transition-colors">NZD/JPY</Link>
+                            <Link to="/forex/secundarios/aud-cad" className="text-base hover:text-primary transition-colors">AUD/CAD</Link>
+                            <Link to="/forex/secundarios/aud-nzd" className="text-base hover:text-primary transition-colors">AUD/NZD</Link>
+                            <Link to="/forex/secundarios/cad-chf" className="text-base hover:text-primary transition-colors">CAD/CHF</Link>
+                            <Link to="/forex/secundarios/nzd-cad" className="text-base hover:text-primary transition-colors">NZD/CAD</Link>
                           </div>
                         </div>
                       </div>
