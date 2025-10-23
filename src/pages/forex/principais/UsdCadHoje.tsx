@@ -1,5 +1,4 @@
 import Layout from "@/components/Layout";
-import Banner from "@/components/Banner";
 import TradingViewWidget from "@/components/TradingViewWidget";
 import UniversalConverter from "@/components/UniversalConverter";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -19,8 +18,6 @@ const UsdCadHoje = () => {
             Acompanhe a cotação do Dólar Americano contra o Dólar Canadense em tempo real - "Loonie".
           </p>
         </div>
-
-        <Banner />
 
         <div className="mb-8">
           <Card>
@@ -49,8 +46,6 @@ const UsdCadHoje = () => {
           assetSymbol="CAD" 
           assetName="Dólar Canadense" 
         />
-
-        <Banner />
       </div>
     </Layout>
   );

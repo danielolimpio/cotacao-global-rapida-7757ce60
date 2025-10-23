@@ -1,6 +1,5 @@
 import Layout from "@/components/Layout";
 import TradingViewWidget from "@/components/TradingViewWidget";
-import Banner from "@/components/Banner";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 const AppleHoje = () => {
@@ -12,8 +11,6 @@ const AppleHoje = () => {
           <h1 className="text-4xl font-bold text-foreground mb-4">Apple Hoje</h1>
           <p className="text-xl text-muted-foreground">Cotação da Apple (AAPL) em tempo real</p>
         </div>
-
-        <Banner />
 
         <div className="mb-8">
           <Card>
@@ -36,8 +33,6 @@ const AppleHoje = () => {
             </CardContent>
           </Card>
         </div>
-
-        <Banner />
       </div>
     </Layout>
   );

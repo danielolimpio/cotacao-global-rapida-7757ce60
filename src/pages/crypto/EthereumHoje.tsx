@@ -1,7 +1,6 @@
 import Layout from "@/components/Layout";
 import TradingViewWidget from "@/components/TradingViewWidget";
 import UniversalConverter from "@/components/UniversalConverter";
-import Banner from "@/components/Banner";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 const EthereumHoje = () => {
@@ -13,8 +12,6 @@ const EthereumHoje = () => {
           <h1 className="text-4xl font-bold text-foreground mb-4">Ethereum Hoje</h1>
           <p className="text-xl text-muted-foreground">Cotação do Ethereum (ETH) em tempo real</p>
         </div>
-
-        <Banner />
 
         <div className="mb-8">
           <Card>
@@ -39,8 +36,6 @@ const EthereumHoje = () => {
         </div>
 
         <UniversalConverter assetType="crypto" assetSymbol="ETH" assetName="Ethereum" />
-        
-        <Banner />
       </div>
     </Layout>
   );

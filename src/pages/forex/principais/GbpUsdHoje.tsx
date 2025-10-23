@@ -1,5 +1,4 @@
 import Layout from "@/components/Layout";
-import Banner from "@/components/Banner";
 import TradingViewWidget from "@/components/TradingViewWidget";
 import CurrencyConverter from "@/components/CurrencyConverter";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -19,8 +18,6 @@ const GbpUsdHoje = () => {
             Acompanhe a cotação da Libra Esterlina contra o Dólar Americano em tempo real - "Cable".
           </p>
         </div>
-
-        <Banner />
 
         <div className="mb-8">
           <Card>
@@ -46,8 +43,6 @@ const GbpUsdHoje = () => {
 
         {/* Currency Converter */}
         <CurrencyConverter type="currency" />
-
-        <Banner />
       </div>
     </Layout>
   );

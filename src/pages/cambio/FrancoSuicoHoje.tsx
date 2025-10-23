@@ -2,7 +2,6 @@ import Layout from "@/components/Layout";
 import TradingViewWidget from "@/components/TradingViewWidget";
 import QuoteCard from "@/components/QuoteCard";
 import CurrencyConverter from "@/components/CurrencyConverter";
-import Banner from "@/components/Banner";
 import useRealTimeQuotes from "@/hooks/useRealTimeQuotes";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
@@ -15,8 +14,6 @@ const FrancoSuicoHoje = () => {
           <h1 className="text-4xl font-bold text-foreground mb-4">Franco Suíço Hoje</h1>
           <p className="text-xl text-muted-foreground">Cotação do Franco Suíço (CHF) em tempo real</p>
         </div>
-
-        <Banner />
 
         <div className="mb-8">
           <Card>
@@ -33,8 +30,6 @@ const FrancoSuicoHoje = () => {
 
 
         <CurrencyConverter type="currency" mainCurrency="CHF" />
-        
-        <Banner />
       </div>
     </Layout>
   );

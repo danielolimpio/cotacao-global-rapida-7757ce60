@@ -1,5 +1,4 @@
 import Layout from "@/components/Layout";
-import Banner from "@/components/Banner";
 import QuoteCard from "@/components/QuoteCard";
 import TradingViewWidget from "@/components/TradingViewWidget";
 import UniversalConverter from "@/components/UniversalConverter";
@@ -73,8 +72,6 @@ const Index = () => {
         </div>
       </section>
 
-      <Banner />
-
       {/* Main USD/BRL Chart */}
       <section className="py-16">
         <div className="container mx-auto px-4">
@@ -122,8 +119,6 @@ const Index = () => {
 
       {/* Currency Converter */}
       <UniversalConverter assetType="fiat" assetSymbol="USD" assetName="Dólar Americano" />
-
-      <Banner />
 
       {/* Features Section */}
       <section className="py-16">

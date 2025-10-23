@@ -1,5 +1,4 @@
 import Layout from "@/components/Layout";
-import Banner from "@/components/Banner";
 import TradingViewWidget from "@/components/TradingViewWidget";
 import CurrencyConverter from "@/components/CurrencyConverter";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -19,8 +18,6 @@ const EurUsdHoje = () => {
             Acompanhe a cotação do Euro contra o Dólar Americano em tempo real com análises técnicas e indicadores.
           </p>
         </div>
-
-        <Banner />
 
         <div className="mb-8">
           <Card>
@@ -46,8 +43,6 @@ const EurUsdHoje = () => {
 
         {/* Currency Converter */}
         <CurrencyConverter type="euro" />
-
-        <Banner />
       </div>
     </Layout>
   );
