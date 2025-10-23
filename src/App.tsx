@@ -84,6 +84,22 @@ import AudUsdHoje from "./pages/forex/principais/AudUsdHoje";
 import UsdCadHoje from "./pages/forex/principais/UsdCadHoje";
 import NzdUsdHoje from "./pages/forex/principais/NzdUsdHoje";
 
+// Forex secundários pages
+import EurGbpHoje from "./pages/forex/secundarios/EurGbpHoje";
+import EurAudHoje from "./pages/forex/secundarios/EurAudHoje";
+import EurCadHoje from "./pages/forex/secundarios/EurCadHoje";
+import EurNzdHoje from "./pages/forex/secundarios/EurNzdHoje";
+import GbpJpyHoje from "./pages/forex/secundarios/GbpJpyHoje";
+import GbpAudHoje from "./pages/forex/secundarios/GbpAudHoje";
+import GbpCadHoje from "./pages/forex/secundarios/GbpCadHoje";
+import AudJpyHoje from "./pages/forex/secundarios/AudJpyHoje";
+import CadJpyHoje from "./pages/forex/secundarios/CadJpyHoje";
+import NzdJpyHoje from "./pages/forex/secundarios/NzdJpyHoje";
+import AudCadHoje from "./pages/forex/secundarios/AudCadHoje";
+import AudNzdHoje from "./pages/forex/secundarios/AudNzdHoje";
+import CadChfHoje from "./pages/forex/secundarios/CadChfHoje";
+import NzdCadHoje from "./pages/forex/secundarios/NzdCadHoje";
+
 // Calculator page
 import CalculadoraJuros from "./pages/CalculadoraJuros";
 import VerTodasCotacoes from "./pages/VerTodasCotacoes";
@@ -176,6 +192,22 @@ const App = () => (
           <Route path="/forex/principais/aud-usd" element={<AudUsdHoje />} />
           <Route path="/forex/principais/usd-cad" element={<UsdCadHoje />} />
           <Route path="/forex/principais/nzd-usd" element={<NzdUsdHoje />} />
+          
+          {/* Forex secundários routes */}
+          <Route path="/forex/secundarios/eur-gbp" element={<EurGbpHoje />} />
+          <Route path="/forex/secundarios/eur-aud" element={<EurAudHoje />} />
+          <Route path="/forex/secundarios/eur-cad" element={<EurCadHoje />} />
+          <Route path="/forex/secundarios/eur-nzd" element={<EurNzdHoje />} />
+          <Route path="/forex/secundarios/gbp-jpy" element={<GbpJpyHoje />} />
+          <Route path="/forex/secundarios/gbp-aud" element={<GbpAudHoje />} />
+          <Route path="/forex/secundarios/gbp-cad" element={<GbpCadHoje />} />
+          <Route path="/forex/secundarios/aud-jpy" element={<AudJpyHoje />} />
+          <Route path="/forex/secundarios/cad-jpy" element={<CadJpyHoje />} />
+          <Route path="/forex/secundarios/nzd-jpy" element={<NzdJpyHoje />} />
+          <Route path="/forex/secundarios/aud-cad" element={<AudCadHoje />} />
+          <Route path="/forex/secundarios/aud-nzd" element={<AudNzdHoje />} />
+          <Route path="/forex/secundarios/cad-chf" element={<CadChfHoje />} />
+          <Route path="/forex/secundarios/nzd-cad" element={<NzdCadHoje />} />
           
           {/* Calculator routes */}
           <Route path="/calculadora-juros" element={<CalculadoraJuros />} />
