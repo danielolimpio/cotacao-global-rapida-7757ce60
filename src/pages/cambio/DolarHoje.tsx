@@ -1,14 +1,10 @@
 import Layout from "@/components/Layout";
 import TradingViewWidget from "@/components/TradingViewWidget";
-import QuoteCard from "@/components/QuoteCard";
-import CurrencyConverter from "@/components/CurrencyConverter";
+import UniversalConverter from "@/components/UniversalConverter";
 import Banner from "@/components/Banner";
-import useRealTimeQuotes from "@/hooks/useRealTimeQuotes";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 const DolarHoje = () => {
-  const { quotes, loading } = useRealTimeQuotes(['USDBRL', 'EURUSD', 'GBPUSD']);
-  
   return (
     <Layout>
       <div className="container mx-auto px-4 py-8">
@@ -33,7 +29,11 @@ const DolarHoje = () => {
         </div>
 
 
-        <CurrencyConverter type="dollar" />
+        <UniversalConverter 
+          assetType="fiat" 
+          assetSymbol="USD" 
+          assetName="Dólar Americano" 
+        />
         
         <Banner />
       </div>
