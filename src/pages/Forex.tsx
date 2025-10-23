@@ -218,6 +218,115 @@ const Forex = () => {
           </CardContent>
         </Card>
 
+        {/* Pares Exóticos */}
+        <Card className="max-w-6xl mx-auto mt-12">
+          <CardHeader>
+            <CardTitle className="text-center">Pares de Forex Exóticos</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+              <Link to="/forex/exoticos/usd-try" className="p-4 bg-muted/50 rounded-lg hover:bg-muted transition-colors text-center">
+                <div className="flex items-center justify-center space-x-2 mb-2">
+                  <span className="text-2xl">🇺🇸</span>
+                  <span className="text-2xl">🇹🇷</span>
+                </div>
+                <p className="font-semibold">USD/TRY</p>
+              </Link>
+              <Link to="/forex/exoticos/usd-zar" className="p-4 bg-muted/50 rounded-lg hover:bg-muted transition-colors text-center">
+                <div className="flex items-center justify-center space-x-2 mb-2">
+                  <span className="text-2xl">🇺🇸</span>
+                  <span className="text-2xl">🇿🇦</span>
+                </div>
+                <p className="font-semibold">USD/ZAR</p>
+              </Link>
+              <Link to="/forex/exoticos/usd-mxn" className="p-4 bg-muted/50 rounded-lg hover:bg-muted transition-colors text-center">
+                <div className="flex items-center justify-center space-x-2 mb-2">
+                  <span className="text-2xl">🇺🇸</span>
+                  <span className="text-2xl">🇲🇽</span>
+                </div>
+                <p className="font-semibold">USD/MXN</p>
+              </Link>
+              <Link to="/forex/exoticos/usd-sek" className="p-4 bg-muted/50 rounded-lg hover:bg-muted transition-colors text-center">
+                <div className="flex items-center justify-center space-x-2 mb-2">
+                  <span className="text-2xl">🇺🇸</span>
+                  <span className="text-2xl">🇸🇪</span>
+                </div>
+                <p className="font-semibold">USD/SEK</p>
+              </Link>
+              <Link to="/forex/exoticos/usd-nok" className="p-4 bg-muted/50 rounded-lg hover:bg-muted transition-colors text-center">
+                <div className="flex items-center justify-center space-x-2 mb-2">
+                  <span className="text-2xl">🇺🇸</span>
+                  <span className="text-2xl">🇳🇴</span>
+                </div>
+                <p className="font-semibold">USD/NOK</p>
+              </Link>
+              <Link to="/forex/exoticos/usd-pln" className="p-4 bg-muted/50 rounded-lg hover:bg-muted transition-colors text-center">
+                <div className="flex items-center justify-center space-x-2 mb-2">
+                  <span className="text-2xl">🇺🇸</span>
+                  <span className="text-2xl">🇵🇱</span>
+                </div>
+                <p className="font-semibold">USD/PLN</p>
+              </Link>
+              <Link to="/forex/exoticos/eur-try" className="p-4 bg-muted/50 rounded-lg hover:bg-muted transition-colors text-center">
+                <div className="flex items-center justify-center space-x-2 mb-2">
+                  <span className="text-2xl">🇪🇺</span>
+                  <span className="text-2xl">🇹🇷</span>
+                </div>
+                <p className="font-semibold">EUR/TRY</p>
+              </Link>
+              <Link to="/forex/exoticos/gbp-try" className="p-4 bg-muted/50 rounded-lg hover:bg-muted transition-colors text-center">
+                <div className="flex items-center justify-center space-x-2 mb-2">
+                  <span className="text-2xl">🇬🇧</span>
+                  <span className="text-2xl">🇹🇷</span>
+                </div>
+                <p className="font-semibold">GBP/TRY</p>
+              </Link>
+              <Link to="/forex/exoticos/aud-sgd" className="p-4 bg-muted/50 rounded-lg hover:bg-muted transition-colors text-center">
+                <div className="flex items-center justify-center space-x-2 mb-2">
+                  <span className="text-2xl">🇦🇺</span>
+                  <span className="text-2xl">🇸🇬</span>
+                </div>
+                <p className="font-semibold">AUD/SGD</p>
+              </Link>
+              <Link to="/forex/exoticos/eur-zar" className="p-4 bg-muted/50 rounded-lg hover:bg-muted transition-colors text-center">
+                <div className="flex items-center justify-center space-x-2 mb-2">
+                  <span className="text-2xl">🇪🇺</span>
+                  <span className="text-2xl">🇿🇦</span>
+                </div>
+                <p className="font-semibold">EUR/ZAR</p>
+              </Link>
+              <Link to="/forex/exoticos/usd-hkd" className="p-4 bg-muted/50 rounded-lg hover:bg-muted transition-colors text-center">
+                <div className="flex items-center justify-center space-x-2 mb-2">
+                  <span className="text-2xl">🇺🇸</span>
+                  <span className="text-2xl">🇭🇰</span>
+                </div>
+                <p className="font-semibold">USD/HKD</p>
+              </Link>
+              <Link to="/forex/exoticos/usd-thb" className="p-4 bg-muted/50 rounded-lg hover:bg-muted transition-colors text-center">
+                <div className="flex items-center justify-center space-x-2 mb-2">
+                  <span className="text-2xl">🇺🇸</span>
+                  <span className="text-2xl">🇹🇭</span>
+                </div>
+                <p className="font-semibold">USD/THB</p>
+              </Link>
+              <Link to="/forex/exoticos/usd-inr" className="p-4 bg-muted/50 rounded-lg hover:bg-muted transition-colors text-center">
+                <div className="flex items-center justify-center space-x-2 mb-2">
+                  <span className="text-2xl">🇺🇸</span>
+                  <span className="text-2xl">🇮🇳</span>
+                </div>
+                <p className="font-semibold">USD/INR</p>
+              </Link>
+              <Link to="/forex/exoticos/usd-rub" className="p-4 bg-muted/50 rounded-lg hover:bg-muted transition-colors text-center">
+                <div className="flex items-center justify-center space-x-2 mb-2">
+                  <span className="text-2xl">🇺🇸</span>
+                  <span className="text-2xl">🇷🇺</span>
+                </div>
+                <p className="font-semibold">USD/RUB</p>
+              </Link>
+            </div>
+          </CardContent>
+        </Card>
+
         {/* Market Sessions */}
         <Card className="max-w-6xl mx-auto mt-12">
           <CardHeader>

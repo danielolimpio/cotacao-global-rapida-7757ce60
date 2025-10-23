@@ -100,6 +100,22 @@ import AudNzdHoje from "./pages/forex/secundarios/AudNzdHoje";
 import CadChfHoje from "./pages/forex/secundarios/CadChfHoje";
 import NzdCadHoje from "./pages/forex/secundarios/NzdCadHoje";
 
+// Forex exóticos pages
+import UsdTryHoje from "./pages/forex/exoticos/UsdTryHoje";
+import UsdZarHoje from "./pages/forex/exoticos/UsdZarHoje";
+import UsdMxnHoje from "./pages/forex/exoticos/UsdMxnHoje";
+import UsdSekHoje from "./pages/forex/exoticos/UsdSekHoje";
+import UsdNokHoje from "./pages/forex/exoticos/UsdNokHoje";
+import UsdPlnHoje from "./pages/forex/exoticos/UsdPlnHoje";
+import EurTryHoje from "./pages/forex/exoticos/EurTryHoje";
+import GbpTryHoje from "./pages/forex/exoticos/GbpTryHoje";
+import AudSgdHoje from "./pages/forex/exoticos/AudSgdHoje";
+import EurZarHoje from "./pages/forex/exoticos/EurZarHoje";
+import UsdHkdHoje from "./pages/forex/exoticos/UsdHkdHoje";
+import UsdThbHoje from "./pages/forex/exoticos/UsdThbHoje";
+import UsdInrHoje from "./pages/forex/exoticos/UsdInrHoje";
+import UsdRubHoje from "./pages/forex/exoticos/UsdRubHoje";
+
 // Calculator page
 import CalculadoraJuros from "./pages/CalculadoraJuros";
 import VerTodasCotacoes from "./pages/VerTodasCotacoes";
@@ -208,6 +224,22 @@ const App = () => (
           <Route path="/forex/secundarios/aud-nzd" element={<AudNzdHoje />} />
           <Route path="/forex/secundarios/cad-chf" element={<CadChfHoje />} />
           <Route path="/forex/secundarios/nzd-cad" element={<NzdCadHoje />} />
+          
+          {/* Forex exóticos routes */}
+          <Route path="/forex/exoticos/usd-try" element={<UsdTryHoje />} />
+          <Route path="/forex/exoticos/usd-zar" element={<UsdZarHoje />} />
+          <Route path="/forex/exoticos/usd-mxn" element={<UsdMxnHoje />} />
+          <Route path="/forex/exoticos/usd-sek" element={<UsdSekHoje />} />
+          <Route path="/forex/exoticos/usd-nok" element={<UsdNokHoje />} />
+          <Route path="/forex/exoticos/usd-pln" element={<UsdPlnHoje />} />
+          <Route path="/forex/exoticos/eur-try" element={<EurTryHoje />} />
+          <Route path="/forex/exoticos/gbp-try" element={<GbpTryHoje />} />
+          <Route path="/forex/exoticos/aud-sgd" element={<AudSgdHoje />} />
+          <Route path="/forex/exoticos/eur-zar" element={<EurZarHoje />} />
+          <Route path="/forex/exoticos/usd-hkd" element={<UsdHkdHoje />} />
+          <Route path="/forex/exoticos/usd-thb" element={<UsdThbHoje />} />
+          <Route path="/forex/exoticos/usd-inr" element={<UsdInrHoje />} />
+          <Route path="/forex/exoticos/usd-rub" element={<UsdRubHoje />} />
           
           {/* Calculator routes */}
           <Route path="/calculadora-juros" element={<CalculadoraJuros />} />

@@ -210,8 +210,8 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
                 <NavigationMenuItem>
                   <NavigationMenuTrigger className="font-medium text-base">Forex</NavigationMenuTrigger>
                   <NavigationMenuContent>
-                    <div className="w-[700px] p-6">
-                      <div className="grid grid-cols-3 gap-6">
+                    <div className="w-[900px] p-6">
+                      <div className="grid grid-cols-4 gap-6">
                         <div>
                           <h4 className="font-semibold mb-3 text-base">Principais</h4>
                           <div className="grid gap-2">
@@ -246,6 +246,35 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
                             <Link to="/forex/secundarios/aud-nzd" className="text-base hover:text-primary transition-colors">AUD/NZD</Link>
                             <Link to="/forex/secundarios/cad-chf" className="text-base hover:text-primary transition-colors">CAD/CHF</Link>
                             <Link to="/forex/secundarios/nzd-cad" className="text-base hover:text-primary transition-colors">NZD/CAD</Link>
+                          </div>
+                        </div>
+                        <div>
+                          <h4 className="font-semibold mb-3 text-base">Exóticos</h4>
+                          <div className="grid gap-2">
+                            <Link to="/forex/exoticos/usd-try" className="text-base hover:text-primary transition-colors">USD/TRY</Link>
+                            <Link to="/forex/exoticos/usd-zar" className="text-base hover:text-primary transition-colors">USD/ZAR</Link>
+                            <Link to="/forex/exoticos/usd-mxn" className="text-base hover:text-primary transition-colors">USD/MXN</Link>
+                            <Link to="/forex/exoticos/usd-sek" className="text-base hover:text-primary transition-colors">USD/SEK</Link>
+                            <Link to="/forex/exoticos/usd-nok" className="text-base hover:text-primary transition-colors">USD/NOK</Link>
+                            <Link to="/forex/exoticos/usd-pln" className="text-base hover:text-primary transition-colors">USD/PLN</Link>
+                            <Link to="/forex/exoticos/eur-try" className="text-base hover:text-primary transition-colors">EUR/TRY</Link>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="grid grid-cols-4 gap-6 mt-4">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div>
+                          <h4 className="font-semibold mb-3 text-base invisible">Cont.</h4>
+                          <div className="grid gap-2">
+                            <Link to="/forex/exoticos/gbp-try" className="text-base hover:text-primary transition-colors">GBP/TRY</Link>
+                            <Link to="/forex/exoticos/aud-sgd" className="text-base hover:text-primary transition-colors">AUD/SGD</Link>
+                            <Link to="/forex/exoticos/eur-zar" className="text-base hover:text-primary transition-colors">EUR/ZAR</Link>
+                            <Link to="/forex/exoticos/usd-hkd" className="text-base hover:text-primary transition-colors">USD/HKD</Link>
+                            <Link to="/forex/exoticos/usd-thb" className="text-base hover:text-primary transition-colors">USD/THB</Link>
+                            <Link to="/forex/exoticos/usd-inr" className="text-base hover:text-primary transition-colors">USD/INR</Link>
+                            <Link to="/forex/exoticos/usd-rub" className="text-base hover:text-primary transition-colors">USD/RUB</Link>
                           </div>
                         </div>
                       </div>
