@@ -2,6 +2,7 @@ import Layout from "@/components/Layout";
 import TradingViewWidget from "@/components/TradingViewWidget";
 import CurrencyConverter from "@/components/CurrencyConverter";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Link } from "react-router-dom";
 
 const Forex = () => {
   return (
@@ -47,6 +48,175 @@ const Forex = () => {
         </Card>
 
         <CurrencyConverter type="currency" mainCurrency="GBP" />
+
+        {/* Pares Principais */}
+        <Card className="max-w-6xl mx-auto mt-12">
+          <CardHeader>
+            <CardTitle className="text-center">Pares de Forex Principais</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+              <Link to="/forex/principais/eur-usd" className="p-4 bg-muted/50 rounded-lg hover:bg-muted transition-colors text-center">
+                <div className="flex items-center justify-center space-x-2 mb-2">
+                  <span className="text-2xl">🇪🇺</span>
+                  <span className="text-2xl">🇺🇸</span>
+                </div>
+                <p className="font-semibold">EUR/USD</p>
+              </Link>
+              <Link to="/forex/principais/gbp-usd" className="p-4 bg-muted/50 rounded-lg hover:bg-muted transition-colors text-center">
+                <div className="flex items-center justify-center space-x-2 mb-2">
+                  <span className="text-2xl">🇬🇧</span>
+                  <span className="text-2xl">🇺🇸</span>
+                </div>
+                <p className="font-semibold">GBP/USD</p>
+              </Link>
+              <Link to="/forex/principais/usd-jpy" className="p-4 bg-muted/50 rounded-lg hover:bg-muted transition-colors text-center">
+                <div className="flex items-center justify-center space-x-2 mb-2">
+                  <span className="text-2xl">🇺🇸</span>
+                  <span className="text-2xl">🇯🇵</span>
+                </div>
+                <p className="font-semibold">USD/JPY</p>
+              </Link>
+              <Link to="/forex/principais/usd-chf" className="p-4 bg-muted/50 rounded-lg hover:bg-muted transition-colors text-center">
+                <div className="flex items-center justify-center space-x-2 mb-2">
+                  <span className="text-2xl">🇺🇸</span>
+                  <span className="text-2xl">🇨🇭</span>
+                </div>
+                <p className="font-semibold">USD/CHF</p>
+              </Link>
+              <Link to="/forex/principais/aud-usd" className="p-4 bg-muted/50 rounded-lg hover:bg-muted transition-colors text-center">
+                <div className="flex items-center justify-center space-x-2 mb-2">
+                  <span className="text-2xl">🇦🇺</span>
+                  <span className="text-2xl">🇺🇸</span>
+                </div>
+                <p className="font-semibold">AUD/USD</p>
+              </Link>
+              <Link to="/forex/principais/usd-cad" className="p-4 bg-muted/50 rounded-lg hover:bg-muted transition-colors text-center">
+                <div className="flex items-center justify-center space-x-2 mb-2">
+                  <span className="text-2xl">🇺🇸</span>
+                  <span className="text-2xl">🇨🇦</span>
+                </div>
+                <p className="font-semibold">USD/CAD</p>
+              </Link>
+              <Link to="/forex/principais/nzd-usd" className="p-4 bg-muted/50 rounded-lg hover:bg-muted transition-colors text-center">
+                <div className="flex items-center justify-center space-x-2 mb-2">
+                  <span className="text-2xl">🇳🇿</span>
+                  <span className="text-2xl">🇺🇸</span>
+                </div>
+                <p className="font-semibold">NZD/USD</p>
+              </Link>
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* Pares Secundários */}
+        <Card className="max-w-6xl mx-auto mt-12">
+          <CardHeader>
+            <CardTitle className="text-center">Pares de Forex Secundários</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+              <Link to="/forex/secundarios/eur-gbp" className="p-4 bg-muted/50 rounded-lg hover:bg-muted transition-colors text-center">
+                <div className="flex items-center justify-center space-x-2 mb-2">
+                  <span className="text-2xl">🇪🇺</span>
+                  <span className="text-2xl">🇬🇧</span>
+                </div>
+                <p className="font-semibold">EUR/GBP</p>
+              </Link>
+              <Link to="/forex/secundarios/eur-aud" className="p-4 bg-muted/50 rounded-lg hover:bg-muted transition-colors text-center">
+                <div className="flex items-center justify-center space-x-2 mb-2">
+                  <span className="text-2xl">🇪🇺</span>
+                  <span className="text-2xl">🇦🇺</span>
+                </div>
+                <p className="font-semibold">EUR/AUD</p>
+              </Link>
+              <Link to="/forex/secundarios/eur-cad" className="p-4 bg-muted/50 rounded-lg hover:bg-muted transition-colors text-center">
+                <div className="flex items-center justify-center space-x-2 mb-2">
+                  <span className="text-2xl">🇪🇺</span>
+                  <span className="text-2xl">🇨🇦</span>
+                </div>
+                <p className="font-semibold">EUR/CAD</p>
+              </Link>
+              <Link to="/forex/secundarios/eur-nzd" className="p-4 bg-muted/50 rounded-lg hover:bg-muted transition-colors text-center">
+                <div className="flex items-center justify-center space-x-2 mb-2">
+                  <span className="text-2xl">🇪🇺</span>
+                  <span className="text-2xl">🇳🇿</span>
+                </div>
+                <p className="font-semibold">EUR/NZD</p>
+              </Link>
+              <Link to="/forex/secundarios/gbp-jpy" className="p-4 bg-muted/50 rounded-lg hover:bg-muted transition-colors text-center">
+                <div className="flex items-center justify-center space-x-2 mb-2">
+                  <span className="text-2xl">🇬🇧</span>
+                  <span className="text-2xl">🇯🇵</span>
+                </div>
+                <p className="font-semibold">GBP/JPY</p>
+              </Link>
+              <Link to="/forex/secundarios/gbp-aud" className="p-4 bg-muted/50 rounded-lg hover:bg-muted transition-colors text-center">
+                <div className="flex items-center justify-center space-x-2 mb-2">
+                  <span className="text-2xl">🇬🇧</span>
+                  <span className="text-2xl">🇦🇺</span>
+                </div>
+                <p className="font-semibold">GBP/AUD</p>
+              </Link>
+              <Link to="/forex/secundarios/gbp-cad" className="p-4 bg-muted/50 rounded-lg hover:bg-muted transition-colors text-center">
+                <div className="flex items-center justify-center space-x-2 mb-2">
+                  <span className="text-2xl">🇬🇧</span>
+                  <span className="text-2xl">🇨🇦</span>
+                </div>
+                <p className="font-semibold">GBP/CAD</p>
+              </Link>
+              <Link to="/forex/secundarios/aud-jpy" className="p-4 bg-muted/50 rounded-lg hover:bg-muted transition-colors text-center">
+                <div className="flex items-center justify-center space-x-2 mb-2">
+                  <span className="text-2xl">🇦🇺</span>
+                  <span className="text-2xl">🇯🇵</span>
+                </div>
+                <p className="font-semibold">AUD/JPY</p>
+              </Link>
+              <Link to="/forex/secundarios/cad-jpy" className="p-4 bg-muted/50 rounded-lg hover:bg-muted transition-colors text-center">
+                <div className="flex items-center justify-center space-x-2 mb-2">
+                  <span className="text-2xl">🇨🇦</span>
+                  <span className="text-2xl">🇯🇵</span>
+                </div>
+                <p className="font-semibold">CAD/JPY</p>
+              </Link>
+              <Link to="/forex/secundarios/nzd-jpy" className="p-4 bg-muted/50 rounded-lg hover:bg-muted transition-colors text-center">
+                <div className="flex items-center justify-center space-x-2 mb-2">
+                  <span className="text-2xl">🇳🇿</span>
+                  <span className="text-2xl">🇯🇵</span>
+                </div>
+                <p className="font-semibold">NZD/JPY</p>
+              </Link>
+              <Link to="/forex/secundarios/aud-cad" className="p-4 bg-muted/50 rounded-lg hover:bg-muted transition-colors text-center">
+                <div className="flex items-center justify-center space-x-2 mb-2">
+                  <span className="text-2xl">🇦🇺</span>
+                  <span className="text-2xl">🇨🇦</span>
+                </div>
+                <p className="font-semibold">AUD/CAD</p>
+              </Link>
+              <Link to="/forex/secundarios/aud-nzd" className="p-4 bg-muted/50 rounded-lg hover:bg-muted transition-colors text-center">
+                <div className="flex items-center justify-center space-x-2 mb-2">
+                  <span className="text-2xl">🇦🇺</span>
+                  <span className="text-2xl">🇳🇿</span>
+                </div>
+                <p className="font-semibold">AUD/NZD</p>
+              </Link>
+              <Link to="/forex/secundarios/cad-chf" className="p-4 bg-muted/50 rounded-lg hover:bg-muted transition-colors text-center">
+                <div className="flex items-center justify-center space-x-2 mb-2">
+                  <span className="text-2xl">🇨🇦</span>
+                  <span className="text-2xl">🇨🇭</span>
+                </div>
+                <p className="font-semibold">CAD/CHF</p>
+              </Link>
+              <Link to="/forex/secundarios/nzd-cad" className="p-4 bg-muted/50 rounded-lg hover:bg-muted transition-colors text-center">
+                <div className="flex items-center justify-center space-x-2 mb-2">
+                  <span className="text-2xl">🇳🇿</span>
+                  <span className="text-2xl">🇨🇦</span>
+                </div>
+                <p className="font-semibold">NZD/CAD</p>
+              </Link>
+            </div>
+          </CardContent>
+        </Card>
 
         {/* Market Sessions */}
         <Card className="max-w-6xl mx-auto mt-12">
