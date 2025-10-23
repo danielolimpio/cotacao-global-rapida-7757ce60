@@ -1,7 +1,6 @@
 import Layout from "@/components/Layout";
 import TradingViewWidget from "@/components/TradingViewWidget";
 import CurrencyConverter from "@/components/CurrencyConverter";
-import Banner from "@/components/Banner";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 const HarvestFundHoje = () => {
@@ -12,8 +11,6 @@ const HarvestFundHoje = () => {
           <h1 className="text-4xl font-bold text-foreground mb-4">Harvest Fund Hoje</h1>
           <p className="text-xl text-muted-foreground">Cotação do Harvest Fund Management em tempo real</p>
         </div>
-
-        <Banner />
 
         <div className="mb-8">
           <Card>
@@ -29,7 +26,6 @@ const HarvestFundHoje = () => {
         </div>
 
         <CurrencyConverter type="currency" />
-
       </div>
     </Layout>
   );

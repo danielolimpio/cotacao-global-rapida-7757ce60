@@ -1,7 +1,6 @@
 import Layout from "@/components/Layout";
 import TradingViewWidget from "@/components/TradingViewWidget";
 import CurrencyConverter from "@/components/CurrencyConverter";
-import Banner from "@/components/Banner";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 const CiscoHoje = () => {
@@ -12,8 +11,6 @@ const CiscoHoje = () => {
           <h1 className="text-4xl font-bold text-foreground mb-4">Cisco Hoje</h1>
           <p className="text-xl text-muted-foreground">Cotação da Cisco (CSCO) em tempo real</p>
         </div>
-
-        <Banner />
 
         <div className="mb-8">
           <Card>
@@ -29,7 +26,6 @@ const CiscoHoje = () => {
         </div>
 
         <CurrencyConverter type="currency" />
-
       </div>
     </Layout>
   );

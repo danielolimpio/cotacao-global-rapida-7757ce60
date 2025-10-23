@@ -2,7 +2,6 @@ import Layout from "@/components/Layout";
 import TradingViewWidget from "@/components/TradingViewWidget";
 import QuoteCard from "@/components/QuoteCard";
 import UniversalConverter from "@/components/UniversalConverter";
-import Banner from "@/components/Banner";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 const PolkadotHoje = () => {
@@ -13,8 +12,6 @@ const PolkadotHoje = () => {
           <h1 className="text-4xl font-bold text-foreground mb-4">Polkadot Hoje</h1>
           <p className="text-xl text-muted-foreground">Cotação do Polkadot (DOT) em tempo real</p>
         </div>
-
-        <Banner />
 
         <div className="mb-8">
           <Card>
@@ -31,8 +28,6 @@ const PolkadotHoje = () => {
 
 
         <UniversalConverter assetType="crypto" assetSymbol="DOT" assetName="Polkadot" />
-        
-        <Banner />
       </div>
     </Layout>
   );

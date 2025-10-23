@@ -2,7 +2,6 @@ import Layout from "@/components/Layout";
 import TradingViewWidget from "@/components/TradingViewWidget";
 import QuoteCard from "@/components/QuoteCard";
 import UniversalConverter from "@/components/UniversalConverter";
-import Banner from "@/components/Banner";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 const ChainlinkHoje = () => {
@@ -13,8 +12,6 @@ const ChainlinkHoje = () => {
           <h1 className="text-4xl font-bold text-foreground mb-4">Chainlink Hoje</h1>
           <p className="text-xl text-muted-foreground">Cotação do Chainlink (LINK) em tempo real</p>
         </div>
-
-        <Banner />
 
         <div className="mb-8">
           <Card>
@@ -31,8 +28,6 @@ const ChainlinkHoje = () => {
 
 
         <UniversalConverter assetType="crypto" assetSymbol="LINK" assetName="Chainlink" />
-        
-        <Banner />
       </div>
     </Layout>
   );
