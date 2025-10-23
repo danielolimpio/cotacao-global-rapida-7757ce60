@@ -1,6 +1,6 @@
 import Layout from "@/components/Layout";
 import TradingViewWidget from "@/components/TradingViewWidget";
-import CurrencyConverter from "@/components/CurrencyConverter";
+import ForexPairConverter from "@/components/ForexPairConverter";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 const GbpUsdHoje = () => {
@@ -41,8 +41,13 @@ const GbpUsdHoje = () => {
           </Card>
         </div>
 
-        {/* Currency Converter */}
-        <CurrencyConverter type="currency" />
+        <ForexPairConverter 
+          baseCurrency="GBP"
+          quoteCurrency="USD"
+          baseCurrencyName="Libra Esterlina"
+          quoteCurrencyName="Dólar Americano"
+          pairSymbol="GBPUSD"
+        />
       </div>
     </Layout>
   );

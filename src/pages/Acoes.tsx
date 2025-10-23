@@ -38,10 +38,25 @@ const Acoes = () => {
         </div>
 
         <Tabs defaultValue="us" className="w-full">
-          <TabsList className="grid w-full grid-cols-2 max-w-md mx-auto mb-8">
+          <TabsList className="grid w-full grid-cols-3 max-w-2xl mx-auto mb-8">
             <TabsTrigger value="us">Ações Americanas</TabsTrigger>
             <TabsTrigger value="br">Ações Brasileiras</TabsTrigger>
+            <TabsTrigger value="indices">Índices</TabsTrigger>
           </TabsList>
+
+          <TabsContent value="indices" className="space-y-8">
+            {/* S&P 500 Chart */}
+            <Card className="max-w-6xl mx-auto">
+              <CardHeader>
+                <CardTitle className="text-center">S&P 500 (SPX)</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="h-96">
+                  <TradingViewWidget symbol="SPX" height="384" />
+                </div>
+              </CardContent>
+            </Card>
+          </TabsContent>
 
           <TabsContent value="us" className="space-y-8">
             {/* Featured SPY Chart */}

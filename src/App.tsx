@@ -74,8 +74,8 @@ import NvidiaHoje from "./pages/acoes/NvidiaHoje";
 import PimcoHoje from "./pages/acoes/PimcoHoje";
 import VertexPharmHoje from "./pages/acoes/VertexPharmHoje";
 
-// Forex pages
-import SP500Hoje from "./pages/forex/SP500Hoje";
+// Índices pages
+import SP500Hoje from "./pages/acoes/SP500Hoje";
 import EurUsdHoje from "./pages/forex/principais/EurUsdHoje";
 import UsdJpyHoje from "./pages/forex/principais/UsdJpyHoje";
 import GbpUsdHoje from "./pages/forex/principais/GbpUsdHoje";
@@ -199,8 +199,10 @@ const App = () => (
           <Route path="/acoes/pimco" element={<PimcoHoje />} />
           <Route path="/acoes/vertex" element={<VertexPharmHoje />} />
           
+          {/* Índices routes */}
+          <Route path="/acoes/sp500" element={<SP500Hoje />} />
+          
           {/* Forex routes */}
-          <Route path="/forex/sp500" element={<SP500Hoje />} />
           <Route path="/forex/principais/eur-usd" element={<EurUsdHoje />} />
           <Route path="/forex/principais/usd-jpy" element={<UsdJpyHoje />} />
           <Route path="/forex/principais/gbp-usd" element={<GbpUsdHoje />} />
