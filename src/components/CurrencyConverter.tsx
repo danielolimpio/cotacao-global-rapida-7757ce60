@@ -250,12 +250,27 @@ const CurrencyConverter: React.FC<CurrencyConverterProps> = ({
     
     switch (type) {
       case 'dollar':
-        const selectedRate = rates[selectedDollar] || rates.USD || 6.15;
-        const usdToCompare = rates.USD || rates.USDBRL || 6.15;
-        return {
-          usd: selectedDollar === 'USD' ? inputAmount : (inputAmount * selectedRate) / usdToCompare,
-          brl: inputAmount * selectedRate
-        };
+        if (selectedDollar === 'USD') {
+          const usdToBrl = rates.BRL || 5.34;
+          return {
+            usd: inputAmount,
+            brl: inputAmount * usdToBrl
+          };
+        } else if (selectedDollar === 'USDT') {
+          const usdToBrl = rates.BRL || 5.34;
+          return {
+            usd: inputAmount,
+            brl: inputAmount * usdToBrl * 1.02 // 2% spread for tourism dollar
+          };
+        } else {
+          // For CAD, AUD, NZD - rates from API are relative to that currency
+          const currencyToUsd = rates.USD || 1;
+          const currencyToBrl = rates.BRL || 1;
+          return {
+            usd: inputAmount * currencyToUsd,
+            brl: inputAmount * currencyToBrl
+          };
+        }
       
       case 'euro':
         const eurToBrl = rates.BRL || 6.50;
@@ -304,8 +319,18 @@ const CurrencyConverter: React.FC<CurrencyConverterProps> = ({
     
     switch (type) {
       case 'dollar':
-        const selectedRate = rates[selectedDollar] || rates.USD || 6.15;
-        return `1 ${selectedDollar} = R$${selectedRate.toFixed(4)} BRL`;
+        if (selectedDollar === 'USD') {
+          const usdToBrl = rates.BRL || 5.34;
+          return `1 USD = R$${usdToBrl.toFixed(4)} BRL`;
+        } else if (selectedDollar === 'USDT') {
+          const usdToBrl = rates.BRL || 5.34;
+          const touristRate = usdToBrl * 1.02;
+          return `1 USDT = R$${touristRate.toFixed(4)} BRL (com IOF 2%)`;
+        } else {
+          const currencyToUsd = rates.USD || 1;
+          const currencyToBrl = rates.BRL || 1;
+          return `1 ${selectedDollar} = $${currencyToUsd.toFixed(4)} USD | 1 ${selectedDollar} = R$${currencyToBrl.toFixed(4)} BRL`;
+        }
       
       case 'euro':
         const eurToBrl = rates.BRL || 6.50;
