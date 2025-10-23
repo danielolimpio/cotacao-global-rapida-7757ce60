@@ -63,7 +63,10 @@ const TradingViewWidget = ({
         "12m|1D",
         "60m|1W",
         "all|1M"
-      ]
+      ],
+      dateFormat: "dd MMM 'yy",
+      timeHoursFormat: "24-hours",
+      dateRange: "3m"
     });
 
     container.current.appendChild(script);

@@ -83,26 +83,10 @@ const Index = () => {
           
           <Card className="max-w-6xl mx-auto">
             <CardHeader>
-              <CardTitle className="flex items-center justify-between">
-                <div className="flex items-center space-x-3">
-                  <span className="text-3xl">🇺🇸</span>
-                  <span className="text-2xl font-bold">USD/BRL</span>
-                  <span className="text-3xl">🇧🇷</span>
-                </div>
-                <div className="text-right">
-                  {loading || !usdBrlQuote ? <div className="animate-pulse">
-                      <div className="text-3xl font-bold text-primary">R$ -.--</div>
-                      <div className="text-muted-foreground">Carregando...</div>
-                    </div> : <>
-                      <div className="text-3xl font-bold text-primary">
-                        R$ {usdBrlQuote.price.toFixed(2)}
-                      </div>
-                      <div className={`flex items-center ${usdBrlQuote.change >= 0 ? 'text-success' : 'text-destructive'}`}>
-                        <TrendingUp className="h-4 w-4 mr-1" />
-                        {usdBrlQuote.change >= 0 ? '+' : ''}{usdBrlQuote.change.toFixed(3)} ({usdBrlQuote.changePercent >= 0 ? '+' : ''}{usdBrlQuote.changePercent.toFixed(2)}%)
-                      </div>
-                    </>}
-                </div>
+              <CardTitle className="flex items-center justify-center space-x-3">
+                <span className="text-3xl">🇺🇸</span>
+                <span className="text-2xl font-bold">USD/BRL</span>
+                <span className="text-3xl">🇧🇷</span>
               </CardTitle>
             </CardHeader>
             <CardContent>
