@@ -31,7 +31,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
       <CurrencyTicker />
       
       {/* Header */}
-      <header className="border-b bg-card shadow-sm">
+      <header className="sticky top-0 z-50 border-b bg-card shadow-sm">
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between w-full">
             {/* Logo */}
@@ -199,6 +199,10 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
                             <Link to="/acoes/harvest-fund" className="text-base hover:text-primary transition-colors">Harvest Fund Hoje</Link>
                             <Link to="/acoes/300-etf" className="text-base hover:text-primary transition-colors">300 ETF Hoje</Link>
                             <Link to="/acoes/50-etf" className="text-base hover:text-primary transition-colors">50 ETF Hoje</Link>
+                          </div>
+                          <h4 className="font-semibold mb-3 mt-4 text-base">Índices</h4>
+                          <div className="grid gap-2">
+                            <Link to="/acoes/sp500" className="text-base hover:text-primary transition-colors">S&P 500 Hoje</Link>
                           </div>
                         </div>
                       </div>

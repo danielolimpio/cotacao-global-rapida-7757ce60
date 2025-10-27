@@ -224,7 +224,7 @@ const Forex = () => {
             <CardTitle className="text-center">Pares de Forex Exóticos</CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="grid grid-cols-2 md:grid-cols-7 gap-4">
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-4">
               <Link to="/forex/exoticos/usd-try" className="p-4 bg-muted/50 rounded-lg hover:bg-muted transition-colors text-center">
                 <div className="flex items-center justify-center space-x-2 mb-2">
                   <span className="text-2xl">🇺🇸</span>
