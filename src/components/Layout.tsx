@@ -264,11 +264,6 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
                             <Link to="/forex/exoticos/eur-try" className="text-base hover:text-primary transition-colors">EUR/TRY</Link>
                           </div>
                         </div>
-                      </div>
-                      <div className="grid grid-cols-4 gap-6 mt-4">
-                        <div></div>
-                        <div></div>
-                        <div></div>
                         <div>
                           <h4 className="font-semibold mb-3 text-base invisible">Cont.</h4>
                           <div className="grid gap-2">
@@ -281,10 +276,6 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
                             <Link to="/forex/exoticos/usd-rub" className="text-base hover:text-primary transition-colors">USD/RUB</Link>
                           </div>
                         </div>
-                      </div>
-                      <div className="mt-6 pt-4 border-t">
-                        <h4 className="font-semibold mb-3 text-base">Índices</h4>
-                        <Link to="/forex/sp500" className="text-base hover:text-primary transition-colors">S&P 500 Hoje</Link>
                       </div>
                     </div>
                   </NavigationMenuContent>
