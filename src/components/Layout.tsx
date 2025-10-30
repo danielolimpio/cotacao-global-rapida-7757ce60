@@ -22,6 +22,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
     { name: "Crypto", path: "/crypto" },
     { name: "Ações", path: "/acoes" },
     { name: "Forex", path: "/forex" },
+    { name: "Sobre", path: "/sobre" },
     { name: "Contato", path: "/contato" }
   ];
 
@@ -282,6 +283,14 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
                 </NavigationMenuItem>
 
                 <NavigationMenuItem>
+                  <Link to="/sobre">
+                    <Button variant={location.pathname === "/sobre" ? "default" : "ghost"} className="font-medium text-base">
+                      Sobre
+                    </Button>
+                  </Link>
+                </NavigationMenuItem>
+
+                <NavigationMenuItem>
                   <Link to="/contato">
                     <Button variant={location.pathname === "/contato" ? "default" : "ghost"} className="font-medium text-base">
                       Contato
@@ -338,8 +347,9 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
               </p>
             </div>
             <div>
-              <h4 className="font-semibold text-foreground mb-4">Mercados</h4>
+              <h4 className="font-semibold text-foreground mb-4">Navegação</h4>
               <ul className="space-y-2 text-sm text-muted-foreground">
+                <li><Link to="/" className="hover:text-primary">Início</Link></li>
                 <li><Link to="/cambio" className="hover:text-primary">Câmbio</Link></li>
                 <li><Link to="/crypto" className="hover:text-primary">Criptomoedas</Link></li>
                 <li><Link to="/acoes" className="hover:text-primary">Ações</Link></li>
@@ -349,16 +359,17 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
             <div>
               <h4 className="font-semibold text-foreground mb-4">Moedas Populares</h4>
               <ul className="space-y-2 text-sm text-muted-foreground">
-                <li>USD/BRL</li>
-                <li>EUR/BRL</li>
-                <li>GBP/BRL</li>
-                <li>CAD/BRL</li>
+                <li><Link to="/cambio/usd-brl" className="hover:text-primary">USD/BRL</Link></li>
+                <li><Link to="/cambio/eur-brl" className="hover:text-primary">EUR/BRL</Link></li>
+                <li><Link to="/cambio/gbp-brl" className="hover:text-primary">GBP/BRL</Link></li>
+                <li><Link to="/cambio/cad-brl" className="hover:text-primary">CAD/BRL</Link></li>
               </ul>
             </div>
             <div>
-              <h4 className="font-semibold text-foreground mb-4">Contato</h4>
+              <h4 className="font-semibold text-foreground mb-4">Institucional</h4>
               <ul className="space-y-2 text-sm text-muted-foreground">
-                <li><Link to="/contato" className="hover:text-primary">Entre em Contato</Link></li>
+                <li><Link to="/sobre" className="hover:text-primary">Sobre</Link></li>
+                <li><Link to="/contato" className="hover:text-primary">Contato</Link></li>
                 <li>contato@cotacaodehoje.com</li>
               </ul>
             </div>

@@ -8,6 +8,7 @@ import Cambio from "./pages/Cambio";
 import Crypto from "./pages/Crypto";
 import Acoes from "./pages/Acoes";
 import Forex from "./pages/Forex";
+import Sobre from "./pages/Sobre";
 import Contato from "./pages/Contato";
 import NotFound from "./pages/NotFound";
 
@@ -138,6 +139,7 @@ const App = () => (
           <Route path="/crypto" element={<Crypto />} />
           <Route path="/acoes" element={<Acoes />} />
           <Route path="/forex" element={<Forex />} />
+          <Route path="/sobre" element={<Sobre />} />
           <Route path="/contato" element={<Contato />} />
           
           {/* Câmbio routes */}

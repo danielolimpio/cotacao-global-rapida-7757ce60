@@ -63,7 +63,7 @@ const Index = () => {
                 </Button>
               </Link>
               <Link to="/calculadora-juros">
-                <Button variant="outline" size="lg" className="border-white bg-white/10 text-white hover:bg-white/20 hover:text-white">
+                <Button size="lg" className="bg-green-600 hover:bg-green-700 text-white">
                   Calculadora de Juros
                 </Button>
               </Link>
