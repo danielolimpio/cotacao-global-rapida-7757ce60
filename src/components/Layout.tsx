@@ -10,7 +10,7 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
-const logoUrl = "/lovable-uploads/d6b0e3b9-996c-4858-a90a-4c5c17f95789.png";
+import logoImage from "@/assets/logo.png";
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
   const location = useLocation();
@@ -37,7 +37,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
           <div className="flex items-center justify-between w-full">
             {/* Logo */}
             <Link to="/" className="flex items-center space-x-3">
-              <img src={logoUrl} alt="Cotação de Hoje" className="h-12 w-12" />
+              <img src={logoImage} alt="Cotação de Hoje" className="h-12 w-12" />
               <div>
                 <h1 className="text-xl font-bold text-foreground">Cotação de Hoje</h1>
                 <p className="text-xs text-muted-foreground">Tempo Real</p>
@@ -63,6 +63,14 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
                   <Link to="/">
                     <Button variant={location.pathname === "/" ? "default" : "ghost"} className="font-medium text-base">
                       Início
+                    </Button>
+                  </Link>
+                </NavigationMenuItem>
+
+                <NavigationMenuItem>
+                  <Link to="/sobre">
+                    <Button variant={location.pathname === "/sobre" ? "default" : "ghost"} className="font-medium text-base">
+                      Sobre
                     </Button>
                   </Link>
                 </NavigationMenuItem>
@@ -283,14 +291,6 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
                 </NavigationMenuItem>
 
                 <NavigationMenuItem>
-                  <Link to="/sobre">
-                    <Button variant={location.pathname === "/sobre" ? "default" : "ghost"} className="font-medium text-base">
-                      Sobre
-                    </Button>
-                  </Link>
-                </NavigationMenuItem>
-
-                <NavigationMenuItem>
                   <Link to="/contato">
                     <Button variant={location.pathname === "/contato" ? "default" : "ghost"} className="font-medium text-base">
                       Contato
@@ -334,22 +334,23 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
       <main>{children}</main>
 
       {/* Footer */}
-      <footer className="border-t bg-card mt-16">
+      <footer className="border-t bg-gray-900 mt-16">
         <div className="container mx-auto px-4 py-8">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div>
               <div className="flex items-center space-x-2 mb-4">
-                <img src={logoUrl} alt="Cotação de Hoje" className="h-8 w-8" />
-                <h3 className="font-bold text-foreground">Cotação de Hoje</h3>
+                <img src={logoImage} alt="Cotação de Hoje" className="h-8 w-8" />
+                <h3 className="font-bold text-white">Cotação de Hoje</h3>
               </div>
-              <p className="text-sm text-muted-foreground">
+              <p className="text-sm text-white/80">
                 Acompanhe as cotações financeiras em tempo real com dados precisos e atualizados.
               </p>
             </div>
             <div>
-              <h4 className="font-semibold text-foreground mb-4">Navegação</h4>
-              <ul className="space-y-2 text-sm text-muted-foreground">
+              <h4 className="font-semibold text-white mb-4">Navegação</h4>
+              <ul className="space-y-2 text-sm text-white/80">
                 <li><Link to="/" className="hover:text-primary">Início</Link></li>
+                <li><Link to="/sobre" className="hover:text-primary">Sobre</Link></li>
                 <li><Link to="/cambio" className="hover:text-primary">Câmbio</Link></li>
                 <li><Link to="/crypto" className="hover:text-primary">Criptomoedas</Link></li>
                 <li><Link to="/acoes" className="hover:text-primary">Ações</Link></li>
@@ -357,8 +358,8 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
               </ul>
             </div>
             <div>
-              <h4 className="font-semibold text-foreground mb-4">Moedas Populares</h4>
-              <ul className="space-y-2 text-sm text-muted-foreground">
+              <h4 className="font-semibold text-white mb-4">Moedas Populares</h4>
+              <ul className="space-y-2 text-sm text-white/80">
                 <li><Link to="/cambio/usd-brl" className="hover:text-primary">USD/BRL</Link></li>
                 <li><Link to="/cambio/eur-brl" className="hover:text-primary">EUR/BRL</Link></li>
                 <li><Link to="/cambio/gbp-brl" className="hover:text-primary">GBP/BRL</Link></li>
@@ -366,15 +367,15 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
               </ul>
             </div>
             <div>
-              <h4 className="font-semibold text-foreground mb-4">Institucional</h4>
-              <ul className="space-y-2 text-sm text-muted-foreground">
+              <h4 className="font-semibold text-white mb-4">Institucional</h4>
+              <ul className="space-y-2 text-sm text-white/80">
                 <li><Link to="/sobre" className="hover:text-primary">Sobre</Link></li>
                 <li><Link to="/contato" className="hover:text-primary">Contato</Link></li>
                 <li>contato@cotacaodehoje.com</li>
               </ul>
             </div>
           </div>
-          <div className="border-t pt-4 mt-8 text-center text-sm text-muted-foreground">
+          <div className="border-t border-white/20 pt-4 mt-8 text-center text-sm text-white/80">
             <p>&copy; 2025 Cotação de Hoje | Todos os direitos reservados | Desenvolvido por <a href="https://danielolimpio.com/" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">DanielOlimpio</a></p>
           </div>
         </div>
