@@ -10,7 +10,7 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
-import logoImage from "@/assets/logo.png";
+import logoImage from "@/assets/logo-completo.png";
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
   const location = useLocation();
@@ -36,12 +36,8 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between w-full">
             {/* Logo */}
-            <Link to="/" className="flex items-center space-x-3">
-              <img src={logoImage} alt="Cotação de Hoje" className="h-12 w-12" />
-              <div>
-                <h1 className="text-xl font-bold text-foreground">Cotação de Hoje</h1>
-                <p className="text-xs text-muted-foreground">Tempo Real</p>
-              </div>
+            <Link to="/" className="flex items-center">
+              <img src={logoImage} alt="Cotação de Hoje" className="h-14" />
             </Link>
 
             {/* Mobile Menu Button */}
@@ -338,10 +334,9 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
         <div className="container mx-auto px-4 py-8">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div>
-              <div className="flex items-center space-x-2 mb-4">
-                <img src={logoImage} alt="Cotação de Hoje" className="h-8 w-8" />
-                <h3 className="font-bold text-white">Cotação de Hoje</h3>
-              </div>
+              <Link to="/" className="inline-block mb-4">
+                <img src={logoImage} alt="Cotação de Hoje" className="h-12" />
+              </Link>
               <p className="text-sm text-white/80">
                 Acompanhe as cotações financeiras em tempo real com dados precisos e atualizados.
               </p>
