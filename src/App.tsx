@@ -26,6 +26,10 @@ import RubloRussoHoje from "./pages/cambio/RubloRussoHoje";
 import RupiaIndianaHoje from "./pages/cambio/RupiaIndianaHoje";
 import YuanChinesHoje from "./pages/cambio/YuanChinesHoje";
 import WonSulCoreanoHoje from "./pages/cambio/WonSulCoreanoHoje";
+import UsdBrlHoje from "./pages/cambio/UsdBrlHoje";
+import EurBrlHoje from "./pages/cambio/EurBrlHoje";
+import GbpBrlHoje from "./pages/cambio/GbpBrlHoje";
+import CadBrlHoje from "./pages/cambio/CadBrlHoje";
 
 // Crypto pages
 import AaveHoje from "./pages/crypto/AaveHoje";
@@ -151,6 +155,10 @@ const App = () => (
           <Route path="/cambio/rupia-indiana" element={<RupiaIndianaHoje />} />
           <Route path="/cambio/yuan-chines" element={<YuanChinesHoje />} />
           <Route path="/cambio/won-sul-coreano" element={<WonSulCoreanoHoje />} />
+          <Route path="/cambio/usd-brl" element={<UsdBrlHoje />} />
+          <Route path="/cambio/eur-brl" element={<EurBrlHoje />} />
+          <Route path="/cambio/gbp-brl" element={<GbpBrlHoje />} />
+          <Route path="/cambio/cad-brl" element={<CadBrlHoje />} />
           
           {/* Crypto routes */}
           <Route path="/crypto/aave" element={<AaveHoje />} />
