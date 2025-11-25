@@ -2,6 +2,7 @@ import Layout from "@/components/Layout";
 import QuoteCard from "@/components/QuoteCard";
 import TradingViewWidget from "@/components/TradingViewWidget";
 import UniversalConverter from "@/components/UniversalConverter";
+import EducationalSection from "@/components/EducationalSection";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { TrendingUp, Globe, Shield, Zap } from "lucide-react";
@@ -155,6 +156,9 @@ const Index = () => {
           </div>
         </div>
       </section>
+
+      {/* Educational Section */}
+      <EducationalSection />
     </Layout>;
 };
 export default Index;
