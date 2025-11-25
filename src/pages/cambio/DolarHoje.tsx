@@ -1,6 +1,7 @@
 import Layout from "@/components/Layout";
 import TradingViewWidget from "@/components/TradingViewWidget";
 import CurrencyConverter from "@/components/CurrencyConverter";
+import DolarEducationalContent from "@/components/DolarEducationalContent";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 const DolarHoje = () => {
@@ -27,6 +28,8 @@ const DolarHoje = () => {
 
 
         <CurrencyConverter type="dollar" />
+
+        <DolarEducationalContent />
       </div>
     </Layout>
   );
