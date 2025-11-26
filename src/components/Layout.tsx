@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { TrendingUp, DollarSign, ChevronDown, Menu, X } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import CurrencyTicker from "@/components/CurrencyTicker";
+import Breadcrumbs from "@/components/Breadcrumbs";
 import { useState } from "react";
 import {
   NavigationMenu,
@@ -325,6 +326,9 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
           </div>
         )}
       </header>
+
+      {/* Breadcrumbs */}
+      <Breadcrumbs />
 
       {/* Main Content */}
       <main>{children}</main>
