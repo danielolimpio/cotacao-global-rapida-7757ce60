@@ -1,12 +1,32 @@
 import Layout from "@/components/Layout";
+import SEO from "@/components/SEO";
 import TradingViewWidget from "@/components/TradingViewWidget";
 import CurrencyConverter from "@/components/CurrencyConverter";
 import DolarEducationalContent from "@/components/DolarEducationalContent";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 const DolarHoje = () => {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "FinancialProduct",
+    "name": "Dólar Americano (USD)",
+    "description": "Cotação do Dólar Americano em tempo real com conversor e gráficos atualizados",
+    "provider": {
+      "@type": "Organization",
+      "name": "Cotação de Hoje",
+      "url": "https://cotacaodehoje.com"
+    }
+  };
+
   return (
     <Layout>
+      <SEO
+        title="Dólar Hoje - Cotação USD/BRL em Tempo Real"
+        description="Acompanhe a cotação do dólar americano (USD) hoje em tempo real. Conversor de dólar para real, gráficos atualizados e análise completa da moeda americana."
+        keywords="dólar hoje, cotação dólar, USD BRL, dólar americano, conversão dólar real, preço dólar, dólar tempo real, câmbio dólar"
+        canonical="https://cotacaodehoje.com/cambio/dolar"
+        schema={schema}
+      />
       <div className="container mx-auto px-4 py-8">
         <div className="text-center mb-8">
           <h1 className="text-4xl font-bold text-foreground mb-4">Dólar Hoje</h1>

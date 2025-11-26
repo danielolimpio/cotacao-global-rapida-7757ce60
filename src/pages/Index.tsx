@@ -1,4 +1,5 @@
 import Layout from "@/components/Layout";
+import SEO from "@/components/SEO";
 import QuoteCard from "@/components/QuoteCard";
 import TradingViewWidget from "@/components/TradingViewWidget";
 import UniversalConverter from "@/components/UniversalConverter";
@@ -8,7 +9,24 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { TrendingUp, Globe, Shield, Zap } from "lucide-react";
 import { Link } from "react-router-dom";
 import useRealTimeQuotes from "@/hooks/useRealTimeQuotes";
+
 const Index = () => {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Cotação de Hoje",
+    "description": "Plataforma de cotações financeiras em tempo real",
+    "url": "https://cotacaodehoje.com",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": {
+        "@type": "EntryPoint",
+        "urlTemplate": "https://cotacaodehoje.com/busca?q={search_term_string}"
+      },
+      "query-input": "required name=search_term_string"
+    }
+  };
+
   const {
     quotes,
     loading
@@ -44,6 +62,13 @@ const Index = () => {
   }, "CAD/BRL")].filter(Boolean);
   const usdBrlQuote = quotes['USDBRL'];
   return <Layout>
+      <SEO
+        title="Cotações Hoje - Dólar, Euro, Bitcoin e Ações em Tempo Real"
+        description="Acompanhe cotações do dólar, euro, bitcoin, ações e criptomoedas em tempo real. Conversor de moedas, gráficos atualizados e análises do mercado financeiro."
+        keywords="cotação hoje, dólar hoje, euro hoje, bitcoin hoje, cotação tempo real, conversão moedas, câmbio, criptomoedas, ações, forex, mercado financeiro"
+        canonical="https://cotacaodehoje.com"
+        schema={schema}
+      />
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-primary/10 to-accent/10 py-20 bg-cover bg-center bg-no-repeat" style={{
       backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/lovable-uploads/85bbe2bd-087d-450f-854b-df96d620b9ce.png')`

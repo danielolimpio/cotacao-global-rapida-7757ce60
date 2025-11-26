@@ -1,12 +1,32 @@
 import Layout from "@/components/Layout";
+import SEO from "@/components/SEO";
 import TradingViewWidget from "@/components/TradingViewWidget";
 import QuoteCard from "@/components/QuoteCard";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 const Acoes = () => {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Ações - Bolsa de Valores em Tempo Real",
+    "description": "Cotações das principais ações da B3, NYSE e NASDAQ em tempo real",
+    "provider": {
+      "@type": "Organization",
+      "name": "Cotação de Hoje",
+      "url": "https://cotacaodehoje.com"
+    }
+  };
+
   return (
     <Layout>
+      <SEO
+        title="Ações Hoje - Bolsa de Valores em Tempo Real"
+        description="Cotações das principais ações da bolsa: B3, NYSE, NASDAQ. Acompanhe Apple, Microsoft, Petrobras e mais em tempo real com gráficos atualizados."
+        keywords="ações hoje, bolsa valores, B3, NYSE, NASDAQ, cotação ações, preço ações, mercado ações, investimentos, bovespa"
+        canonical="https://cotacaodehoje.com/acoes"
+        schema={schema}
+      />
       <div className="container mx-auto px-4 py-8">
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold text-foreground mb-4">Ações</h1>
