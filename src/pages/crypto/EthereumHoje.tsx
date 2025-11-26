@@ -1,12 +1,13 @@
 import Layout from "@/components/Layout";
 import TradingViewWidget from "@/components/TradingViewWidget";
 import UniversalConverter from "@/components/UniversalConverter";
+import SEO from "@/components/SEO";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 const EthereumHoje = () => {
-  
   return (
     <Layout>
+      <SEO path="/crypto/ethereum-hoje" />
       <div className="container mx-auto px-4 py-8">
         <div className="text-center mb-8">
           <h1 className="text-4xl font-bold text-foreground mb-4">Ethereum Hoje</h1>
