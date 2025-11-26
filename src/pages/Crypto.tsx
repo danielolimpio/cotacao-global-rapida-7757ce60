@@ -1,11 +1,31 @@
 import Layout from "@/components/Layout";
+import SEO from "@/components/SEO";
 import TradingViewWidget from "@/components/TradingViewWidget";
 import QuoteCard from "@/components/QuoteCard";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 const Crypto = () => {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Criptomoedas - Cotações em Tempo Real",
+    "description": "Cotações das principais criptomoedas em tempo real",
+    "provider": {
+      "@type": "Organization",
+      "name": "Cotação de Hoje",
+      "url": "https://cotacaodehoje.com"
+    }
+  };
+
   return (
     <Layout>
+      <SEO
+        title="Criptomoedas Hoje - Cotações em Tempo Real"
+        description="Cotações das principais criptomoedas em tempo real: Bitcoin, Ethereum, Binance Coin e mais. Gráficos, conversores e análises do mercado crypto."
+        keywords="criptomoedas, bitcoin, ethereum, crypto hoje, cotação crypto, preço bitcoin, mercado cripto, criptoativos, BTC, ETH, altcoins"
+        canonical="https://cotacaodehoje.com/crypto"
+        schema={schema}
+      />
       <div className="container mx-auto px-4 py-8">
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold text-foreground mb-4">Criptomoedas</h1>
