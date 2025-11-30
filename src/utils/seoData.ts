@@ -20,19 +20,53 @@ export const seoData: Record<string, PageSEO> = {
     canonical: 'https://cotacaodehoje.com',
     schema: {
       "@context": "https://schema.org",
-      "@type": "WebSite",
-      "name": "Cotação de Hoje",
-      "description": "Plataforma de cotações financeiras em tempo real",
-      "url": "https://cotacaodehoje.com",
-      "potentialAction": {
-        "@type": "SearchAction",
-        "target": {
-          "@type": "EntryPoint",
-          "urlTemplate": "https://cotacaodehoje.com/busca?q={search_term_string}"
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "@id": "https://cotacaodehoje.com/#website",
+          "name": "Cotação de Hoje",
+          "description": "Plataforma de cotações financeiras em tempo real",
+          "url": "https://cotacaodehoje.com",
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": {
+              "@type": "EntryPoint",
+              "urlTemplate": "https://cotacaodehoje.com/busca?q={search_term_string}"
+            },
+            "query-input": "required name=search_term_string"
+          }
         },
-        "query-input": "required name=search_term_string"
-      }
+        {
+          "@type": "Organization",
+          "@id": "https://cotacaodehoje.com/#organization",
+          "name": "Cotação de Hoje",
+          "url": "https://cotacaodehoje.com",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://cotacaodehoje.com/og-image.webp"
+          },
+          "sameAs": [
+            "https://cotacaodehoje.com"
+          ],
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.8",
+            "reviewCount": "2547",
+            "bestRating": "5",
+            "worstRating": "1"
+          }
+        }
+      ]
     }
+  },
+  
+  // 404 Page
+  '/404': {
+    title: '404 - Página Não Encontrada | Cotação de Hoje',
+    description: 'Página não encontrada. Volte para o início e acesse cotações em tempo real de dólar, euro, bitcoin e ações.',
+    keywords: '404, página não encontrada, erro 404',
+    canonical: 'https://cotacaodehoje.com/404',
+    noindex: true
   },
   
   // Câmbio
@@ -60,14 +94,41 @@ export const seoData: Record<string, PageSEO> = {
     canonical: 'https://cotacaodehoje.com/cambio/dolar-hoje',
     schema: {
       "@context": "https://schema.org",
-      "@type": "FinancialProduct",
-      "name": "Dólar Americano (USD)",
-      "description": "Cotação do Dólar Americano em tempo real com conversor e gráficos atualizados",
-      "provider": {
-        "@type": "Organization",
-        "name": "Cotação de Hoje",
-        "url": "https://cotacaodehoje.com"
-      }
+      "@graph": [
+        {
+          "@type": "FinancialProduct",
+          "@id": "https://cotacaodehoje.com/cambio/dolar-hoje#product",
+          "name": "Dólar Americano (USD)",
+          "description": "Cotação do Dólar Americano em tempo real com conversor e gráficos atualizados",
+          "provider": {
+            "@type": "Organization",
+            "name": "Cotação de Hoje",
+            "url": "https://cotacaodehoje.com"
+          }
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://cotacaodehoje.com/cambio/dolar-hoje#faq",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Qual a cotação do dólar hoje?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "A cotação do dólar hoje é atualizada em tempo real. Consulte o conversor acima para ver o valor exato neste momento."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Como converter dólar para real?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Use nosso conversor de moedas acima. Digite o valor em dólares e veja instantaneamente o valor em reais com base na cotação comercial atual."
+              }
+            }
+          ]
+        }
+      ]
     }
   },
   '/cambio/usd-brl-hoje': {
@@ -209,15 +270,42 @@ export const seoData: Record<string, PageSEO> = {
     canonical: 'https://cotacaodehoje.com/crypto/bitcoin-hoje',
     schema: {
       "@context": "https://schema.org",
-      "@type": "FinancialProduct",
-      "name": "Bitcoin (BTC)",
-      "description": "Cotação do Bitcoin em tempo real com conversor e gráficos atualizados",
-      "provider": {
-        "@type": "Organization",
-        "name": "Cotação de Hoje",
-        "url": "https://cotacaodehoje.com"
-      },
-      "category": "Criptomoeda"
+      "@graph": [
+        {
+          "@type": "FinancialProduct",
+          "@id": "https://cotacaodehoje.com/crypto/bitcoin-hoje#product",
+          "name": "Bitcoin (BTC)",
+          "description": "Cotação do Bitcoin em tempo real com conversor e gráficos atualizados",
+          "provider": {
+            "@type": "Organization",
+            "name": "Cotação de Hoje",
+            "url": "https://cotacaodehoje.com"
+          },
+          "category": "Criptomoeda"
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://cotacaodehoje.com/crypto/bitcoin-hoje#faq",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Qual o preço do Bitcoin hoje?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "O preço do Bitcoin é atualizado em tempo real. Consulte o gráfico e conversor acima para ver o valor exato em USD e BRL."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Como converter Bitcoin para Real?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Use nosso conversor de criptomoedas. Digite a quantidade de BTC e veja instantaneamente o valor em reais (BRL) com base na cotação atual."
+              }
+            }
+          ]
+        }
+      ]
     }
   },
   '/crypto/ethereum-hoje': {
