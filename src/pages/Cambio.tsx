@@ -20,13 +20,7 @@ const Cambio = () => {
 
   return (
     <Layout>
-      <SEO
-        title="Câmbio - Cotações de Moedas em Tempo Real"
-        description="Cotações de câmbio em tempo real: dólar, euro, libra, iene e todas principais moedas. Conversores, gráficos atualizados e taxas de câmbio do dia."
-        keywords="câmbio, cotação moedas, câmbio hoje, taxa de câmbio, conversão moedas, dólar real, euro real, moeda estrangeira, forex, exchange rate"
-        canonical="https://cotacaodehoje.com/cambio"
-        schema={schema}
-      />
+      <SEO path="/cambio" />
       <div className="container mx-auto px-4 py-8">
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold text-foreground mb-4">Câmbio</h1>

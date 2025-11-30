@@ -20,13 +20,7 @@ const DolarHoje = () => {
 
   return (
     <Layout>
-      <SEO
-        title="Dólar Hoje - Cotação USD/BRL em Tempo Real"
-        description="Acompanhe a cotação do dólar americano (USD) hoje em tempo real. Conversor de dólar para real, gráficos atualizados e análise completa da moeda americana."
-        keywords="dólar hoje, cotação dólar, USD BRL, dólar americano, conversão dólar real, preço dólar, dólar tempo real, câmbio dólar"
-        canonical="https://cotacaodehoje.com/cambio/dolar"
-        schema={schema}
-      />
+      <SEO path="/cambio/dolar-hoje" />
       <div className="container mx-auto px-4 py-8">
         <div className="text-center mb-8">
           <h1 className="text-4xl font-bold text-foreground mb-4">Dólar Hoje</h1>

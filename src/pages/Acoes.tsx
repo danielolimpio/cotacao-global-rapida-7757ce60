@@ -20,13 +20,7 @@ const Acoes = () => {
 
   return (
     <Layout>
-      <SEO
-        title="Ações Hoje - Bolsa de Valores em Tempo Real"
-        description="Cotações das principais ações da bolsa: B3, NYSE, NASDAQ. Acompanhe Apple, Microsoft, Petrobras e mais em tempo real com gráficos atualizados."
-        keywords="ações hoje, bolsa valores, B3, NYSE, NASDAQ, cotação ações, preço ações, mercado ações, investimentos, bovespa"
-        canonical="https://cotacaodehoje.com/acoes"
-        schema={schema}
-      />
+      <SEO path="/acoes" />
       <div className="container mx-auto px-4 py-8">
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold text-foreground mb-4">Ações</h1>
