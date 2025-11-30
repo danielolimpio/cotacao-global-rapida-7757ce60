@@ -5,6 +5,10 @@ export interface PageSEO {
   description: string;
   keywords: string;
   canonical: string;
+  ogType?: string;
+  ogImage?: string;
+  noindex?: boolean;
+  schema?: object;
 }
 
 export const seoData: Record<string, PageSEO> = {
@@ -13,7 +17,22 @@ export const seoData: Record<string, PageSEO> = {
     title: 'Cotações Hoje - Dólar, Euro, Bitcoin e Ações em Tempo Real',
     description: 'Acompanhe cotações do dólar, euro, bitcoin, ações e criptomoedas em tempo real. Conversor de moedas, gráficos atualizados e análises do mercado financeiro.',
     keywords: 'cotação hoje, dólar hoje, euro hoje, bitcoin hoje, cotação tempo real, conversão moedas, câmbio, criptomoedas, ações, forex, mercado financeiro',
-    canonical: 'https://cotacaodehoje.com'
+    canonical: 'https://cotacaodehoje.com',
+    schema: {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Cotação de Hoje",
+      "description": "Plataforma de cotações financeiras em tempo real",
+      "url": "https://cotacaodehoje.com",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://cotacaodehoje.com/busca?q={search_term_string}"
+        },
+        "query-input": "required name=search_term_string"
+      }
+    }
   },
   
   // Câmbio
@@ -21,13 +40,35 @@ export const seoData: Record<string, PageSEO> = {
     title: 'Câmbio - Cotações de Moedas em Tempo Real',
     description: 'Cotações de câmbio em tempo real: dólar, euro, libra, iene e todas principais moedas. Conversores, gráficos atualizados e taxas de câmbio do dia.',
     keywords: 'câmbio, cotação moedas, câmbio hoje, taxa de câmbio, conversão moedas, dólar real, euro real, moeda estrangeira, forex, exchange rate',
-    canonical: 'https://cotacaodehoje.com/cambio'
+    canonical: 'https://cotacaodehoje.com/cambio',
+    schema: {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "name": "Câmbio - Cotações de Moedas",
+      "description": "Cotações das principais moedas mundiais em tempo real",
+      "provider": {
+        "@type": "Organization",
+        "name": "Cotação de Hoje",
+        "url": "https://cotacaodehoje.com"
+      }
+    }
   },
   '/cambio/dolar-hoje': {
     title: 'Dólar Hoje - Cotação USD/BRL em Tempo Real',
     description: 'Acompanhe a cotação do dólar americano (USD) hoje em tempo real. Conversor de dólar para real, gráficos atualizados e análise completa da moeda americana.',
     keywords: 'dólar hoje, cotação dólar, USD BRL, dólar americano, conversão dólar real, preço dólar, dólar tempo real, câmbio dólar',
-    canonical: 'https://cotacaodehoje.com/cambio/dolar-hoje'
+    canonical: 'https://cotacaodehoje.com/cambio/dolar-hoje',
+    schema: {
+      "@context": "https://schema.org",
+      "@type": "FinancialProduct",
+      "name": "Dólar Americano (USD)",
+      "description": "Cotação do Dólar Americano em tempo real com conversor e gráficos atualizados",
+      "provider": {
+        "@type": "Organization",
+        "name": "Cotação de Hoje",
+        "url": "https://cotacaodehoje.com"
+      }
+    }
   },
   '/cambio/usd-brl-hoje': {
     title: 'Dólar x Real Hoje - Cotação USD/BRL em Tempo Real',
@@ -39,7 +80,18 @@ export const seoData: Record<string, PageSEO> = {
     title: 'Euro Hoje - Cotação EUR/BRL em Tempo Real',
     description: 'Cotação do euro (EUR) hoje em tempo real. Conversor euro para real, gráficos ao vivo e análise da moeda europeia.',
     keywords: 'euro hoje, cotação euro, EUR BRL, euro real, conversão euro, preço euro, euro tempo real, câmbio euro',
-    canonical: 'https://cotacaodehoje.com/cambio/euro-hoje'
+    canonical: 'https://cotacaodehoje.com/cambio/euro-hoje',
+    schema: {
+      "@context": "https://schema.org",
+      "@type": "FinancialProduct",
+      "name": "Euro (EUR)",
+      "description": "Cotação do Euro em tempo real com conversor e gráficos atualizados",
+      "provider": {
+        "@type": "Organization",
+        "name": "Cotação de Hoje",
+        "url": "https://cotacaodehoje.com"
+      }
+    }
   },
   '/cambio/eur-brl-hoje': {
     title: 'Euro x Real Hoje - Cotação EUR/BRL em Tempo Real',
@@ -137,13 +189,36 @@ export const seoData: Record<string, PageSEO> = {
     title: 'Criptomoedas Hoje - Cotações em Tempo Real',
     description: 'Cotações das principais criptomoedas em tempo real: Bitcoin, Ethereum, Binance Coin e mais. Gráficos, conversores e análises do mercado crypto.',
     keywords: 'criptomoedas, bitcoin, ethereum, crypto hoje, cotação crypto, preço bitcoin, mercado cripto, criptoativos',
-    canonical: 'https://cotacaodehoje.com/crypto'
+    canonical: 'https://cotacaodehoje.com/crypto',
+    schema: {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "name": "Criptomoedas - Cotações em Tempo Real",
+      "description": "Cotações das principais criptomoedas em tempo real",
+      "provider": {
+        "@type": "Organization",
+        "name": "Cotação de Hoje",
+        "url": "https://cotacaodehoje.com"
+      }
+    }
   },
   '/crypto/bitcoin-hoje': {
     title: 'Bitcoin Hoje - Cotação BTC em Tempo Real',
     description: 'Acompanhe a cotação do Bitcoin (BTC) em tempo real. Preço atualizado, gráficos ao vivo, conversor BTC/BRL e análise completa da principal criptomoeda.',
     keywords: 'bitcoin hoje, BTC, cotação bitcoin, preço bitcoin, bitcoin tempo real, bitcoin BRL, bitcoin USD, comprar bitcoin, valor bitcoin',
-    canonical: 'https://cotacaodehoje.com/crypto/bitcoin-hoje'
+    canonical: 'https://cotacaodehoje.com/crypto/bitcoin-hoje',
+    schema: {
+      "@context": "https://schema.org",
+      "@type": "FinancialProduct",
+      "name": "Bitcoin (BTC)",
+      "description": "Cotação do Bitcoin em tempo real com conversor e gráficos atualizados",
+      "provider": {
+        "@type": "Organization",
+        "name": "Cotação de Hoje",
+        "url": "https://cotacaodehoje.com"
+      },
+      "category": "Criptomoeda"
+    }
   },
   '/crypto/ethereum-hoje': {
     title: 'Ethereum Hoje - Cotação ETH em Tempo Real',
@@ -241,7 +316,18 @@ export const seoData: Record<string, PageSEO> = {
     title: 'Ações Hoje - Bolsa de Valores em Tempo Real',
     description: 'Cotações das principais ações da bolsa: B3, NYSE, NASDAQ. Acompanhe Apple, Microsoft, Petrobras e mais em tempo real.',
     keywords: 'ações hoje, bolsa valores, B3, NYSE, NASDAQ, cotação ações, preço ações, mercado ações, investimentos',
-    canonical: 'https://cotacaodehoje.com/acoes'
+    canonical: 'https://cotacaodehoje.com/acoes',
+    schema: {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "name": "Ações - Bolsa de Valores em Tempo Real",
+      "description": "Cotações das principais ações da B3, NYSE e NASDAQ em tempo real",
+      "provider": {
+        "@type": "Organization",
+        "name": "Cotação de Hoje",
+        "url": "https://cotacaodehoje.com"
+      }
+    }
   },
   '/acoes/apple-hoje': {
     title: 'Apple Hoje - Cotação AAPL em Tempo Real',

@@ -62,13 +62,7 @@ const Index = () => {
   }, "CAD/BRL")].filter(Boolean);
   const usdBrlQuote = quotes['USDBRL'];
   return <Layout>
-      <SEO
-        title="Cotações Hoje - Dólar, Euro, Bitcoin e Ações em Tempo Real"
-        description="Acompanhe cotações do dólar, euro, bitcoin, ações e criptomoedas em tempo real. Conversor de moedas, gráficos atualizados e análises do mercado financeiro."
-        keywords="cotação hoje, dólar hoje, euro hoje, bitcoin hoje, cotação tempo real, conversão moedas, câmbio, criptomoedas, ações, forex, mercado financeiro"
-        canonical="https://cotacaodehoje.com"
-        schema={schema}
-      />
+      <SEO path="/" />
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-primary/10 to-accent/10 py-20 bg-cover bg-center bg-no-repeat" style={{
       backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/lovable-uploads/85bbe2bd-087d-450f-854b-df96d620b9ce.png')`

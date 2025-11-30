@@ -23,13 +23,7 @@ const EuroHoje = () => {
   
   return (
     <Layout>
-      <SEO
-        title="Euro Hoje - Cotação EUR/BRL em Tempo Real"
-        description="Cotação do euro (EUR) hoje em tempo real. Conversor euro para real, gráficos ao vivo e análise completa da moeda europeia."
-        keywords="euro hoje, cotação euro, EUR BRL, euro real, conversão euro, preço euro, euro tempo real, câmbio euro"
-        canonical="https://cotacaodehoje.com/cambio/euro"
-        schema={schema}
-      />
+      <SEO path="/cambio/euro-hoje" />
       <div className="container mx-auto px-4 py-8">
         <div className="text-center mb-8">
           <h1 className="text-4xl font-bold text-foreground mb-4">Euro Hoje</h1>

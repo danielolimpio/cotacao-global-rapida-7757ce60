@@ -20,13 +20,7 @@ const BitcoinHoje = () => {
   
   return (
     <Layout>
-      <SEO
-        title="Bitcoin Hoje - Cotação BTC em Tempo Real"
-        description="Acompanhe a cotação do Bitcoin (BTC) em tempo real. Preço atualizado, gráficos ao vivo, conversor BTC/BRL e análise completa da principal criptomoeda do mundo."
-        keywords="bitcoin hoje, BTC, cotação bitcoin, preço bitcoin, bitcoin tempo real, bitcoin BRL, bitcoin USD, comprar bitcoin, valor bitcoin"
-        canonical="https://cotacaodehoje.com/crypto/bitcoin"
-        schema={schema}
-      />
+      <SEO path="/crypto/bitcoin-hoje" />
       <div className="container mx-auto px-4 py-8">
         <div className="text-center mb-8">
           <h1 className="text-4xl font-bold text-foreground mb-4">Bitcoin Hoje</h1>
