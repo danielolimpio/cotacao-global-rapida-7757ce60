@@ -30,6 +30,14 @@
 - Organiza hierarquia do conteúdo
 - Melhora compreensão do Google sobre estrutura do site
 
+#### 6. **BreadcrumbList Schema** (Navegação)
+- ✅ Implementado automaticamente em todas as páginas
+- Gerado dinamicamente baseado na URL
+- 120+ labels de breadcrumbs mapeados
+- Aparece nos resultados do Google como "Início › Seção › Página"
+- Aumenta CTR e melhora UX
+- Documentação completa em [`BREADCRUMB-SCHEMA-GUIDE.md`](./BREADCRUMB-SCHEMA-GUIDE.md)
+
 ### Benefícios dos Rich Snippets:
 - ⭐ Estrelas de avaliação nos resultados
 - 📝 FAQs expandíveis diretamente no Google

@@ -42,6 +42,7 @@
 - ✅ **FinancialProduct Schema** em cotações
 - ✅ **FAQPage Schema** em páginas principais
 - ✅ **CollectionPage Schema** em categorias
+- ✅ **BreadcrumbList Schema** em todas páginas (120+ labels)
 - ✅ **@graph** para múltiplos schemas
 
 #### Redirecionamentos 301
@@ -67,6 +68,7 @@
 
 ### 📚 Documentação SEO
 - [`SEO-IMPROVEMENTS.md`](./SEO-IMPROVEMENTS.md) - Melhorias implementadas
+- [`BREADCRUMB-SCHEMA-GUIDE.md`](./BREADCRUMB-SCHEMA-GUIDE.md) - Guia completo de breadcrumbs
 - [`SCHEMA-EXAMPLES.md`](./SCHEMA-EXAMPLES.md) - Exemplos de schemas JSON-LD
 - [`SEO-CHECKLIST.md`](./SEO-CHECKLIST.md) - Checklist de manutenção
 - [`SEO-IMPLEMENTATION-GUIDE.md`](./SEO-IMPLEMENTATION-GUIDE.md) - Guia de implementação
