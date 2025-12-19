@@ -23,6 +23,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
     { name: "Crypto", path: "/crypto" },
     { name: "Ações", path: "/acoes" },
     { name: "Forex", path: "/forex" },
+    { name: "Blog", path: "/blog" },
     { name: "Sobre", path: "/sobre" },
     { name: "Contato", path: "/contato" }
   ];
@@ -288,6 +289,14 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
                 </NavigationMenuItem>
 
                 <NavigationMenuItem>
+                  <Link to="/blog">
+                    <Button variant={location.pathname === "/blog" || location.pathname.startsWith("/blog/") ? "default" : "ghost"} className="font-medium text-base">
+                      Blog
+                    </Button>
+                  </Link>
+                </NavigationMenuItem>
+
+                <NavigationMenuItem>
                   <Link to="/contato">
                     <Button variant={location.pathname === "/contato" ? "default" : "ghost"} className="font-medium text-base">
                       Contato
@@ -354,6 +363,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
                 <li><Link to="/crypto" className="hover:text-primary">Criptomoedas</Link></li>
                 <li><Link to="/acoes" className="hover:text-primary">Ações</Link></li>
                 <li><Link to="/forex" className="hover:text-primary">Forex</Link></li>
+                <li><Link to="/blog" className="hover:text-primary">Blog</Link></li>
               </ul>
             </div>
             <div>

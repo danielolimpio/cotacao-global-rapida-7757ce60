@@ -12,6 +12,7 @@ import Acoes from "./pages/Acoes";
 import Forex from "./pages/Forex";
 import Sobre from "./pages/Sobre";
 import Contato from "./pages/Contato";
+import Blog from "./pages/Blog";
 import NotFound from "./pages/NotFound";
 
 // Câmbio pages
@@ -145,6 +146,7 @@ const App = () => (
           <Route path="/forex" element={<Forex />} />
           <Route path="/sobre" element={<Sobre />} />
           <Route path="/contato" element={<Contato />} />
+          <Route path="/blog" element={<Blog />} />
           
           {/* Câmbio routes */}
           <Route path="/cambio/dolar" element={<DolarHoje />} />
