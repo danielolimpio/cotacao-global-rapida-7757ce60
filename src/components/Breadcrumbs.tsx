@@ -23,6 +23,7 @@ const Breadcrumbs = () => {
       'contato': 'Contato',
       'calculadora-juros': 'Calculadora de Juros',
       'ver-todas-cotacoes': 'Ver Todas Cotações',
+      'blog': 'Blog',
       
       // Câmbio
       'dolar': 'Dólar Hoje',

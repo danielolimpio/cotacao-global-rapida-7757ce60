@@ -1,5 +1,7 @@
 // SEO Data for all pages - Easy to maintain and update
 
+// SEO Data for all pages
+
 export interface PageSEO {
   title: string;
   description: string;
@@ -806,6 +808,31 @@ export const seoData: Record<string, PageSEO> = {
     description: 'Cotação do par AUD/SGD no mercado Forex em tempo real.',
     keywords: 'AUD/SGD, australiano cingapura, forex exótico, aud sgd hoje',
     canonical: 'https://cotacaodehoje.com/forex/exoticos/aud-sgd-hoje'
+  },
+  
+  // Blog
+  '/blog': {
+    title: 'Blog de Finanças - Artigos sobre Investimentos, Economia e Educação Financeira',
+    description: 'Artigos exclusivos sobre investimentos, criptomoedas, economia e educação financeira. Aprenda a investir e tomar decisões inteligentes.',
+    keywords: 'blog finanças, artigos investimentos, educação financeira, dicas investir, economia, criptomoedas, mercado financeiro, poupança, renda fixa, renda variável',
+    canonical: 'https://cotacaodehoje.com/blog',
+    schema: {
+      "@context": "https://schema.org",
+      "@type": "Blog",
+      "@id": "https://cotacaodehoje.com/blog#blog",
+      "name": "Blog Cotação de Hoje",
+      "description": "Artigos exclusivos sobre investimentos, economia e educação financeira",
+      "url": "https://cotacaodehoje.com/blog",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Cotação de Hoje",
+        "url": "https://cotacaodehoje.com",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://cotacaodehoje.com/og-image.webp"
+        }
+      }
+    }
   }
 };
 
