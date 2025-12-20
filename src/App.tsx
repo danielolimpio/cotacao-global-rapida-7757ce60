@@ -14,6 +14,9 @@ import Sobre from "./pages/Sobre";
 import Contato from "./pages/Contato";
 import Blog from "./pages/Blog";
 import NotFound from "./pages/NotFound";
+import PoliticaPrivacidade from "./pages/PoliticaPrivacidade";
+import PoliticaCookies from "./pages/PoliticaCookies";
+import TermosUso from "./pages/TermosUso";
 
 // Câmbio pages
 import DolarHoje from "./pages/cambio/DolarHoje";
@@ -262,6 +265,11 @@ const App = () => (
           {/* Calculator routes */}
           <Route path="/calculadora-juros" element={<CalculadoraJuros />} />
           <Route path="/ver-todas-cotacoes" element={<VerTodasCotacoes />} />
+          
+          {/* Legal pages */}
+          <Route path="/politica-de-privacidade" element={<PoliticaPrivacidade />} />
+          <Route path="/politica-de-cookies" element={<PoliticaCookies />} />
+          <Route path="/termos-de-uso" element={<TermosUso />} />
           
           <Route path="*" element={<NotFound />} />
         </Routes>

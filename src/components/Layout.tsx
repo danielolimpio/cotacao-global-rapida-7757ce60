@@ -380,7 +380,9 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
               <ul className="space-y-2 text-sm text-white/80">
                 <li><Link to="/sobre" className="hover:text-primary">Sobre</Link></li>
                 <li><Link to="/contato" className="hover:text-primary">Contato</Link></li>
-                <li>contato@cotacaodehoje.com</li>
+                <li><Link to="/politica-de-privacidade" className="hover:text-primary">Política de Privacidade</Link></li>
+                <li><Link to="/politica-de-cookies" className="hover:text-primary">Política de Cookies</Link></li>
+                <li><Link to="/termos-de-uso" className="hover:text-primary">Termos de Uso</Link></li>
               </ul>
             </div>
           </div>
