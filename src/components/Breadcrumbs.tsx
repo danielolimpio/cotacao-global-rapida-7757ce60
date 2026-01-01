@@ -25,6 +25,12 @@ const Breadcrumbs = () => {
       'ver-todas-cotacoes': 'Ver Todas Cotações',
       'blog': 'Blog',
       
+      // Páginas Legais
+      'politica-de-privacidade': 'Política de Privacidade',
+      'politica-de-cookies': 'Política de Cookies',
+      'termos-de-uso': 'Termos de Uso',
+      'sitemap': 'Sitemap',
+      
       // Câmbio
       'dolar': 'Dólar Hoje',
       'euro': 'Euro Hoje',
