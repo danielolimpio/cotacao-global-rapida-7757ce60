@@ -383,6 +383,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
                 <li><Link to="/politica-de-privacidade" className="hover:text-primary">Política de Privacidade</Link></li>
                 <li><Link to="/politica-de-cookies" className="hover:text-primary">Política de Cookies</Link></li>
                 <li><Link to="/termos-de-uso" className="hover:text-primary">Termos de Uso</Link></li>
+                <li><Link to="/sitemap" className="hover:text-primary">Sitemap</Link></li>
               </ul>
             </div>
           </div>

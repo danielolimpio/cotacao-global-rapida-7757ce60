@@ -17,6 +17,7 @@ import NotFound from "./pages/NotFound";
 import PoliticaPrivacidade from "./pages/PoliticaPrivacidade";
 import PoliticaCookies from "./pages/PoliticaCookies";
 import TermosUso from "./pages/TermosUso";
+import Sitemap from "./pages/Sitemap";
 
 // Câmbio pages
 import DolarHoje from "./pages/cambio/DolarHoje";
@@ -270,6 +271,7 @@ const App = () => (
           <Route path="/politica-de-privacidade" element={<PoliticaPrivacidade />} />
           <Route path="/politica-de-cookies" element={<PoliticaCookies />} />
           <Route path="/termos-de-uso" element={<TermosUso />} />
+          <Route path="/sitemap" element={<Sitemap />} />
           
           <Route path="*" element={<NotFound />} />
         </Routes>

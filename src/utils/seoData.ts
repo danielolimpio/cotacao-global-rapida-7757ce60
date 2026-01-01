@@ -833,6 +833,14 @@ export const seoData: Record<string, PageSEO> = {
         }
       }
     }
+  },
+  
+  // Sitemap
+  '/sitemap': {
+    title: 'Sitemap - Mapa do Site Completo | Cotação de Hoje',
+    description: 'Navegue por todas as páginas do Cotação de Hoje. Encontre cotações de moedas, criptomoedas, ações, forex e muito mais.',
+    keywords: 'sitemap, mapa do site, cotação de hoje, navegação, páginas, índice',
+    canonical: 'https://cotacaodehoje.com/sitemap'
   }
 };
 
