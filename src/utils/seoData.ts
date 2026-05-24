@@ -449,11 +449,11 @@ export const seoData: Record<string, PageSEO> = {
     keywords: 'nvidia, NVDA, ações nvidia, cotação nvda, nvidia hoje',
     canonical: 'https://cotacaodehoje.com/acoes/nvidia'
   },
-  '/acoes/magazine-luiza': {
+  '/acoes/magazine-luiz': {
     title: 'Magazine Luiza Hoje - Cotação MGLU3 em Tempo Real',
     description: 'Cotação do Magazine Luiza (MGLU3) na Bovespa em tempo real.',
     keywords: 'magazine luiza, MGLU3, ações magalu, bovespa, magalu hoje',
-    canonical: 'https://cotacaodehoje.com/acoes/magazine-luiza'
+    canonical: 'https://cotacaodehoje.com/acoes/magazine-luiz'
   },
   '/acoes/sp500': {
     title: 'S&P 500 Hoje - Cotação SPX em Tempo Real',
@@ -461,17 +461,17 @@ export const seoData: Record<string, PageSEO> = {
     keywords: 's&p 500, SPX, índice sp500, bolsa americana, sp500 hoje',
     canonical: 'https://cotacaodehoje.com/acoes/sp500'
   },
-  '/acoes/vertex-pharm': {
+  '/acoes/vertex': {
     title: 'Vertex Pharmaceuticals Hoje - Cotação VRTX em Tempo Real',
     description: 'Cotação da Vertex Pharmaceuticals (VRTX) em tempo real.',
     keywords: 'vertex, VRTX, ações vertex, farmacêutica, vertex hoje',
-    canonical: 'https://cotacaodehoje.com/acoes/vertex-pharm'
+    canonical: 'https://cotacaodehoje.com/acoes/vertex'
   },
-  '/acoes/monster-beverage': {
+  '/acoes/monster': {
     title: 'Monster Beverage Hoje - Cotação MNST em Tempo Real',
     description: 'Cotação da Monster Beverage (MNST) atualizada em tempo real.',
     keywords: 'monster beverage, MNST, ações monster, monster hoje',
-    canonical: 'https://cotacaodehoje.com/acoes/monster-beverage'
+    canonical: 'https://cotacaodehoje.com/acoes/monster'
   },
   '/acoes/pimco': {
     title: 'PIMCO Hoje - Cotação em Tempo Real',
@@ -527,11 +527,11 @@ export const seoData: Record<string, PageSEO> = {
     keywords: 'ambev, ABEV3, ações ambev, bebidas, ambev hoje',
     canonical: 'https://cotacaodehoje.com/acoes/ambev'
   },
-  '/acoes/etf50': {
+  '/acoes/50-etf': {
     title: '50 ETF Hoje - Cotação SSE 50 ETF em Tempo Real',
     description: 'Cotação do SSE 50 ETF (510050.SS) em tempo real.',
     keywords: '50 etf, SSE, etf china, bolsa xangai',
-    canonical: 'https://cotacaodehoje.com/acoes/etf50'
+    canonical: 'https://cotacaodehoje.com/acoes/50-etf'
   },
   '/acoes/eagle-point': {
     title: 'Eagle Point Hoje - Cotação ECC em Tempo Real',
@@ -545,11 +545,11 @@ export const seoData: Record<string, PageSEO> = {
     keywords: 'kraft heinz, KHC, ações kraft, alimentos, kraft heinz hoje',
     canonical: 'https://cotacaodehoje.com/acoes/kraft-heinz'
   },
-  '/acoes/etf300': {
+  '/acoes/300-etf': {
     title: '300 ETF Hoje - Cotação CSI 300 ETF em Tempo Real',
     description: 'Cotação do CSI 300 ETF (510300.SS) em tempo real.',
     keywords: '300 etf, CSI 300, etf china',
-    canonical: 'https://cotacaodehoje.com/acoes/etf300'
+    canonical: 'https://cotacaodehoje.com/acoes/300-etf'
   },
   '/acoes/assai': {
     title: 'Assaí Hoje - Cotação ASAI3 em Tempo Real',
@@ -581,11 +581,11 @@ export const seoData: Record<string, PageSEO> = {
     keywords: 'bank of china, banco china, ações china, bank of china hoje',
     canonical: 'https://cotacaodehoje.com/acoes/bank-of-china'
   },
-  '/acoes/china-shenhua-energy': {
+  '/acoes/china-shenhua': {
     title: 'China Shenhua Energy Hoje - Cotação 601088 em Tempo Real',
     description: 'Cotação da China Shenhua Energy (601088) em tempo real.',
     keywords: 'china shenhua, energia china, ações china, shenhua hoje',
-    canonical: 'https://cotacaodehoje.com/acoes/china-shenhua-energy'
+    canonical: 'https://cotacaodehoje.com/acoes/china-shenhua'
   },
   
   // Forex - Principais
