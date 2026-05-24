@@ -162,11 +162,11 @@ export const seoData: Record<string, PageSEO> = {
     keywords: 'EUR/BRL, euro real, cotação euro, câmbio europa, euro brasileiro',
     canonical: 'https://cotacaodehoje.com/cambio/eur-brl'
   },
-  '/cambio/libras-esterlinas': {
+  '/cambio/libras': {
     title: 'Libra Esterlina Hoje - Cotação GBP em Tempo Real',
     description: 'Cotação da libra esterlina (GBP) hoje. Conversor de libra para real, gráficos atualizados e análise da moeda britânica.',
     keywords: 'libra hoje, cotação libra, GBP BRL, libra esterlina, conversão libra real, preço libra, libra tempo real',
-    canonical: 'https://cotacaodehoje.com/cambio/libras-esterlinas'
+    canonical: 'https://cotacaodehoje.com/cambio/libras'
   },
   '/cambio/gbp-brl': {
     title: 'Libra x Real Hoje - Cotação GBP/BRL em Tempo Real',
