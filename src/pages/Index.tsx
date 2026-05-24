@@ -273,8 +273,15 @@ const Index = () => {
       </section>
 
       {/* WHY US */}
-      <section className="bg-emerald text-cream py-24">
-        <div className="container mx-auto px-6">
+      <section className="relative bg-emerald text-cream py-24 overflow-hidden">
+        <img
+          src={xeExchange}
+          alt=""
+          aria-hidden="true"
+          loading="lazy"
+          className="absolute inset-0 w-full h-full object-cover opacity-10 mix-blend-luminosity"
+        />
+        <div className="container mx-auto px-6 relative">
           <div className="text-center mb-16">
             <div className="text-xs font-bold tracking-[0.25em] text-gold uppercase mb-3">Por que Cotação de Hoje</div>
             <h2 className="font-display text-4xl md:text-5xl font-bold tracking-tight max-w-3xl mx-auto">
