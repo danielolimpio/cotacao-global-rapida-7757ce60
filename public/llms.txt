@@ -1,0 +1,134 @@
+# Cotação de Hoje
+
+> Acompanhe cotações de moedas, criptomoedas, ações e pares forex em tempo real. Plataforma brasileira com conversores, gráficos atualizados e análises do mercado financeiro.
+
+Cotação de Hoje é uma plataforma financeira brasileira que oferece cotações em tempo real de diversos ativos, incluindo moedas estrangeiras, criptomoedas, ações nacionais e internacionais, além de pares de forex. O site disponibiliza conversores de moedas, gráficos interativos, calculadora de juros compostos e conteúdo educativo sobre o mercado financeiro.
+
+## Pages
+
+- [Home](/): Cotações em tempo real de dólar, euro, bitcoin, ações e criptomoedas. Conversor de moedas, gráficos atualizados e análises do mercado financeiro.
+- [Câmbio](/cambio): Cotações de câmbio em tempo real — dólar, euro, libra, iene e todas as principais moedas mundiais.
+- [Criptomoedas](/crypto): Cotações das principais criptomoedas em tempo real — Bitcoin, Ethereum, Binance Coin e mais.
+- [Ações](/acoes): Cotações de ações nacionais e internacionais em tempo real, com análises e gráficos.
+- [Forex](/forex): Cotações de pares forex em tempo real — principais, secundários e exóticos.
+- [Calculadora de Juros](/calculadora-juros): Calculadora de juros compostos para simulação de investimentos.
+- [Ver Todas Cotações](/ver-todas-cotacoes): Visão consolidada de todas as cotações disponíveis na plataforma.
+- [Blog](/blog): Artigos, análises e notícias sobre o mercado financeiro, câmbio e investimentos.
+- [Sobre](/sobre): Informações sobre a plataforma Cotação de Hoje e sua missão.
+- [Contato](/contato): Canal de comunicação para dúvidas, sugestões e parcerias.
+- [Sitemap](/sitemap): Mapa completo do site com todas as URLs e seções disponíveis.
+
+## Câmbio
+
+- [Dólar Hoje](/cambio/dolar): Cotação do dólar americano (USD) em tempo real com conversor e gráficos.
+- [Euro Hoje](/cambio/euro): Cotação do euro (EUR) em tempo real com conversor e gráficos.
+- [USD/BRL](/cambio/usd-brl): Cotação do par dólar americano x real brasileiro em tempo real.
+- [EUR/BRL](/cambio/eur-brl): Cotação do par euro x real brasileiro em tempo real.
+- [GBP/BRL](/cambio/gbp-brl): Cotação do par libra esterlina x real brasileiro em tempo real.
+- [CAD/BRL](/cambio/cad-brl): Cotação do par dólar canadense x real brasileiro em tempo real.
+- [Franco Suíço](/cambio/franco-suico): Cotação do franco suíço (CHF) em tempo real.
+- [Iene](/cambio/iene): Cotação do iene japonês (JPY) em tempo real.
+- [Libras Esterlinas](/cambio/libras): Cotação da libra esterlina (GBP) em tempo real.
+- [Peso Argentino](/cambio/peso-argentino): Cotação do peso argentino (ARS) em tempo real.
+- [Peso Chileno](/cambio/peso-chileno): Cotação do peso chileno (CLP) em tempo real.
+- [Peso Mexicano](/cambio/peso-mexicano): Cotação do peso mexicano (MXN) em tempo real.
+- [Peso Uruguaio](/cambio/peso-uruguaio): Cotação do peso uruguaio (UYU) em tempo real.
+- [Rand Sul-Africano](/cambio/rand-sul-africano): Cotação do rand sul-africano (ZAR) em tempo real.
+- [Rublo Russo](/cambio/rublo-russo): Cotação do rublo russo (RUB) em tempo real.
+- [Yuan Chinês](/cambio/yuan-chines): Cotação do yuan chinês (CNY) em tempo real.
+- [Rupia Indiana](/cambio/rupia-indiana): Cotação da rupia indiana (INR) em tempo real.
+- [Won Sul-Coreano](/cambio/won-sul-coreano): Cotação do won sul-coreano (KRW) em tempo real.
+
+## Criptomoedas
+
+- [Bitcoin](/crypto/bitcoin): Cotação do Bitcoin (BTC) em tempo real com conversor e gráficos.
+- [Ethereum](/crypto/ethereum): Cotação do Ethereum (ETH) em tempo real com conversor e gráficos.
+- [Binance Coin](/crypto/binance-coin): Cotação do Binance Coin (BNB) em tempo real.
+- [Ripple](/crypto/ripple): Cotação do Ripple (XRP) em tempo real.
+- [Cardano](/crypto/cardano): Cotação do Cardano (ADA) em tempo real.
+- [Solana](/crypto/solana): Cotação do Solana (SOL) em tempo real.
+- [Litecoin](/crypto/litecoin): Cotação do Litecoin (LTC) em tempo real.
+- [Polkadot](/crypto/polkadot): Cotação do Polkadot (DOT) em tempo real.
+- [Avalanche](/crypto/avalanche): Cotação do Avalanche (AVAX) em tempo real.
+- [Dash](/crypto/dash): Cotação do Dash (DASH) em tempo real.
+- [USDT](/crypto/usdt): Cotação do Tether (USDT) em tempo real.
+- [USDC](/crypto/usdc): Cotação do USD Coin (USDC) em tempo real.
+- [DAI](/crypto/dai): Cotação do DAI em tempo real.
+- [Uniswap](/crypto/uniswap): Cotação do Uniswap (UNI) em tempo real.
+- [Chainlink](/crypto/chainlink): Cotação do Chainlink (LINK) em tempo real.
+- [Aave](/crypto/aave): Cotação do Aave (AAVE) em tempo real.
+
+## Ações
+
+- [Apple](/acoes/apple): Cotação da Apple (AAPL) em tempo real.
+- [Amazon](/acoes/amazon): Cotação da Amazon (AMZN) em tempo real.
+- [Microsoft](/acoes/microsoft): Cotação da Microsoft (MSFT) em tempo real.
+- [Meta](/acoes/meta): Cotação da Meta (META) em tempo real.
+- [NVIDIA](/acoes/nvidia): Cotação da NVIDIA (NVDA) em tempo real.
+- [Intel](/acoes/intel): Cotação da Intel (INTC) em tempo real.
+- [Cisco](/acoes/cisco): Cotação da Cisco (CSCO) em tempo real.
+- [Kraft Heinz](/acoes/kraft-heinz): Cotação da Kraft Heinz (KHC) em tempo real.
+- [Monster Beverage](/acoes/monster): Cotação da Monster Beverage (MNST) em tempo real.
+- [Vertex Pharmaceuticals](/acoes/vertex): Cotação da Vertex Pharmaceuticals (VRTX) em tempo real.
+- [PIMCO](/acoes/pimco): Cotação da PIMCO em tempo real.
+- [Nuveen](/acoes/nuveen): Cotação da Nuveen em tempo real.
+- [Eagle Point](/acoes/eagle-point): Cotação da Eagle Point em tempo real.
+- [Invesco](/acoes/invesco): Cotação da Invesco em tempo real.
+- [Allspring](/acoes/allspring): Cotação da Allspring em tempo real.
+- [BlackRock](/acoes/blackrock): Cotação da BlackRock em tempo real.
+- [Ambev](/acoes/ambev): Cotação da Ambev (ABEV3) em tempo real.
+- [Assaí](/acoes/assai): Cotação do Assaí (ASAI3) em tempo real.
+- [Bradesco](/acoes/bradesco): Cotação do Bradesco (BBDC4) em tempo real.
+- [Carrefour](/acoes/carrefour): Cotação do Carrefour (CRFB3) em tempo real.
+- [Hapvida](/acoes/hapvida): Cotação da Hapvida (HAPV3) em tempo real.
+- [Magazine Luiza](/acoes/magazine-luiza): Cotação da Magazine Luiza (MGLU3) em tempo real.
+- [Bank of China](/acoes/bank-of-china): Cotação do Bank of China em tempo real.
+- [China Shenhua Energy](/acoes/china-shenhua): Cotação da China Shenhua Energy em tempo real.
+- [Harvest Fund](/acoes/harvest-fund): Cotação da Harvest Fund em tempo real.
+- [ETF 300](/acoes/300-etf): Cotação do ETF 300 em tempo real.
+- [ETF 50](/acoes/50-etf): Cotação do ETF 50 em tempo real.
+- [S&P 500](/acoes/sp500): Cotação do índice S&P 500 em tempo real.
+
+## Forex
+
+- [EUR/USD](/forex/principais/eur-usd): Cotação do par euro x dólar americano em tempo real.
+- [USD/JPY](/forex/principais/usd-jpy): Cotação do par dólar x iene em tempo real.
+- [GBP/USD](/forex/principais/gbp-usd): Cotação do par libra x dólar em tempo real.
+- [USD/CHF](/forex/principais/usd-chf): Cotação do par dólar x franco suíço em tempo real.
+- [AUD/USD](/forex/principais/aud-usd): Cotação do par dólar australiano x dólar em tempo real.
+- [USD/CAD](/forex/principais/usd-cad): Cotação do par dólar x dólar canadense em tempo real.
+- [NZD/USD](/forex/principais/nzd-usd): Cotação do par dólar neozelandês x dólar em tempo real.
+- [EUR/GBP](/forex/secundarios/eur-gbp): Cotação do par euro x libra em tempo real.
+- [EUR/AUD](/forex/secundarios/eur-aud): Cotação do par euro x dólar australiano em tempo real.
+- [EUR/CAD](/forex/secundarios/eur-cad): Cotação do par euro x dólar canadense em tempo real.
+- [EUR/NZD](/forex/secundarios/eur-nzd): Cotação do par euro x dólar neozelandês em tempo real.
+- [GBP/JPY](/forex/secundarios/gbp-jpy): Cotação do par libra x iene em tempo real.
+- [GBP/AUD](/forex/secundarios/gbp-aud): Cotação do par libra x dólar australiano em tempo real.
+- [GBP/CAD](/forex/secundarios/gbp-cad): Cotação do par libra x dólar canadense em tempo real.
+- [AUD/JPY](/forex/secundarios/aud-jpy): Cotação do par dólar australiano x iene em tempo real.
+- [CAD/JPY](/forex/secundarios/cad-jpy): Cotação do par dólar canadense x iene em tempo real.
+- [NZD/JPY](/forex/secundarios/nzd-jpy): Cotação do par dólar neozelandês x iene em tempo real.
+- [AUD/CAD](/forex/secundarios/aud-cad): Cotação do par dólar australiano x dólar canadense em tempo real.
+- [AUD/NZD](/forex/secundarios/aud-nzd): Cotação do par dólar australiano x dólar neozelandês em tempo real.
+- [CAD/CHF](/forex/secundarios/cad-chf): Cotação do par dólar canadense x franco suíço em tempo real.
+- [NZD/CAD](/forex/secundarios/nzd-cad): Cotação do par dólar neozelandês x dólar canadense em tempo real.
+- [USD/TRY](/forex/exoticos/usd-try): Cotação do par dólar x lira turca em tempo real.
+- [USD/ZAR](/forex/exoticos/usd-zar): Cotação do par dólar x rand sul-africano em tempo real.
+- [USD/MXN](/forex/exoticos/usd-mxn): Cotação do par dólar x peso mexicano em tempo real.
+- [USD/SEK](/forex/exoticos/usd-sek): Cotação do par dólar x coroa sueca em tempo real.
+- [USD/NOK](/forex/exoticos/usd-nok): Cotação do par dólar x coroa norueguesa em tempo real.
+- [USD/PLN](/forex/exoticos/usd-pln): Cotação do par dólar x zloty polonês em tempo real.
+- [EUR/TRY](/forex/exoticos/eur-try): Cotação do par euro x lira turca em tempo real.
+- [GBP/TRY](/forex/exoticos/gbp-try): Cotação do par libra x lira turca em tempo real.
+- [AUD/SGD](/forex/exoticos/aud-sgd): Cotação do par dólar australiano x dólar de Cingapura em tempo real.
+- [EUR/ZAR](/forex/exoticos/eur-zar): Cotação do par euro x rand sul-africano em tempo real.
+- [USD/HKD](/forex/exoticos/usd-hkd): Cotação do par dólar x dólar de Hong Kong em tempo real.
+- [USD/THB](/forex/exoticos/usd-thb): Cotação do par dólar x baht tailandês em tempo real.
+- [USD/INR](/forex/exoticos/usd-inr): Cotação do par dólar x rupia indiana em tempo real.
+- [USD/RUB](/forex/exoticos/usd-rub): Cotação do par dólar x rublo russo em tempo real.
+
+## Legal
+
+- [Política de Privacidade](/politica-de-privacidade): Política de privacidade e proteção de dados do Cotação de Hoje.
+- [Política de Cookies](/politica-de-cookies): Informações sobre o uso de cookies no site.
+- [Termos de Uso](/termos-de-uso): Termos e condições de uso da plataforma.
