@@ -527,11 +527,11 @@ export const seoData: Record<string, PageSEO> = {
     keywords: 'ambev, ABEV3, ações ambev, bebidas, ambev hoje',
     canonical: 'https://cotacaodehoje.com/acoes/ambev'
   },
-  '/acoes/etf50': {
+  '/acoes/50-etf': {
     title: '50 ETF Hoje - Cotação SSE 50 ETF em Tempo Real',
     description: 'Cotação do SSE 50 ETF (510050.SS) em tempo real.',
     keywords: '50 etf, SSE, etf china, bolsa xangai',
-    canonical: 'https://cotacaodehoje.com/acoes/etf50'
+    canonical: 'https://cotacaodehoje.com/acoes/50-etf'
   },
   '/acoes/eagle-point': {
     title: 'Eagle Point Hoje - Cotação ECC em Tempo Real',
@@ -545,11 +545,11 @@ export const seoData: Record<string, PageSEO> = {
     keywords: 'kraft heinz, KHC, ações kraft, alimentos, kraft heinz hoje',
     canonical: 'https://cotacaodehoje.com/acoes/kraft-heinz'
   },
-  '/acoes/etf300': {
+  '/acoes/300-etf': {
     title: '300 ETF Hoje - Cotação CSI 300 ETF em Tempo Real',
     description: 'Cotação do CSI 300 ETF (510300.SS) em tempo real.',
     keywords: '300 etf, CSI 300, etf china',
-    canonical: 'https://cotacaodehoje.com/acoes/etf300'
+    canonical: 'https://cotacaodehoje.com/acoes/300-etf'
   },
   '/acoes/assai': {
     title: 'Assaí Hoje - Cotação ASAI3 em Tempo Real',
