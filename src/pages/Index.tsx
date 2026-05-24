@@ -167,14 +167,64 @@ const Index = () => {
         </div>
       </section>
 
+      {/* EDITORIAL BANNER */}
+      <section className="container mx-auto px-6 pb-20">
+        <div className="relative rounded-3xl overflow-hidden shadow-elegant border border-border h-[280px] md:h-[340px]">
+          <img
+            src={dollarMarket}
+            alt="Mercado financeiro global"
+            loading="lazy"
+            className="absolute inset-0 w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-emerald via-emerald/85 to-emerald/30" />
+          <div className="relative h-full flex items-center px-10 md:px-16 max-w-3xl">
+            <div>
+              <div className="text-xs font-bold tracking-[0.25em] text-gold uppercase mb-4">Mercados em movimento</div>
+              <h2 className="font-display text-3xl md:text-5xl font-bold text-cream leading-tight mb-4">
+                Cada centavo conta.<br />Cada segundo importa.
+              </h2>
+              <p className="text-cream/80 text-base md:text-lg max-w-xl">
+                Dados de mercado institucionais ao alcance de qualquer investidor — do iniciante ao profissional.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* CONVERTER */}
       <section className="container mx-auto px-6 pb-20">
-        <UniversalConverter assetType="fiat" assetSymbol="USD" assetName="Dólar Americano" />
+        <div className="grid lg:grid-cols-12 gap-10 items-center">
+          <div className="lg:col-span-7">
+            <UniversalConverter assetType="fiat" assetSymbol="USD" assetName="Dólar Americano" />
+          </div>
+          <div className="lg:col-span-5 relative hidden lg:block">
+            <div className="absolute inset-0 bg-gradient-to-br from-emerald-bright/10 to-gold/10 blur-3xl rounded-full" />
+            <img
+              src={calculatorImg}
+              alt="Calculadora de conversão de moedas"
+              loading="lazy"
+              className="relative w-full h-auto max-w-md mx-auto drop-shadow-xl"
+            />
+            <div className="text-center mt-6">
+              <div className="text-xs font-bold tracking-[0.25em] text-gold uppercase mb-2">Conversor Universal</div>
+              <p className="text-muted-foreground text-sm max-w-sm mx-auto">
+                Converta qualquer moeda fiduciária ou criptoativo com taxas atualizadas em tempo real.
+              </p>
+            </div>
+          </div>
+        </div>
       </section>
 
       {/* MARKETS PILLARS */}
-      <section className="container mx-auto px-6 pb-24">
-        <div className="text-center mb-14">
+      <section className="container mx-auto px-6 pb-24 relative">
+        <img
+          src={worldCurrencies}
+          alt=""
+          aria-hidden="true"
+          loading="lazy"
+          className="absolute -top-10 right-0 w-64 h-64 opacity-10 pointer-events-none select-none"
+        />
+        <div className="text-center mb-14 relative">
           <div className="text-xs font-bold tracking-[0.25em] text-gold uppercase mb-3">Mercados Cobertos</div>
           <h2 className="font-display text-4xl md:text-5xl font-bold tracking-tight">
             Inteligência financeira <span className="text-gradient-emerald">sem fronteiras</span>
