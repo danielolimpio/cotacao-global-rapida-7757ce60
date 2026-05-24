@@ -203,7 +203,7 @@ const Blog = () => {
                   >
                     <div className="aspect-video bg-gradient-to-br from-primary/5 to-accent/5 flex items-center justify-center">
                       <div className="text-center">
-                        <BookOpen className="w-12 h-12 text-muted-foreground/30 mx-auto mb-2" />
+                        <BookOpen className="w-12 h-12 text-muted-foreground/60 mx-auto mb-2" />
                       </div>
                     </div>
                     <CardContent className="p-6">
