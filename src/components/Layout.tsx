@@ -305,14 +305,18 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
               </NavigationMenuList>
             </NavigationMenu>
 
-            {/* Live indicator */}
-            <div className="hidden sm:flex items-center space-x-2">
-              <div className="flex items-center space-x-1">
-                <div className="h-2 w-2 rounded-full bg-success animate-pulse"></div>
-                <span className="text-sm font-medium text-success">AO VIVO</span>
+            {/* Live indicator + theme toggle */}
+            <div className="hidden sm:flex items-center gap-3 shrink-0">
+              <div className="hidden lg:flex items-center gap-2 px-3 py-1.5 rounded-full border border-emerald-bright/30 bg-emerald-bright/5">
+                <span className="relative flex h-2 w-2">
+                  <span className="absolute inline-flex h-full w-full rounded-full bg-emerald-bright opacity-60 animate-ping"></span>
+                  <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-bright"></span>
+                </span>
+                <span className="text-xs font-semibold tracking-widest uppercase text-emerald-bright">Ao Vivo</span>
               </div>
-              <TrendingUp className="h-5 w-5 text-success" />
+              <ThemeToggle />
             </div>
+
           </div>
         </div>
 
