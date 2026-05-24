@@ -581,11 +581,11 @@ export const seoData: Record<string, PageSEO> = {
     keywords: 'bank of china, banco china, ações china, bank of china hoje',
     canonical: 'https://cotacaodehoje.com/acoes/bank-of-china'
   },
-  '/acoes/china-shenhua-energy': {
+  '/acoes/china-shenhua': {
     title: 'China Shenhua Energy Hoje - Cotação 601088 em Tempo Real',
     description: 'Cotação da China Shenhua Energy (601088) em tempo real.',
     keywords: 'china shenhua, energia china, ações china, shenhua hoje',
-    canonical: 'https://cotacaodehoje.com/acoes/china-shenhua-energy'
+    canonical: 'https://cotacaodehoje.com/acoes/china-shenhua'
   },
   
   // Forex - Principais
