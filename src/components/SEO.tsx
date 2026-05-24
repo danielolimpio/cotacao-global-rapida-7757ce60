@@ -6,9 +6,13 @@ interface SEOProps {
 }
 
 const SEO = ({ path }: SEOProps) => {
-  const data = seoData[path] || seoData['/'];
+  // Normalize: strip legacy "-hoje" suffix from the last URL segment so the
+  // canonical matches the actual route defined in App.tsx.
+  const normalizedPath = path.replace(/-hoje(\/?$)/, '$1');
+  const data = seoData[normalizedPath] || seoData[path] || seoData['/'];
   const fullTitle = data.title.includes('Cotação') ? data.title : `${data.title} | Cotação de Hoje`;
-  const url = `https://cotacaodehoje.com.br${path}`;
+  const url = `https://cotacaodehoje.com${normalizedPath}`;
+
 
   return (
     <Helmet>
