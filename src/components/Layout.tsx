@@ -322,22 +322,27 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="md:hidden border-t bg-card">
-            <div className="container mx-auto px-4 py-4 space-y-2">
+          <div className="md:hidden border-t border-border bg-card">
+            <div className="container mx-auto px-4 py-4 space-y-1">
               {menuItems.map((item) => (
                 <Link
                   key={item.path}
                   to={item.path}
-                  className="block py-2 px-4 hover:bg-muted/50 rounded-lg transition-colors text-foreground"
+                  className="block py-2.5 px-4 hover:bg-muted rounded-lg transition-colors text-foreground font-medium"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {item.name}
                 </Link>
               ))}
+              <div className="flex items-center justify-between px-4 pt-3 mt-3 border-t border-border">
+                <span className="text-sm text-muted-foreground">Modo escuro</span>
+                <ThemeToggle />
+              </div>
             </div>
           </div>
         )}
       </header>
+
 
       {/* Breadcrumbs */}
       <Breadcrumbs />
