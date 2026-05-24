@@ -449,11 +449,11 @@ export const seoData: Record<string, PageSEO> = {
     keywords: 'nvidia, NVDA, ações nvidia, cotação nvda, nvidia hoje',
     canonical: 'https://cotacaodehoje.com/acoes/nvidia'
   },
-  '/acoes/magazine-luiza': {
+  '/acoes/magazine-luiz': {
     title: 'Magazine Luiza Hoje - Cotação MGLU3 em Tempo Real',
     description: 'Cotação do Magazine Luiza (MGLU3) na Bovespa em tempo real.',
     keywords: 'magazine luiza, MGLU3, ações magalu, bovespa, magalu hoje',
-    canonical: 'https://cotacaodehoje.com/acoes/magazine-luiza'
+    canonical: 'https://cotacaodehoje.com/acoes/magazine-luiz'
   },
   '/acoes/sp500': {
     title: 'S&P 500 Hoje - Cotação SPX em Tempo Real',
@@ -461,17 +461,17 @@ export const seoData: Record<string, PageSEO> = {
     keywords: 's&p 500, SPX, índice sp500, bolsa americana, sp500 hoje',
     canonical: 'https://cotacaodehoje.com/acoes/sp500'
   },
-  '/acoes/vertex-pharm': {
+  '/acoes/vertex': {
     title: 'Vertex Pharmaceuticals Hoje - Cotação VRTX em Tempo Real',
     description: 'Cotação da Vertex Pharmaceuticals (VRTX) em tempo real.',
     keywords: 'vertex, VRTX, ações vertex, farmacêutica, vertex hoje',
-    canonical: 'https://cotacaodehoje.com/acoes/vertex-pharm'
+    canonical: 'https://cotacaodehoje.com/acoes/vertex'
   },
-  '/acoes/monster-beverage': {
+  '/acoes/monster': {
     title: 'Monster Beverage Hoje - Cotação MNST em Tempo Real',
     description: 'Cotação da Monster Beverage (MNST) atualizada em tempo real.',
     keywords: 'monster beverage, MNST, ações monster, monster hoje',
-    canonical: 'https://cotacaodehoje.com/acoes/monster-beverage'
+    canonical: 'https://cotacaodehoje.com/acoes/monster'
   },
   '/acoes/pimco': {
     title: 'PIMCO Hoje - Cotação em Tempo Real',
