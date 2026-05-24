@@ -346,55 +346,57 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
       <main>{children}</main>
 
       {/* Footer */}
-      <footer className="border-t bg-gray-900 mt-16">
-        <div className="container mx-auto px-4 py-8">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+      <footer className="border-t border-gold/20 bg-emerald text-cream mt-20">
+        <div className="container mx-auto px-4 py-14">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
             <div>
-              <Link to="/" className="inline-block mb-4">
-                <img src={logoImage} alt="Cotação de Hoje" className="h-12" />
+              <Link to="/" className="inline-block mb-5">
+                <img src={logoImage} alt="Cotação de Hoje" className="h-12 brightness-0 invert" />
               </Link>
-              <p className="text-sm text-white/90">
-                Acompanhe as cotações financeiras em tempo real com dados precisos e atualizados.
+              <p className="text-sm text-cream/70 leading-relaxed max-w-xs">
+                Inteligência de mercado em tempo real. Cotações precisas para decisões financeiras com refinamento institucional.
               </p>
             </div>
             <div>
-              <h4 className="font-semibold text-white mb-4">Navegação</h4>
-              <ul className="space-y-2 text-sm text-white/90">
-                <li><Link to="/" className="hover:text-primary">Início</Link></li>
-                <li><Link to="/sobre" className="hover:text-primary">Sobre</Link></li>
-                <li><Link to="/cambio" className="hover:text-primary">Câmbio</Link></li>
-                <li><Link to="/crypto" className="hover:text-primary">Criptomoedas</Link></li>
-                <li><Link to="/acoes" className="hover:text-primary">Ações</Link></li>
-                <li><Link to="/forex" className="hover:text-primary">Forex</Link></li>
-                <li><Link to="/blog" className="hover:text-primary">Blog</Link></li>
+              <h4 className="font-display font-semibold text-gold mb-5 text-xs uppercase tracking-[0.2em]">Navegação</h4>
+              <ul className="space-y-3 text-sm text-cream/80">
+                <li><Link to="/" className="hover:text-gold transition-colors">Início</Link></li>
+                <li><Link to="/sobre" className="hover:text-gold transition-colors">Sobre</Link></li>
+                <li><Link to="/cambio" className="hover:text-gold transition-colors">Câmbio</Link></li>
+                <li><Link to="/crypto" className="hover:text-gold transition-colors">Criptomoedas</Link></li>
+                <li><Link to="/acoes" className="hover:text-gold transition-colors">Ações</Link></li>
+                <li><Link to="/forex" className="hover:text-gold transition-colors">Forex</Link></li>
+                <li><Link to="/blog" className="hover:text-gold transition-colors">Blog</Link></li>
               </ul>
             </div>
             <div>
-              <h4 className="font-semibold text-white mb-4">Moedas Populares</h4>
-              <ul className="space-y-2 text-sm text-white/90">
-                <li><Link to="/cambio/usd-brl" className="hover:text-primary">USD/BRL</Link></li>
-                <li><Link to="/cambio/eur-brl" className="hover:text-primary">EUR/BRL</Link></li>
-                <li><Link to="/cambio/gbp-brl" className="hover:text-primary">GBP/BRL</Link></li>
-                <li><Link to="/cambio/cad-brl" className="hover:text-primary">CAD/BRL</Link></li>
+              <h4 className="font-display font-semibold text-gold mb-5 text-xs uppercase tracking-[0.2em]">Moedas Populares</h4>
+              <ul className="space-y-3 text-sm text-cream/80">
+                <li><Link to="/cambio/usd-brl" className="hover:text-gold transition-colors">USD / BRL</Link></li>
+                <li><Link to="/cambio/eur-brl" className="hover:text-gold transition-colors">EUR / BRL</Link></li>
+                <li><Link to="/cambio/gbp-brl" className="hover:text-gold transition-colors">GBP / BRL</Link></li>
+                <li><Link to="/cambio/cad-brl" className="hover:text-gold transition-colors">CAD / BRL</Link></li>
               </ul>
             </div>
             <div>
-              <h4 className="font-semibold text-white mb-4">Institucional</h4>
-              <ul className="space-y-2 text-sm text-white/90">
-                <li><Link to="/sobre" className="hover:text-primary">Sobre</Link></li>
-                <li><Link to="/contato" className="hover:text-primary">Contato</Link></li>
-                <li><Link to="/politica-de-privacidade" className="hover:text-primary">Política de Privacidade</Link></li>
-                <li><Link to="/politica-de-cookies" className="hover:text-primary">Política de Cookies</Link></li>
-                <li><Link to="/termos-de-uso" className="hover:text-primary">Termos de Uso</Link></li>
-                <li><Link to="/sitemap" className="hover:text-primary">Sitemap</Link></li>
+              <h4 className="font-display font-semibold text-gold mb-5 text-xs uppercase tracking-[0.2em]">Institucional</h4>
+              <ul className="space-y-3 text-sm text-cream/80">
+                <li><Link to="/sobre" className="hover:text-gold transition-colors">Sobre</Link></li>
+                <li><Link to="/contato" className="hover:text-gold transition-colors">Contato</Link></li>
+                <li><Link to="/politica-de-privacidade" className="hover:text-gold transition-colors">Privacidade</Link></li>
+                <li><Link to="/politica-de-cookies" className="hover:text-gold transition-colors">Cookies</Link></li>
+                <li><Link to="/termos-de-uso" className="hover:text-gold transition-colors">Termos de Uso</Link></li>
+                <li><Link to="/sitemap" className="hover:text-gold transition-colors">Sitemap</Link></li>
               </ul>
             </div>
           </div>
-          <div className="border-t border-white/20 pt-4 mt-8 text-center text-sm text-white/90">
-            <p>&copy; 2025 Cotação de Hoje | Todos os direitos reservados | Desenvolvido por <a href="https://danielolimpio.com/" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">DanielOlimpio</a></p>
+          <div className="border-t border-cream/10 pt-6 mt-12 flex flex-col md:flex-row justify-between items-center gap-3 text-xs text-cream/60">
+            <p>&copy; {new Date().getFullYear()} Cotação de Hoje — Todos os direitos reservados.</p>
+            <p>Desenvolvido por <a href="https://danielolimpio.com/" target="_blank" rel="noopener noreferrer" className="text-gold hover:text-gold-soft transition-colors">DanielOlimpio</a></p>
           </div>
         </div>
       </footer>
+
     </div>
   );
 };
