@@ -12,8 +12,22 @@
     <meta name="googlebot" content="index, follow" />
     <meta name="bingbot" content="index, follow" />
     <!-- Canonical is set per-route via react-helmet-async (src/components/SEO.tsx) -->
-    <link rel="preload" as="image" href="/lovable-uploads/85bbe2bd-087d-450f-854b-df96d620b9ce.png" fetchpriority="high" />
     <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
+
+    <!-- Premium Typography: Space Grotesk + DM Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+
+    <!-- Theme: avoid flash, default light -->
+    <script>
+      (function () {
+        try {
+          var stored = localStorage.getItem('theme');
+          if (stored === 'dark') document.documentElement.classList.add('dark');
+        } catch (e) {}
+      })();
+    </script>
     
     <!-- Verificação Google Search Console -->
     <meta name="google-site-verification" content="pending" />

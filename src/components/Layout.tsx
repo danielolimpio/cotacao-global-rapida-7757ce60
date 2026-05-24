@@ -1,8 +1,9 @@
 import { Button } from "@/components/ui/button";
-import { TrendingUp, DollarSign, ChevronDown, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import CurrencyTicker from "@/components/CurrencyTicker";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import ThemeToggle from "@/components/ThemeToggle";
 import { useState } from "react";
 import {
   NavigationMenu,
@@ -16,7 +17,7 @@ import logoImage from "@/assets/logo-completo.png";
 const Layout = ({ children }: { children: React.ReactNode }) => {
   const location = useLocation();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  
+
   const menuItems = [
     { name: "Início", path: "/" },
     { name: "Câmbio", path: "/cambio" },
@@ -29,30 +30,28 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
   ];
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background bg-grain">
       {/* Currency Ticker */}
       <CurrencyTicker />
-      
+
       {/* Header */}
-      <header className="sticky top-0 z-50 border-b bg-card shadow-sm">
-        <div className="container mx-auto px-4 py-4">
-          <div className="flex items-center justify-between w-full">
+      <header className="sticky top-0 z-50 border-b border-border bg-background/80 backdrop-blur-xl">
+        <div className="container mx-auto px-4 py-3">
+          <div className="flex items-center justify-between w-full gap-4">
             {/* Logo */}
-            <Link to="/" className="flex items-center">
-              <img src={logoImage} alt="Cotação de Hoje" className="h-14" />
+            <Link to="/" className="flex items-center shrink-0">
+              <img src={logoImage} alt="Cotação de Hoje" className="h-12" />
             </Link>
 
             {/* Mobile Menu Button */}
-            <button 
-              className="md:hidden p-2 rounded-lg hover:bg-muted/50 transition-colors"
+            <button
+              className="md:hidden p-2 rounded-lg hover:bg-muted transition-colors"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              aria-label="Menu"
             >
-              {isMobileMenuOpen ? (
-                <X className="w-6 h-6 text-foreground" />
-              ) : (
-                <Menu className="w-6 h-6 text-foreground" />
-              )}
+              {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
+
 
             {/* Navigation */}
             <NavigationMenu className="hidden md:flex">
@@ -306,35 +305,44 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
               </NavigationMenuList>
             </NavigationMenu>
 
-            {/* Live indicator */}
-            <div className="hidden sm:flex items-center space-x-2">
-              <div className="flex items-center space-x-1">
-                <div className="h-2 w-2 rounded-full bg-success animate-pulse"></div>
-                <span className="text-sm font-medium text-success">AO VIVO</span>
+            {/* Live indicator + theme toggle */}
+            <div className="hidden sm:flex items-center gap-3 shrink-0">
+              <div className="hidden lg:flex items-center gap-2 px-3 py-1.5 rounded-full border border-emerald-bright/30 bg-emerald-bright/5">
+                <span className="relative flex h-2 w-2">
+                  <span className="absolute inline-flex h-full w-full rounded-full bg-emerald-bright opacity-60 animate-ping"></span>
+                  <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-bright"></span>
+                </span>
+                <span className="text-xs font-semibold tracking-widest uppercase text-emerald-bright">Ao Vivo</span>
               </div>
-              <TrendingUp className="h-5 w-5 text-success" />
+              <ThemeToggle />
             </div>
+
           </div>
         </div>
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="md:hidden border-t bg-card">
-            <div className="container mx-auto px-4 py-4 space-y-2">
+          <div className="md:hidden border-t border-border bg-card">
+            <div className="container mx-auto px-4 py-4 space-y-1">
               {menuItems.map((item) => (
                 <Link
                   key={item.path}
                   to={item.path}
-                  className="block py-2 px-4 hover:bg-muted/50 rounded-lg transition-colors text-foreground"
+                  className="block py-2.5 px-4 hover:bg-muted rounded-lg transition-colors text-foreground font-medium"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {item.name}
                 </Link>
               ))}
+              <div className="flex items-center justify-between px-4 pt-3 mt-3 border-t border-border">
+                <span className="text-sm text-muted-foreground">Modo escuro</span>
+                <ThemeToggle />
+              </div>
             </div>
           </div>
         )}
       </header>
+
 
       {/* Breadcrumbs */}
       <Breadcrumbs />
@@ -343,55 +351,57 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
       <main>{children}</main>
 
       {/* Footer */}
-      <footer className="border-t bg-gray-900 mt-16">
-        <div className="container mx-auto px-4 py-8">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+      <footer className="border-t border-gold/20 bg-emerald text-cream mt-20">
+        <div className="container mx-auto px-4 py-14">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
             <div>
-              <Link to="/" className="inline-block mb-4">
-                <img src={logoImage} alt="Cotação de Hoje" className="h-12" />
+              <Link to="/" className="inline-block mb-5">
+                <img src={logoImage} alt="Cotação de Hoje" className="h-12 brightness-0 invert" />
               </Link>
-              <p className="text-sm text-white/90">
-                Acompanhe as cotações financeiras em tempo real com dados precisos e atualizados.
+              <p className="text-sm text-cream/70 leading-relaxed max-w-xs">
+                Inteligência de mercado em tempo real. Cotações precisas para decisões financeiras com refinamento institucional.
               </p>
             </div>
             <div>
-              <h4 className="font-semibold text-white mb-4">Navegação</h4>
-              <ul className="space-y-2 text-sm text-white/90">
-                <li><Link to="/" className="hover:text-primary">Início</Link></li>
-                <li><Link to="/sobre" className="hover:text-primary">Sobre</Link></li>
-                <li><Link to="/cambio" className="hover:text-primary">Câmbio</Link></li>
-                <li><Link to="/crypto" className="hover:text-primary">Criptomoedas</Link></li>
-                <li><Link to="/acoes" className="hover:text-primary">Ações</Link></li>
-                <li><Link to="/forex" className="hover:text-primary">Forex</Link></li>
-                <li><Link to="/blog" className="hover:text-primary">Blog</Link></li>
+              <h4 className="font-display font-semibold text-gold mb-5 text-xs uppercase tracking-[0.2em]">Navegação</h4>
+              <ul className="space-y-3 text-sm text-cream/80">
+                <li><Link to="/" className="hover:text-gold transition-colors">Início</Link></li>
+                <li><Link to="/sobre" className="hover:text-gold transition-colors">Sobre</Link></li>
+                <li><Link to="/cambio" className="hover:text-gold transition-colors">Câmbio</Link></li>
+                <li><Link to="/crypto" className="hover:text-gold transition-colors">Criptomoedas</Link></li>
+                <li><Link to="/acoes" className="hover:text-gold transition-colors">Ações</Link></li>
+                <li><Link to="/forex" className="hover:text-gold transition-colors">Forex</Link></li>
+                <li><Link to="/blog" className="hover:text-gold transition-colors">Blog</Link></li>
               </ul>
             </div>
             <div>
-              <h4 className="font-semibold text-white mb-4">Moedas Populares</h4>
-              <ul className="space-y-2 text-sm text-white/90">
-                <li><Link to="/cambio/usd-brl" className="hover:text-primary">USD/BRL</Link></li>
-                <li><Link to="/cambio/eur-brl" className="hover:text-primary">EUR/BRL</Link></li>
-                <li><Link to="/cambio/gbp-brl" className="hover:text-primary">GBP/BRL</Link></li>
-                <li><Link to="/cambio/cad-brl" className="hover:text-primary">CAD/BRL</Link></li>
+              <h4 className="font-display font-semibold text-gold mb-5 text-xs uppercase tracking-[0.2em]">Moedas Populares</h4>
+              <ul className="space-y-3 text-sm text-cream/80">
+                <li><Link to="/cambio/usd-brl" className="hover:text-gold transition-colors">USD / BRL</Link></li>
+                <li><Link to="/cambio/eur-brl" className="hover:text-gold transition-colors">EUR / BRL</Link></li>
+                <li><Link to="/cambio/gbp-brl" className="hover:text-gold transition-colors">GBP / BRL</Link></li>
+                <li><Link to="/cambio/cad-brl" className="hover:text-gold transition-colors">CAD / BRL</Link></li>
               </ul>
             </div>
             <div>
-              <h4 className="font-semibold text-white mb-4">Institucional</h4>
-              <ul className="space-y-2 text-sm text-white/90">
-                <li><Link to="/sobre" className="hover:text-primary">Sobre</Link></li>
-                <li><Link to="/contato" className="hover:text-primary">Contato</Link></li>
-                <li><Link to="/politica-de-privacidade" className="hover:text-primary">Política de Privacidade</Link></li>
-                <li><Link to="/politica-de-cookies" className="hover:text-primary">Política de Cookies</Link></li>
-                <li><Link to="/termos-de-uso" className="hover:text-primary">Termos de Uso</Link></li>
-                <li><Link to="/sitemap" className="hover:text-primary">Sitemap</Link></li>
+              <h4 className="font-display font-semibold text-gold mb-5 text-xs uppercase tracking-[0.2em]">Institucional</h4>
+              <ul className="space-y-3 text-sm text-cream/80">
+                <li><Link to="/sobre" className="hover:text-gold transition-colors">Sobre</Link></li>
+                <li><Link to="/contato" className="hover:text-gold transition-colors">Contato</Link></li>
+                <li><Link to="/politica-de-privacidade" className="hover:text-gold transition-colors">Privacidade</Link></li>
+                <li><Link to="/politica-de-cookies" className="hover:text-gold transition-colors">Cookies</Link></li>
+                <li><Link to="/termos-de-uso" className="hover:text-gold transition-colors">Termos de Uso</Link></li>
+                <li><Link to="/sitemap" className="hover:text-gold transition-colors">Sitemap</Link></li>
               </ul>
             </div>
           </div>
-          <div className="border-t border-white/20 pt-4 mt-8 text-center text-sm text-white/90">
-            <p>&copy; 2025 Cotação de Hoje | Todos os direitos reservados | Desenvolvido por <a href="https://danielolimpio.com/" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">DanielOlimpio</a></p>
+          <div className="border-t border-cream/10 pt-6 mt-12 flex flex-col md:flex-row justify-between items-center gap-3 text-xs text-cream/60">
+            <p>&copy; {new Date().getFullYear()} Cotação de Hoje — Todos os direitos reservados.</p>
+            <p>Desenvolvido por <a href="https://danielolimpio.com/" target="_blank" rel="noopener noreferrer" className="text-gold hover:text-gold-soft transition-colors">DanielOlimpio</a></p>
           </div>
         </div>
       </footer>
+
     </div>
   );
 };

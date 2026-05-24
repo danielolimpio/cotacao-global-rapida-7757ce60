@@ -18,6 +18,11 @@ export default {
 			}
 		},
 		extend: {
+			fontFamily: {
+				display: ['"Space Grotesk"', 'system-ui', 'sans-serif'],
+				sans: ['"DM Sans"', 'system-ui', 'sans-serif'],
+				mono: ['"JetBrains Mono"', 'ui-monospace', 'monospace'],
+			},
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
@@ -60,6 +65,15 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
+				emerald: {
+					DEFAULT: 'hsl(var(--emerald))',
+					bright: 'hsl(var(--emerald-bright))'
+				},
+				gold: {
+					DEFAULT: 'hsl(var(--gold))',
+					soft: 'hsl(var(--gold-soft))'
+				},
+				cream: 'hsl(var(--cream))',
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',
