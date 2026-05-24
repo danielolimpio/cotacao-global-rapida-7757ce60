@@ -43,36 +43,52 @@ const Index = () => {
           <div className="absolute -bottom-40 right-1/3 w-[600px] h-[600px] rounded-full bg-emerald-bright/10 blur-3xl" />
         </div>
 
-        <div className="container mx-auto px-6 pt-20 pb-24 text-center max-w-5xl">
-          <div className="inline-flex items-center gap-2 bg-emerald-bright/10 border border-emerald-bright/20 rounded-full px-4 py-1.5 mb-8 text-xs font-semibold text-emerald-bright tracking-widest uppercase animate-fade-up">
-            <span className="relative flex h-2 w-2">
-              <span className="absolute inline-flex h-full w-full rounded-full bg-emerald-bright opacity-60 animate-ping" />
-              <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-bright" />
-            </span>
-            Mercados Globais Ao Vivo
-          </div>
+        <div className="container mx-auto px-6 pt-20 pb-24 max-w-7xl">
+          <div className="grid lg:grid-cols-12 gap-12 items-center">
+            <div className="lg:col-span-7 text-center lg:text-left">
+              <div className="inline-flex items-center gap-2 bg-emerald-bright/10 border border-emerald-bright/20 rounded-full px-4 py-1.5 mb-8 text-xs font-semibold text-emerald-bright tracking-widest uppercase animate-fade-up">
+                <span className="relative flex h-2 w-2">
+                  <span className="absolute inline-flex h-full w-full rounded-full bg-emerald-bright opacity-60 animate-ping" />
+                  <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-bright" />
+                </span>
+                Mercados Globais Ao Vivo
+              </div>
 
-          <h1 className="font-display text-5xl sm:text-6xl md:text-7xl font-bold tracking-tight text-foreground mb-8 leading-[1.05] animate-fade-up">
-            Cotações em<br />
-            <span className="text-gradient-gold italic font-light inline-block pr-3">Tempo Real</span>
-          </h1>
+              <h1 className="font-display text-5xl sm:text-6xl md:text-7xl font-bold tracking-tight text-foreground mb-8 leading-[1.05] animate-fade-up">
+                Cotações em<br />
+                <span className="text-gradient-gold italic font-light inline-block pr-3">Tempo Real</span>
+              </h1>
 
-          <p className="max-w-2xl mx-auto text-lg md:text-xl text-muted-foreground mb-12 leading-relaxed animate-fade-up">
-            Acompanhe moedas, criptoativos, ações e índices globais com a precisão e o refinamento que sua estratégia financeira merece.
-          </p>
+              <p className="max-w-2xl mx-auto lg:mx-0 text-lg md:text-xl text-muted-foreground mb-12 leading-relaxed animate-fade-up">
+                Acompanhe moedas, criptoativos, ações e índices globais com a precisão e o refinamento que sua estratégia financeira merece.
+              </p>
 
-          <div className="flex flex-col sm:flex-row justify-center gap-4 animate-fade-up">
-            <Link to="/ver-todas-cotacoes">
-              <Button size="lg" className="rounded-full px-8 py-6 bg-emerald text-cream hover:bg-emerald-bright shadow-elegant font-semibold">
-                <TrendingUp className="mr-2 h-5 w-5" />
-                Ver Todas as Cotações
-              </Button>
-            </Link>
-            <Link to="/calculadora-juros">
-              <Button size="lg" variant="outline" className="rounded-full px-8 py-6 border-emerald/20 hover:bg-emerald/5 font-semibold">
-                Calculadora de Juros
-              </Button>
-            </Link>
+              <div className="flex flex-col sm:flex-row lg:justify-start justify-center gap-4 animate-fade-up">
+                <Link to="/ver-todas-cotacoes">
+                  <Button size="lg" className="rounded-full px-8 py-6 bg-emerald text-cream hover:bg-emerald-bright shadow-elegant font-semibold">
+                    <TrendingUp className="mr-2 h-5 w-5" />
+                    Ver Todas as Cotações
+                  </Button>
+                </Link>
+                <Link to="/calculadora-juros">
+                  <Button size="lg" variant="outline" className="rounded-full px-8 py-6 border-emerald/20 hover:bg-emerald/5 font-semibold">
+                    Calculadora de Juros
+                  </Button>
+                </Link>
+              </div>
+            </div>
+
+            <div className="lg:col-span-5 relative animate-fade-up">
+              <div className="absolute inset-0 bg-gradient-to-br from-gold/20 to-emerald-bright/20 blur-3xl rounded-full" />
+              <img
+                src={heroMoneyTime}
+                alt="Cotações financeiras em tempo real"
+                width={820}
+                height={500}
+                fetchPriority="high"
+                className="relative w-full h-auto drop-shadow-2xl"
+              />
+            </div>
           </div>
         </div>
       </section>
