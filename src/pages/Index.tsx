@@ -142,7 +142,10 @@ const Index = () => {
       <section className="container mx-auto px-6 pb-20">
         <div className="grid lg:grid-cols-12 gap-10 items-end mb-10">
           <div className="lg:col-span-8">
-            <div className="text-xs font-bold tracking-[0.25em] text-gold uppercase mb-3">Análise em Destaque</div>
+            <div className="flex items-center gap-3 mb-3">
+              <img src={exchangeRateIcon} alt="" aria-hidden="true" className="w-8 h-8" />
+              <div className="text-xs font-bold tracking-[0.25em] text-gold uppercase">Análise em Destaque</div>
+            </div>
             <h2 className="font-display text-4xl md:text-5xl font-bold tracking-tight text-foreground">
               Dólar / Real <span className="text-gradient-emerald">em foco</span>
             </h2>
@@ -160,9 +163,26 @@ const Index = () => {
           </div>
         </div>
 
-        <div className="rounded-3xl border border-border bg-card overflow-hidden shadow-elegant">
-          <div className="h-[420px]">
-            <TradingViewWidget symbol="USDBRL" height="420" />
+        <div className="grid lg:grid-cols-12 gap-6">
+          <div className="lg:col-span-8 rounded-3xl border border-border bg-card overflow-hidden shadow-elegant">
+            <div className="h-[420px]">
+              <TradingViewWidget symbol="USDBRL" height="420" />
+            </div>
+          </div>
+          <div className="lg:col-span-4 rounded-3xl overflow-hidden shadow-elegant border border-border relative min-h-[280px]">
+            <img
+              src={dollarChart}
+              alt="Análise técnica do dólar"
+              loading="lazy"
+              className="absolute inset-0 w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-emerald/95 via-emerald/60 to-transparent" />
+            <div className="absolute bottom-0 left-0 right-0 p-6">
+              <div className="text-xs font-bold tracking-[0.25em] text-gold uppercase mb-2">Insight</div>
+              <p className="text-cream font-display text-xl leading-snug">
+                Volatilidade institucional capturada em tempo real.
+              </p>
+            </div>
           </div>
         </div>
       </section>
