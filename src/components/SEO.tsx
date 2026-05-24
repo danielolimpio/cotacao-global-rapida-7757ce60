@@ -1,4 +1,5 @@
 import { Helmet } from 'react-helmet-async';
+import { useLocation } from 'react-router-dom';
 import { seoData } from '@/utils/seoData';
 
 interface SEOProps {
@@ -6,12 +7,14 @@ interface SEOProps {
 }
 
 const SEO = ({ path }: SEOProps) => {
+  const location = useLocation();
+  const currentPath = location.pathname || '/';
   // Normalize: strip legacy "-hoje" suffix from the last URL segment so the
   // canonical matches the actual route defined in App.tsx.
   const normalizedPath = path.replace(/-hoje(\/?$)/, '$1');
-  const data = seoData[normalizedPath] || seoData[path] || seoData['/'];
+  const data = seoData[currentPath] || seoData[normalizedPath] || seoData[path] || seoData['/'];
   const fullTitle = data.title.includes('Cotação') ? data.title : `${data.title} | Cotação de Hoje`;
-  const url = `https://cotacaodehoje.com${normalizedPath}`;
+  const url = `https://cotacaodehoje.com${currentPath}`;
 
 
   return (
