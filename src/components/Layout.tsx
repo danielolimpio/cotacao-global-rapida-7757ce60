@@ -350,13 +350,13 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
               <Link to="/" className="inline-block mb-4">
                 <img src={logoImage} alt="Cotação de Hoje" className="h-12" />
               </Link>
-              <p className="text-sm text-white/80">
+              <p className="text-sm text-white/90">
                 Acompanhe as cotações financeiras em tempo real com dados precisos e atualizados.
               </p>
             </div>
             <div>
               <h4 className="font-semibold text-white mb-4">Navegação</h4>
-              <ul className="space-y-2 text-sm text-white/80">
+              <ul className="space-y-2 text-sm text-white/90">
                 <li><Link to="/" className="hover:text-primary">Início</Link></li>
                 <li><Link to="/sobre" className="hover:text-primary">Sobre</Link></li>
                 <li><Link to="/cambio" className="hover:text-primary">Câmbio</Link></li>
@@ -368,7 +368,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
             </div>
             <div>
               <h4 className="font-semibold text-white mb-4">Moedas Populares</h4>
-              <ul className="space-y-2 text-sm text-white/80">
+              <ul className="space-y-2 text-sm text-white/90">
                 <li><Link to="/cambio/usd-brl" className="hover:text-primary">USD/BRL</Link></li>
                 <li><Link to="/cambio/eur-brl" className="hover:text-primary">EUR/BRL</Link></li>
                 <li><Link to="/cambio/gbp-brl" className="hover:text-primary">GBP/BRL</Link></li>
@@ -377,7 +377,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
             </div>
             <div>
               <h4 className="font-semibold text-white mb-4">Institucional</h4>
-              <ul className="space-y-2 text-sm text-white/80">
+              <ul className="space-y-2 text-sm text-white/90">
                 <li><Link to="/sobre" className="hover:text-primary">Sobre</Link></li>
                 <li><Link to="/contato" className="hover:text-primary">Contato</Link></li>
                 <li><Link to="/politica-de-privacidade" className="hover:text-primary">Política de Privacidade</Link></li>
@@ -387,7 +387,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
               </ul>
             </div>
           </div>
-          <div className="border-t border-white/20 pt-4 mt-8 text-center text-sm text-white/80">
+          <div className="border-t border-white/20 pt-4 mt-8 text-center text-sm text-white/90">
             <p>&copy; 2025 Cotação de Hoje | Todos os direitos reservados | Desenvolvido por <a href="https://danielolimpio.com/" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">DanielOlimpio</a></p>
           </div>
         </div>
