@@ -7,6 +7,13 @@ import { Button } from "@/components/ui/button";
 import { TrendingUp, Globe, Shield, Zap, ArrowUpRight, ArrowDownRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import useRealTimeQuotes from "@/hooks/useRealTimeQuotes";
+import heroMoneyTime from "@/assets/hero-money-time.png";
+import worldCurrencies from "@/assets/world-currencies.png";
+import calculatorImg from "@/assets/calculator.webp";
+import dollarChart from "@/assets/dollar-chart.webp";
+import dollarMarket from "@/assets/dollar-market.jpg";
+import xeExchange from "@/assets/xe-exchange.webp";
+import exchangeRateIcon from "@/assets/exchange-rate-icon.png";
 
 const Index = () => {
   const { quotes } = useRealTimeQuotes(["USDBRL", "EURBRL", "GBPBRL", "CADBRL"]);
@@ -36,36 +43,52 @@ const Index = () => {
           <div className="absolute -bottom-40 right-1/3 w-[600px] h-[600px] rounded-full bg-emerald-bright/10 blur-3xl" />
         </div>
 
-        <div className="container mx-auto px-6 pt-20 pb-24 text-center max-w-5xl">
-          <div className="inline-flex items-center gap-2 bg-emerald-bright/10 border border-emerald-bright/20 rounded-full px-4 py-1.5 mb-8 text-xs font-semibold text-emerald-bright tracking-widest uppercase animate-fade-up">
-            <span className="relative flex h-2 w-2">
-              <span className="absolute inline-flex h-full w-full rounded-full bg-emerald-bright opacity-60 animate-ping" />
-              <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-bright" />
-            </span>
-            Mercados Globais Ao Vivo
-          </div>
+        <div className="container mx-auto px-6 pt-20 pb-24 max-w-7xl">
+          <div className="grid lg:grid-cols-12 gap-12 items-center">
+            <div className="lg:col-span-7 text-center lg:text-left">
+              <div className="inline-flex items-center gap-2 bg-emerald-bright/10 border border-emerald-bright/20 rounded-full px-4 py-1.5 mb-8 text-xs font-semibold text-emerald-bright tracking-widest uppercase animate-fade-up">
+                <span className="relative flex h-2 w-2">
+                  <span className="absolute inline-flex h-full w-full rounded-full bg-emerald-bright opacity-60 animate-ping" />
+                  <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-bright" />
+                </span>
+                Mercados Globais Ao Vivo
+              </div>
 
-          <h1 className="font-display text-5xl sm:text-6xl md:text-7xl font-bold tracking-tight text-foreground mb-8 leading-[1.05] animate-fade-up">
-            Cotações em<br />
-            <span className="text-gradient-gold italic font-light inline-block pr-3">Tempo Real</span>
-          </h1>
+              <h1 className="font-display text-5xl sm:text-6xl md:text-7xl font-bold tracking-tight text-foreground mb-8 leading-[1.05] animate-fade-up">
+                Cotações em<br />
+                <span className="text-gradient-gold italic font-light inline-block pr-3">Tempo Real</span>
+              </h1>
 
-          <p className="max-w-2xl mx-auto text-lg md:text-xl text-muted-foreground mb-12 leading-relaxed animate-fade-up">
-            Acompanhe moedas, criptoativos, ações e índices globais com a precisão e o refinamento que sua estratégia financeira merece.
-          </p>
+              <p className="max-w-2xl mx-auto lg:mx-0 text-lg md:text-xl text-muted-foreground mb-12 leading-relaxed animate-fade-up">
+                Acompanhe moedas, criptoativos, ações e índices globais com a precisão e o refinamento que sua estratégia financeira merece.
+              </p>
 
-          <div className="flex flex-col sm:flex-row justify-center gap-4 animate-fade-up">
-            <Link to="/ver-todas-cotacoes">
-              <Button size="lg" className="rounded-full px-8 py-6 bg-emerald text-cream hover:bg-emerald-bright shadow-elegant font-semibold">
-                <TrendingUp className="mr-2 h-5 w-5" />
-                Ver Todas as Cotações
-              </Button>
-            </Link>
-            <Link to="/calculadora-juros">
-              <Button size="lg" variant="outline" className="rounded-full px-8 py-6 border-emerald/20 hover:bg-emerald/5 font-semibold">
-                Calculadora de Juros
-              </Button>
-            </Link>
+              <div className="flex flex-col sm:flex-row lg:justify-start justify-center gap-4 animate-fade-up">
+                <Link to="/ver-todas-cotacoes">
+                  <Button size="lg" className="rounded-full px-8 py-6 bg-emerald text-cream hover:bg-emerald-bright shadow-elegant font-semibold">
+                    <TrendingUp className="mr-2 h-5 w-5" />
+                    Ver Todas as Cotações
+                  </Button>
+                </Link>
+                <Link to="/calculadora-juros">
+                  <Button size="lg" variant="outline" className="rounded-full px-8 py-6 border-emerald/20 hover:bg-emerald/5 font-semibold">
+                    Calculadora de Juros
+                  </Button>
+                </Link>
+              </div>
+            </div>
+
+            <div className="lg:col-span-5 relative animate-fade-up">
+              <div className="absolute inset-0 bg-gradient-to-br from-gold/20 to-emerald-bright/20 blur-3xl rounded-full" />
+              <img
+                src={heroMoneyTime}
+                alt="Cotações financeiras em tempo real"
+                width={820}
+                height={500}
+                fetchPriority="high"
+                className="relative w-full h-auto drop-shadow-2xl"
+              />
+            </div>
           </div>
         </div>
       </section>
@@ -119,7 +142,10 @@ const Index = () => {
       <section className="container mx-auto px-6 pb-20">
         <div className="grid lg:grid-cols-12 gap-10 items-end mb-10">
           <div className="lg:col-span-8">
-            <div className="text-xs font-bold tracking-[0.25em] text-gold uppercase mb-3">Análise em Destaque</div>
+            <div className="flex items-center gap-3 mb-3">
+              <img src={exchangeRateIcon} alt="" aria-hidden="true" className="w-8 h-8" />
+              <div className="text-xs font-bold tracking-[0.25em] text-gold uppercase">Análise em Destaque</div>
+            </div>
             <h2 className="font-display text-4xl md:text-5xl font-bold tracking-tight text-foreground">
               Dólar / Real <span className="text-gradient-emerald">em foco</span>
             </h2>
@@ -137,21 +163,88 @@ const Index = () => {
           </div>
         </div>
 
-        <div className="rounded-3xl border border-border bg-card overflow-hidden shadow-elegant">
-          <div className="h-[420px]">
-            <TradingViewWidget symbol="USDBRL" height="420" />
+        <div className="grid lg:grid-cols-12 gap-6">
+          <div className="lg:col-span-8 rounded-3xl border border-border bg-card overflow-hidden shadow-elegant">
+            <div className="h-[420px]">
+              <TradingViewWidget symbol="USDBRL" height="420" />
+            </div>
+          </div>
+          <div className="lg:col-span-4 rounded-3xl overflow-hidden shadow-elegant border border-border relative min-h-[280px]">
+            <img
+              src={dollarChart}
+              alt="Análise técnica do dólar"
+              loading="lazy"
+              className="absolute inset-0 w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-emerald/95 via-emerald/60 to-transparent" />
+            <div className="absolute bottom-0 left-0 right-0 p-6">
+              <div className="text-xs font-bold tracking-[0.25em] text-gold uppercase mb-2">Insight</div>
+              <p className="text-cream font-display text-xl leading-snug">
+                Volatilidade institucional capturada em tempo real.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* EDITORIAL BANNER */}
+      <section className="container mx-auto px-6 pb-20">
+        <div className="relative rounded-3xl overflow-hidden shadow-elegant border border-border h-[280px] md:h-[340px]">
+          <img
+            src={dollarMarket}
+            alt="Mercado financeiro global"
+            loading="lazy"
+            className="absolute inset-0 w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-emerald via-emerald/85 to-emerald/30" />
+          <div className="relative h-full flex items-center px-10 md:px-16 max-w-3xl">
+            <div>
+              <div className="text-xs font-bold tracking-[0.25em] text-gold uppercase mb-4">Mercados em movimento</div>
+              <h2 className="font-display text-3xl md:text-5xl font-bold text-cream leading-tight mb-4">
+                Cada centavo conta.<br />Cada segundo importa.
+              </h2>
+              <p className="text-cream/80 text-base md:text-lg max-w-xl">
+                Dados de mercado institucionais ao alcance de qualquer investidor — do iniciante ao profissional.
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
       {/* CONVERTER */}
       <section className="container mx-auto px-6 pb-20">
-        <UniversalConverter assetType="fiat" assetSymbol="USD" assetName="Dólar Americano" />
+        <div className="grid lg:grid-cols-12 gap-10 items-center">
+          <div className="lg:col-span-7">
+            <UniversalConverter assetType="fiat" assetSymbol="USD" assetName="Dólar Americano" />
+          </div>
+          <div className="lg:col-span-5 relative hidden lg:block">
+            <div className="absolute inset-0 bg-gradient-to-br from-emerald-bright/10 to-gold/10 blur-3xl rounded-full" />
+            <img
+              src={calculatorImg}
+              alt="Calculadora de conversão de moedas"
+              loading="lazy"
+              className="relative w-full h-auto max-w-md mx-auto drop-shadow-xl"
+            />
+            <div className="text-center mt-6">
+              <div className="text-xs font-bold tracking-[0.25em] text-gold uppercase mb-2">Conversor Universal</div>
+              <p className="text-muted-foreground text-sm max-w-sm mx-auto">
+                Converta qualquer moeda fiduciária ou criptoativo com taxas atualizadas em tempo real.
+              </p>
+            </div>
+          </div>
+        </div>
       </section>
 
       {/* MARKETS PILLARS */}
-      <section className="container mx-auto px-6 pb-24">
-        <div className="text-center mb-14">
+      <section className="container mx-auto px-6 pb-24 relative">
+        <img
+          src={worldCurrencies}
+          alt=""
+          aria-hidden="true"
+          loading="lazy"
+          className="absolute -top-10 right-0 w-64 h-64 opacity-10 pointer-events-none select-none"
+        />
+        <div className="text-center mb-14 relative">
           <div className="text-xs font-bold tracking-[0.25em] text-gold uppercase mb-3">Mercados Cobertos</div>
           <h2 className="font-display text-4xl md:text-5xl font-bold tracking-tight">
             Inteligência financeira <span className="text-gradient-emerald">sem fronteiras</span>
@@ -180,8 +273,15 @@ const Index = () => {
       </section>
 
       {/* WHY US */}
-      <section className="bg-emerald text-cream py-24">
-        <div className="container mx-auto px-6">
+      <section className="relative bg-emerald text-cream py-24 overflow-hidden">
+        <img
+          src={xeExchange}
+          alt=""
+          aria-hidden="true"
+          loading="lazy"
+          className="absolute inset-0 w-full h-full object-cover opacity-10 mix-blend-luminosity"
+        />
+        <div className="container mx-auto px-6 relative">
           <div className="text-center mb-16">
             <div className="text-xs font-bold tracking-[0.25em] text-gold uppercase mb-3">Por que Cotação de Hoje</div>
             <h2 className="font-display text-4xl md:text-5xl font-bold tracking-tight max-w-3xl mx-auto">
