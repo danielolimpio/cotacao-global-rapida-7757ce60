@@ -64,10 +64,17 @@ const Index = () => {
   return <Layout>
       <SEO path="/" />
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-primary/10 to-accent/10 py-20 bg-cover bg-center bg-no-repeat" style={{
-      backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/lovable-uploads/85bbe2bd-087d-450f-854b-df96d620b9ce.png')`
-    }}>
-        <div className="container mx-auto px-4">
+      <section className="relative py-20 overflow-hidden">
+        <img
+          src="/lovable-uploads/85bbe2bd-087d-450f-854b-df96d620b9ce.png"
+          alt="Cotações financeiras em tempo real"
+          width={1920}
+          height={606}
+          fetchpriority="high"
+          className="absolute inset-1 w-full h-full object-cover"
+        />
+        <div className="absolute inset-1 bg-black/50" />
+        <div className="relative z-10 container mx-auto px-4">
           <div className="text-center mb-12">
             <h1 className="text-3xl md:text-5xl font-bold text-white mb-4 animate-fade-in">
               Cotações em <span className="text-primary">Tempo Real</span>
@@ -96,7 +103,7 @@ const Index = () => {
       <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <img src="/lovable-uploads/5d06de04-992d-43a6-ac71-779bc6f6ff12.png" alt="Dollar Symbol" className="w-24 h-24 mx-auto mb-6" />
+            <img src="/lovable-uploads/5d06de04-992d-43a6-ac71-779bc6f6ff12.png" alt="Dollar Symbol" width={126} height={125} fetchpriority="high" className="w-24 h-24 mx-auto mb-6" />
             <h2 className="text-3xl font-bold text-foreground mb-4">Dólar Hoje</h2>
             <p className="text-muted-foreground">Acompanhe a cotação USD/BRL em tempo real</p>
           </div>
