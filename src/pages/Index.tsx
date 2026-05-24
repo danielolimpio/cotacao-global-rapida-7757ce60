@@ -7,6 +7,13 @@ import { Button } from "@/components/ui/button";
 import { TrendingUp, Globe, Shield, Zap, ArrowUpRight, ArrowDownRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import useRealTimeQuotes from "@/hooks/useRealTimeQuotes";
+import heroMoneyTime from "@/assets/hero-money-time.png";
+import worldCurrencies from "@/assets/world-currencies.png";
+import calculatorImg from "@/assets/calculator.webp";
+import dollarChart from "@/assets/dollar-chart.webp";
+import dollarMarket from "@/assets/dollar-market.jpg";
+import xeExchange from "@/assets/xe-exchange.webp";
+import exchangeRateIcon from "@/assets/exchange-rate-icon.png";
 
 const Index = () => {
   const { quotes } = useRealTimeQuotes(["USDBRL", "EURBRL", "GBPBRL", "CADBRL"]);
