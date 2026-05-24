@@ -1,8 +1,9 @@
 import { Button } from "@/components/ui/button";
-import { TrendingUp, DollarSign, ChevronDown, Menu, X } from "lucide-react";
+import { TrendingUp, Menu, X } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import CurrencyTicker from "@/components/CurrencyTicker";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import ThemeToggle from "@/components/ThemeToggle";
 import { useState } from "react";
 import {
   NavigationMenu,
@@ -16,7 +17,7 @@ import logoImage from "@/assets/logo-completo.png";
 const Layout = ({ children }: { children: React.ReactNode }) => {
   const location = useLocation();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  
+
   const menuItems = [
     { name: "Início", path: "/" },
     { name: "Câmbio", path: "/cambio" },
@@ -29,30 +30,28 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
   ];
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background bg-grain">
       {/* Currency Ticker */}
       <CurrencyTicker />
-      
+
       {/* Header */}
-      <header className="sticky top-0 z-50 border-b bg-card shadow-sm">
-        <div className="container mx-auto px-4 py-4">
-          <div className="flex items-center justify-between w-full">
+      <header className="sticky top-0 z-50 border-b border-border bg-background/80 backdrop-blur-xl">
+        <div className="container mx-auto px-4 py-3">
+          <div className="flex items-center justify-between w-full gap-4">
             {/* Logo */}
-            <Link to="/" className="flex items-center">
-              <img src={logoImage} alt="Cotação de Hoje" className="h-14" />
+            <Link to="/" className="flex items-center shrink-0">
+              <img src={logoImage} alt="Cotação de Hoje" className="h-12" />
             </Link>
 
             {/* Mobile Menu Button */}
-            <button 
-              className="md:hidden p-2 rounded-lg hover:bg-muted/50 transition-colors"
+            <button
+              className="md:hidden p-2 rounded-lg hover:bg-muted transition-colors"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              aria-label="Menu"
             >
-              {isMobileMenuOpen ? (
-                <X className="w-6 h-6 text-foreground" />
-              ) : (
-                <Menu className="w-6 h-6 text-foreground" />
-              )}
+              {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
+
 
             {/* Navigation */}
             <NavigationMenu className="hidden md:flex">
