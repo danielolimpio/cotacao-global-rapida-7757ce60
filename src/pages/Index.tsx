@@ -70,7 +70,7 @@ const Index = () => {
           alt="Cotações financeiras em tempo real"
           width={1920}
           height={606}
-          fetchpriority="high"
+          fetchPriority="high"
           className="absolute inset-1 w-full h-full object-cover"
         />
         <div className="absolute inset-1 bg-black/50" />
@@ -103,7 +103,7 @@ const Index = () => {
       <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <img src="/lovable-uploads/5d06de04-992d-43a6-ac71-779bc6f6ff12.png" alt="Dollar Symbol" width={126} height={125} fetchpriority="high" className="w-24 h-24 mx-auto mb-6" />
+            <img src="/lovable-uploads/5d06de04-992d-43a6-ac71-779bc6f6ff12.png" alt="Dollar Symbol" width={126} height={125} fetchPriority="high" className="w-24 h-24 mx-auto mb-6" />
             <h2 className="text-3xl font-bold text-foreground mb-4">Dólar Hoje</h2>
             <p className="text-muted-foreground">Acompanhe a cotação USD/BRL em tempo real</p>
           </div>
