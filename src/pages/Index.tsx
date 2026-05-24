@@ -45,8 +45,8 @@ const Index = () => {
             Mercados Globais Ao Vivo
           </div>
 
-          <h1 className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight text-foreground mb-8 leading-[0.95] animate-fade-up">
-            Cotações em{" "}
+          <h1 className="font-display text-5xl sm:text-6xl md:text-7xl font-bold tracking-tight text-foreground mb-8 leading-[1.05] animate-fade-up">
+            Cotações em<br />
             <span className="text-gradient-gold italic font-light">Tempo Real</span>
           </h1>
 
