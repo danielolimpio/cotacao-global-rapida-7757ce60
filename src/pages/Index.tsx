@@ -237,14 +237,12 @@ const Index = () => {
 
       {/* MARKETS PILLARS */}
       <section className="container mx-auto px-6 pb-24 relative">
-        <img
-          src={worldCurrencies}
-          alt=""
-          aria-hidden="true"
-          loading="lazy"
-          className="absolute -top-10 right-0 w-64 h-64 opacity-10 pointer-events-none select-none"
-        />
         <div className="text-center mb-14 relative">
+          <div className="text-xs font-bold tracking-[0.25em] text-gold uppercase mb-3">Mercados Cobertos</div>
+          <h2 className="font-display text-4xl md:text-5xl font-bold tracking-tight">
+            Inteligência financeira <span className="text-gradient-emerald">sem fronteiras</span>
+          </h2>
+        </div>
           <div className="text-xs font-bold tracking-[0.25em] text-gold uppercase mb-3">Mercados Cobertos</div>
           <h2 className="font-display text-4xl md:text-5xl font-bold tracking-tight">
             Inteligência financeira <span className="text-gradient-emerald">sem fronteiras</span>
