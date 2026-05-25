@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 import { TrendingUp, Globe, Shield, Zap, ArrowUpRight, ArrowDownRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import useRealTimeQuotes from "@/hooks/useRealTimeQuotes";
-import heroMoneyTime from "@/assets/hero-money-time.png";
+import heroMoneyTime from "@/assets/hero-money-time.webp";
 import worldCurrencies from "@/assets/world-currencies.png";
 import calculatorImg from "@/assets/calculator.webp";
 import dollarChart from "@/assets/dollar-chart.webp";
@@ -44,8 +44,8 @@ const Index = () => {
         </div>
 
         <div className="container mx-auto px-6 pt-20 pb-24 max-w-7xl">
-          <div className="grid lg:grid-cols-12 gap-12 items-center">
-            <div className="lg:col-span-7 text-center lg:text-left">
+          <div className="grid lg:grid-cols-12 gap-10 items-center">
+            <div className="lg:col-span-6 text-center lg:text-left">
               <div className="inline-flex items-center gap-2 bg-emerald-bright/10 border border-emerald-bright/20 rounded-full px-4 py-1.5 mb-8 text-xs font-semibold text-emerald-bright tracking-widest uppercase animate-fade-up">
                 <span className="relative flex h-2 w-2">
                   <span className="absolute inline-flex h-full w-full rounded-full bg-emerald-bright opacity-60 animate-ping" />
@@ -78,15 +78,15 @@ const Index = () => {
               </div>
             </div>
 
-            <div className="lg:col-span-5 relative animate-fade-up">
+            <div className="lg:col-span-6 relative animate-fade-up lg:-mr-8 xl:-mr-16">
               <div className="absolute inset-0 bg-gradient-to-br from-gold/20 to-emerald-bright/20 blur-3xl rounded-full" />
               <img
                 src={heroMoneyTime}
                 alt="Cotações financeiras em tempo real"
-                width={820}
-                height={500}
+                width={1100}
+                height={680}
                 fetchPriority="high"
-                className="relative w-full h-auto drop-shadow-2xl"
+                className="relative w-full h-auto scale-110 lg:scale-125 origin-center drop-shadow-2xl"
               />
             </div>
           </div>
