@@ -243,11 +243,6 @@ const Index = () => {
             Inteligência financeira <span className="text-gradient-emerald">sem fronteiras</span>
           </h2>
         </div>
-          <div className="text-xs font-bold tracking-[0.25em] text-gold uppercase mb-3">Mercados Cobertos</div>
-          <h2 className="font-display text-4xl md:text-5xl font-bold tracking-tight">
-            Inteligência financeira <span className="text-gradient-emerald">sem fronteiras</span>
-          </h2>
-        </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {markets.map((m) => (
             <Link
