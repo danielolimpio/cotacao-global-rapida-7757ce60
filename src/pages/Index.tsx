@@ -8,7 +8,7 @@ import { TrendingUp, Globe, Shield, Zap, ArrowUpRight, ArrowDownRight } from "lu
 import { Link } from "react-router-dom";
 import useRealTimeQuotes from "@/hooks/useRealTimeQuotes";
 import heroMoneyTime from "@/assets/hero-money-time.webp";
-import worldCurrencies from "@/assets/world-currencies.png";
+
 import calculatorImg from "@/assets/calculator.webp";
 import dollarChart from "@/assets/dollar-chart.webp";
 import dollarMarket from "@/assets/dollar-market.jpg";
