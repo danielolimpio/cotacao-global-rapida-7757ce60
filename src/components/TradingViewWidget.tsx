@@ -20,6 +20,8 @@ const TradingViewWidget = ({
   locale = "br"
 }: TradingViewWidgetProps) => {
   const container = useRef<HTMLDivElement>(null);
+  const creditHeight = 24;
+  const chartHeight = autosize ? `calc(100% - ${creditHeight}px)` : `${Math.max(Number(height) - creditHeight, 280)}px`;
 
   useEffect(() => {
     if (!container.current) return;
@@ -80,14 +82,14 @@ const TradingViewWidget = ({
   }, [symbol, width, height, autosize, theme, style, locale]);
 
   return (
-    <div className="tradingview-widget-container w-full">
-      <div ref={container} className="tradingview-widget w-full" style={{ height: autosize ? '100%' : `${height}px` }} />
-      <div className="tradingview-widget-copyright mt-2 text-center bg-transparent">
+    <div className="tradingview-widget-container w-full overflow-hidden" style={{ height: autosize ? '100%' : `${height}px` }}>
+      <div ref={container} className="tradingview-widget w-full" style={{ height: chartHeight }} />
+      <div className="tradingview-widget-copyright flex h-6 items-center justify-center bg-[hsl(var(--chart-surface))] text-center leading-none">
         <a
           href="https://br.tradingview.com/symbols/USDBRL/"
           rel="noopener nofollow"
           target="_blank"
-          className="text-[11px] text-muted-foreground hover:text-primary"
+          className="rounded-sm bg-[hsl(var(--chart-surface))] px-1.5 text-[10px] text-muted-foreground hover:text-primary"
         >
           Dados do TradingView
         </a>
