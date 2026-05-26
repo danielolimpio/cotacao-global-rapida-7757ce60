@@ -80,14 +80,14 @@ const TradingViewWidget = ({
   }, [symbol, width, height, autosize, theme, style, locale]);
 
   return (
-    <div className="tradingview-widget-container w-full h-full">
-      <div ref={container} className="tradingview-widget w-full h-full" />
-      <div className="tradingview-widget-copyright">
-        <a 
-          href="https://br.tradingview.com/symbols/USDBRL/" 
-          rel="noopener nofollow" 
+    <div className="tradingview-widget-container w-full h-full flex flex-col">
+      <div ref={container} className="tradingview-widget w-full flex-1 min-h-0" />
+      <div className="tradingview-widget-copyright mt-2 pt-2 pb-1 px-2 bg-background border-t border-border text-center">
+        <a
+          href="https://br.tradingview.com/symbols/USDBRL/"
+          rel="noopener nofollow"
           target="_blank"
-          className="text-xs text-muted-foreground hover:text-primary"
+          className="text-xs font-medium text-foreground hover:text-primary"
         >
           Dados do TradingView
         </a>
