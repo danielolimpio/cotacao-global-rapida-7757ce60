@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 
 interface TradingViewWidgetProps {
   symbol: string;
@@ -19,7 +19,30 @@ const TradingViewWidget = ({
   style = "basic",
   locale = "br"
 }: TradingViewWidgetProps) => {
+  const wrapper = useRef<HTMLDivElement>(null);
   const container = useRef<HTMLDivElement>(null);
+  const creditHeight = 24;
+  const numericHeight = Number.parseInt(height, 10);
+  const totalHeight = Number.isFinite(numericHeight) ? numericHeight : 400;
+  const [availableHeight, setAvailableHeight] = useState(totalHeight);
+  const chartPixelHeight = Math.max(availableHeight - creditHeight, 280);
+  const chartHeight = autosize ? `calc(100% - ${creditHeight}px)` : `${chartPixelHeight}px`;
+
+  useLayoutEffect(() => {
+    const element = wrapper.current;
+    if (!element) return;
+
+    const updateHeight = () => {
+      const measuredHeight = Math.round(element.getBoundingClientRect().height);
+      setAvailableHeight(measuredHeight > 0 ? measuredHeight : totalHeight);
+    };
+
+    updateHeight();
+    const resizeObserver = new ResizeObserver(updateHeight);
+    resizeObserver.observe(element);
+
+    return () => resizeObserver.disconnect();
+  }, [totalHeight]);
 
   useEffect(() => {
     if (!container.current) return;
@@ -34,7 +57,7 @@ const TradingViewWidget = ({
       ],
       chartOnly: false,
       width: autosize ? "100%" : width,
-      height: autosize ? "100%" : height,
+      height: autosize ? "100%" : chartPixelHeight.toString(),
       locale: locale,
       colorTheme: theme,
       autosize: autosize,
@@ -77,17 +100,17 @@ const TradingViewWidget = ({
         container.current.innerHTML = '';
       }
     };
-  }, [symbol, width, height, autosize, theme, style, locale]);
+  }, [symbol, width, height, autosize, theme, style, locale, chartPixelHeight]);
 
   return (
-    <div className="tradingview-widget-container w-full">
-      <div ref={container} className="tradingview-widget w-full" style={{ height: autosize ? '100%' : `${height}px` }} />
-      <div className="tradingview-widget-copyright mt-2 text-center bg-transparent">
+    <div ref={wrapper} className="tradingview-widget-container h-full w-full max-h-full overflow-hidden" style={{ height: autosize ? '100%' : `${totalHeight}px` }}>
+      <div ref={container} className="tradingview-widget w-full overflow-hidden" style={{ height: chartHeight }} />
+      <div className="tradingview-widget-copyright flex h-6 items-center justify-center text-center leading-none">
         <a
           href="https://br.tradingview.com/symbols/USDBRL/"
           rel="noopener nofollow"
           target="_blank"
-          className="text-[11px] text-muted-foreground hover:text-primary"
+          className="rounded-sm bg-[hsl(var(--chart-surface))] px-1.5 text-[10px] text-muted-foreground hover:text-primary"
         >
           Dados do TradingView
         </a>
