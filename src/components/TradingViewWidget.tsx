@@ -21,7 +21,10 @@ const TradingViewWidget = ({
 }: TradingViewWidgetProps) => {
   const container = useRef<HTMLDivElement>(null);
   const creditHeight = 24;
-  const chartHeight = autosize ? `calc(100% - ${creditHeight}px)` : `${Math.max(Number(height) - creditHeight, 280)}px`;
+  const numericHeight = Number.parseInt(height, 10);
+  const totalHeight = Number.isFinite(numericHeight) ? numericHeight : 400;
+  const chartPixelHeight = Math.max(totalHeight - creditHeight, 280);
+  const chartHeight = autosize ? `calc(100% - ${creditHeight}px)` : `${chartPixelHeight}px`;
 
   useEffect(() => {
     if (!container.current) return;
@@ -36,7 +39,7 @@ const TradingViewWidget = ({
       ],
       chartOnly: false,
       width: autosize ? "100%" : width,
-      height: autosize ? "100%" : height,
+      height: autosize ? "100%" : chartPixelHeight.toString(),
       locale: locale,
       colorTheme: theme,
       autosize: autosize,
@@ -79,10 +82,10 @@ const TradingViewWidget = ({
         container.current.innerHTML = '';
       }
     };
-  }, [symbol, width, height, autosize, theme, style, locale]);
+  }, [symbol, width, height, autosize, theme, style, locale, chartPixelHeight]);
 
   return (
-    <div className="tradingview-widget-container w-full overflow-hidden" style={{ height: autosize ? '100%' : `${height}px` }}>
+    <div className="tradingview-widget-container w-full overflow-hidden" style={{ height: autosize ? '100%' : `${totalHeight}px` }}>
       <div ref={container} className="tradingview-widget w-full" style={{ height: chartHeight }} />
       <div className="tradingview-widget-copyright flex h-6 items-center justify-center bg-[hsl(var(--chart-surface))] text-center leading-none">
         <a
