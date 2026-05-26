@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 
 interface TradingViewWidgetProps {
   symbol: string;
@@ -19,12 +19,30 @@ const TradingViewWidget = ({
   style = "basic",
   locale = "br"
 }: TradingViewWidgetProps) => {
+  const wrapper = useRef<HTMLDivElement>(null);
   const container = useRef<HTMLDivElement>(null);
   const creditHeight = 24;
   const numericHeight = Number.parseInt(height, 10);
   const totalHeight = Number.isFinite(numericHeight) ? numericHeight : 400;
-  const chartPixelHeight = Math.max(totalHeight - creditHeight, 280);
+  const [availableHeight, setAvailableHeight] = useState(totalHeight);
+  const chartPixelHeight = Math.max(availableHeight - creditHeight, 280);
   const chartHeight = autosize ? `calc(100% - ${creditHeight}px)` : `${chartPixelHeight}px`;
+
+  useLayoutEffect(() => {
+    const element = wrapper.current;
+    if (!element) return;
+
+    const updateHeight = () => {
+      const measuredHeight = Math.round(element.getBoundingClientRect().height);
+      setAvailableHeight(measuredHeight > 0 ? measuredHeight : totalHeight);
+    };
+
+    updateHeight();
+    const resizeObserver = new ResizeObserver(updateHeight);
+    resizeObserver.observe(element);
+
+    return () => resizeObserver.disconnect();
+  }, [totalHeight]);
 
   useEffect(() => {
     if (!container.current) return;
@@ -85,9 +103,9 @@ const TradingViewWidget = ({
   }, [symbol, width, height, autosize, theme, style, locale, chartPixelHeight]);
 
   return (
-    <div className="tradingview-widget-container w-full overflow-hidden" style={{ height: autosize ? '100%' : `${totalHeight}px` }}>
-      <div ref={container} className="tradingview-widget w-full" style={{ height: chartHeight }} />
-      <div className="tradingview-widget-copyright flex h-6 items-center justify-center bg-[hsl(var(--chart-surface))] text-center leading-none">
+    <div ref={wrapper} className="tradingview-widget-container h-full w-full max-h-full overflow-hidden" style={{ height: autosize ? '100%' : `${totalHeight}px` }}>
+      <div ref={container} className="tradingview-widget w-full overflow-hidden" style={{ height: chartHeight }} />
+      <div className="tradingview-widget-copyright flex h-6 items-center justify-center text-center leading-none">
         <a
           href="https://br.tradingview.com/symbols/USDBRL/"
           rel="noopener nofollow"
