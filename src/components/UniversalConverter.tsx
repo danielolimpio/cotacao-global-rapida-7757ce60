@@ -185,7 +185,7 @@ const UniversalConverter: React.FC<UniversalConverterProps> = ({
     fetchExchangeRates();
     
     // Atualizar a cada 2 minutos
-    const interval = setInterval(fetchExchangeRates, 120000);
+    const interval = setInterval(fetchExchangeRates, REALTIME_INTERVAL_MS);
     return () => clearInterval(interval);
   }, [assetSymbol, assetType]);
 
