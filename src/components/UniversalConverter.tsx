@@ -5,6 +5,7 @@ import { Label } from '@/components/ui/label';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Button } from '@/components/ui/button';
 import { RefreshCw } from 'lucide-react';
+import { fetchLiveRates, REALTIME_INTERVAL_MS } from '@/lib/exchangeRates';
 
 interface UniversalConverterProps {
   assetType: 'fiat' | 'crypto';
@@ -95,25 +96,12 @@ const UniversalConverter: React.FC<UniversalConverterProps> = ({
   };
 
   const fetchFiatRates = async () => {
-    // Moedas não suportadas pelo Frankfurter
-    const unsupportedCurrencies = ['ARS', 'CLP', 'UYU', 'RUB'];
-    
-    if (unsupportedCurrencies.includes(assetSymbol)) {
-      setFallbackFiatRates();
-      return;
-    }
+    const rates = await fetchLiveRates(assetSymbol);
+    if (!rates) throw new Error('All FX APIs failed');
 
-    const response = await fetch(
-      `https://api.frankfurter.app/latest?from=${assetSymbol}&to=USD,BRL`
-    );
-    
-    if (!response.ok) throw new Error('Frankfurter API Error');
-    
-    const data = await response.json();
-    
     setExchangeRates({
-      usd: assetSymbol === 'USD' ? 1 : data.rates.USD || 1,
-      brl: assetSymbol === 'BRL' ? 1 : data.rates.BRL || 5.5
+      usd: assetSymbol === 'USD' ? 1 : (rates.USD ?? 1),
+      brl: assetSymbol === 'BRL' ? 1 : (rates.BRL ?? 5.5)
     });
   };
 
@@ -197,7 +185,7 @@ const UniversalConverter: React.FC<UniversalConverterProps> = ({
     fetchExchangeRates();
     
     // Atualizar a cada 2 minutos
-    const interval = setInterval(fetchExchangeRates, 120000);
+    const interval = setInterval(fetchExchangeRates, REALTIME_INTERVAL_MS);
     return () => clearInterval(interval);
   }, [assetSymbol, assetType]);
 

@@ -4,6 +4,7 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Button } from '@/components/ui/button';
 import { RefreshCw } from 'lucide-react';
+import { fetchLiveRates, REALTIME_INTERVAL_MS } from '@/lib/exchangeRates';
 
 interface ForexPairConverterProps {
   baseCurrency: string;
@@ -40,48 +41,28 @@ const ForexPairConverter: React.FC<ForexPairConverterProps> = ({
   const fetchRates = async () => {
     setLoading(true);
     setError(null);
-    
+
     try {
-      const unsupportedCurrencies = ['ARS', 'CLP', 'UYU', 'RUB', 'THB', 'INR', 'TRY', 'PLN', 'NOK', 'SEK', 'HKD', 'SGD'];
-      
-      // Se qualquer moeda não é suportada, usar fallback
-      if (unsupportedCurrencies.includes(baseCurrency) || unsupportedCurrencies.includes(quoteCurrency)) {
-        setFallbackRates();
-        setLastUpdate(new Date());
-        setLoading(false);
-        return;
-      }
-
-      // Buscar taxa do par base/quote
-      const pairResponse = await fetch(
-        `https://api.frankfurter.app/latest?from=${baseCurrency}&to=${quoteCurrency}`
-      );
-      
-      if (!pairResponse.ok) throw new Error('API Error');
-      
-      const pairData = await pairResponse.json();
-      const baseToQuote = pairData.rates[quoteCurrency] || 1;
-
-      // Buscar taxa para a terceira moeda (USD ou BRL)
-      let baseToThird = 1;
-      
-      if (baseCurrency !== thirdCurrency) {
-        const thirdResponse = await fetch(
-          `https://api.frankfurter.app/latest?from=${baseCurrency}&to=${thirdCurrency}`
-        );
-        
-        if (thirdResponse.ok) {
-          const thirdData = await thirdResponse.json();
-          baseToThird = thirdData.rates[thirdCurrency] || 1;
+      const baseRates = await fetchLiveRates(baseCurrency);
+      if (!baseRates || baseRates[quoteCurrency] == null) {
+        // Try via USD pivot if direct pair unavailable
+        const usdRates = await fetchLiveRates('USD');
+        if (!usdRates || !usdRates[baseCurrency] || !usdRates[quoteCurrency]) {
+          throw new Error('Rate not available');
         }
+        const baseToQuote = usdRates[quoteCurrency] / usdRates[baseCurrency];
+        const baseToThird =
+          baseCurrency === thirdCurrency
+            ? 1
+            : (usdRates[thirdCurrency] ?? 1) / usdRates[baseCurrency];
+        setRates({ base: 1, quote: baseToQuote, third: baseToThird });
+      } else {
+        const baseToQuote = baseRates[quoteCurrency];
+        const baseToThird =
+          baseCurrency === thirdCurrency ? 1 : (baseRates[thirdCurrency] ?? 1);
+        setRates({ base: 1, quote: baseToQuote, third: baseToThird });
       }
 
-      setRates({
-        base: 1,
-        quote: baseToQuote,
-        third: baseToThird
-      });
-      
       setLastUpdate(new Date());
     } catch (err) {
       console.error('Erro ao buscar cotações:', err);
@@ -177,7 +158,7 @@ const ForexPairConverter: React.FC<ForexPairConverterProps> = ({
 
   useEffect(() => {
     fetchRates();
-    const interval = setInterval(fetchRates, 120000);
+    const interval = setInterval(fetchRates, REALTIME_INTERVAL_MS);
     return () => clearInterval(interval);
   }, [baseCurrency, quoteCurrency, pairSymbol]);
 
