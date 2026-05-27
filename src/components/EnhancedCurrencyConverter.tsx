@@ -86,14 +86,12 @@ const EnhancedCurrencyConverter: React.FC<EnhancedCurrencyConverterProps> = ({
           targetCurrencies.push(selectedCurrency);
         }
 
-        const response = await fetch(`https://api.frankfurter.app/latest?from=${selectedCurrency}&to=${targetCurrencies.join(',')}`);
-        
-        if (response.ok) {
-          const data = await response.json();
-          setRates({ ...data.rates, [selectedCurrency]: 1 });
+        const apiRates = await fetchLiveRates(selectedCurrency);
+        if (apiRates) {
+          setRates({ ...apiRates, [selectedCurrency]: 1 });
           setLastUpdate(new Date());
         } else {
-          throw new Error('API Error');
+          throw new Error('All APIs failed');
         }
       }
     } catch (error) {
@@ -114,7 +112,7 @@ const EnhancedCurrencyConverter: React.FC<EnhancedCurrencyConverterProps> = ({
 
   useEffect(() => {
     fetchRates();
-    const interval = setInterval(fetchRates, 300000); // Atualiza a cada 5 minutos
+    const interval = setInterval(fetchRates, REALTIME_INTERVAL_MS);
     return () => clearInterval(interval);
   }, [selectedCurrency]);
 
