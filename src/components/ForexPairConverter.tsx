@@ -4,6 +4,7 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Button } from '@/components/ui/button';
 import { RefreshCw } from 'lucide-react';
+import { fetchLiveRates, REALTIME_INTERVAL_MS } from '@/lib/exchangeRates';
 
 interface ForexPairConverterProps {
   baseCurrency: string;
