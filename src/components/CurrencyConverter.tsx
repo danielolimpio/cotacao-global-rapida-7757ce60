@@ -101,42 +101,59 @@ const CurrencyConverter: React.FC<CurrencyConverterProps> = ({
         setRates(fallbackRates);
         setLastUpdate(new Date());
       } else {
-        // Use Frankfurter API for supported currencies
-        const response = await fetch(
-          `https://api.frankfurter.app/latest?from=${baseCurrency}&to=${targetCurrencies.join(',')}`
-        );
-        
-        if (response.ok) {
-          const data = await response.json();
-          const newRates: { [key: string]: number } = {};
-          
-          // Adicionar taxa base
-          newRates[baseCurrency] = 1;
-          
-          // Adicionar taxas retornadas pela API
-          Object.keys(data.rates).forEach(currency => {
-            newRates[currency] = data.rates[currency];
+        // Try multiple APIs for reliability (Frankfurter often fails by CORS in preview)
+        const fetchFromApi = async (base: string): Promise<{ [k: string]: number } | null> => {
+          // Primary: exchangerate-api (free, reliable, CORS-enabled)
+          try {
+            const r = await fetch(`https://api.exchangerate-api.com/v4/latest/${base}`);
+            if (r.ok) {
+              const d = await r.json();
+              return d.rates;
+            }
+          } catch (e) { /* try next */ }
+          // Fallback: open.er-api.com
+          try {
+            const r = await fetch(`https://open.er-api.com/v6/latest/${base}`);
+            if (r.ok) {
+              const d = await r.json();
+              return d.rates;
+            }
+          } catch (e) { /* try next */ }
+          // Last resort: Frankfurter
+          try {
+            const r = await fetch(`https://api.frankfurter.app/latest?from=${base}`);
+            if (r.ok) {
+              const d = await r.json();
+              return d.rates;
+            }
+          } catch (e) { /* fail */ }
+          return null;
+        };
+
+        const apiRates = await fetchFromApi(baseCurrency);
+        if (apiRates) {
+          const newRates: { [key: string]: number } = { [baseCurrency]: 1 };
+          targetCurrencies.forEach(c => {
+            if (apiRates[c] != null) newRates[c] = apiRates[c];
           });
-          
-          // Para dólar turismo, adicionar 2% de spread
+          // Also expose all rates so calculations can find them
+          Object.keys(apiRates).forEach(c => {
+            if (newRates[c] == null) newRates[c] = apiRates[c];
+          });
+
           if (selectedDollar === 'USDT' && baseCurrency === 'USD') {
             newRates.USDT = newRates.BRL * 1.02;
           }
-          
-          // Se precisarmos de USD/BRL mas a base não é USD
+
           if (baseCurrency !== 'USD' && !newRates.USD) {
-            // Fazer segunda requisição para obter USD/BRL
-            const usdResponse = await fetch('https://api.frankfurter.app/latest?from=USD&to=BRL');
-            if (usdResponse.ok) {
-              const usdData = await usdResponse.json();
-              newRates.USDBRL = usdData.rates.BRL;
-            }
+            const usdRates = await fetchFromApi('USD');
+            if (usdRates?.BRL) newRates.USDBRL = usdRates.BRL;
           }
-          
+
           setRates(newRates);
           setLastUpdate(new Date());
         } else {
-          throw new Error('API Error');
+          throw new Error('All APIs failed');
         }
       }
     } catch (error) {
@@ -217,6 +234,10 @@ const CurrencyConverter: React.FC<CurrencyConverterProps> = ({
             fallbackRates.USD = 0.19;
             fallbackRates.BRL = 5.34;
         }
+      } else if (type === 'euro') {
+        fallbackRates.EUR = 1;
+        fallbackRates.USD = 1.16;
+        fallbackRates.BRL = 5.92;
       } else {
         // Para outros tipos, usar lógica antiga
         fallbackRates.USD = 1;
@@ -233,11 +254,11 @@ const CurrencyConverter: React.FC<CurrencyConverterProps> = ({
     }
   };
 
-  // Fetch inicial e configurar atualizações automáticas
+  // Fetch inicial e configurar atualizações automáticas em tempo real
   useEffect(() => {
     fetchRates();
-    // Atualizar a cada 2 minutos para ter cotações mais atuais
-    const interval = setInterval(fetchRates, 120000);
+    // Atualizar a cada 30 segundos para cotação em tempo real
+    const interval = setInterval(fetchRates, 30000);
     return () => clearInterval(interval);
   }, [type, mainCurrency, selectedDollar]);
 
