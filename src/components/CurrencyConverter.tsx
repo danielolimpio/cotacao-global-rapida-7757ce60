@@ -254,11 +254,11 @@ const CurrencyConverter: React.FC<CurrencyConverterProps> = ({
     }
   };
 
-  // Fetch inicial e configurar atualizações automáticas
+  // Fetch inicial e configurar atualizações automáticas em tempo real
   useEffect(() => {
     fetchRates();
-    // Atualizar a cada 2 minutos para ter cotações mais atuais
-    const interval = setInterval(fetchRates, 120000);
+    // Atualizar a cada 30 segundos para cotação em tempo real
+    const interval = setInterval(fetchRates, 30000);
     return () => clearInterval(interval);
   }, [type, mainCurrency, selectedDollar]);
 
