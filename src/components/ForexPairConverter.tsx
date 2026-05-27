@@ -158,7 +158,7 @@ const ForexPairConverter: React.FC<ForexPairConverterProps> = ({
 
   useEffect(() => {
     fetchRates();
-    const interval = setInterval(fetchRates, 120000);
+    const interval = setInterval(fetchRates, REALTIME_INTERVAL_MS);
     return () => clearInterval(interval);
   }, [baseCurrency, quoteCurrency, pairSymbol]);
 
