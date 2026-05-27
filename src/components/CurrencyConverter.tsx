@@ -234,6 +234,10 @@ const CurrencyConverter: React.FC<CurrencyConverterProps> = ({
             fallbackRates.USD = 0.19;
             fallbackRates.BRL = 5.34;
         }
+      } else if (type === 'euro') {
+        fallbackRates.EUR = 1;
+        fallbackRates.USD = 1.16;
+        fallbackRates.BRL = 5.92;
       } else {
         // Para outros tipos, usar lógica antiga
         fallbackRates.USD = 1;
