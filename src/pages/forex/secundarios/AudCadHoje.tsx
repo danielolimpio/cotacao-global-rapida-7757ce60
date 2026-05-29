@@ -1,6 +1,6 @@
 import Layout from "@/components/Layout";
 import TradingViewWidget from "@/components/TradingViewWidget";
-import CurrencyConverter from "@/components/CurrencyConverter";
+import ForexPairConverter from "@/components/ForexPairConverter";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 const AudCadHoje = () => {
@@ -40,7 +40,7 @@ const AudCadHoje = () => {
           </Card>
         </div>
 
-        <CurrencyConverter type="currency" />
+        <ForexPairConverter baseCurrency="AUD" quoteCurrency="CAD" baseCurrencyName="Dólar Australiano" quoteCurrencyName="Dólar Canadense" pairSymbol="AUDCAD" />
       </div>
     </Layout>
   );

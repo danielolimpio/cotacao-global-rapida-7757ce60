@@ -1,6 +1,6 @@
 import Layout from "@/components/Layout";
 import TradingViewWidget from "@/components/TradingViewWidget";
-import CurrencyConverter from "@/components/CurrencyConverter";
+import ForexPairConverter from "@/components/ForexPairConverter";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 const NzdJpyHoje = () => {
@@ -40,7 +40,7 @@ const NzdJpyHoje = () => {
           </Card>
         </div>
 
-        <CurrencyConverter type="currency" />
+        <ForexPairConverter baseCurrency="NZD" quoteCurrency="JPY" baseCurrencyName="Dólar Neozelandês" quoteCurrencyName="Iene Japonês" pairSymbol="NZDJPY" />
       </div>
     </Layout>
   );
