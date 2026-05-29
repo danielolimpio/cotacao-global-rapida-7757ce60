@@ -82,7 +82,7 @@ const ForexPairConverter: React.FC<ForexPairConverterProps> = ({
       'USDJPY': 152.5,
       'GBPUSD': 1.33,
       'USDCHF': 0.80,
-      'AUDUSD': 0.65,
+      'AUDUSD': 0.72,
       'USDCAD': 1.40,
       'NZDUSD': 0.57,
       
@@ -132,14 +132,14 @@ const ForexPairConverter: React.FC<ForexPairConverterProps> = ({
         // Converter base para BRL via USD
         const baseToUsd = baseCurrency === 'EUR' ? 1.16 : 
                           baseCurrency === 'GBP' ? 1.33 : 
-                          baseCurrency === 'AUD' ? 0.65 : 1;
+                          baseCurrency === 'AUD' ? 0.72 : 1;
         thirdRate = baseToUsd * usdToBrl;
       }
     } else {
       // thirdCurrency é USD
       if (baseCurrency === 'EUR') thirdRate = 1.16;
       else if (baseCurrency === 'GBP') thirdRate = 1.33;
-      else if (baseCurrency === 'AUD') thirdRate = 0.65;
+      else if (baseCurrency === 'AUD') thirdRate = 0.72;
       else thirdRate = 1;
     }
 
