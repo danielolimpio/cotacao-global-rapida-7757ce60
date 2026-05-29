@@ -1,0 +1,17 @@
+{
+  "name": "Cotações Hoje",
+  "short_name": "Cotações",
+  "description": "Cotações de moedas, criptos, ações e índices em tempo real.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0f3d2e",
+  "orientation": "portrait",
+  "lang": "pt-BR",
+  "icons": [
+    { "src": "/favicon.gif", "sizes": "any", "type": "image/gif" },
+    { "src": "/og-image.webp", "sizes": "512x512", "type": "image/webp", "purpose": "any" },
+    { "src": "/og-image.webp", "sizes": "512x512", "type": "image/webp", "purpose": "maskable" }
+  ]
+}
