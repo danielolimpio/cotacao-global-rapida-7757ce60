@@ -1,17 +1,17 @@
 {
-  "name": "Cotações Hoje",
-  "short_name": "Cotações",
-  "description": "Cotações de moedas, criptos, ações e índices em tempo real.",
+  "name": "Cotações Hoje - Dólar, Euro, Bitcoin ao Vivo",
+  "short_name": "Cotações Hoje",
+  "description": "Cotação ao vivo de Dólar, Euro, Bitcoin, ações e criptos em tempo real.",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
   "background_color": "#ffffff",
-  "theme_color": "#0f3d2e",
+  "theme_color": "#00C896",
   "orientation": "portrait",
   "lang": "pt-BR",
   "icons": [
-    { "src": "/favicon.gif", "sizes": "any", "type": "image/gif" },
-    { "src": "/og-image.webp", "sizes": "512x512", "type": "image/webp", "purpose": "any" },
-    { "src": "/og-image.webp", "sizes": "512x512", "type": "image/webp", "purpose": "maskable" }
+    { "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" },
+    { "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "maskable" },
+    { "src": "/og-image.webp", "sizes": "512x512", "type": "image/webp", "purpose": "any" }
   ]
 }
