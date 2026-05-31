@@ -16,10 +16,11 @@ export interface PageSEO {
 export const seoData: Record<string, PageSEO> = {
   // Main Pages
   '/': {
-    title: 'Cotações Hoje - Dólar, Euro, Bitcoin e Ações em Tempo Real',
-    description: 'Acompanhe cotações do dólar, euro, bitcoin, ações e criptomoedas em tempo real. Conversor de moedas, gráficos atualizados e análises do mercado financeiro.',
+    title: 'Dólar, Euro e Bitcoin Hoje ✅ Cotação ao Vivo Agora',
+    description: '✅ Veja AGORA a cotação do Dólar, Euro, Bitcoin e Ações em tempo real. Conversor grátis, gráficos ao vivo e atualização a cada 30 segundos. Acesse já!',
     keywords: 'cotação hoje, dólar hoje, euro hoje, bitcoin hoje, cotação tempo real, conversão moedas, câmbio, criptomoedas, ações, forex, mercado financeiro',
     canonical: 'https://cotacaodehoje.com',
+
     schema: {
       "@context": "https://schema.org",
       "@graph": [
@@ -73,9 +74,10 @@ export const seoData: Record<string, PageSEO> = {
   
   // Câmbio
   '/cambio': {
-    title: 'Câmbio - Cotações de Moedas em Tempo Real',
-    description: 'Cotações de câmbio em tempo real: dólar, euro, libra, iene e todas principais moedas. Conversores, gráficos atualizados e taxas de câmbio do dia.',
+    title: 'Câmbio Hoje ✅ Cotação de Todas as Moedas ao Vivo',
+    description: '✅ Cotação ao vivo de Dólar, Euro, Libra, Iene e +20 moedas. Conversor grátis em tempo real e gráficos atualizados a cada 30s. Confira AGORA!',
     keywords: 'câmbio, cotação moedas, câmbio hoje, taxa de câmbio, conversão moedas, dólar real, euro real, moeda estrangeira, forex, exchange rate',
+
     canonical: 'https://cotacaodehoje.com/cambio',
     schema: {
       "@context": "https://schema.org",
@@ -90,9 +92,10 @@ export const seoData: Record<string, PageSEO> = {
     }
   },
   '/cambio/dolar': {
-    title: 'Dólar Hoje - Cotação USD/BRL em Tempo Real',
-    description: 'Acompanhe a cotação do dólar americano (USD) hoje em tempo real. Conversor de dólar para real, gráficos atualizados e análise completa da moeda americana.',
+    title: 'Dólar Hoje ✅ Cotação USD/BRL AGORA em Tempo Real',
+    description: '✅ Quanto está o Dólar hoje? Veja a cotação USD/BRL ao vivo AGORA, conversor grátis e gráficos atualizados a cada 30 segundos. Confira!',
     keywords: 'dólar hoje, cotação dólar, USD BRL, dólar americano, conversão dólar real, preço dólar, dólar tempo real, câmbio dólar',
+
     canonical: 'https://cotacaodehoje.com/cambio/dolar',
     schema: {
       "@context": "https://schema.org",
@@ -140,9 +143,10 @@ export const seoData: Record<string, PageSEO> = {
     canonical: 'https://cotacaodehoje.com/cambio/usd-brl'
   },
   '/cambio/euro': {
-    title: 'Euro Hoje - Cotação EUR/BRL em Tempo Real',
-    description: 'Cotação do euro (EUR) hoje em tempo real. Conversor euro para real, gráficos ao vivo e análise da moeda europeia.',
+    title: 'Euro Hoje ✅ Cotação EUR/BRL AGORA em Tempo Real',
+    description: '✅ Quanto está o Euro hoje? Cotação EUR/BRL ao vivo AGORA, conversor grátis e gráficos atualizados a cada 30s. Veja o valor exato!',
     keywords: 'euro hoje, cotação euro, EUR BRL, euro real, conversão euro, preço euro, euro tempo real, câmbio euro',
+
     canonical: 'https://cotacaodehoje.com/cambio/euro',
     schema: {
       "@context": "https://schema.org",
@@ -163,10 +167,11 @@ export const seoData: Record<string, PageSEO> = {
     canonical: 'https://cotacaodehoje.com/cambio/eur-brl'
   },
   '/cambio/libras': {
-    title: 'Libra Esterlina Hoje - Cotação GBP em Tempo Real',
-    description: 'Cotação da libra esterlina (GBP) hoje. Conversor de libra para real, gráficos atualizados e análise da moeda britânica.',
+    title: 'Libra Esterlina Hoje ✅ Cotação GBP/BRL AGORA',
+    description: '✅ Quanto está a Libra hoje? Cotação GBP/BRL ao vivo AGORA com conversor grátis e gráficos atualizados em tempo real.',
     keywords: 'libra hoje, cotação libra, GBP BRL, libra esterlina, conversão libra real, preço libra, libra tempo real',
     canonical: 'https://cotacaodehoje.com/cambio/libras'
+
   },
   '/cambio/gbp-brl': {
     title: 'Libra x Real Hoje - Cotação GBP/BRL em Tempo Real',
@@ -249,10 +254,11 @@ export const seoData: Record<string, PageSEO> = {
   
   // Criptomoedas
   '/crypto': {
-    title: 'Criptomoedas Hoje - Cotações em Tempo Real',
-    description: 'Cotações das principais criptomoedas em tempo real: Bitcoin, Ethereum, Binance Coin e mais. Gráficos, conversores e análises do mercado crypto.',
+    title: 'Criptomoedas Hoje ✅ Cotação BTC, ETH e +20 ao Vivo',
+    description: '✅ Veja AGORA a cotação de Bitcoin, Ethereum e principais criptos em tempo real. Conversor grátis, gráficos ao vivo e atualização constante.',
     keywords: 'criptomoedas, bitcoin, ethereum, crypto hoje, cotação crypto, preço bitcoin, mercado cripto, criptoativos',
     canonical: 'https://cotacaodehoje.com/crypto',
+
     schema: {
       "@context": "https://schema.org",
       "@type": "CollectionPage",
@@ -266,9 +272,10 @@ export const seoData: Record<string, PageSEO> = {
     }
   },
   '/crypto/bitcoin': {
-    title: 'Bitcoin Hoje - Cotação BTC em Tempo Real',
-    description: 'Acompanhe a cotação do Bitcoin (BTC) em tempo real. Preço atualizado, gráficos ao vivo, conversor BTC/BRL e análise completa da principal criptomoeda.',
+    title: 'Bitcoin Hoje ✅ Preço do BTC AGORA em Tempo Real',
+    description: '✅ Quanto está o Bitcoin hoje? Preço do BTC ao vivo AGORA, conversor BTC/BRL grátis e gráficos atualizados em tempo real. Confira!',
     keywords: 'bitcoin hoje, BTC, cotação bitcoin, preço bitcoin, bitcoin tempo real, bitcoin BRL, bitcoin USD, comprar bitcoin, valor bitcoin',
+
     canonical: 'https://cotacaodehoje.com/crypto/bitcoin',
     schema: {
       "@context": "https://schema.org",
