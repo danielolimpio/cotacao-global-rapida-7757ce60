@@ -189,6 +189,9 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
                         <div>
                           <h4 className="font-semibold mb-3 text-base">B3 Brasil</h4>
                           <div className="grid gap-2">
+                            <Link to="/acoes/petrobras" className="text-base hover:text-primary transition-colors">Petrobras Hoje</Link>
+                            <Link to="/acoes/vale" className="text-base hover:text-primary transition-colors">Vale Hoje</Link>
+                            <Link to="/acoes/itau" className="text-base hover:text-primary transition-colors">Itaú Hoje</Link>
                             <Link to="/acoes/carrefour" className="text-base hover:text-primary transition-colors">Carrefour Hoje</Link>
                             <Link to="/acoes/hapvida" className="text-base hover:text-primary transition-colors">Hapvida On Hoje</Link>
                             <Link to="/acoes/magazine-luiz" className="text-base hover:text-primary transition-colors">Magazine Luiz Hoje</Link>
