@@ -85,6 +85,9 @@ import NuveenHoje from "./pages/acoes/NuveenHoje";
 import NvidiaHoje from "./pages/acoes/NvidiaHoje";
 import PimcoHoje from "./pages/acoes/PimcoHoje";
 import VertexPharmHoje from "./pages/acoes/VertexPharmHoje";
+import PetrobrasHoje from "./pages/acoes/PetrobrasHoje";
+import ValeHoje from "./pages/acoes/ValeHoje";
+import ItauHoje from "./pages/acoes/ItauHoje";
 
 // Índices pages
 import SP500Hoje from "./pages/acoes/SP500Hoje";
@@ -218,6 +221,9 @@ const App = () => (
           <Route path="/acoes/nvidia" element={<NvidiaHoje />} />
           <Route path="/acoes/pimco" element={<PimcoHoje />} />
           <Route path="/acoes/vertex" element={<VertexPharmHoje />} />
+          <Route path="/acoes/petrobras" element={<PetrobrasHoje />} />
+          <Route path="/acoes/vale" element={<ValeHoje />} />
+          <Route path="/acoes/itau" element={<ItauHoje />} />
           
           {/* Índices routes */}
           <Route path="/acoes/sp500" element={<SP500Hoje />} />
