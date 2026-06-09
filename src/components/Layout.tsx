@@ -359,7 +359,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
             <div>
               <Link to="/" className="inline-block mb-5">
-                <img src={logoImage} alt="Cotação de Hoje" className="h-16 md:h-20" />
+                <img src={logoImage} alt="Cotação de Hoje" width={200} height={80} loading="lazy" decoding="async" className="h-16 md:h-20 w-auto" />
               </Link>
               <p className="text-sm text-cream/70 leading-relaxed max-w-xs">
                 Inteligência de mercado em tempo real. Cotações precisas para decisões financeiras com refinamento institucional.
