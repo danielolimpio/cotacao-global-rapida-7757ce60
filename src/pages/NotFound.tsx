@@ -8,10 +8,10 @@ import { Home, Search, TrendingUp, DollarSign, Bitcoin, BarChart3 } from "lucide
 
 const NotFound = () => {
   const popularLinks = [
-    { to: "/cambio/dolar-hoje", label: "Dólar Hoje", icon: DollarSign, description: "Cotação USD/BRL em tempo real" },
-    { to: "/crypto/bitcoin-hoje", label: "Bitcoin Hoje", icon: Bitcoin, description: "Preço do BTC atualizado" },
+    { to: "/cambio/dolar", label: "Dólar Hoje", icon: DollarSign, description: "Cotação USD/BRL em tempo real" },
+    { to: "/crypto/bitcoin", label: "Bitcoin Hoje", icon: Bitcoin, description: "Preço do BTC atualizado" },
     { to: "/acoes", label: "Ações", icon: BarChart3, description: "Bolsa de valores em tempo real" },
-    { to: "/cambio/euro-hoje", label: "Euro Hoje", icon: TrendingUp, description: "Cotação EUR/BRL" }
+    { to: "/cambio/euro", label: "Euro Hoje", icon: TrendingUp, description: "Cotação EUR/BRL" }
   ];
 
   return (

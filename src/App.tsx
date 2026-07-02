@@ -5,6 +5,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
 import ScrollToTop from "./components/ScrollToTop";
+import CatchAllRoute from "./components/CatchAllRoute";
 import Index from "./pages/Index";
 import Cambio from "./pages/Cambio";
 import Crypto from "./pages/Crypto";
@@ -13,7 +14,7 @@ import Forex from "./pages/Forex";
 import Sobre from "./pages/Sobre";
 import Contato from "./pages/Contato";
 import Blog from "./pages/Blog";
-import NotFound from "./pages/NotFound";
+// NotFound is rendered via CatchAllRoute
 import PoliticaPrivacidade from "./pages/PoliticaPrivacidade";
 import PoliticaCookies from "./pages/PoliticaCookies";
 import TermosUso from "./pages/TermosUso";
@@ -279,7 +280,8 @@ const App = () => (
           <Route path="/termos-de-uso" element={<TermosUso />} />
           <Route path="/sitemap" element={<Sitemap />} />
           
-          <Route path="*" element={<NotFound />} />
+          {/* Catch-all: redirects legacy /*-hoje URLs -> canonical, else 404 */}
+          <Route path="*" element={<CatchAllRoute />} />
         </Routes>
       </BrowserRouter>
     </TooltipProvider>
