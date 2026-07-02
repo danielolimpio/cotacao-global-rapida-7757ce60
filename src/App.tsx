@@ -14,7 +14,7 @@ import Forex from "./pages/Forex";
 import Sobre from "./pages/Sobre";
 import Contato from "./pages/Contato";
 import Blog from "./pages/Blog";
-import NotFound from "./pages/NotFound";
+// NotFound is rendered via CatchAllRoute
 import PoliticaPrivacidade from "./pages/PoliticaPrivacidade";
 import PoliticaCookies from "./pages/PoliticaCookies";
 import TermosUso from "./pages/TermosUso";
