@@ -5,6 +5,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
 import ScrollToTop from "./components/ScrollToTop";
+import LegacyRedirect from "./components/LegacyRedirect";
 import Index from "./pages/Index";
 import Cambio from "./pages/Cambio";
 import Crypto from "./pages/Crypto";
@@ -279,6 +280,8 @@ const App = () => (
           <Route path="/termos-de-uso" element={<TermosUso />} />
           <Route path="/sitemap" element={<Sitemap />} />
           
+          {/* Legacy -hoje suffix -> canonical redirect (fixes Search Console soft 404s) */}
+          <Route path="*-hoje" element={<LegacyRedirect />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

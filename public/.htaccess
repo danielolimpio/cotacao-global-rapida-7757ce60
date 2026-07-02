@@ -13,27 +13,33 @@ RewriteRule ^(.+)/$ /$1 [R=301,L]
 
 # Redirecionamentos 301 de URLs antigas para novas
 # Cambio
-RewriteRule ^dolar/?$ /cambio/dolar-hoje [R=301,L]
-RewriteRule ^euro/?$ /cambio/euro-hoje [R=301,L]
-RewriteRule ^libra/?$ /cambio/libras-esterlinas-hoje [R=301,L]
-RewriteRule ^iene/?$ /cambio/iene-hoje [R=301,L]
-RewriteRule ^cambio/dolar$ /cambio/dolar-hoje [R=301,L]
-RewriteRule ^cambio/euro$ /cambio/euro-hoje [R=301,L]
+RewriteRule ^dolar/?$ /cambio/dolar [R=301,L]
+RewriteRule ^euro/?$ /cambio/euro [R=301,L]
+RewriteRule ^libra/?$ /cambio/libras [R=301,L]
+RewriteRule ^libras-esterlinas/?$ /cambio/libras [R=301,L]
+RewriteRule ^iene/?$ /cambio/iene [R=301,L]
 
-# Crypto
-RewriteRule ^bitcoin/?$ /crypto/bitcoin-hoje [R=301,L]
-RewriteRule ^ethereum/?$ /crypto/ethereum-hoje [R=301,L]
-RewriteRule ^btc/?$ /crypto/bitcoin-hoje [R=301,L]
-RewriteRule ^eth/?$ /crypto/ethereum-hoje [R=301,L]
-RewriteRule ^crypto/bitcoin$ /crypto/bitcoin-hoje [R=301,L]
-RewriteRule ^crypto/ethereum$ /crypto/ethereum-hoje [R=301,L]
+# Legacy -hoje URLs (Search Console soft 404s) -> canonical clean URLs
+RewriteRule ^cambio/dolar-hoje/?$ /cambio/dolar [R=301,L]
+RewriteRule ^cambio/euro-hoje/?$ /cambio/euro [R=301,L]
+RewriteRule ^cambio/libras-esterlinas-hoje/?$ /cambio/libras [R=301,L]
+RewriteRule ^cambio/iene-hoje/?$ /cambio/iene [R=301,L]
+RewriteRule ^crypto/bitcoin-hoje/?$ /crypto/bitcoin [R=301,L]
+RewriteRule ^crypto/ethereum-hoje/?$ /crypto/ethereum [R=301,L]
+RewriteRule ^acoes/apple-hoje/?$ /acoes/apple [R=301,L]
+RewriteRule ^acoes/amazon-hoje/?$ /acoes/amazon [R=301,L]
+RewriteRule ^acoes/microsoft-hoje/?$ /acoes/microsoft [R=301,L]
 
-# Ações
-RewriteRule ^apple/?$ /acoes/apple-hoje [R=301,L]
-RewriteRule ^amazon/?$ /acoes/amazon-hoje [R=301,L]
-RewriteRule ^microsoft/?$ /acoes/microsoft-hoje [R=301,L]
-RewriteRule ^acoes/apple$ /acoes/apple-hoje [R=301,L]
-RewriteRule ^acoes/amazon$ /acoes/amazon-hoje [R=301,L]
+# Crypto short slugs
+RewriteRule ^bitcoin/?$ /crypto/bitcoin [R=301,L]
+RewriteRule ^ethereum/?$ /crypto/ethereum [R=301,L]
+RewriteRule ^btc/?$ /crypto/bitcoin [R=301,L]
+RewriteRule ^eth/?$ /crypto/ethereum [R=301,L]
+
+# Ações short slugs
+RewriteRule ^apple/?$ /acoes/apple [R=301,L]
+RewriteRule ^amazon/?$ /acoes/amazon [R=301,L]
+RewriteRule ^microsoft/?$ /acoes/microsoft [R=301,L]
 
 # Remover .html de URLs antigas
 RewriteCond %{REQUEST_FILENAME} !-f
