@@ -2,6 +2,17 @@
 RewriteEngine On
 RewriteBase /
 
+# Não anexar barra final automaticamente em diretórios (evita loops com regra
+# de remoção de trailing slash abaixo, agora que temos HTML pré-renderizado
+# servido a partir de /<rota>/index.html).
+DirectorySlash Off
+
+# Servir index.html interno da pasta pré-renderizada sem redirecionar a URL.
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^(.*[^/])$ /$1/index.html [L]
+
+
+
 # Forçar HTTPS (Segurança e SEO)
 RewriteCond %{HTTPS} !=on
 RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
