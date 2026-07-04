@@ -8,7 +8,9 @@
     "dev": "vite",
     "prebuild": "bunx tsx scripts/generate-sitemap.ts",
     "build": "vite build",
+    "postbuild": "node scripts/prerender.mjs",
     "build:dev": "bunx tsx scripts/generate-sitemap.ts && vite build --mode development",
+
     "lint": "eslint .",
     "preview": "vite preview"
   },
